@@ -1,0 +1,3 @@
+git init
+git remote add origin https://github.com/tiagowebersc/Original-coder-project.git
+git pull -u origin master

@@ -1,0 +1,14 @@
+// Create a new laravel project
+composer create-project --prefer-dist laravel/laravel myProject
+
+//run laravel server
+//open bash inside the new folder
+php artisan serve
+
+// list all the routes available
+php artisan route:list
+
+// to create a controller
+php artisan make:controller TestController
+// to create a controller with CRUD
+php artisan make:controller --resource TestController
