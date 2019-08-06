@@ -2,6 +2,13 @@
 
 Final Project Fit4Coding
 
-Project Leader : Bobby Spencer
+Team Composition:
 
-Followed by Tiago Weber, Diedon Maxhuni, Joao Felicio and Nasser Alkar.
+- Project Manager: Tiago Weber
+
+Developer:
+
+- Diedon Maxhuni
+- Joao Felicio
+- Nasser Alkar
+- Bobby J. Spencer
