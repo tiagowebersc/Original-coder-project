@@ -4,11 +4,11 @@ Final Project Fit4Coding
 
 Team Composition:
 
-Project Manager: Tiago Weber
+- Project Manager: Tiago Weber
 
 Developer:
 
-Diedon Maxhuni,
-Joao Felicio,
-Nasser Alkar,
-Bobby Spencer
+- Diedon Maxhuni,
+- Joao Felicio,
+- Nasser Alkar,
+- Bobby Spencer
