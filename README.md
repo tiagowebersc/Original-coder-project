@@ -2,6 +2,6 @@
 
 Final Project Fit4Coding
 
-Project Leader : Bobby Spencer
+Team Composition:
 
-Made by Tiago Weber, Diedon Maxhuni, Joao Felicio and Nasser Alkar.
+Made by Tiago Weber, Diedon Maxhuni, Joao Felicio and Nasser Alkar, Bobby Spencer
