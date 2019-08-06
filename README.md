@@ -8,7 +8,7 @@ Team Composition:
 
 Developer:
 
-- Diedon Maxhuni,
-- Joao Felicio,
-- Nasser Alkar,
-- Bobby Spencer
+- Diedon Maxhuni
+- Joao Felicio
+- Nasser Alkar
+- Bobby Spence
