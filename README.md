@@ -11,4 +11,4 @@ Developer:
 - Diedon Maxhuni
 - Joao Felicio
 - Nasser Alkar
-- Bobby Spence
+- Bobby J. Spencer
