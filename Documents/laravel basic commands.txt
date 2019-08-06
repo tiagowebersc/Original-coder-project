@@ -12,3 +12,26 @@ php artisan route:list
 php artisan make:controller TestController
 // to create a controller with CRUD
 php artisan make:controller --resource TestController
+
+// create model
+php artisan make:model Article
+
+// to create a migration
+php artisan make:migration create_articles_table
+
+// execute migration
+php artisan migrate
+// rollback everything and execute migration again
+php artisan migrate:refresh
+// drops everything and than execute migration
+php artisan migrate:fresh
+
+// to create a seeder file
+php artisan make:seeder ArticleTableSeeder
+// execute all seeds
+php artisan db:seed
+// to specify a seeder
+php artisan db:seed --class=ArticleTableSeeder
+
+// recreate the migration and executes the seeds
+php artisan migrate:refresh --seed
