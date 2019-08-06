@@ -8,7 +8,7 @@ Project Manager: Tiago Weber
 
 Developer:
 
-Diedon Maxhuni
-Joao Felicio
-Nasser Alkar
+Diedon Maxhuni,
+Joao Felicio,
+Nasser Alkar,
 Bobby Spencer
