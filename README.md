@@ -1,14 +1,17 @@
-# Original-coder-project
+# SnackHound
 
 Final Project Fit4Coding
 
-Team Composition:
+## Team Composition:
 
-- Project Manager: Tiago Weber
+### Project Manager: Tiago Weber
 
-Developer:
+### Design: Bobby J. Spencer
+
+### Development:
 
 - Diedon Maxhuni
 - Joao Felicio
+- Tiago Weber
 - Nasser Alkar
 - Bobby J. Spencer
