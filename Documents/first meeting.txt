@@ -1,0 +1,36 @@
+customer
+- not logged in
+	* can look for a foodtruck in the map
+	* look the general information (photo, name, schedule)
+	* look the menu and open each item for the description 
+	* if is available to order online he can add in the lunchbag
+- logged in
+	* user can update his information
+	* put the foodtruck as farorite
+	* can review the foodtruck
+	* finalize the order
+	* can cancel before the order is accepted
+
+General features
+	* multilanguage
+
+Foodtruck
+	* specific login - Changes the main menu
+	* form to include (photo, title, description, schedule, category)
+	* menu (photo, title, ingredients, price), category (spice, vegan), if is available online
+		is necessary alergic stuff?
+	* look for the new order (items and pick up time) and has possibility to accept or not
+		if rejected is possible to write a message
+	* when deliver check the order as done
+		nobody go to take the food the order can be marked as cancelled
+
+
+
+
+
+Things to confirm
+	* be sure about the map
+
+Bonus
+	* during the delivering may the items in the order can change
+	* two ways review
