@@ -17,7 +17,7 @@ General features
 Foodtruck
 	* specific login - Changes the main menu
 	* form to include (photo, title, description, schedule, category)
-	* menu (photo, title, ingredients, price), category (spice, vegan), if is available online
+	* menu (photo, title, ingredients, price), characteristic(spice, vegan), if is available online
 		is necessary alergic stuff?
 	* look for the new order (items and pick up time) and has possibility to accept or not
 		if rejected is possible to write a message
