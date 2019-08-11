@@ -1,0 +1,12 @@
+/SnackHound/node_modules
+/SnackHound/public/hot
+/SnackHound/public/storage
+/SnackHound/storage/*.key
+/SnackHound/vendor
+/SnackHound/.env
+/SnackHound/.env.backup
+/SnackHound/.phpunit.result.cache
+/SnackHound/Homestead.json
+/SnackHound/Homestead.yaml
+/SnackHound/npm-debug.log
+/SnackHound/yarn-error.log
