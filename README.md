@@ -1,6 +1,6 @@
 # SnackHound
 
-Final Project Fit4Coding
+Final Project Fit4Coding 2019
 
 ## Team Composition:
 
