@@ -15,6 +15,3 @@ Final Project Fit4Coding
 - Tiago Weber
 - Nasser Alkar
 - Bobby J. Spencer
-
-
-test diedon
