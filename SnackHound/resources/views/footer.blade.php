@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="{{ URL::asset('/css/footer.css') }}" />
 <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 <footer class="footer">
+    <header class="header">
         <section class="contact-information">
             <section class="first-footer">
                 <div>
@@ -29,4 +30,8 @@
                 <a href="#"><img class="footer-img" src="{{URL::asset('assets/ICONS/Footer%20Content/MadeInLuxLogo.svg')}}"></a>
             </div>
         </section>
-</footer>
+    </header>
+    <p class="copy-right">
+            © 2019 | Designed & Developed by Original_Coder
+    </p>
+ </footer>
