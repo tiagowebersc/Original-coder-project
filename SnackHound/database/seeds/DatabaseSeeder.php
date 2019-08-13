@@ -21,5 +21,7 @@ class DatabaseSeeder extends Seeder
         $this->call(Food_characteristicTableSeeder::class);
         $this->call(MenuTableSeeder::class);
         $this->call(Menu_food_characteristicTableSeeder::class);
+        $this->call(OrderTableSeeder::class);
+        $this->call(Order_itemTableSeeder::class);
     }
 }
