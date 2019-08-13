@@ -12,6 +12,7 @@ class TruckTableSeeder extends Seeder
     public function run()
     {
         DB::table('truck')->insert([
+            'id_truck' => 1,
             'id_user' => 2,
             'name' => 'La maracas',
             'image' => 'truck1.png',
