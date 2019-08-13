@@ -17,7 +17,7 @@
         <div class='side-mobile-pic'><img src="http://neo-labor.com/wp-content/uploads/2016/08/13.jpg" alt=""></div>
 
         <div class="sidebar-logo">
-            <a href="#"><img class='sidebar-logo-img' src="{{URL::asset('assets/ICONS/logo-white.svg')}}" alt="Logo of SnackHound."></a>
+            <a href="#"><img class='sidebar-logo-img' src="{{URL::asset('assets/ICONS/Logo_White.svg')}}" alt="Logo of SnackHound."></a>
         </div>
 
 

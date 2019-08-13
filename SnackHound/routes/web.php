@@ -26,3 +26,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/footer', function () {
     return view('footer');
 });
+
+Route::get('/test2', function () {
+    return view('truckownerSidebar');
+});

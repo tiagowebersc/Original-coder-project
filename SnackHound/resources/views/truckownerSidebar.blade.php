@@ -31,12 +31,12 @@
     <div class='sidebar-items'>
 
         <ul>
-            <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-track-order (1).svg')}}"> Coverage area </a></li>
-            <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-doggy-bag (1).svg')}}"> Lunchbar </a></li>
-            <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-info (1).svg')}}"> About Us </a></li>
-            <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-food-truck (1).svg')}}"> Food Truck Owner </a></li>
-            <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-login-as-user (1).svg')}}"> Login | Sign Up </a></li>
-            <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-settings (1).svg')}}"> Account Settings </a></li>
+            <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/surface349390.svg')}}"> Orders </a></li>
+            <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/surface347926.svg')}}"> Menu </a></li>
+            <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/surface349757.svg')}}"> Schedule </a></li>
+            <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/surface351177.svg')}}"> Payment Settings </a></li>
+            <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/surface348289.svg')}}"> Media </a></li>
+            <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-settings (1).svg')}}"> Settings </a></li>
         </ul>
 
     </div>
