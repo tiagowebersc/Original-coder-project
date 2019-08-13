@@ -19,7 +19,7 @@ class CreateTruckTable extends Migration
             $table->foreign('id_user')->references('id_user')->on('user');
             $table->string('name', 60);
             $table->string('image', 100);
-            $table->smallInteger('price_range');
+            $table->tinyInteger('price_range');
             $table->string('telephone', 20);
             $table->boolean('online_order');
             $table->string('description', 500);

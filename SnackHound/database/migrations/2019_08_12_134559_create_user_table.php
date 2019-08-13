@@ -17,8 +17,8 @@ class CreateUserTable extends Migration
             $table->bigIncrements('id_user');
             $table->string('first_name', 50);
             $table->string('last_name', 50);
-            $table->smallInteger('user_type');
-            $table->smallInteger('user_status');
+            $table->tinyInteger('user_type');
+            $table->tinyInteger('user_status');
             $table->string('email', 100);
             $table->string('hash_password', 60);
             $table->string('telephone', 20)->nullable();
