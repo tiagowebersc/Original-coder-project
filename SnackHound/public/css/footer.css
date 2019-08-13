@@ -1,0 +1,26 @@
+
+@media only screen and (min-width: 1024px) {
+.footer{
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+.contact-information
+{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Lato', sans-serif;
+    color: #9e9e9e;
+    font-size: 30px;
+    width: 100% ;
+}
+.contact-information p{
+    color: white;
+    font-size: 25px;
+}
+
+.footer-img{
+    height: 600px;
+}
+}

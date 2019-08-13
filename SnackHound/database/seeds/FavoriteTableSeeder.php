@@ -14,7 +14,6 @@ class FavoriteTableSeeder extends Seeder
         DB::table('favorite')->insert([
             'id_user' => 4,
             'id_truck' => 1
-
         ]);
     }
 }

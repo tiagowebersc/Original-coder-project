@@ -34,7 +34,7 @@ class MenuTableSeeder extends Seeder
             'id_truck' => 1,
             'name' => 'Red Bull',
             'description' => 'Energetic drink',
-            'price' => 2.5,
+            'price' => 3.50,
             'available' => true,
             'image' => 'red_bull.png'
         ]);
