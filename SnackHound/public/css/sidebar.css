@@ -17,11 +17,12 @@
     align-items: center;
     border-right: 1px solid white;
     background-color: #000;
+    position: fixed;
 }
 
 .sidebar-items-img, .sidebar-logo-img {
-    width: 56px;
-    height: 56px;
+    width: 60px;
+    height: 60px;
 }
 
 .side-mobile-pic {
@@ -101,13 +102,12 @@
 
 .sidebar-items li {
     display: inline-block;
-    width: 86px;
-    height: 86px;
 }
 
 .sidebar-items a {
     list-style: none;
     display: flex;
+    width: 100px;
     text-decoration: none;
     color: white;
     flex-direction: column;
@@ -135,6 +135,7 @@
         align-items: center;
     }
 
+
     .side-mobile-pic {
         display: none;
     }
@@ -154,9 +155,11 @@
 
     .sidebar-items ul {
         height: 100%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+        align-items: center;
     }
 
 
