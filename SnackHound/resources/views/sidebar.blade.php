@@ -5,7 +5,7 @@
     <div class='side-mobile-pic'><img src="http://neo-labor.com/wp-content/uploads/2016/08/13.jpg" alt=""></div>
 
     <div class="sidebar-logo">
-        <a href="#"><img class='sidebar-logo-img' src="{{URL::asset('assets/ICONS/logo-white.svg')}}" alt="Logo of SnackHound."></a>
+        <a href="#"><img class='sidebar-logo-img' src="{{URL::asset('assets/ICONS/logo_black-white-01.svg')}}" alt="Logo of SnackHound."></a>
     </div>
 
 
@@ -38,7 +38,7 @@
             <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-login-as-user (1).svg')}}"> Login | Sign Up </a></li>
             <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-settings (1).svg')}}"> Account Settings </a></li>
         </ul>
-        
+
     </div>
 </div>
 <h1>asda</h1>
