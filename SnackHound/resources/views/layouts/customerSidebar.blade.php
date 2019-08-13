@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{ URL::asset('css/sidebar.css') }}" />
 
     <div class="sidebar">
-        <div class='side-mobile-pic'><img src="http://neo-labor.com/wp-content/uploads/2016/08/13.jpg" alt=""></div>
+        <div class='side-mobile-pic'><img src="{{URL::asset('assets/IMGS/475605E3-69C5-4D2B-8727-61B7BB8C4699-500w.jpeg')}}" alt=""></div>
 
         <div class="sidebar-logo">
             <a href="#"><img class='sidebar-logo-img' src="{{URL::asset('assets/ICONS/Logo_White.svg')}}" alt="Logo of SnackHound."></a>
@@ -44,9 +44,9 @@
 
             <ul>
                 <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-track-order (1).svg')}}"> Coverage area </a></li>
-                <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-doggy-bag (1).svg')}}"> Lunchbar </a></li>
+                <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-doggy-bag (1).svg')}}"> Lunchbag </a></li>
                 <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-info (1).svg')}}"> About Us </a></li>
-                <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-food-truck (1).svg')}}"> Food Truck Owner </a></li>
+                <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-truck.svg')}}"> Food Truck Owner </a></li>
                 <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-login-as-user (1).svg')}}"> Login | Sign Up </a></li>
                 <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-settings (1).svg')}}"> Account Settings </a></li>
             </ul>

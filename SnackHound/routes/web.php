@@ -16,12 +16,12 @@ Route::get('/', function () {
 });
 
 Route::get('/test', function () {
-    return view('sidebar');
+    return view('layouts/customerSidebar');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index');
 
 Route::get('/header', function () {
     return view('header');
@@ -31,5 +31,5 @@ Route::get('/footer', function () {
 });
 
 Route::get('/test2', function () {
-    return view('truckownerSidebar');
+    return view('layouts/truckownerSidebar');
 });
