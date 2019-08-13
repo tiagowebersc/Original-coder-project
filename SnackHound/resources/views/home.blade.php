@@ -1,4 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.customerSidebar')
+
+@section('title', 'Home Page')
 
 @section('content')
 <div class="container">
@@ -9,9 +11,9 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
                     @endif
 
                     You are logged in!
