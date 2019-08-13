@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFavoriteTable extends Migration
+class CreateTruckFoodCategoryTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateFavoriteTable extends Migration
      */
     public function up()
     {
-        Schema::create('favorite', function (Blueprint $table) {
-            $table->bigIncrements('id_favorite');
-            $table->bigInteger('id_user');
-            $table->foreign('id_user')->references('id_user')->on('user');
+        Schema::create('truck_food_category', function (Blueprint $table) {
+            $table->bigIncrements('id_truck_food_category');
             $table->bigInteger('id_truck');
             $table->foreign('id_truck')->references('id_truck')->on('truck');
+            $table->bigInteger('id_food_category');
+            $table->foreign('id_food_category')->references('id_food_category')->on('food_category');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateFavoriteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('favorite');
+        Schema::dropIfExists('truck_food_category');
     }
 }
