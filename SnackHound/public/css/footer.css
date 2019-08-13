@@ -31,8 +31,6 @@
 .contact-information p {
     color: white;
     font-size: 15px;
-
-
 }
 .first-footer{
     display: flex;
@@ -48,23 +46,21 @@
     padding: 20px;
 }
 
-
 .footer-img {
     display: none;
 }
-.media-links{
+.media-links {
     text-align: center;
 }
-.copy-right{
+.copy-right {
     font-size: 14px;
     padding: 10px;
     text-align: center;
-    color:#fcfcfc;
+    color: #fcfcfc;
 }
 
 @media only screen and (min-width: 1024px) {
-
-    .footer{
+    .footer {
         background-color: black;
         height: 550px;
     }
@@ -91,14 +87,12 @@
         font-size: 20px;
         padding: 0px;
     }
-    .media-links{
+    .media-links {
         text-align: left;
     }
-
 
     .footer-img {
         display: inherit;
         height: 300px;
     }
-
 }
