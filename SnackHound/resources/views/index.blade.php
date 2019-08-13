@@ -9,7 +9,4 @@
 @section('content')
 
 
-<h1>sdhdsfkhsdkfh</h1>
-<p>ksjdskjdhfkjsdsefsdfhgjdfgsjhdgjshdjgh</p>
-
 @endsection
