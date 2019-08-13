@@ -1,12 +1,12 @@
-* {
-    box-sizing: border-box;
-}
+    * {
+        box-sizing: border-box;
+    }
 
-*:not(input) {
-    margin: 0;
-    padding: 0;
-    border: 0;
-}
+    *:not(input) {
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
 
 .footer{
     background-color: black;
