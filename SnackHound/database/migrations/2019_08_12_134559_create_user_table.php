@@ -21,6 +21,7 @@ class CreateUserTable extends Migration
             $table->tinyInteger('user_status');
             $table->string('email', 100);
             $table->string('hash_password', 60);
+            $table->string('remember_token', 100)->nullable();
             $table->string('telephone', 20)->nullable();
             $table->timestamps();
         });

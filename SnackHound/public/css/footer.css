@@ -8,13 +8,16 @@
     border: 0;
 }
 
-.footer {
+.footer{
+    background-color: black;
+    height: 350px;
+}
+.header {
     margin: 0px, auto;
     background-color: black;
     display: flex;
     justify-content: space-between;
-    padding: 30px;
-    height: 300px;
+
 }
 
 .contact-information {
@@ -52,18 +55,28 @@
 .media-links{
     text-align: center;
 }
+.copy-right{
+    font-size: 14px;
+    padding: 10px;
+    text-align: center;
+    color:#fcfcfc;
+}
 
 @media only screen and (min-width: 1024px) {
 
-    .contact-information {
-        flex-direction: row;
+    .footer{
+        background-color: black;
+        height: 550px;
     }
-
-    .footer {
+    .header {
         background-color: black;
         padding: 30px;
         height: 500px;
     }
+    .contact-information {
+        flex-direction: row;
+    }
+
     .contact-information {
         display: flex;
         justify-content: inherit;
@@ -87,4 +100,5 @@
         display: inherit;
         height: 300px;
     }
+
 }
