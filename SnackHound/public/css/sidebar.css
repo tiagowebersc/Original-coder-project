@@ -11,10 +11,10 @@
 /* SIDEBAR */
 
 .sidebar {
-    height: 100vh;
-    width: 125px;
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     border-right: 1px solid white;
     background-color: #000;
 }
@@ -24,10 +24,69 @@
     height: 56px;
 }
 
+.side-mobile-pic {
+    color: white;
+    margin-left: 2rem;
+}
+
+.side-mobile-pic img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.dropdown {
+    margin-right: 2rem;
+}
+
+.btn-secondary:hover {
+    color: inherit;
+}
+
+.dropdown-menu {
+    transform: translate3d(-50%, 45px, 0px) !important;
+    width: 20rem;
+    border-radius: 0px;
+}
+
+.dropdown-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.dropdown-item {
+    cursor: pointer;
+}
+
+.dropdown-sign {
+    width: 200px;
+    margin-top: 5px;
+    margin-left: 33px;
+    border-radius: 3px;
+    text-align: center;
+    height: 35px;
+    background-color: #06B7F9;
+}
+
+.dropdown-log {
+    width: 200px;
+    margin-top: 10px;
+    margin-left: 33px;
+    border-radius: 3px;
+    text-align: center;
+    height: 35px;
+    border: 1px solid black;
+}
+
+
+.dropdown-item:focus, .dropdown-item:hover {
+    background-color: inherit;
+}
+
+
 /* SIDEBAR LOGO */
 
 .sidebar-logo {
-    height: 10%;
+    width: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,20 +95,9 @@
 /* SIDEBAR ITEMS */
 
 .sidebar-items {
-    height: 90%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    border-top: 1px solid white;
+    display: none;
 }
 
-.sidebar-items ul {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
 
 .sidebar-items li {
     display: inline-block;
@@ -65,4 +113,54 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+}
+
+
+@media only screen and (min-width: 1024px) {
+
+    .sidebar {
+        height: 100vh;
+        width: 125px;
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid white;
+        background-color: #000;
+    }
+
+    .sidebar-logo{
+        width: 100%;
+        height: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .side-mobile-pic {
+        display: none;
+    }
+
+    .side-mobile-ham {
+        display: none;
+    }
+
+    .sidebar-items {
+        height: 90%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        border-top: 1px solid white;
+    }
+
+    .sidebar-items ul {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+
+    .dropdown-menu, .dropdown {
+        display: none;
+    }
 }
