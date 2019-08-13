@@ -18,5 +18,8 @@ class DatabaseSeeder extends Seeder
         $this->call(ScheduleTableSeeder::class);
         $this->call(Food_categoryTableSeeder::class);
         $this->call(Truck_food_categoryTableSeeder::class);
+        $this->call(Food_characteristicTableSeeder::class);
+        $this->call(MenuTableSeeder::class);
+        $this->call(Menu_food_characteristicTableSeeder::class);
     }
 }
