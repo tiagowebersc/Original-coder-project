@@ -19,9 +19,6 @@ Route::get('/test', function () {
     return view('layouts/customerSidebar');
 });
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
 
 // Route::get('/index', function () {
 //     return view('index');
