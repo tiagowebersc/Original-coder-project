@@ -17,9 +17,9 @@
                     @csrf
                     <div>
                         <input type="radio" name="userType" id="curtomer" value="0">
-                        <label for="curtomer">Personal Account</label>
+                        <label class="smallPadding" for="curtomer">Personal Account</label>
                         <input type="radio" name="userType" id="foodtruck" value="1">
-                        <label for="foodtruck">Business Account</label>
+                        <label class="smallPadding" for="foodtruck">Business Account</label>
                     </div>
                     <div class="flex">
                         <div class="width50">
@@ -38,7 +38,7 @@
                     <label for="confirmPassword">Confirm Password:</label>
                     <input class="input100" type="password" name="confirmPassword" id="confirmPassword">
                     <div>
-                        <input type="checkbox" name="termsOfUse" value="T"> I accept the terms of use & the privacy policy
+                        <input type="checkbox" name="termsOfUse" id="termsOfUse" value="T"><label class="smallPadding" for="termsOfUse">I accept the terms of use & the privacy policy</label>
                     </div>
                 </form>
             </article>
