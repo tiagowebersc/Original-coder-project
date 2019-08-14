@@ -2,10 +2,10 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ URL::asset('/css/index.css') }}" />
-<link href="https://fonts.googleapis.com/css?family=Raleway:300|Roboto+Slab&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Raleway:400,700|Roboto+Slab&display=swap" rel="stylesheet">
 @endsection
 
-@section('title', 'SnackHound')
+@section('title', 'SnackHound - Homepage')
 
 @section('content')
 
@@ -28,18 +28,18 @@
     </section>
 </header>
 <main>
-        <div id="map"></div>
-        <script>
-          var map;
-          function initMap() {
-            map = new google.maps.Map(document.getElementById('map'), {
-              center: {lat:  34.397, lng: 150.644},
-              zoom: 8
-            });
-          }
-        </script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtlX1KloHpjKujAEto6qDggr_-ibVatcA&callback=initMap"
-        async defer></script>
+    <div id="map"></div>
 </main>
+            <script>
+              var map;
+              function initMap() {
+                map = new google.maps.Map(document.getElementById('map'), {
+                  center: {lat:  34.397, lng: 150.644},
+                  zoom: 8
+                });
+              }
+            </script>
+              <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtlX1KloHpjKujAEto6qDggr_-ibVatcA&callback=initMap"
+              async defer></script>
 
 @endsection
