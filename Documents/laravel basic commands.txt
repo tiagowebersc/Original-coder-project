@@ -26,6 +26,8 @@ php artisan migrate:refresh
 // drops everything and than execute migration
 php artisan migrate:fresh
 
+// if have problem with the seeder class not found execute this
+composer dumpautoload
 // to create a seeder file
 php artisan make:seeder ArticleTableSeeder
 // execute all seeds
