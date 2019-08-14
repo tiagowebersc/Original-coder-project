@@ -19,10 +19,11 @@ Route::get('/login', 'UserController@login');
 
 Route::post('/login', 'UserController@loginPost');
 
+Route::get('/truck/{id}', 'TruckController@getOrders');
 
 
 Route::get('/test', function () {
-    return view('layouts/customerSidebar');
+    return view('truckOwnerDashboard');
 });
 
 

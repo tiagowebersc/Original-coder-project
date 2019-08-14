@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+
+*:not(input) {
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}
+
+main {
+    margin-left: 175px;
+    padding-top: 62px;
+}
+
+form {
+    margin-top: 50px;
+}
+
+fieldset {
+    padding: 15px;
+}
+
+label {
+    margin-left: 20px;
+}

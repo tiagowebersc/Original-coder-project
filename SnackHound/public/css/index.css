@@ -1,1 +1,59 @@
+.bg-image {
+    background-image: url("/assets/IMGS/paula-vermeulen-URjZkhqsuBk-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 540px;
+    color: black;
+    resize: both;
+}
 
+.bg-text {
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+    width: 350px;
+}
+.bg-text h1{
+    font-size: 60px;
+    padding-bottom: 10px;
+}
+.bg-text p{
+    font-size: 15px;
+    align-content: left;
+    padding: 10px;
+    padding-bottom: 20px;
+}
+.search {
+    background: transparent;
+    border-radius: 20px;
+    border: solid 1px white;
+    size: 50px;
+    width: 300px;
+    height: 35px;
+}
+.submit-location {
+    margin-left: -100px;
+    width: 100px;
+    height: 35px;
+    border: #fff solid 1px;
+    border-radius: 20px;
+    background-color: white;
+    color: #b86924;
+    box-shadow: 1px 10px 19px #000000;
+}
+.turn-on-location {
+    background-color: #fff;
+    color: #b86924;
+    border-radius: 20px;
+    height: 35px;
+    width: 300px;
+    box-shadow: 1px 10px 19px #000000;
+}
