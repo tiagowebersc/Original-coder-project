@@ -15,6 +15,12 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/login', 'UserController@login');
+
+Route::post('/login', 'UserController@loginPost');
+
+
+
 Route::get('/test', function () {
     return view('layouts/customerSidebar');
 });

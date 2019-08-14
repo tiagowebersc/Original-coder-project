@@ -3,7 +3,6 @@
 @extends('layouts.customerSidebar')
 
 
-
 @section('title', 'SnackHound')
 
 @section('content')
