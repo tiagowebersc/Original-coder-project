@@ -19,6 +19,8 @@ Route::get('/login', 'UserController@login');
 
 Route::post('/login', 'UserController@loginPost');
 
+Route::post('/signup', 'UserController@signupPost');
+
 Route::get('/truck/{id}', 'TruckController@getOrders');
 
 
