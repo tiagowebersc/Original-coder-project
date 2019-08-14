@@ -15,9 +15,9 @@ class CreateOrderItemTable extends Migration
     {
         Schema::create('order_item', function (Blueprint $table) {
             $table->bigIncrements('id_order_item');
-            $table->bigInteger('id_order');
+            $table->bigInteger('id_order')->unsigned();
             $table->foreign('id_order')->references('id_order')->on('order');
-            $table->bigInteger('id_menu');
+            $table->bigInteger('id_menu')->unsigned();
             $table->foreign('id_menu')->references('id_menu')->on('menu');
             $table->float('price', 6, 2);
             $table->smallInteger('quantity');

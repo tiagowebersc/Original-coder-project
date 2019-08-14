@@ -15,9 +15,9 @@ class CreateFavoriteTable extends Migration
     {
         Schema::create('favorite', function (Blueprint $table) {
             $table->bigIncrements('id_favorite');
-            $table->bigInteger('id_user');
+            $table->bigInteger('id_user')->unsigned();
             $table->foreign('id_user')->references('id_user')->on('user');
-            $table->bigInteger('id_truck');
+            $table->bigInteger('id_truck')->unsigned();
             $table->foreign('id_truck')->references('id_truck')->on('truck');
             $table->timestamps();
         });

@@ -15,9 +15,9 @@ class CreateOrderTable extends Migration
     {
         Schema::create('order', function (Blueprint $table) {
             $table->bigIncrements('id_order');
-            $table->bigInteger('id_truck');
+            $table->bigInteger('id_truck')->unsigned();
             $table->foreign('id_truck')->references('id_truck')->on('truck');
-            $table->bigInteger('id_user');
+            $table->bigInteger('id_user')->unsigned();
             $table->foreign('id_user')->references('id_user')->on('user');
             $table->tinyInteger('status');
             $table->string('detail', 200)->nullable();

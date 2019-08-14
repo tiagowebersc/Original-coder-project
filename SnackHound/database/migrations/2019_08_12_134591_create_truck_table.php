@@ -15,7 +15,8 @@ class CreateTruckTable extends Migration
     {
         Schema::create('truck', function (Blueprint $table) {
             $table->bigIncrements('id_truck');
-            $table->bigInteger('id_user');
+            $table->bigInteger('id_user')->unsigned();
+            $table->foreign('id_user')->references('id_user')->on('user');
             $table->string('name', 60);
             $table->string('image', 100);
             $table->tinyInteger('price_range');
@@ -27,10 +28,6 @@ class CreateTruckTable extends Migration
             $table->string('instagram_link', 45)->nullable();
             $table->string('twitter_link', 45)->nullable();
             $table->timestamps();
-        });
-
-        Schema::table('truck', function (Blueprint $table) {
-            $table->foreign('id_user')->references('id_user')->on('user');
         });
     }
 

@@ -15,9 +15,9 @@ class CreateReviewTable extends Migration
     {
         Schema::create('review', function (Blueprint $table) {
             $table->bigIncrements('id_review');
-            $table->bigInteger('id_user');
+            $table->bigInteger('id_user')->unsigned();
             $table->foreign('id_user')->references('id_user')->on('user');
-            $table->bigInteger('id_truck');
+            $table->bigInteger('id_truck')->unsigned();
             $table->foreign('id_truck')->references('id_truck')->on('truck');
             $table->tinyInteger('rate');
             $table->string('comment', 500);

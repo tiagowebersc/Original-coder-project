@@ -15,9 +15,9 @@ class CreateTruckFoodCategoryTable extends Migration
     {
         Schema::create('truck_food_category', function (Blueprint $table) {
             $table->bigIncrements('id_truck_food_category');
-            $table->bigInteger('id_truck');
+            $table->bigInteger('id_truck')->unsigned();
             $table->foreign('id_truck')->references('id_truck')->on('truck');
-            $table->bigInteger('id_food_category');
+            $table->bigInteger('id_food_category')->unsigned();
             $table->foreign('id_food_category')->references('id_food_category')->on('food_category');
             $table->timestamps();
         });
