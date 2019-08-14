@@ -88,8 +88,6 @@
                 <th><strong>Order no.</strong></th>
                 <th><strong>Date</strong></th>
                 <th><strong>Amount</strong></th>
-                <th><strong>Payment Status</strong></th>
-                <th><strong>Payment Type</strong></th>
                 <th><strong>Pre-Order?</strong></th>
                 <th><strong>Order status</strong></th>
                 <th><strong>Details</strong></th>
@@ -100,21 +98,44 @@
 
         @foreach ($orders as $order)
         <tr class="table-content">
-            <td>{{$order->id_order}}</td>
-            <td>{{$order->id_order}}</td>
-            <td>{{$order->id_order}}</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td class='green'>{{$order->id_order}}</td>
+            <td>{{$order->created_at}}</td>
+            <td>{{$order->total}} €</td>
+            <?php echo $order->pickup_time ? "<td>" . $order->pickup_time . "</td>" : "<td class='red'> N </td>" ?></td>
+            <?php
+            switch($order->status) {
+                case 0:
+                echo "<td class='waiting'> Waiting </td>";
+                break;
+                case 1:
+                echo "<td class='green'> Accepted </td>";
+                break;
+                case 2:
+                echo "<td class='red'> Not accepted </td>";
+                break;
+                case 3:
+                echo "<td class='red'> Canceled </td>";
+                break;
+                case 4:
+                echo "<td class='done'> Delivered </td>";
+                break;
+            }
+            echo "<td> <a class='view-details' href='#'>VIEW</a> </td>";
+
+            if($order->status >= 2) {
+                ?>
+                <td> <a class='accept-order disabled' href='#'>ACCEPT</a> <a class='decline-order disabled-x' href='#'>X</a></td>
+                <?php
+            } else {
+                ?>
+                <td> <a class='accept-order' href='#'>ACCEPT</a> <a class='decline-order' href='#'>X</a></td>
+                <?php
+            }
+            ?>
+            <td><a href='#'> <img src="{{URL::asset('assets/ICONS/printer.svg')}}" alt="print image."> </a></td>
         </td>
 
         @endforeach
-
-        {{-- <p><img src="{{URL::asset('assets/ICONS/printer.svg')}}" alt=""></p> --}}
     </table>
 
 
