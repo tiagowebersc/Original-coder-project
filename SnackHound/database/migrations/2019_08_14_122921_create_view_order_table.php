@@ -14,13 +14,13 @@ class CreateViewOrderTable extends Migration
     public function up()
     {
         DB::statement("
-      CREATE VIEW view_order AS
-      (
-        SELECT o.*, sum(oi.quantity) as quantity, sum(quantity * price) as total
-        FROM `order` o INNER JOIN order_item oi ON o.id_order = oi.id_order
-        GROUP BY o.id_order
-      )
-    ");
+           CREATE OR REPLACE VIEW view_order AS
+           (
+             SELECT o.*, sum(oi.quantity) as quantity, sum(quantity * price) as total
+             FROM `order` o INNER JOIN order_item oi ON o.id_order = oi.id_order
+             GROUP BY o.id_order
+           )
+        ");
     }
 
     /**

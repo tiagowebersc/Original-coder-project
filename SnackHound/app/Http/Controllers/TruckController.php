@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Order;
-use App\Truck;
-use App\View_order;
+use App\Models\Order;
+use App\Models\Truck;
+use App\Models\View_order;
+use DB;
 use Illuminate\Http\Request;
 
-class TruckController extends Controller{
+class TruckController extends Controller
+{
 
-    public function getOrders($id) {
+    public function getOrders($id)
+    {
         $truck = Truck::find($id);
         $orders = View_order::all()->where("id_truck", $id);
 
