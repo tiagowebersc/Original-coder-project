@@ -94,8 +94,12 @@
         font-size: 36px;
         border: solid 2px white;
         max-width: 750px;
-        width: 50%;
+        width: 65%;
         height: 75px;
+    }
+
+    .search:focus {
+        color: white;
     }
     .submit-location {
         margin-left: inherit;

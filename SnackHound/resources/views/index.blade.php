@@ -1,8 +1,8 @@
 @extends('layouts.customerSidebar')
-<link href="https://fonts.googleapis.com/css?family=Raleway:300|Roboto+Slab&display=swap" rel="stylesheet">
 
 @section('css')
 <link rel="stylesheet" href="{{ URL::asset('/css/index.css') }}" />
+<link href="https://fonts.googleapis.com/css?family=Raleway:300|Roboto+Slab&display=swap" rel="stylesheet">
 @endsection
 
 @section('title', 'SnackHound')

@@ -5,6 +5,7 @@
 @section('css')
 
 <link rel="stylesheet" href="{{ URL::asset('css/truckownerDashboard.css') }}" />
+<link href="https://fonts.googleapis.com/css?family=Raleway:400,700|Roboto+Slab&display=swap" rel="stylesheet">
 
 @endsection
 
@@ -21,7 +22,7 @@
 
         <fieldset>
             <label for="typeSearch">
-                <input type="radio" name='typeSearch' value='user'> User:
+                <input checked type="radio" name='typeSearch' value='user'> User:
             </label>
 
             <label for="firstName">First name:
@@ -46,12 +47,12 @@
             </label>
 
             <label for="fromDate">From:
-                <input type="date" name='fromDate' max="<?php echo date('d/m/Y') ?>" value="<?php echo date('d/m/Y') ?>">
+                <input type="date" name='fromDate' max="<?php echo date('Y-m-d') ?>" value="<?php echo date('Y-m-d') ?>">
             </label>
 
 
             <label for="toDate">To:
-                <input type="date" name='toDate' max="<?php echo date('d/m/Y') ?>" value="<?php echo date('d/m/Y') ?>">
+                <input type="date" name='toDate' max="<?php echo date('Y-m-d') ?>" value="<?php echo date('Y-m-d') ?>">
             </label>
 
         </fieldset>
@@ -91,7 +92,7 @@
                 <th><strong>Pre-Order?</strong></th>
                 <th><strong>Order status</strong></th>
                 <th><strong>Details</strong></th>
-                <th><strong>Accept</strong></th>
+                <th><strong>Confirm</strong></th>
                 <th><strong>Print</strong></th>
             </tr>
         </thead>
@@ -99,25 +100,25 @@
         @foreach ($orders as $order)
         <tr class="table-content">
             <td class='green'>{{$order->id_order}}</td>
-            <td>{{$order->created_at}}</td>
-            <td>{{$order->total}} €</td>
-            <?php echo $order->pickup_time ? "<td>" . $order->pickup_time . "</td>" : "<td class='red'> N </td>" ?></td>
+            <td class='order-date'>{{$order->created_at}}</td>
+            <td>{{$order->total}}€</td>
+            <?php echo $order->pickup_time ? "<td class='order-date'>" . $order->pickup_time . "</td>" : "<td class='red'> N </td>" ?></td>
             <?php
             switch($order->status) {
                 case 0:
-                echo "<td class='waiting'> Waiting </td>";
+                echo "<td class='waiting'> WAITING </td>";
                 break;
                 case 1:
-                echo "<td class='green'> Accepted </td>";
+                echo "<td class='green'> ACCEPTED </td>";
                 break;
                 case 2:
-                echo "<td class='red'> Not accepted </td>";
+                echo "<td class='red'> NOT ACCEPTED </td>";
                 break;
                 case 3:
-                echo "<td class='red'> Canceled </td>";
+                echo "<td class='red'> CANCELED </td>";
                 break;
                 case 4:
-                echo "<td class='done'> Delivered </td>";
+                echo "<td class='done'> DELIVERED </td>";
                 break;
             }
             echo "<td> <a class='view-details' href='#'>VIEW</a> </td>";

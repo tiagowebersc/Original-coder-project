@@ -25,7 +25,7 @@ Route::get('/truck/{id}', 'TruckController@getOrders');
 
 
 Route::get('/test', function () {
-    return view('truckOwnerDashboard');
+    return view('layouts/customerSidebar');
 });
 
 

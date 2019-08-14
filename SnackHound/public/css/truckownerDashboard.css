@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-family: "Roboto Slab", serif;
 }
 
 *:not(input) {
@@ -14,11 +15,17 @@ main {
 }
 
 h4 {
-    margin-top: 25px;
+    margin-top: 45px;
+}
+
+h3, h4 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
 }
 
 form {
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 fieldset {
@@ -29,19 +36,24 @@ input {
     margin-right: 10px;
 }
 
+input:not([type='radio']):not([type='tel']):not([type='date']) {
+    width: 140px;
+}
+
+input[type='tel'] {
+    width: 160px;
+}
+
 label[for="typeSearch"] {
     display: inline-block;
-    width: 120px;
+    width: 100px;
 }
 
-label[for="firstName"], label[for="fromDate"], label[for='fromAmount'] {
+label[for="firstName"], label[for="fromDate"], label[for='fromAmount'], label[for='lastName'] {
     display: inline-block;
-    width: 300px;
+    width: 240px;
 }
 
-label[for='phone'] {
-    margin-left: 50px;
-}
 
 input[type='submit'] {
     margin-top: 25px;
@@ -55,14 +67,16 @@ input[type='submit'] {
 
 input[type='date'] {
     width: 173px;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
 }
 
 table {
-    width: 95%;
+    width: 97%;
     margin-top: 30px;
     padding-top: 20px;
     border-collapse: collapse;
-    border-spacing: 0 40px;
+    margin-bottom: 50px;
 }
 
 .table-head {
@@ -71,7 +85,6 @@ table {
 }
 
 .table-content {
-    /* border-top: 1px solid #010101; */
     text-align: center;
 }
 
@@ -92,10 +105,15 @@ table {
 }
 
 td {
-    padding: 15px;
-    margin: 10px;
-    margin: auto
+    padding: 15px 0px;
+    text-align: center;
 }
+
+.order-date {
+    width: 120px;
+
+}
+
 tr:not(:only-child) {
     border: 1px solid black;
 
@@ -122,7 +140,7 @@ a:hover, a:visited, a:link, a:active
 .decline-order {
     background-color: #FF0000;
     display: inline-block;
-    height: 34px;
+    height: 31px;
     width: 30px;
     color: white;
     padding: 5px;
