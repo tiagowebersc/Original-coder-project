@@ -17,7 +17,7 @@
     <h4>ORDERS: </h4>
 
     <form action="">
-        Search orders:
+        <label for=""><strong>Search orders:</strong></label>
 
         <fieldset>
             <label for="typeSearch">
@@ -80,6 +80,42 @@
             <input type="submit" value="Show all">
 
     </form>
+
+    <table>
+
+        <thead class="table-head">
+            <tr>
+                <th><strong>Order no.</strong></th>
+                <th><strong>Date</strong></th>
+                <th><strong>Amount</strong></th>
+                <th><strong>Payment Status</strong></th>
+                <th><strong>Payment Type</strong></th>
+                <th><strong>Pre-Order?</strong></th>
+                <th><strong>Order status</strong></th>
+                <th><strong>Details</strong></th>
+                <th><strong>Accept</strong></th>
+                <th><strong>Print</strong></th>
+            </tr>
+        </thead>
+
+        @foreach ($orders as $order)
+        <tr class="table-content">
+            <td>{{$order->id_order}}</td>
+            <td>{{$order->id_order}}</td>
+            <td>{{$order->id_order}}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </td>
+
+        @endforeach
+
+        {{-- <p><img src="{{URL::asset('assets/ICONS/printer.svg')}}" alt=""></p> --}}
+    </table>
 
 
 
