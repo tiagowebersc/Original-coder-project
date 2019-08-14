@@ -126,6 +126,10 @@
                 ?>
                 <td> <a class='accept-order disabled' href='#'>ACCEPT</a> <a class='decline-order disabled-x' href='#'>X</a></td>
                 <?php
+            } else if($order->status === 1){
+                ?>
+               <td> <a class='accept-order' href='#'>DELIVERED</a> <a class='decline-order' href='#'>X</a></td>
+                <?php
             } else {
                 ?>
                 <td> <a class='accept-order' href='#'>ACCEPT</a> <a class='decline-order' href='#'>X</a></td>
