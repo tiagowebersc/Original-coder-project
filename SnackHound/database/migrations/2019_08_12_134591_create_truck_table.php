@@ -15,7 +15,7 @@ class CreateTruckTable extends Migration
     {
         Schema::create('truck', function (Blueprint $table) {
             $table->bigIncrements('id_truck');
-            $table->bigInteger('id_user');
+            $table->bigInteger('id_user')->unsigned();
             $table->foreign('id_user')->references('id_user')->on('user');
             $table->string('name', 60);
             $table->string('image', 100);

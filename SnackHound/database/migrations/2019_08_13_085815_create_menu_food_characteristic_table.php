@@ -15,9 +15,9 @@ class CreateMenuFoodCharacteristicTable extends Migration
     {
         Schema::create('menu_food_characteristic', function (Blueprint $table) {
             $table->bigIncrements('id_menu_food_characteristic');
-            $table->bigInteger('id_food_characteristic');
+            $table->bigInteger('id_food_characteristic')->unsigned();
             $table->foreign('id_food_characteristic')->references('id_food_characteristic')->on('food_characteristic');
-            $table->bigInteger('id_menu');
+            $table->bigInteger('id_menu')->unsigned();
             $table->foreign('id_menu')->references('id_menu')->on('menu');
             $table->timestamps();
         });

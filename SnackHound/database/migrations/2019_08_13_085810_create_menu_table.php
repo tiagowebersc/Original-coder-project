@@ -15,7 +15,7 @@ class CreateMenuTable extends Migration
     {
         Schema::create('menu', function (Blueprint $table) {
             $table->bigIncrements('id_menu');
-            $table->bigInteger('id_truck');
+            $table->bigInteger('id_truck')->unsigned();
             $table->foreign('id_truck')->references('id_truck')->on('truck');
             $table->string('name', 50);
             $table->string('description', 500);

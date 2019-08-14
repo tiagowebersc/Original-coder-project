@@ -15,13 +15,17 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/login', 'UserController@login');
+
+Route::post('/login', 'UserController@loginPost');
+
+Route::get('/truck/{id}', 'TruckController@getOrders');
+
+
 Route::get('/test', function () {
-    return view('layouts/customerSidebar');
+    return view('truckOwnerDashboard');
 });
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
 
 // Route::get('/index', function () {
 //     return view('index');
