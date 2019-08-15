@@ -17,7 +17,8 @@
 
     <h4>ORDERS: </h4>
 
-    <form action="">
+    <form id='searchForm' action="/truck/orderFilter" method="GET">
+        @csrf
         <label for=""><strong>Search orders:</strong></label>
 
         <fieldset>
@@ -77,10 +78,15 @@
 
             </fieldset>
 
-            <input type="submit" value="Search">
-            <input type="submit" value="Show all">
 
-    </form>
+        </form>
+        <input form='searchForm' type="submit" value="Search">
+
+        <form class='show-all' action="/truck">
+            <input type="submit" value="Show all">
+        </form>
+
+    @if($ordersCount)
 
     <table>
 
@@ -143,11 +149,11 @@
         @endforeach
     </table>
 
+    @else
 
+    <h3 class='no-order'>No Orders found</h3>
 
-
-
-
+    @endif
 
 </main>
 

@@ -158,3 +158,11 @@ a:hover, a:visited, a:link, a:active
     cursor: default;
     background-color: #ad0000;
 }
+
+.no-order {
+    margin-top: 50px;
+}
+
+.show-all {
+    display: inline;
+}

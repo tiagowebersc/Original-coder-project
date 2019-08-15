@@ -21,7 +21,11 @@ Route::post('/login', 'UserController@loginPost');
 
 Route::post('/signup', 'UserController@signupPost');
 
-Route::get('/truck/{id}', 'TruckController@getOrders');
+// TRUCKS DASHBOARD
+Route::get('/truck', 'TruckController@getOrders');
+
+Route::get('/truck/orderFilter', 'TruckController@filterOrder');
+
 
 
 Route::get('/test', function () {
