@@ -66,8 +66,8 @@
                     <input class="input100" type="email" name="email" id="email" @isset($request->email)
                     value={{$request->email}}
                     @endisset>
-                    <label class="bold" for="password">Password:</label>
-                    <input class="input100" type="password" name="password" id="password">
+                    <label class="bold" for="passwordLogin">Password:</label>
+                    <input class="input100" type="password" name="password" id="passwordLogin">
                     <div class="center">
                         <button type="submit">Sign In</button>
                     </div>

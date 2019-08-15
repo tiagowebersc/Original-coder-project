@@ -19,7 +19,7 @@ class CreateUserTable extends Migration
             $table->string('last_name', 50);
             $table->tinyInteger('user_type');
             $table->tinyInteger('user_status');
-            $table->string('email', 100);
+            $table->string('email', 100)->unique();
             $table->string('hash_password', 60);
             $table->string('remember_token', 100)->nullable();
             $table->string('telephone', 20)->nullable();
