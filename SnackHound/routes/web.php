@@ -13,11 +13,11 @@
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');;
 
 Route::get('/login', 'UserController@login');
 
-Route::get('/signup', 'UserController@login');
+Route::get('/signup', 'UserController@signup');
 
 Route::post('/login', 'UserController@loginPost');
 

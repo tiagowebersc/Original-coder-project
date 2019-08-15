@@ -11,9 +11,9 @@
 <div class="background">
     <section class="login">
         <div class='loginSignin'>
-            <article>
+            <article class="articleSignUp <?php if ($form == 'login') echo " hideSmallScreen"; ?>">
                 <h2 class="center">Sign Up</h2>
-                <p>Create your account here. It's completely free and just takes a minute</p>
+                <p class="hideSmallScreen">Create your account here. It's completely free and just takes a minute</p>
                 <form action="/signup" method="post">
                     @csrf
                     <div>
@@ -57,9 +57,9 @@
                 </form>
             </article>
             <div class="verticalLine"></div>
-            <article>
+            <article class="articleSignIn <?php if ($form == 'signup') echo " hideSmallScreen"; ?>">
                 <h2 class="center">Sign In</h2>
-                <p>Why be old fashioned? Sign in with through Facebook or Google:</p>
+                <p class="hideSmallScreen">Why be old fashioned? Sign in with through Facebook or Google:</p>
                 <form action="/login" method="post">
                     @csrf
                     <label class="bold" for="email">Email:</label>
@@ -77,7 +77,7 @@
                 </form>
             </article>
         </div>
-        <p>* Do you own a foodtruck and want to work with us? You can find more information <a href="#">here</a></p>
+        <p class="hideSmallScreen">* Do you own a foodtruck and want to work with us? You can find more information <a href="#">here</a></p>
     </section>
 </div>
 
