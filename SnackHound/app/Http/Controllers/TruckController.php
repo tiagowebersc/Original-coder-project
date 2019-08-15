@@ -17,6 +17,7 @@ class TruckController extends Controller
             $userId = Session::get('id_user');
 
             $truck = Truck::where('id_user', $userId)->first();
+
             $orders = View_order::where("id_truck", $truck->id_truck)->orderBy('created_at', 'desc')->get();
             $ordersCount = View_order::where("id_truck", $truck->id_truck)->count();
 
@@ -39,20 +40,26 @@ class TruckController extends Controller
 
             if($request->typeSearch === "user") {
                 // Search orders by users
+
             } else if($request->typeSearch === "date") {
                 // Search orders by date
-                $orders = View_order::where("id_truck", $userId)->whereBetween('created_at', [$request->fromDate, $request->toDate])->get();
-                $ordersCount = View_order::where("id_truck", $userId)->whereBetween('created_at', [$request->fromDate, $request->toDate])->count();
+                $from = date($request->fromDate);
+                $to = date($request->toDate);
+
+                $orders = View_order::where("id_truck", $truck->id_truck)->whereBetween('created_at', [$from, $to])->get();
+
+                $ordersCount = View_order::where("id_truck", $truck->id_truck)->whereBetween('created_at', [$from, $to])->count();
 
             } else {
                 // Search orders by amount
-                $orders = View_order::where("id_truck", $userId)->whereBetween('total', [$request->fromAmount, $request->toAmount])->get();
-                $ordersCount = View_order::where("id_truck", $userId)->whereBetween('total', [$request->fromAmount, $request->toAmount])->count();
+                $orders = View_order::where("id_truck", $truck->id_truck)->whereBetween('total', [intval($request->fromAmount), intval($request->toAmount)])->get();
+
+                $ordersCount = View_order::where("id_truck", $truck->id_truck)->whereBetween('total', [$request->fromAmount, $request->toAmount])->count();
             }
 
             // If user inserted info, return filtered, if not return all
             if(isset($orders) && isset($ordersCount)) {
-                return view('truckOwnerDashboard', ['orders' => $orders, 'truck' => $truck, 'ordersCount' => $ordersCount]);
+                return view('truckOwnerDashboard', ['orders' => $orders, 'truck' => $truck, 'ordersCount' => $ordersCount, 'request' => $request]);
             } else {
                 return $this->getOrders();
             }

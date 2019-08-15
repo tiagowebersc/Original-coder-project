@@ -27,15 +27,15 @@
             </label>
 
             <label for="firstName">First name:
-                <input type="text" name='firstName' placeholder="John">
+                <input type="text" name='firstName' placeholder="John" value= {{ isset($request->firstName) ? $request->firstName : "" }}>
             </label>
 
             <label for="lastName">Last name:
-                <input type="text" name='lastName' placeholder="Doe">
+                <input type="text" name='lastName' placeholder="Doe" value= {{ isset($request->lastName) ? $request->lastName : "" }}>
             </label>
 
             <label for="phone">Phone:
-                <input type="tel" name='phone' placeholder="+351 123454678">
+                <input type="tel" name='phone' placeholder="661123456" value= {{ isset($request->phone) ? $request->phone : "" }}>
             </label>
 
         </fieldset>
@@ -44,16 +44,16 @@
         <fieldset>
 
             <label for="typeSearch">
-                <input type="radio" name='typeSearch' value='date'> Date:
+                <input {{ isset($request->typeSearch) && $request->typeSearch === 'date' ? "checked" : "" }} type="radio" name='typeSearch' value='date'> Date:
             </label>
 
             <label for="fromDate">From:
-                <input type="date" name='fromDate' max="<?php echo date('Y-m-d') ?>" value="<?php echo date('Y-m-d') ?>">
+                <input type="date" name='fromDate' max="<?php echo date('Y-m-d') ?>" value= {{ isset($request->fromDate) ? $request->fromDate : date('Y-m-d')}} >
             </label>
 
 
             <label for="toDate">To:
-                <input type="date" name='toDate' max="<?php echo date('Y-m-d') ?>" value="<?php echo date('Y-m-d') ?>">
+                <input type="date" name='toDate' max="<?php echo date('Y-m-d') ?>" value= {{ isset($request->toDate) ? $request->toDate : date('Y-m-d')}} >
             </label>
 
         </fieldset>
@@ -63,17 +63,17 @@
         <fieldset>
 
                 <label for="typeSearch">
-                    <input type="radio" name='typeSearch' value='amount'>
+                    <input {{ isset($request->typeSearch) && $request->typeSearch === 'amount' ? "checked" : "" }} type="radio" name='typeSearch' value='amount'>
                     Amount:
                 </label>
 
                 <label for="fromAmount">From:
-                    <input type="number" name='fromAmount' placeholder='€'>
+                    <input type="number" name='fromAmount' placeholder='€' value={{ isset($request->fromAmount) ? $request->fromAmount : ''}}>
                 </label>
 
 
                 <label for="toDate">To:
-                        <input type="number" name='toAmount' placeholder='€€€€€'>
+                        <input type="number" name='toAmount' placeholder='€€€€€' value={{ isset($request->toAmount) ? $request->toAmount : ''}}>
                 </label>
 
             </fieldset>

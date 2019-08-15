@@ -36,8 +36,8 @@ input {
     margin-right: 10px;
 }
 
-input:not([type='radio']):not([type='tel']):not([type='date']) {
-    width: 140px;
+input:not([type='radio']):not([type='tel']) {
+    width: 145px;
 }
 
 input[type='tel'] {
@@ -49,11 +49,11 @@ label[for="typeSearch"] {
     width: 100px;
 }
 
-label[for="firstName"], label[for="fromDate"], label[for='fromAmount'], label[for='lastName'] {
+label[for="firstName"], label[for="fromDate"], label[for='fromAmount'], label[for='lastName'], label[for='toDate'], label[for='toAmount'] {
     display: inline-block;
-    width: 240px;
+    width: 250px;
+    text-align: right;
 }
-
 
 input[type='submit'] {
     margin-top: 25px;
@@ -114,7 +114,7 @@ td {
 
 }
 
-tr:not(:only-child) {
+tr {
     border: 1px solid black;
 
 }
