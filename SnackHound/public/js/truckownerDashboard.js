@@ -1,3 +1,6 @@
+
+
+
 // After filtiring, keeping the same form display of the radio choosen before
 
 let radioValue = document.querySelector('input[name="typeSearch"]:checked').value

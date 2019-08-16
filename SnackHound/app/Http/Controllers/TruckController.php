@@ -29,8 +29,6 @@ class TruckController extends Controller
     }
 
     public function filterOrder(Request $request) {
-        // CREATE A NEW VIEW (USER, ORDER, ORDER CONTENT)
-        // NOT WORKING
 
         if (Session::get('user_type') === 1) {
 
@@ -38,7 +36,6 @@ class TruckController extends Controller
 
             $truck = Truck::where('id_user', $userId)->first();
 
-            if(isset($request->filterBtn)) {
                 if($request->typeSearch === "user") {
                     // Search orders by users
 
@@ -70,9 +67,9 @@ class TruckController extends Controller
                 if(isset($orders) && isset($ordersCount)) {
                     return view('truckOwnerDashboard', ['orders' => $orders, 'truck' => $truck, 'ordersCount' => $ordersCount, 'request' => $request]);
                 } else {
-                    // return Self::getOrders();
+                    return self::getOrders();
                 }
-            }
+
 
 
          } else {
@@ -84,12 +81,16 @@ class TruckController extends Controller
 
     public function updateOrders(Request $request) {
 
-        Self::filterOrder($request);
-
         if(isset($request->updateBtn)) {
-            echo 'asd';
-            return redirect()->route('index');
+            // ACCEPT ORDER
+            echo "update" . $request->hiddenId;
 
+        } else if (isset($request->cancelBtn)) {
+            // CANCEL ORDER
+            echo "delete" . $request->hiddenId;
         }
+
+        // self::filterOrder($request);
+        // return view('truckOwnerDashboard');
     }
 }
