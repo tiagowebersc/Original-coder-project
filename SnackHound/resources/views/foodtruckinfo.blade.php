@@ -23,7 +23,7 @@
                     <div class="favstar">
                         <div class="reviewDiv">
                                 <img class="starlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-filled.svg')}}" alt="">
-                                <p class="reviewNbr">Review Number</p>
+                        <p class="reviewNbr">{{COUNT($reviews)}}</p>
                         </div>
                         <img class="heartlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-heart-outline.svg')}}" alt="">
                     </div>
