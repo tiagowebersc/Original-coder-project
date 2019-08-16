@@ -51,21 +51,31 @@ rel="stylesheet"
                             <div class="left">
                               <div class="details">
                               <h1><?= $truck['name'] ?></h1>
-                                <p>starts</p>
-                                <p>
-                                  <i class="material-icons">
-                                    place </i
-                                  >250
-                                </p>
-                                <hr/>
-                                <h1>Chair</h1>
-                                <p>£250</p>
+                                <div class="stars-lication">
+                                    <h4>stars</h4>
+                                    <div class="location-icon-meter">
+                                        <p>
+                                            <img
+                                            src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-marker.svg')}}"
+                                            alt="" height="25" width="25"
+                                              />
+                                        </p>
+                                        <p>..250</p>
+                                    </div>
+                                </div>
+                                <div id="line"><hr /></div>
+                                <div class="category-€">
+                                    <a class="card-category" href="#">category</a>
+                                    <h4>€€€</h4>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
                         <div class="inside">
-                          <div class="icon"><i class="material-icons">info_outline</i></div>
+                          <div class="icon"><i class="material-icons md-dark">
+                                touch_app
+                                </i></div>
                           <div class="contents">
                             <table>
                               <tr>

@@ -104,6 +104,7 @@
   .wrapper .container {
     width: 100%;
     height: 100%;
+    padding: 0PX;
   }
 
   .wrapper .container .top {
@@ -137,14 +138,17 @@
 
   .wrapper .container .bottom .left {
     height: 100%;
-    width: 50%;
-    background: #f4f4f4;
+    width: 65%;
+    background: white;
     position: relative;
     float: left;
+    border:solid black 1px;
+    border-radius: 10px;
+    width: 293px;
   }
 
   .wrapper .container .bottom .left .details {
-    padding: 20px;
+    padding-left: 15px;
     font-size: 10px;
     float: left;
     width: calc(100% - 40px);
@@ -182,7 +186,7 @@
 
   .wrapper .inside {
     z-index: 9;
-    background: #92879b;
+    background: black;
     width: 140px;
     height: 140px;
     position: absolute;
@@ -255,6 +259,34 @@
   h1 {
     font-size: 24px;
   }
+  hr {
+    border: 0;
+    clear:both;
+    display:block;
+    width: 110%;
+    background-color:black;
+    height: 1px;
+    margin-bottom: 20px;
+  }
+  .stars-lication{
+      width: 250px;
+      display: flex;
+      justify-content: space-between;
+  }
+  .card-category{
+      padding: 5px 30px;
+      color: white;
+      background-color: #06B7F9;
+      border-radius: 0px 0px 0px 10px;
+  }
+  .category-€{
+      display: flex;
+      justify-content: space-between;
+      width: 250px;
+  }
+
+
+
   /*# sourceMappingURL=style.css.map */
 
 @media only screen and (min-width: 1024px) {
@@ -328,4 +360,5 @@
         height: 850px;
         width: 900PX;
       }
+
 }
