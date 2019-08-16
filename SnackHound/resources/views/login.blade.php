@@ -70,6 +70,9 @@
                     <input class="input100" type="password" name="password" id="passwordLogin" placeholder="Password">
                     <div class="center">
                         <button type="submit">Sign In</button>
+                        <a href="/forgot_password">
+                            <p>Forgot your password?</p>
+                        </a>
                     </div>
                     @isset($errorSignIn)
                     <p class="error center">{{$errorSignIn}}</p>

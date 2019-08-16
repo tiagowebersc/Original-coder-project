@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Session;
+use Mail;
 
 class UserController extends Controller
 {
@@ -88,6 +89,42 @@ class UserController extends Controller
         } else {
             return redirect()->route('index');
         }
+    }
+
+    public function forgotPassword()
+    {
+        return view('forgot_password');
+    }
+
+    public function forgotPasswordPost(Request $request)
+    {
+        if (!isset($request->email)) return view('forgot_password', ['error' => 'Email must be informed!']);
+        $user = User::where('email', $request->email)->get();
+        if (count($user) === 0 || count($user) > 1) return view('forgot_password', ['error' => 'Invalid email!']);
+        $user = $user[0];
+        // send email with a token to reset the password
+        $token = base64_encode(random_bytes(64));
+        $token = strtr($token, '+/=', '-__');
+        $user->remember_token = $token;
+        $user->save();
+        // send email
+        $name = $user->first_name . ' ' . $user->last_name;
+        $data = array('name' => $name);
+        Mail::send('mail', $data, function ($message) {
+            $message->to('tiagowebersc@gmail.com', 'Test now')->subject('Laravel HTML Testing Mail');
+            $message->from('snackhound.lux@gmail.com', 'Snack Hound');
+        });
+
+        // return view
+        return view('sent_password');
+    }
+
+    public function resetPassword($token)
+    {
+        $user = User::where('remember_token', $token)->get();
+        if (count($user) === 0 || count($user) > 1) return view('reset_password', ['token' => $token, 'error' => 'Invalid token!']);
+        $user = $user[0];
+        return view('reset_password', ['email' => $user->email]);
     }
 
     public function signout()

@@ -23,6 +23,13 @@ Route::post('/login', 'UserController@loginPost');
 
 Route::post('/signup', 'UserController@signupPost');
 
+Route::get('/forgot_password', 'UserController@forgotPassword');
+Route::post('/forgot_password', 'UserController@forgotPasswordPost');
+
+Route::get('/reset_password/{token}', 'UserController@resetPassword');
+Route::post('/reset_password', 'UserController@resetPasswordPost');
+
+
 // TRUCKS DASHBOARD
 Route::get('/truck', 'TruckController@getOrders');
 
