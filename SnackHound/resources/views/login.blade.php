@@ -24,27 +24,27 @@
                     </div>
                     <div class="flex">
                         <div class="width50">
-                            <label class="bold" for="firstName">First Name:</label>
-                            <input class="input100" type="text" name="firstName" id="firstName" @isset($request->firstName)
+                            <label class="bold hideSmallScreen" for="firstName">First Name:</label>
+                            <input class="input100" type="text" name="firstName" id="firstName" placeholder="First name" @isset($request->firstName)
                             value={{$request->firstName}}
                             @endisset
                             >
                         </div>
                         <div class="width50">
-                            <label class="bold" for="lastName">Last Name:</label>
-                            <input class="input100" type="text" name="lastName" id="lastName" @isset($request->lastName)
+                            <label class="bold hideSmallScreen" for="lastName">Last Name:</label>
+                            <input class="input100" type="text" name="lastName" id="lastName" placeholder="Last name" @isset($request->lastName)
                             value={{$request->lastName}}
                             @endisset>
                         </div>
                     </div>
-                    <label class="bold" for="email">Email:</label>
-                    <input class="input100" type="email" name="email" id="email" @isset($request->email)
+                    <label class="bold hideSmallScreen" for="email">Email:</label>
+                    <input class="input100" type="email" name="email" id="email" placeholder="Email" @isset($request->email)
                     value={{$request->email}}
                     @endisset>
-                    <label class="bold" for="password">Password:</label>
-                    <input class="input100" type="password" name="password" id="password">
-                    <label class="bold" for="confirmPassword">Confirm Password:</label>
-                    <input class="input100" type="password" name="confirmPassword" id="confirmPassword">
+                    <label class="bold hideSmallScreen" for="password">Password:</label>
+                    <input class="input100" type="password" name="password" id="password" placeholder="Password">
+                    <label class="bold hideSmallScreen" for="confirmPassword">Confirm Password:</label>
+                    <input class="input100" type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm password">
                     <div>
                         <input type="checkbox" name="termsOfUse" id="termsOfUse" value="T"><label class="smallPadding" for="termsOfUse">I accept the <a href="#">terms of use</a> & the <a href="#">privacy policy</a></label>
                     </div>
@@ -62,12 +62,12 @@
                 <p class="hideSmallScreen">Why be old fashioned? Sign in with through Facebook or Google:</p>
                 <form action="/login" method="post">
                     @csrf
-                    <label class="bold" for="email">Email:</label>
-                    <input class="input100" type="email" name="email" id="email" @isset($request->email)
+                    <label class="bold hideSmallScreen" for="email">Email:</label>
+                    <input class="input100" type="email" name="email" id="email" placeholder="Email" @isset($request->email)
                     value={{$request->email}}
                     @endisset>
-                    <label class="bold" for="passwordLogin">Password:</label>
-                    <input class="input100" type="password" name="password" id="passwordLogin">
+                    <label class="bold hideSmallScreen" for="passwordLogin">Password:</label>
+                    <input class="input100" type="password" name="password" id="passwordLogin" placeholder="Password">
                     <div class="center">
                         <button type="submit">Sign In</button>
                     </div>

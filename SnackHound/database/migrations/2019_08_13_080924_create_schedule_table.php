@@ -17,7 +17,8 @@ class CreateScheduleTable extends Migration
             $table->bigIncrements('id_schedule');
             $table->bigInteger('id_truck')->unsigned();
             $table->foreign('id_truck')->references('id_truck')->on('truck');
-            $table->point('coordinate');
+            $table->float('latitude', 8, 6);
+            $table->float('longitude', 8, 6);
             $table->tinyInteger('weekday');
             $table->time('start_time');
             $table->time('end_time');

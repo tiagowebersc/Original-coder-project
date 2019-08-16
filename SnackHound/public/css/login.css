@@ -18,11 +18,11 @@
     height: 95%;
     justify-content: space-around;
 }
-.articleSignUp{
+.articleSignUp {
     width: 100%;
     height: 100%;
 }
-.articleSignIn{
+.articleSignIn {
     width: 100%;
     height: 100%;
 }
@@ -40,6 +40,9 @@ h2,
 label,
 input {
     font-family: 'Raleway', sans-serif;
+}
+input {
+    margin-bottom: 8px;
 }
 .bold {
     font-weight: bold;
@@ -64,7 +67,6 @@ input {
     width: 47%;
 }
 label {
-    margin-top: 8px;
     font-size: 14px;
 }
 .smallPadding {
@@ -79,14 +81,19 @@ button {
     font-weight: bold;
     font-family: 'Raleway', sans-serif;
 }
-p{
+p {
     padding: 15px 0;
     font-family: 'Raleway', sans-serif;
     font-size: 13px;
 }
-
+input::placeholder {
+    color: grey;
+}
 
 @media only screen and (min-width: 1024px) {
+    input::placeholder {
+        color: transparent;
+    }
     .background {
         align-items: center;
         padding: 0 0 0 125px;
@@ -103,11 +110,11 @@ p{
         width: 1px;
         background-color: black;
     }
-    .articleSignUp{
+    .articleSignUp {
         width: 45%;
         height: 100%;
     }
-    .articleSignIn{
+    .articleSignIn {
         width: 45%;
         height: 100%;
     }
@@ -115,7 +122,7 @@ p{
         display: block;
     }
     form {
-    height: 400px;
-    box-shadow: 0px 0px 6px #000000;
-}
+        height: 400px;
+        box-shadow: 0px 0px 6px #000000;
+    }
 }
