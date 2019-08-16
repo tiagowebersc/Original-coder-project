@@ -41,6 +41,14 @@ class TruckController extends Controller
             if($request->typeSearch === "user") {
                 // Search orders by users
 
+                $orders = View_order::where("id_truck", $truck->id_truck)->where([['first_Name', "LIKE", "%" . $request->firstName . "%"],
+                                                                                  ['last_Name', "LIKE", "%" . $request->lastName . "%"],
+                                                                                  ['telephone',  $request->phone]])->get();
+
+                $ordersCount = View_order::where("id_truck", $truck->id_truck)->where([['first_Name', "LIKE", "%" . $request->firstName . "%"],
+                                                                                  ['last_Name', "LIKE", "%" . $request->lastName . "%"],
+                                                                                  ['telephone',  $request->phone]])->count();
+
             } else if($request->typeSearch === "date") {
                 // Search orders by date
                 $from = date($request->fromDate);
@@ -52,7 +60,7 @@ class TruckController extends Controller
 
             } else {
                 // Search orders by amount
-                $orders = View_order::where("id_truck", $truck->id_truck)->whereBetween('total', [intval($request->fromAmount), intval($request->toAmount)])->get();
+                $orders = View_order::where("id_truck", $truck->id_truck)->whereBetween('total', [$request->fromAmount, $request->toAmount])->get();
 
                 $ordersCount = View_order::where("id_truck", $truck->id_truck)->whereBetween('total', [$request->fromAmount, $request->toAmount])->count();
             }

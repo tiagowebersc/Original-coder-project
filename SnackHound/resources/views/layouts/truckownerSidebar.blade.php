@@ -19,7 +19,7 @@
     <div class='side-mobile-pic'><img src="{{URL::asset('assets/IMGS/475605E3-69C5-4D2B-8727-61B7BB8C4699-500w.jpeg')}}" alt=""></div>
 
     <div class="sidebar-logo">
-        <a href="#"><img class='sidebar-logo-img' src="{{URL::asset('assets/ICONS/Logo_White.svg')}}" alt="Logo of SnackHound."></a>
+        <a href="/"><img class='sidebar-logo-img' src="{{URL::asset('assets/ICONS/Logo_White.svg')}}" alt="Logo of SnackHound."></a>
     </div>
 
 

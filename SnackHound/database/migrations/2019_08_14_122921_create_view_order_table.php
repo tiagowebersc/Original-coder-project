@@ -16,8 +16,8 @@ class CreateViewOrderTable extends Migration
         DB::statement("
            CREATE OR REPLACE VIEW view_order AS
            (
-             SELECT o.*, sum(oi.quantity) as quantity, sum(quantity * price) as total
-             FROM `order` o INNER JOIN order_item oi ON o.id_order = oi.id_order
+             SELECT o.*, u.first_Name, u.last_Name, u.telephone, sum(oi.quantity) as quantity, sum(oi.quantity * oi.price) as total
+             FROM `order` o INNER JOIN order_item oi ON o.id_order = oi.id_order INNER JOIN user u ON o.id_user = u.id_user
              GROUP BY o.id_order
            )
         ");
