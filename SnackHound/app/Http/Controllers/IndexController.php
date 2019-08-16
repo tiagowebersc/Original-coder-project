@@ -8,6 +8,10 @@ use App\Models\Truck;
 
 class IndexController extends Controller
 {
+    public function index(){
+        $trucks=Self::foodTruckList();
+        return view('index',['trucks'=>$trucks]);
+    }
     public function foodTruckList()
     {
         $result = [];
