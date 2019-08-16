@@ -1,6 +1,7 @@
 
 *{
   box-sizing: border-box;
+  animation-duration: 0.3s;
 }
 
 *:not(input) {
@@ -148,8 +149,6 @@ padding-left: 5px;
 
 
 
-
-
 /* MAIN */
 
 .itemcard {
@@ -204,8 +203,57 @@ padding-left: 5px;
   font-size: 1.5rem;
 }
 
+@media only screen and (min-width: 900px) {
+
+  header{
+    height: 800px;
+  }
+
+  .backgrounddiv{
+    width: 100%;
+  }
+
+  .separator {
+    width: 820px;
+  }
+
+  .truckinfo h1 {
+    font-size: 132px;
+  }
+
+  .reviewDiv {
+    width: 100px;
+  }
+
+  .contactnumber {
+    width: 300px; 
+    padding-left: 60px;
+  }
+
+
+  .phoneInfo {
+    font-size: 25px;
+  }
+
+  .webInfo {
+    font-size: 25px;
+  }
+
+  .contactweb{
+    padding-left: 60px;
+    padding-bottom: 20px;
+  }
+
+  .positionInfo{
+    font-size: 25px;
+  }
+
+  .truckposition{
+    padding-right: 50px;
+  }
 
 
 
-/* card example */
+
+}
 

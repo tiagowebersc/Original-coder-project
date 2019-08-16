@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('index');;
+Route::get('/','indexController@index')->name('index');;
 
 Route::get('/login', 'UserController@login');
 
@@ -22,6 +20,13 @@ Route::get('/signup', 'UserController@signup');
 Route::post('/login', 'UserController@loginPost');
 
 Route::post('/signup', 'UserController@signupPost');
+
+Route::get('/forgot_password', 'UserController@forgotPassword');
+Route::post('/forgot_password', 'UserController@forgotPasswordPost');
+
+Route::get('/reset_password/{token}', 'UserController@resetPassword');
+Route::post('/reset_password', 'UserController@resetPasswordPost');
+
 
 // TRUCKS DASHBOARD
 Route::get('/truck', 'TruckController@getOrders');
@@ -35,9 +40,7 @@ Route::get('/test', function () {
 });
 
 
-Route::get('/foodtruckinfo', function () {
-    return view('foodtruckinfo');
-});
+Route::get('/foodtruckinfo/{id_truck}', 'foodTruckController@main');
 
 
 // Route::get('/index', function () {
