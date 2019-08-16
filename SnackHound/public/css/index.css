@@ -1,1 +1,139 @@
+.bg-image {
+    background-image: url("/assets/IMGS/paula-vermeulen-URjZkhqsuBk-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 640px;
+    color: black;
+    resize: both;
+}
 
+.bg-text {
+    color: white;
+    font-weight: bold;
+    font-family: "Roboto Slab", serif;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    padding: 20px;
+    text-align: center;
+    width: 350px;
+}
+.bg-text h1 {
+    font-size: 58px;
+    padding-bottom: 10px;
+    font-family: "Raleway", sans-serif;
+}
+.bg-text p {
+    font-size: 16px;
+    font-family: "Roboto Slab", serif;
+    padding: 14px;
+    padding-bottom: 20px;
+}
+
+.search {
+    background: transparent;
+    border-radius: 20px;
+    border: solid 1px white;
+    width: 300px;
+    height: 35px;
+}
+.submit-location {
+    margin-left: -100px;
+    width: 100px;
+    height: 35px;
+    border: #fff solid 1px;
+    border-radius: 20px;
+    background-color: white;
+    color: #b86924;
+    box-shadow: 1px 10px 19px #000000;
+}
+.turn-on-location {
+    background-color: #fff;
+    color: #b86924;
+    border-radius: 20px;
+    height: 35px;
+    width: 300px;
+    box-shadow: 1px 10px 19px #000000;
+    margin-bottom: 20px;
+}
+.use-location-link {
+    display: none;
+}
+::placeholder {
+    color: white;
+}
+
+#map {
+    padding-right: 50px;
+    height: 850px;
+    width: 900PX;
+  }
+
+@media only screen and (min-width: 1024px) {
+    .bg-image {
+        background-image: url("/assets/IMGS/paula-vermeulen-URjZkhqsuBk-unsplash-blur.jpg");
+        height: 100vh;
+    }
+    .bg-text {
+        padding-left: 125px;
+        width: 70%;
+        top: 60%;
+    }
+    .bg-text h1 {
+        font-size: 120px;
+        padding-bottom: 10px;
+    }
+    .bg-text p {
+        font-size: 40px;
+    }
+    .search {
+        background: transparent;
+        background-size: 50px;
+        border-radius: 50px;
+        background-image: url("../assets/ICONS/icons8-search.svg");
+        background-repeat: no-repeat;
+        background-position: 98%;
+        font-size: 36px;
+        border: solid 2px white;
+        max-width: 750px;
+        width: 65%;
+        height: 75px;
+    }
+
+    .search:focus {
+        color: white;
+    }
+    .submit-location {
+        margin-left: inherit;
+        background: transparent;
+        width: 150px;
+        height: 75px;
+        border: solid 2px white;
+        border-radius: 36px;
+        color: white;
+        font-size: 28px;
+        margin-left: 20px;
+        box-shadow: inherit;
+    }
+    .or,
+    .turn-on-location {
+        display: none;
+    }
+    .use-location-link {
+        display: inherit;
+        margin-top: 20px;
+        margin-bottom: 150px;
+    }
+    .use-location-link a {
+        color: white;
+        font-size: 24px;
+    }
+
+    /* /.main-container{
+        display: flex;
+        justify-content: ;
+    } */
+}

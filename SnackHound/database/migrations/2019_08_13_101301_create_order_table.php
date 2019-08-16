@@ -20,6 +20,7 @@ class CreateOrderTable extends Migration
             $table->bigInteger('id_user')->unsigned();
             $table->foreign('id_user')->references('id_user')->on('user');
             $table->tinyInteger('status');
+            $table->dateTime('pickup_time')->nullable();
             $table->string('detail', 200)->nullable();
             $table->string('rejection_reason', 200)->nullable();
             $table->string('cancellation_reason', 200)->nullable();

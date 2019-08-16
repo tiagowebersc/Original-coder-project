@@ -13,11 +13,20 @@
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');;
 
 Route::get('/login', 'UserController@login');
 
+Route::get('/signup', 'UserController@signup');
+
 Route::post('/login', 'UserController@loginPost');
+
+Route::post('/signup', 'UserController@signupPost');
+
+// TRUCKS DASHBOARD
+Route::get('/truck', 'TruckController@getOrders');
+
+Route::get('/truck/orderFilter', 'TruckController@filterOrder');
 
 
 

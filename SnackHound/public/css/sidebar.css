@@ -15,9 +15,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-right: 1px solid white;
     background-color: #010101;
     position: fixed;
+    z-index: 100;
 }
 
 .sidebar-items-img, .sidebar-logo-img {

@@ -1,0 +1,168 @@
+* {
+    box-sizing: border-box;
+    font-family: "Roboto Slab", serif;
+}
+
+*:not(input) {
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}
+
+main {
+    margin-left: 175px;
+    padding-top: 62px;
+}
+
+h4 {
+    margin-top: 45px;
+}
+
+h3, h4 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+}
+
+form {
+    margin-top: 30px;
+}
+
+fieldset {
+    padding: 10px 10px 10px 0px;
+}
+
+input {
+    margin-right: 10px;
+}
+
+input:not([type='radio']):not([type='tel']) {
+    width: 145px;
+}
+
+input[type='tel'] {
+    width: 160px;
+}
+
+label[for="typeSearch"] {
+    display: inline-block;
+    width: 100px;
+}
+
+label[for="firstName"], label[for="fromDate"], label[for='fromAmount'], label[for='lastName'], label[for='toDate'], label[for='toAmount'] {
+    display: inline-block;
+    width: 250px;
+    text-align: right;
+}
+
+input[type='submit'] {
+    margin-top: 25px;
+    width: 150px;
+    padding: 5px;
+    margin-right: 20px;
+    background-color: #06B7F9;
+    color: white;
+    box-shadow:0px 1px 1px #010101;
+}
+
+input[type='date'] {
+    width: 173px;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+table {
+    width: 97%;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-collapse: collapse;
+    margin-bottom: 50px;
+}
+
+.table-head {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.table-content {
+    text-align: center;
+}
+
+.waiting {
+    color: #878787;
+}
+
+.green {
+    color: #02CB24;
+}
+
+.done {
+    color: #06B7F9;
+}
+
+.red {
+    color: #FF0000;
+}
+
+td {
+    padding: 15px 0px;
+    text-align: center;
+}
+
+.order-date {
+    width: 120px;
+
+}
+
+tr {
+    border: 1px solid black;
+
+}
+
+.view-details, .accept-order {
+    display: inline-block;
+    width: 100px;
+    padding: 5px;
+    background-color: #06B7F9;
+    color: white;
+}
+
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+    color: white;
+}
+
+.accept-order {
+    background-color: #02CB24;
+}
+
+.decline-order {
+    background-color: #FF0000;
+    display: inline-block;
+    height: 31px;
+    width: 30px;
+    color: white;
+    padding: 5px;
+    margin-left: 30px;
+}
+
+.disabled {
+    pointer-events: none;
+    cursor: default;
+    background-color: #03961c;
+}
+
+.disabled-x {
+    pointer-events: none;
+    cursor: default;
+    background-color: #ad0000;
+}
+
+.no-order {
+    margin-top: 50px;
+}
+
+.show-all {
+    display: inline;
+}
