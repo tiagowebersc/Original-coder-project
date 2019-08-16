@@ -19,7 +19,7 @@
 
             <div name="truckinfo" class="truckinfo"> 
 
-                    <h1>FOODTRUCK NAME</h1>
+                    <h1>FOODTRUCK</h1>
                     <div class="favstar">
                         <div class="reviewDiv">
                                 <img class="starlogo" src="assets/ICONS/Food Truck Cards/icons8-star-filled.svg" alt="">
