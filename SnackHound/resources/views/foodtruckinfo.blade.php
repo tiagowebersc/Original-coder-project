@@ -19,45 +19,97 @@
 
             <div name="truckinfo" class="truckinfo"> 
 
-                    <h1>FoodTruck Name</h1>
+                    <h1>FOODTRUCK NAME</h1>
                     <div class="favstar">
-                        <img src="assets/ICONS/Food Truck Cards/icons8-star-filled.svg" alt="">Review Number
-                        <img src="assets/ICONS/Food Truck Cards/icons8-heart-outline.svg" alt="">
+                        <div class="reviewDiv">
+                                <img class="starlogo" src="assets/ICONS/Food Truck Cards/icons8-star-filled.svg" alt="">
+                                <p class="reviewNbr">Review Number</p>
+                        </div>
+                        <img class="heartlogo" src="assets/ICONS/Food Truck Cards/icons8-heart-outline.svg" alt="">
                     </div>
         
-                    <hr>
+                    <hr class="separator">
         
                     <div class="truckcontact">
-                        <div class="contactnumber" name="contactnumber">
-                            <img name="phoneicon" class="phoneicon" src="assets//ICONS/icons8-cell-phone (2).svg" alt=""> Phone Number
-                        </div>
-                        <div class="contactweb" name="contactweb">
-                                <img name="webicon" class="webicon" src="assets/ICONS/icons8-internet.svg" alt=""> Website
+                        <div class="contactlist">
+                                <div class="contactnumber" name="contactnumber">
+                                    <img name="phoneicon" class="phoneicon" src="assets//ICONS/icons8-cell-phone (1).svg" alt=""> 
+                                    <p class="phoneInfo" name="phoneInfo">Phone Number</p>
+                                </div>
+                                <div class="contactweb" name="contactweb">
+                                    <img name="webicon" class="webicon" src="assets/ICONS/icons8-internet (1).svg" alt="">
+                                    <p class="webInfo" name="webInfo">Website</p>
+                                </div>
                         </div>
                         <div class="truckposition" name="truckposition">
-                            <img  src="assets/ICONS/Food Truck Cards/icons8-marker.svg" alt=""> Position
+                            <img class="positionImg" src="assets/ICONS/Food Truck Cards/icons8-marker.svg" alt="">
+                             <p class="positionInfo" name="positionInfo">Position</p>
                         </div>
                     </div>
         
-                    <hr>
+                    <hr class="separator">
         
                     <div class="hourinfo">
-                            <h2>Schedule</h2>
-                            <div class="grid-1">
-                                <div class="row" data-line="Line Number: 1">Mon: 8:00-8:30</div>
-                                <div class="row" data-line="Line Number: 2">Tue: 8:30-9:00</div>
-                                <div class="row" data-line="Line Number: 3">Wed: 9:00-9:30</div>
-                                <div class="row" data-line="Line Number: 4">Thur: 9:30-10:00</div>
-                                <div class="row" data-line="Line Number: 5">Fri: 10:00-10:30</div>
-                                <div class="row" data-line="Line Number: 6">Sat: 10:00-10:30</div>
+                            {{-- <div class="grid-1">
+                                <div class="row" data-line="Line Number: 1"><p class="daySchedule">Mon:</p> HOUR at PLACE</div>
+                                <br>
+                                <div class="row" data-line="Line Number: 2"><p class="daySchedule">Tue:</p> HOUR at PLACE</div>
+                                <br>
+                                <div class="row" data-line="Line Number: 3"><p class="daySchedule">Wed:</p> HOUR at PLACE</div>
+                                <br>
+                                <div class="row" data-line="Line Number: 4"><p class="daySchedule">Thur:</p> HOUR at PLACE</div>
+                                <br>
+                                <div class="row" data-line="Line Number: 5"><p class="daySchedule">Fri:</p> HOUR at PLACE</div>
+                                <br>
+                                <div class="row" data-line="Line Number: 6"><p class="daySchedule">Sat:</p> HOUR at PLACE</div>
+                                <br>
+                                <div class="row" data-line="Line Number: 6"><p class="daySchedule">Sun:</p> HOUR at PLACE</div>
+                            </div> --}}
+
+                            <table class="scheduleTable">
+                                    <tr>
+                                      <td class="daySchedule">Mon: </td>
+                                      <td>Hour</td>
+                                      <td>Place</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="daySchedule">Tue: </td>
+                                      <td>Hour</td>
+                                      <td>Place</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="daySchedule">Wed: </td>
+                                      <td>Hour</td>
+                                      <td>Place</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="daySchedule">Thur: </td>
+                                      <td>Hour</td>
+                                      <td>Place</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="daySchedule">Fri: </td>
+                                      <td>Hour</td>
+                                      <td>Place</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="daySchedule">Sat: </td>
+                                      <td>Hour</td>
+                                      <td>Place</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="daySchedule">Sun: </td>
+                                      <td>Hour</td>
+                                      <td>Place</td>
+                                    </tr>
+                                </table>
                             </div>
-                    </div>
                     <br>
                     <div name="scrollicon" class="scrollicon">
-                        <img src="../user food truck/Scroll down.svg" alt="">The scrool down
+                        <img class="scrollImg" src="assets/IMGS/ScrollDown.svg" alt="">
                     </div>
         
-        </div>
+            </div>
 
         </div>
             <!-- <img name="backgroundimg" class="backgroundimg" src="frittenwerk.png" alt=""> -->
@@ -86,7 +138,8 @@
                         </div>
                       </form>
                     </div>
-                  </div>     
+                  </div>    
+
     </main>  
 </body>
 </html>

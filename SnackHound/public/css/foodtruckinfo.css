@@ -25,11 +25,22 @@ header {
   background-image: url("/assets/IMGS/frittenwerk.jpg");
   background-size: cover;
   background-position: 50% 50%;
+  width: 359.17px;
+}
+
+.separator {
+  border: 1px solid #FFFFFF;
+  opacity: .5;
+  border-radius: 5px;
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .truckinfo {
-  padding-top: 50px;
-  padding-bottom: 40px; 
+  padding-top: 100px;
+  padding-bottom: 10px; 
   text-align: center;
   position: relative;
   color: white;
@@ -37,17 +48,35 @@ header {
 
 .truckinfo h1 {
   font-family: 'Raleway', sans-serif;
+  font-size: 36px;
+}
+
+.reviewDiv{
+  display: flex;
+}
+
+.reviewNbr{
+  color: #FFFFFF;
+  font-size: 12px;
+  padding-top: 13px;
+  padding-left: 8px;
 }
 
 .favstar {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   font-family: 'Roboto Slab', serif;
+  padding-top: 10px;
 }
 
 .truckcontact{
   font-family: 'Roboto Slab', serif;
+  display: flex;
+  justify-content: space-around;
+}
 
+.contactlist{
+  text-align: left;
 }
 
 .contact {
@@ -55,9 +84,68 @@ header {
   flex-direction: column;
 }
 
+.contactnumber{
+  font-size: 18px;
+  display: flex;
+  padding-bottom: 10px;
+}
+
+.phoneInfo{
+  padding-top: 30px;
+}
+
+.contactweb{
+  font-size: 18px;
+  display: flex;
+}
+
+.webInfo{
+padding-top: 5px;
+padding-left: 5px;
+}
+
+.truckposition{
+  font-size: 12px;
+}
+
 .hourinfo {
   font-family: 'Roboto Slab', serif;
 }
+
+.scheduleTable{
+  margin: 0 auto;
+}
+
+
+.daySchedule{
+  font-family: 'Raleway', sans-serif;
+}
+
+.starlogo{
+  height: 38.12px;
+}
+
+.heartlogo{
+  height: 38.12px;
+}
+
+.positionImg {
+  height: 38.11px;
+}
+
+.scrollImg {
+  height: 29.31px;
+}
+
+.phoneicon {
+  height: 45px;
+  margin-top: 20px;
+}
+
+.webicon {
+  height: 40px;
+}
+
 
 
 
