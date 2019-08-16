@@ -19,13 +19,13 @@
 
             <div name="truckinfo" class="truckinfo"> 
 
-                    <h1>FOODTRUCK</h1>
+                    <h1>{{$foodtruck->name}}</h1>
                     <div class="favstar">
                         <div class="reviewDiv">
-                                <img class="starlogo" src="assets/ICONS/Food Truck Cards/icons8-star-filled.svg" alt="">
+                                <img class="starlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-filled.svg')}}" alt="">
                                 <p class="reviewNbr">Review Number</p>
                         </div>
-                        <img class="heartlogo" src="assets/ICONS/Food Truck Cards/icons8-heart-outline.svg" alt="">
+                        <img class="heartlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-heart-outline.svg')}}" alt="">
                     </div>
         
                     <hr class="separator">
@@ -33,16 +33,16 @@
                     <div class="truckcontact">
                         <div class="contactlist">
                                 <div class="contactnumber" name="contactnumber">
-                                    <img name="phoneicon" class="phoneicon" src="assets//ICONS/icons8-cell-phone (1).svg" alt=""> 
+                                    <img name="phoneicon" class="phoneicon" src="{{URL::asset('assets/ICONS/icons8-cell-phone (1).svg')}}" alt=""> 
                                     <p class="phoneInfo" name="phoneInfo">Phone Number</p>
                                 </div>
                                 <div class="contactweb" name="contactweb">
-                                    <img name="webicon" class="webicon" src="assets/ICONS/icons8-internet (1).svg" alt="">
+                                    <img name="webicon" class="webicon" src="{{URL::asset('assets/ICONS/icons8-internet (1).svg')}}" alt="">
                                     <p class="webInfo" name="webInfo">Website</p>
                                 </div>
                         </div>
                         <div class="truckposition" name="truckposition">
-                            <img class="positionImg" src="assets/ICONS/Food Truck Cards/icons8-marker.svg" alt="">
+                            <img class="positionImg" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-marker.svg')}}" alt="">
                              <p class="positionInfo" name="positionInfo">Position</p>
                         </div>
                     </div>
@@ -106,7 +106,7 @@
                             </div>
                     <br>
                     <div name="scrollicon" class="scrollicon">
-                        <img class="scrollImg" src="assets/IMGS/ScrollDown.svg" alt="">
+                        <img class="scrollImg" src="{{URL::asset('assets/IMGS/ScrollDown.svg')}}" alt="">
                     </div>
         
             </div>
