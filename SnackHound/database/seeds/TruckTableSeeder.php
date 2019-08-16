@@ -25,5 +25,20 @@ class TruckTableSeeder extends Seeder
             'instagram_link' => 'http://www.instagram.com',
             'twitter_link' => 'http://www.twitter.com'
         ]);
+
+        DB::table('truck')->insert([
+            'id_truck' => 2,
+            'id_user' => 2,
+            'name' => 'The moose is lose',
+            'image' => 'truck2.png',
+            'price_range' => 5,
+            'telephone' => '555 333 777',
+            'online_order' => false,
+            'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod hic facere ipsa fuga perferendis sunt pariatur perspiciatis tempora. Amet quos vero est distinctio praesentium veritatis blanditiis aut voluptatibus ducimus voluptate.',
+            'website' => 'http://www.themooseislose.lu',
+            'facebook_link' => 'http://www.facebook.com',
+            'instagram_link' => 'http://www.instagram.com',
+            'twitter_link' => 'http://www.twitter.com'
+        ]);
     }
 }

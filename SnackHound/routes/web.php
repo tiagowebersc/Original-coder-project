@@ -50,3 +50,5 @@ Route::get('/footer', function () {
 Route::get('/test2', function () {
     return view('layouts/truckownerSidebar');
 });
+
+Route::get('/listTest', 'IndexController@foodTruckList');
