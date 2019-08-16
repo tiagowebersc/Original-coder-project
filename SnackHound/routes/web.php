@@ -26,6 +26,11 @@ Route::get('/test', function () {
 });
 
 
+Route::get('/foodtruckinfo', function () {
+    return view('foodtruckinfo');
+});
+
+
 // Route::get('/index', function () {
 //     return view('index');
 // });
