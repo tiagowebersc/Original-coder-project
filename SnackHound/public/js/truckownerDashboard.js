@@ -45,6 +45,9 @@ function showUser() {
     document.querySelector(".filter-amount-mobile").style.display = "none";
     document.querySelector(".filter-user-mobile").style.display = "block";
 }
+
+
+// remove and add classes depending of the device size
 let nodes;
 
 nodes = this.document.querySelectorAll('.desktop-row');

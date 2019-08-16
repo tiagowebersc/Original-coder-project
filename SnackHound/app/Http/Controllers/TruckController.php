@@ -38,38 +38,40 @@ class TruckController extends Controller
 
             $truck = Truck::where('id_user', $userId)->first();
 
-            if($request->typeSearch === "user") {
-                // Search orders by users
+            if(isset($request->filterBtn)) {
+                if($request->typeSearch === "user") {
+                    // Search orders by users
 
-                $orders = View_order::where("id_truck", $truck->id_truck)->where([['first_Name', "LIKE", "%" . $request->firstName . "%"],
-                                                                                  ['last_Name', "LIKE", "%" . $request->lastName . "%"],
-                                                                                  ['telephone',  $request->phone]])->get();
+                    $orders = View_order::where("id_truck", $truck->id_truck)->where([['first_Name', "LIKE", "%" . $request->firstName . "%"],
+                                                                                      ['last_Name', "LIKE", "%" . $request->lastName . "%"],
+                                                                                      ['telephone',  $request->phone]])->get();
 
-                $ordersCount = View_order::where("id_truck", $truck->id_truck)->where([['first_Name', "LIKE", "%" . $request->firstName . "%"],
-                                                                                  ['last_Name', "LIKE", "%" . $request->lastName . "%"],
-                                                                                  ['telephone',  $request->phone]])->count();
+                    $ordersCount = View_order::where("id_truck", $truck->id_truck)->where([['first_Name', "LIKE", "%" . $request->firstName . "%"],
+                                                                                      ['last_Name', "LIKE", "%" . $request->lastName . "%"],
+                                                                                      ['telephone',  $request->phone]])->count();
 
-            } else if($request->typeSearch === "date") {
-                // Search orders by date
-                $from = date($request->fromDate);
-                $to = date($request->toDate);
+                } else if($request->typeSearch === "date") {
+                    // Search orders by date
+                    $from = date($request->fromDate);
+                    $to = date($request->toDate);
 
-                $orders = View_order::where("id_truck", $truck->id_truck)->whereBetween('created_at', [$from, $to])->get();
+                    $orders = View_order::where("id_truck", $truck->id_truck)->whereBetween('created_at', [$from, $to])->get();
 
-                $ordersCount = View_order::where("id_truck", $truck->id_truck)->whereBetween('created_at', [$from, $to])->count();
+                    $ordersCount = View_order::where("id_truck", $truck->id_truck)->whereBetween('created_at', [$from, $to])->count();
 
-            } else {
-                // Search orders by amount
-                $orders = View_order::where("id_truck", $truck->id_truck)->whereBetween('total', [$request->fromAmount, $request->toAmount])->get();
+                } else {
+                    // Search orders by amount
+                    $orders = View_order::where("id_truck", $truck->id_truck)->whereBetween('total', [$request->fromAmount, $request->toAmount])->get();
 
-                $ordersCount = View_order::where("id_truck", $truck->id_truck)->whereBetween('total', [$request->fromAmount, $request->toAmount])->count();
-            }
+                    $ordersCount = View_order::where("id_truck", $truck->id_truck)->whereBetween('total', [$request->fromAmount, $request->toAmount])->count();
+                }
 
-            // If user inserted info, return filtered, if not return all
-            if(isset($orders) && isset($ordersCount)) {
-                return view('truckOwnerDashboard', ['orders' => $orders, 'truck' => $truck, 'ordersCount' => $ordersCount, 'request' => $request]);
-            } else {
-                return $this->getOrders();
+                // If user inserted info, return filtered, if not return all
+                if(isset($orders) && isset($ordersCount)) {
+                    return view('truckOwnerDashboard', ['orders' => $orders, 'truck' => $truck, 'ordersCount' => $ordersCount, 'request' => $request]);
+                } else {
+                    // return Self::getOrders();
+                }
             }
 
 
@@ -78,5 +80,16 @@ class TruckController extends Controller
              return redirect()->route('index');
          }
 
+    }
+
+    public function updateOrders(Request $request) {
+
+        Self::filterOrder($request);
+
+        if(isset($request->updateBtn)) {
+            echo 'asd';
+            return redirect()->route('index');
+
+        }
     }
 }

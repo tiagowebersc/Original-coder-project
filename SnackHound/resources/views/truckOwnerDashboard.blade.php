@@ -17,7 +17,7 @@
 
     <h4>ORDERS: </h4>
 
-    <form id='searchForm' action="/truck/orderFilter" method="GET">
+    <form id='searchForm' action="/truck/orderFilter" method="POST">
         @csrf
         <label for=""><strong>Search orders:</strong></label>
 
@@ -82,7 +82,7 @@
         </form>
 
         <div class="desktop-btn">
-            <input id='searchForm-search' form='searchForm' type="submit" value="Search">
+            <input id='searchForm-search' form='searchForm' name='filterBtn' type="submit" value="Search">
 
             <form id='searchForm-showall' class='show-all' action="/truck">
                 <input type="submit" value="Show all">
@@ -171,7 +171,7 @@
                 <th><strong>Date</strong></th>
                 <th class='desktop-row'><strong>Amount</strong></th>
                 <th class='desktop-row'><strong>Pre-Order?</strong></th>
-                <th><strong>Order status</strong></th>
+                <th class='desktop-row'><strong>Order status</strong></th>
                 <th><strong>Details</strong></th>
                 <th><strong>Confirm</strong></th>
                 <th class='desktop-row'><strong>Print</strong></th>
@@ -179,6 +179,9 @@
         </thead>
 
         @foreach ($orders as $order)
+
+        <input type='hidden' name='idOrder' value="<?= $order->id_order ?>">
+
         <tr class="table-content">
             <td class='green'>{{$order->id_order}}</td>
             <td class='order-date'>{{$order->created_at}}</td>
@@ -187,48 +190,43 @@
             <?php
             switch($order->status) {
                 case 0:
-                echo "<td class='waiting width'> WAITING </td>";
+                echo "<td class='desktop-row waiting width'> WAITING </td>";
                 break;
                 case 1:
-                echo "<td class='green width '> ACCEPTED </td>";
+                echo "<td class='desktop-row green width '> ACCEPTED </td>";
                 break;
                 case 2:
-                echo "<td class='red width'> NOT ACCEPTED </td>";
+                echo "<td class='desktop-row red width'> NOT ACCEPTED </td>";
                 break;
                 case 3:
-                echo "<td class='red width'> CANCELLED </td>";
+                echo "<td class='desktop-row red width'> CANCELLED </td>";
                 break;
                 case 4:
-                echo "<td class='done width'> DELIVERED </td>";
+                echo "<td class='desktop-row done width'> DELIVERED </td>";
                 break;
             }
             echo "<td> <a class='view-details' href='#'>VIEW</a> </td>";
 
-            if($order->status > 2) {
-                ?>
-                <td> <a class='red accepted-order disabled' href='#'><?php
-                    if($order->status === 3) {
-                        echo "CANCELLED";
-                    } else if($order->status === 4) {
-                        echo "DELIVERED";
-                    }
 
-                ?></a> <a class='decline-order disabled-x desktop-row' href='#'>x</a></td>
-                <?php
-            } else if($order->status === 2){
-                ?>
-               <td class='not-accepted-order'> <a class='accepted-order disabled red' href='#'>NOT ACCEPTED</a> <a class='decline-order desktop-row' href='#'>x</a></td>
-                <?php
-            } else if($order->status === 1){
-                ?>
-               <td> <a class='accept-order' href='#'>DELIVERED</a> <a class='decline-order desktop-row' href='#'>x</a></td>
-                <?php
-            } else {
-                ?>
-                <td> <a class='accept-order' href='#'>ACCEPT</a> <a class='decline-order desktop-row' href='#'>x</a></td>
-                <?php
+            switch($order->status) {
+                case 0:
+                echo "<td> <input type='submit' form='searchForm' name='updateBtn' class='update-order-btn accept-order' value='ACCEPT'> <input type='submit' name='cancelBtn' class='decline-order desktop-row' value='x'></td>";
+                break;
+                case 1:
+                echo "<td> <input type='submit' form='searchForm' name='updateBtn' class='blue accept-order update-order-btn' value='DELIVERED'> <input type='submit' name='cancelBtn' class='decline-order desktop-row' value='x'></td>";
+                break;
+                case 2:
+                echo "<td class='not-accepted-order'> <a class='accepted-order disabled red' href='#'>NOT ACCEPTED</a> <a class='x-hidden decline-order desktop-row' href='#'>x</a></td>";
+                break;
+                case 3:
+                echo "<td> <a class='red accepted-order disabled' href='#'> CANCELLED </a> <a class='x-hidden decline-order disabled-x desktop-row' href='#'>x</a></td>";
+                break;
+                case 4:
+                echo "<td> <a class='black accepted-order disabled' href='#'> DELIVERED </a> <a class='x-hidden decline-order disabled-x desktop-row' href='#'>x</a></td>";
+                break;
             }
-            ?>
+
+?>
             <td class='desktop-row'><a href='#'> <img src="{{URL::asset('assets/ICONS/printer.svg')}}" alt="print image."> </a></td>
         </td>
 

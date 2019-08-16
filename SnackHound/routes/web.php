@@ -28,7 +28,7 @@ Route::get('/truck', 'TruckController@getOrders');
 
 Route::get('/truck/orderFilter', 'TruckController@filterOrder');
 
-
+Route::post('/truck/orderFilter', 'TruckController@updateOrders');
 
 Route::get('/test', function () {
     return view('layouts/customerSidebar');
