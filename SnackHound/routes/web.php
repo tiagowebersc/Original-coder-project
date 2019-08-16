@@ -35,6 +35,11 @@ Route::get('/test', function () {
 });
 
 
+Route::get('/foodtruckinfo', function () {
+    return view('foodtruckinfo');
+});
+
+
 // Route::get('/index', function () {
 //     return view('index');
 // });
@@ -45,3 +50,5 @@ Route::get('/footer', function () {
 Route::get('/test2', function () {
     return view('layouts/truckownerSidebar');
 });
+
+Route::get('/listTest', 'IndexController@foodTruckList');

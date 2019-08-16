@@ -18,14 +18,14 @@ class UserController extends Controller
 
         // for the moment to erase the session
         if (Session::has('id_user')) Session::flush();
-        
+
         return view('login', ['form' => 'login']);
     }
     public function signup()
     {
         // for the moment to erase the session
         if (Session::has('id_user')) Session::flush();
-        
+
         return view('login', ['form' => 'signup']);
     }
 
@@ -39,18 +39,18 @@ class UserController extends Controller
         if (count($user) == 0) return view("login", ['errorSignIn' => "email not registered!", 'request' => $request, 'form' => 'login']);
         $user = $user[0]; // take the user from the array to be easy to retrieve the columns
         // check password
-        if (password_verify($request->password, $user->hash_password)){
+        if (password_verify($request->password, $user->hash_password)) {
             // if user blocked returns
             if ($user->user_status == 1) return view("login", ['errorSignIn' => "User blocked!", 'request' => $request, 'form' => 'login']);
             // save the user info in the session
             Self::SaveSessionInfo($user);
             // redirect to a new page
-            if (isset($request->redirect)){
+            if (isset($request->redirect)) {
                 return redirect()->route($request->redirect);
-            }else{
+            } else {
                 return redirect()->route('index');
             }
-        }else{
+        } else {
             // if password not match returns
             return view("login", ['errorSignIn' => "password not match!", 'request' => $request, 'form' => 'login']);
         }
@@ -65,7 +65,7 @@ class UserController extends Controller
         if (!isset($request->password)) return view("login", ['errorSignUp' => "inform password!", 'request' => $request, 'form' => 'signup']);
         if (!isset($request->confirmPassword)) return view("login", ['errorSignUp' => "inform password confirmation!", 'request' => $request, 'form' => 'signup']);
         if (!isset($request->termsOfUse)) return view("login", ['errorSignUp' => "you must to accept the terms and conditions!", 'request' => $request, 'form' => 'signup']);
-        // check email 
+        // check email
         $user = User::where("email", $request->email)->get();
         if (count($user) > 0) return view("login", ['errorSignUp' => "email already in use!", 'request' => $request, 'form' => 'signup']);
         // check is only valid user type was selected
@@ -83,15 +83,20 @@ class UserController extends Controller
         $user->save();
 
         // redirect to a new page
-        if (isset($request->redirect)){
+        if (isset($request->redirect)) {
             return redirect()->route($request->redirect);
-        }else{
+        } else {
             return redirect()->route('index');
         }
     }
 
-    public function signout(){
-        Session::flush();
+    public function signout()
+    {
+        Session::forget('id_user');
+        Session::forget('email');
+        Session::forget('first_name');
+        Session::forget('last_name');
+        Session::forget('user_type');
         return view('index');
     }
 
@@ -100,7 +105,8 @@ class UserController extends Controller
     //    echo Session::get('email');
     //}
 
-    private function SaveSessionInfo($user){
+    private function SaveSessionInfo($user)
+    {
         Session::put('id_user', $user->id_user);
         Session::put('email', $user->email);
         Session::put('first_name', $user->first_name);
