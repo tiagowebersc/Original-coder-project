@@ -92,35 +92,30 @@ class TruckController extends Controller
 
         $order = Order::find($request->hiddenId);
 
-        if(isset($request->updateBtn)) {
+        if($request->updateBtn === 'ACCEPT') {
             // ACCEPT ORDER
+            $order->status = 1;
+            $order->save();
 
-            switch($order->status) {
-                case 0:
-                $order->status = 1;
-                break;
-                case 1:
-                $order->status = 4;
-                break;
-            }
-
+        } else if ($request->updateBtn === 'DELIVERED') {
+            // DELIVERED ORDER
+            $order->status = 4;
             $order->save();
 
         } else if (isset($request->cancelBtn)) {
-
+            // CANCEL OR NOT ACCEPTED
             switch($order->status) {
+                // NOT ACCEPTED
                 case 0:
                 $order->status = 2;
                 break;
+                // CANCELLED
                 case 1:
                 $order->status = 3;
                 break;
             }
-
             $order->save();
         }
-
         return self::filterOrder($request);
-
     }
 }
