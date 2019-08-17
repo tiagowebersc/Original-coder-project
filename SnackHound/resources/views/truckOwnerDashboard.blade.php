@@ -161,7 +161,7 @@
         </div>
 
 
-    @if($ordersCount)
+    @if(!empty($ordersCount))
 
     <table>
 
@@ -214,11 +214,11 @@
             {{-- ORDER BUTTONS --}}
             @switch($order->status)
                 @case(0)
-                    <td> <form action='/truck/edit' method='POST'> @csrf <input type='submit' name='updateBtn' class='update-order-btn accept-order' value='ACCEPT'> <input type='submit' name='cancelBtn' class='decline-order desktop-row' value='x'> <input type='hidden' name='hiddenId' value="{{$order->id_order}}"> </form></td>
+                    <td> <form id='form_update' action='' method='post'> @csrf <input type='submit' name='updateBtn' class='update-order-btn accept-order' value='ACCEPT'> <input type='submit' name='cancelBtn' class='decline-order desktop-row' value='x'> <input type='hidden' name='hiddenId' value="{{$order->id_order}}"> </form></td>
                 @break
 
                 @case(1)
-                    <td> <form action='/truck/edit' method='POST'> @csrf <input type='submit' name='updateBtn' class='blue accept-order update-order-btn' value='DELIVERED'> <input type='submit' name='cancelBtn' class='decline-order desktop-row' value='x'> <input type='hidden' name='hiddenId' value="{{$order->id_order}}"> </form></td>
+                    <td> <form id='form_update' action='' method='post'> @csrf <input type='submit' name='updateBtn' class='blue accept-order update-order-btn' value='DELIVERED'> <input type='submit' name='cancelBtn' class='decline-order desktop-row' value='x'> <input type='hidden' name='hiddenId' value="{{$order->id_order}}"> </form></td>
                 @break
 
                 @case(2)

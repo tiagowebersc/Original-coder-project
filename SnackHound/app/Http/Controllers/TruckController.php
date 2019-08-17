@@ -39,13 +39,22 @@ class TruckController extends Controller
                 if($request->typeSearch === "user") {
                     // Search orders by users
 
-                    $orders = View_order::where("id_truck", $truck->id_truck)->where([['first_Name', "LIKE", "%" . $request->firstName . "%"],
-                                                                                      ['last_Name', "LIKE", "%" . $request->lastName . "%"],
-                                                                                      ['telephone',  $request->phone]])->get();
+                    // Because user radio by default is checked, check if the fields and fullfield
+                    var_dump((!empty($request->firstName) || !empty($request->lastName) || !empty($request->phone)));
 
-                    $ordersCount = View_order::where("id_truck", $truck->id_truck)->where([['first_Name', "LIKE", "%" . $request->firstName . "%"],
-                                                                                      ['last_Name', "LIKE", "%" . $request->lastName . "%"],
-                                                                                      ['telephone',  $request->phone]])->count();
+                    if((!empty($request->firstName) || !empty($request->lastName) || !empty($request->phone))) {
+                        $orders = View_order::where("id_truck", $truck->id_truck)->where([['first_Name', "LIKE", "%" . $request->firstName . "%"],
+                        ['last_Name', "LIKE", "%" . $request->lastName . "%"],
+                        ['telephone',  $request->phone]])->get();
+
+                        $ordersCount = View_order::where("id_truck", $truck->id_truck)->where([['first_Name', "LIKE", "%" . $request->firstName . "%"],
+                        ['last_Name', "LIKE", "%" . $request->lastName . "%"],
+                        ['telephone',  $request->phone]])->count();
+                    } else {
+                        $orders = '';
+                        $ordersCount = '';
+                    }
+
 
                 } else if($request->typeSearch === "date") {
                     // Search orders by date
@@ -56,7 +65,7 @@ class TruckController extends Controller
 
                     $ordersCount = View_order::where("id_truck", $truck->id_truck)->whereBetween('created_at', [$from, $to])->count();
 
-                } else {
+                } else if($request->typeSearch === "amount") {
                     // Search orders by amount
                     $orders = View_order::where("id_truck", $truck->id_truck)->whereBetween('total', [$request->fromAmount, $request->toAmount])->get();
 
@@ -81,16 +90,37 @@ class TruckController extends Controller
 
     public function updateOrders(Request $request) {
 
+        $order = Order::find($request->hiddenId);
+
         if(isset($request->updateBtn)) {
             // ACCEPT ORDER
-            echo "update" . $request->hiddenId;
+
+            switch($order->status) {
+                case 0:
+                $order->status = 1;
+                break;
+                case 1:
+                $order->status = 4;
+                break;
+            }
+
+            $order->save();
 
         } else if (isset($request->cancelBtn)) {
-            // CANCEL ORDER
-            echo "delete" . $request->hiddenId;
+
+            switch($order->status) {
+                case 0:
+                $order->status = 2;
+                break;
+                case 1:
+                $order->status = 3;
+                break;
+            }
+
+            $order->save();
         }
 
-        // self::filterOrder($request);
-        // return view('truckOwnerDashboard');
+        return self::filterOrder($request);
+
     }
 }
