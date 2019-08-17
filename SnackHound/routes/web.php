@@ -30,9 +30,12 @@ Route::post('/reset_password/{token}', 'UserController@resetPasswordPost');
 
 // TRUCKS DASHBOARD
 Route::get('/truck', 'TruckController@getOrders');
+// EVERYTIME IT REFRESH, IT UPDATES
+Route::post('/truck', 'TruckController@updateOrders');
 
 Route::get('/truck/orderFilter', 'TruckController@filterOrder');
-Route::post('/truck/edit', 'TruckController@updateOrders');
+// EVERYTIME IT REFRESH, IT UPDATES
+Route::post('/truck/orderFilter', 'TruckController@updateOrders');
 
 Route::get('/test', function () {
     return view('layouts/customerSidebar');
