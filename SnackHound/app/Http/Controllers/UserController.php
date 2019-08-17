@@ -109,9 +109,11 @@ class UserController extends Controller
         $user->save();
         // send email
         $name = $user->first_name . ' ' . $user->last_name;
-        $data = array('name' => $name);
-        Mail::send('mail', $data, function ($message) {
-            $message->to('tiagowebersc@gmail.com', 'Test now')->subject('Laravel HTML Testing Mail');
+        $email = $user->email;
+        $data = ['name' => $name, 'url_reset' => 'http://127.0.0.1:8000/reset_password/'.$token];
+        
+        Mail::send('mail', $data, function ($message) use ($name, $email){
+            $message->to($email, $name)->subject('Reset password requested');
             $message->from('snackhound.lux@gmail.com', 'Snack Hound');
         });
 
@@ -124,7 +126,22 @@ class UserController extends Controller
         $user = User::where('remember_token', $token)->get();
         if (count($user) === 0 || count($user) > 1) return view('reset_password', ['token' => $token, 'error' => 'Invalid token!']);
         $user = $user[0];
-        return view('reset_password', ['email' => $user->email]);
+        return view('reset_password', ['email' => $user->email, 'token' => $token]);
+    }
+    public function resetPasswordPost($token, Request $request){
+        if (!isset($request->password)) return view("reset_password", ['error' => "inform password!", 'email' => $request->email, 'token' => $token]);
+        if (!isset($request->confirmPassword)) return view("reset_password", ['error' => "inform password confirmation!", 'email' => $request->email, 'token' => $token]);
+        // check if passwords match
+        if ($request->password != $request->confirmPassword) return view("reset_password", ['error' => "passwords don't match!", 'email' => $request->email, 'token' => $token]);
+
+        $user = User::where('remember_token', $token)->get();
+        if (count($user) === 0 || count($user) > 1) return view('reset_password', ['token' => $token, 'email' => $request->email, 'error' => 'Invalid token!']);
+        $user = $user[0];
+        $user->hash_password = password_hash($request->password, PASSWORD_DEFAULT);
+        $user-> remember_token = '';
+        $user->save();
+
+        return redirect()->route('login');
     }
 
     public function signout()
