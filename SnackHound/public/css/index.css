@@ -284,7 +284,9 @@
       justify-content: space-between;
       width: 250px;
   }
-
+  .background {
+    padding: 60px 0 0 0;
+  }
 
 
   /*# sourceMappingURL=style.css.map */
@@ -356,9 +358,12 @@
         justify-content:space-around;
     }
     #map {
-        padding-right: 50px;
-        height: 850px;
-        width: 900PX;
-      }
+      padding-right: 50px;
+      height: 850px;
+      width: 900PX;
+    }
+    .background {
+      padding: 0 0 0 125px;
+    }
 
 }
