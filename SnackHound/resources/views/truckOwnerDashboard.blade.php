@@ -68,12 +68,12 @@
             </label>
 
             <label for="fromAmount">From:
-                <input type="number" step="0.01" name='fromAmount' placeholder='€' value={{ isset($request->fromAmount) ? $request->fromAmount : ''}}>
+                <input type="number" name='fromAmount' placeholder='€' value={{ isset($request->fromAmount) ? $request->fromAmount : ''}}>
             </label>
 
 
             <label for="toDate">To:
-                    <input type="number" step="0.01" name='toAmount' placeholder='€€€€€' value={{ isset($request->toAmount) ? $request->toAmount : ''}}>
+                    <input type="number" name='toAmount' placeholder='€€€€€' value={{ isset($request->toAmount) ? $request->toAmount : ''}}>
             </label>
 
         </fieldset>
@@ -209,7 +209,7 @@
                 @break
             @endswitch
 
-            <td> <a class='view-details' href='#'>VIEW</a> </td>
+        <td> <a class='view-details' href='{{route('details', [$order->id_order])}}'>VIEW</a> </td>
 
             {{-- ORDER BUTTONS --}}
             @switch($order->status)
