@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/','indexController@index')->name('index');;
+Route::get('/','indexController@index')->name('index');
 
 Route::get('/login', 'UserController@login')->name('login');
 

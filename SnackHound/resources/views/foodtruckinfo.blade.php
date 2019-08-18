@@ -1,18 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>FoodTruck Info</title>
-</head>
-<body>
-    <link rel="stylesheet" href="{{URL::asset('/css/foodtruckinfo.css')}}"/>
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+@extends('layouts.customerSidebar')
 
+@section('css')
+  <link rel="stylesheet" href="{{URL::asset('/css/foodtruckinfo.css')}}"/>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+@endsection
 
+@section('title', 'SnackHound - FoodTruck Info')
+
+@section('content')
+<div class="background">
     <header>
         <!-- principal div header start here -->
         <div class="backgrounddiv" name="backgrounddiv">
@@ -140,6 +138,6 @@
                     </div>
                   </div>    
 
-    </main>  
-</body>
-</html>
+    </main> 
+    </div>
+@endsection
