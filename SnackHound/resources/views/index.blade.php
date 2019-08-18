@@ -114,9 +114,7 @@ rel="stylesheet"
                           </div>
                         </div>
                       </div>
-                      <?php
             }
-            ?>
         </section>
         <section class="map-container">
             <div id="map"></div>
