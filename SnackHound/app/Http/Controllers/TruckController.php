@@ -29,8 +29,6 @@ class TruckController extends Controller
     }
 
     public function filterOrder(Request $request) {
-        // CREATE A NEW VIEW (USER, ORDER, ORDER CONTENT)
-        // NOT WORKING
 
         if (Session::get('user_type') === 1) {
 
@@ -38,17 +36,25 @@ class TruckController extends Controller
 
             $truck = Truck::where('id_user', $userId)->first();
 
-            if(isset($request->filterBtn)) {
                 if($request->typeSearch === "user") {
                     // Search orders by users
 
-                    $orders = View_order::where("id_truck", $truck->id_truck)->where([['first_Name', "LIKE", "%" . $request->firstName . "%"],
-                                                                                      ['last_Name', "LIKE", "%" . $request->lastName . "%"],
-                                                                                      ['telephone',  $request->phone]])->get();
+                    // Because user radio by default is checked, check if the fields and fullfield
+                    var_dump((!empty($request->firstName) || !empty($request->lastName) || !empty($request->phone)));
 
-                    $ordersCount = View_order::where("id_truck", $truck->id_truck)->where([['first_Name', "LIKE", "%" . $request->firstName . "%"],
-                                                                                      ['last_Name', "LIKE", "%" . $request->lastName . "%"],
-                                                                                      ['telephone',  $request->phone]])->count();
+                    if((!empty($request->firstName) || !empty($request->lastName) || !empty($request->phone))) {
+                        $orders = View_order::where("id_truck", $truck->id_truck)->where([['first_Name', "LIKE", "%" . $request->firstName . "%"],
+                        ['last_Name', "LIKE", "%" . $request->lastName . "%"],
+                        ['telephone',  $request->phone]])->get();
+
+                        $ordersCount = View_order::where("id_truck", $truck->id_truck)->where([['first_Name', "LIKE", "%" . $request->firstName . "%"],
+                        ['last_Name', "LIKE", "%" . $request->lastName . "%"],
+                        ['telephone',  $request->phone]])->count();
+                    } else {
+                        $orders = '';
+                        $ordersCount = '';
+                    }
+
 
                 } else if($request->typeSearch === "date") {
                     // Search orders by date
@@ -59,7 +65,7 @@ class TruckController extends Controller
 
                     $ordersCount = View_order::where("id_truck", $truck->id_truck)->whereBetween('created_at', [$from, $to])->count();
 
-                } else {
+                } else if($request->typeSearch === "amount") {
                     // Search orders by amount
                     $orders = View_order::where("id_truck", $truck->id_truck)->whereBetween('total', [$request->fromAmount, $request->toAmount])->get();
 
@@ -70,9 +76,9 @@ class TruckController extends Controller
                 if(isset($orders) && isset($ordersCount)) {
                     return view('truckOwnerDashboard', ['orders' => $orders, 'truck' => $truck, 'ordersCount' => $ordersCount, 'request' => $request]);
                 } else {
-                    // return Self::getOrders();
+                    return self::getOrders();
                 }
-            }
+
 
 
          } else {
@@ -84,12 +90,32 @@ class TruckController extends Controller
 
     public function updateOrders(Request $request) {
 
-        Self::filterOrder($request);
+        $order = Order::find($request->hiddenId);
 
-        if(isset($request->updateBtn)) {
-            echo 'asd';
-            return redirect()->route('index');
+        if($request->updateBtn === 'ACCEPT') {
+            // ACCEPT ORDER
+            $order->status = 1;
+            $order->save();
 
+        } else if ($request->updateBtn === 'DELIVERED') {
+            // DELIVERED ORDER
+            $order->status = 4;
+            $order->save();
+
+        } else if (isset($request->cancelBtn)) {
+            // CANCEL OR NOT ACCEPTED
+            switch($order->status) {
+                // NOT ACCEPTED
+                case 0:
+                $order->status = 2;
+                break;
+                // CANCELLED
+                case 1:
+                $order->status = 3;
+                break;
+            }
+            $order->save();
         }
+        return self::filterOrder($request);
     }
 }

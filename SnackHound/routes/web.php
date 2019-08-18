@@ -13,7 +13,7 @@
 
 Route::get('/','indexController@index')->name('index');;
 
-Route::get('/login', 'UserController@login');
+Route::get('/login', 'UserController@login')->name('login');
 
 Route::get('/signup', 'UserController@signup');
 
@@ -25,14 +25,16 @@ Route::get('/forgot_password', 'UserController@forgotPassword');
 Route::post('/forgot_password', 'UserController@forgotPasswordPost');
 
 Route::get('/reset_password/{token}', 'UserController@resetPassword');
-Route::post('/reset_password', 'UserController@resetPasswordPost');
+Route::post('/reset_password/{token}', 'UserController@resetPasswordPost');
 
 
 // TRUCKS DASHBOARD
 Route::get('/truck', 'TruckController@getOrders');
+// EVERYTIME IT REFRESH, IT UPDATES
+Route::post('/truck', 'TruckController@updateOrders');
 
 Route::get('/truck/orderFilter', 'TruckController@filterOrder');
-
+// EVERYTIME IT REFRESH, IT UPDATES
 Route::post('/truck/orderFilter', 'TruckController@updateOrders');
 
 Route::get('/test', function () {

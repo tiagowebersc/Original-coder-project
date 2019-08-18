@@ -12,7 +12,7 @@ rel="stylesheet"
 @section('title', 'SnackHound - Homepage')
 
 @section('content')
-
+<div class="background">
  <header class="bg-image">
     <section class="bg-text">
         <h1>Hungry?</h1>
@@ -121,6 +121,7 @@ rel="stylesheet"
         </section>
     </section>
 </main>
+</div>
             <script>
                 function initMap(){
                     // Map options

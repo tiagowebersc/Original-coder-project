@@ -1,5 +1,23 @@
-// After filtiring, keeping the same form display of the radio choosen before
+$(document).ready (function() {
 
+    $("#form_update").submit(function() {
+
+        // ! sessionStorage.scrollTop = $(window).scrollTop();
+        $.ajax({
+            url     : '/truck/orderFilter',
+            type    : 'post',
+            data    : $("#searchForm").serialize(),
+        });
+    })
+
+    // ! MAINTAIN SCROLL POSITION AFTER CONFIRMING
+    // if (sessionStorage.scrollTop != "undefined") {
+    //     $(window).scrollTop(sessionStorage.scrollTop);
+    // }
+})
+
+
+// After filtiring, keeping the same form display of the radio choosen before [mobile]
 let radioValue = document.querySelector('input[name="typeSearch"]:checked').value
 
 if(radioValue === 'user') {
@@ -47,7 +65,7 @@ function showUser() {
 }
 
 
-// remove and add classes depending of the device size
+// remove and add classes depending of the device size [responsiveness]
 let nodes;
 
 nodes = this.document.querySelectorAll('.desktop-row');
@@ -86,3 +104,4 @@ window.addEventListener("resize", function() {
         }
     }
   });
+

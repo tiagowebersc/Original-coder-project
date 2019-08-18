@@ -12,7 +12,7 @@
     <section class="frame">
         <article>
             <h2 class="center">Reset your password</h2>
-            <form action="/reset_password" method="post">
+            <form action="/reset_password/{{$token}}" method="post">
                 @csrf
                 <label class=" bold hideSmallScreen" for="email">Email:</label>
                 <input class="input100" type="email" name="email" id="email" readonly @isset($email) value={{$email}} @endisset>

@@ -1,2 +1,2 @@
 <h1>Hi, {{ $name }}</h1>
-l<p>Sending Mail from Laravel.</p>
+<a href="{{$url_reset}}">Reset your password</a>

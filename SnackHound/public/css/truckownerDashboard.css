@@ -34,9 +34,16 @@ h3, h4 {
 fieldset {
     padding: 10px 10px 10px 0px;
 }
+input:not([type='radio']):not([type='submit']) {
+    border-radius: 2px;
+    border: 1px solid #333333;
+}
 
 input:not([type='radio']):not([type='tel']):not(.update-order-btn):not(.decline-order) {
     width: 145px;
+}
+input[type='radio'] {
+    margin-right: 5px;
 }
 
 .update-order-btn {
@@ -149,7 +156,6 @@ td a {
 .decline-order {
     background-color: #FF0000;
     display: inline-block;
-    height: 31px;
     width: 30px;
     color: white;
     padding: 5px;
@@ -263,7 +269,7 @@ td a {
 @media only screen and (min-width: 1024px) {
 
     main {
-        margin-left: 110px;
+        margin-left: 124px;
         padding-top: 62px;
     }
     #searchFormMobile {

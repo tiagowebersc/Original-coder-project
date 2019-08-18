@@ -17,9 +17,9 @@
 
     <h4>ORDERS: </h4>
 
-    <form id='searchForm' action="/truck/orderFilter" method="POST">
+    <form id='searchForm' action="/truck/orderFilter" method="GET">
         @csrf
-        <label for=""><strong>Search orders:</strong></label>
+        <strong>Search orders:</strong>
 
         <fieldset>
             <label for="typeSearch">
@@ -68,12 +68,12 @@
             </label>
 
             <label for="fromAmount">From:
-                <input type="number" name='fromAmount' placeholder='€' value={{ isset($request->fromAmount) ? $request->fromAmount : ''}}>
+                <input type="number" step="0.01" name='fromAmount' placeholder='€' value={{ isset($request->fromAmount) ? $request->fromAmount : ''}}>
             </label>
 
 
             <label for="toDate">To:
-                    <input type="number" name='toAmount' placeholder='€€€€€' value={{ isset($request->toAmount) ? $request->toAmount : ''}}>
+                    <input type="number" step="0.01" name='toAmount' placeholder='€€€€€' value={{ isset($request->toAmount) ? $request->toAmount : ''}}>
             </label>
 
         </fieldset>
@@ -161,7 +161,7 @@
         </div>
 
 
-    @if($ordersCount)
+    @if(!empty($ordersCount))
 
     <table>
 
@@ -180,53 +180,60 @@
 
         @foreach ($orders as $order)
 
-        <input type='hidden' name='idOrder' value="<?= $order->id_order ?>">
-
         <tr class="table-content">
             <td class='green'>{{$order->id_order}}</td>
             <td class='order-date'>{{$order->created_at}}</td>
             <td class='desktop-row'>{{$order->total}}€</td>
             <?php echo $order->pickup_time ? "<td class='order-date desktop-row'>" . $order->pickup_time . "</td>" : "<td class='red desktop-row'> N </td>" ?></td>
-            <?php
-            switch($order->status) {
-                case 0:
-                echo "<td class='desktop-row waiting width'> WAITING </td>";
-                break;
-                case 1:
-                echo "<td class='desktop-row green width '> ACCEPTED </td>";
-                break;
-                case 2:
-                echo "<td class='desktop-row red width'> NOT ACCEPTED </td>";
-                break;
-                case 3:
-                echo "<td class='desktop-row red width'> CANCELLED </td>";
-                break;
-                case 4:
-                echo "<td class='desktop-row done width'> DELIVERED </td>";
-                break;
-            }
-            echo "<td> <a class='view-details' href='#'>VIEW</a> </td>";
 
+            {{-- ORDER STATUS --}}
+            @switch($order->status)
+                @case(0)
+                    <td class='desktop-row waiting width'> WAITING </td>
+                @break
 
-            switch($order->status) {
-                case 0:
-                echo "<td> <input type='submit' form='searchForm' name='updateBtn' class='update-order-btn accept-order' value='ACCEPT'> <input type='submit' name='cancelBtn' class='decline-order desktop-row' value='x'></td>";
-                break;
-                case 1:
-                echo "<td> <input type='submit' form='searchForm' name='updateBtn' class='blue accept-order update-order-btn' value='DELIVERED'> <input type='submit' name='cancelBtn' class='decline-order desktop-row' value='x'></td>";
-                break;
-                case 2:
-                echo "<td class='not-accepted-order'> <a class='accepted-order disabled red' href='#'>NOT ACCEPTED</a> <a class='x-hidden decline-order desktop-row' href='#'>x</a></td>";
-                break;
-                case 3:
-                echo "<td> <a class='red accepted-order disabled' href='#'> CANCELLED </a> <a class='x-hidden decline-order disabled-x desktop-row' href='#'>x</a></td>";
-                break;
-                case 4:
-                echo "<td> <a class='black accepted-order disabled' href='#'> DELIVERED </a> <a class='x-hidden decline-order disabled-x desktop-row' href='#'>x</a></td>";
-                break;
-            }
+                @case(1)
+                    <td class='desktop-row green width '> ACCEPTED </td>
+                @break
 
-?>
+                @case(2)
+                    <td class='desktop-row red width'> NOT ACCEPTED </td>
+                @break
+
+                @case(3)
+                    <td class='desktop-row red width'> CANCELLED </td>
+                @break
+
+                @case(4)
+                    <td class='desktop-row done width'> DELIVERED </td>
+                @break
+            @endswitch
+
+            <td> <a class='view-details' href='#'>VIEW</a> </td>
+
+            {{-- ORDER BUTTONS --}}
+            @switch($order->status)
+                @case(0)
+                    <td> <form id='form_update' action='' method='post'> @csrf <input type='submit' name='updateBtn' class='update-order-btn accept-order' value='ACCEPT'> <input type='submit' name='cancelBtn' class='decline-order desktop-row' value='x'> <input type='hidden' name='hiddenId' value="{{$order->id_order}}"> </form></td>
+                @break
+
+                @case(1)
+                    <td> <form id='form_update' action='' method='post'> @csrf <input type='submit' name='updateBtn' class='blue accept-order update-order-btn' value='DELIVERED'> <input type='submit' name='cancelBtn' class='decline-order desktop-row' value='x'> <input type='hidden' name='hiddenId' value="{{$order->id_order}}"> </form></td>
+                @break
+
+                @case(2)
+                    <td class='not-accepted-order'> <a class='accepted-order disabled red' href='#'>NOT ACCEPTED</a> <a class='x-hidden decline-order desktop-row' href='#'>x</a></td>
+                @break
+
+                @case(3)
+                    <td> <a class='red accepted-order disabled' href='#'> CANCELLED </a> <a class='x-hidden decline-order disabled-x desktop-row' href='#'>x</a></td>
+                @break
+
+                @case(4)
+                    <td> <a class='black accepted-order disabled' href='#'> DELIVERED </a> <a class='x-hidden decline-order disabled-x desktop-row' href='#'>x</a></td>
+                @break
+            @endswitch
+
             <td class='desktop-row'><a href='#'> <img src="{{URL::asset('assets/ICONS/printer.svg')}}" alt="print image."> </a></td>
         </td>
 
@@ -240,5 +247,9 @@
     @endif
 
 </main>
+
+@section('js')
 <script type="text/javascript" src="{{ URL::asset('js/truckownerDashboard.js') }}"></script>
+@endsection
+
 @endsection
