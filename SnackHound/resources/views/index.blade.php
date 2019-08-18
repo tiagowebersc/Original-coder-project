@@ -37,7 +37,6 @@ rel="stylesheet"
         <section class="cards-container">
             <?php
             foreach ($trucks as $truck) {
-                # code...
                 ?>
                 <div class="wrapper">
                         <div class="container">
@@ -114,7 +113,9 @@ rel="stylesheet"
                           </div>
                         </div>
                       </div>
+                      <?php
             }
+            ?>
         </section>
         <section class="map-container">
             <div id="map"></div>
