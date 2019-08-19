@@ -14,7 +14,7 @@ class TruckTableSeeder extends Seeder
         DB::table('truck')->insert([
             'id_truck' => 1,
             'id_user' => 2,
-            'name' => 'La maracas',
+            'name' => 'Las maracas',
             'image' => 'las-maracas.jpg',
             'price_range' => 3,
             'telephone' => '666 111 222',

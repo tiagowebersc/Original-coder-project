@@ -92,12 +92,12 @@
     <main>
         <?php
         foreach ($menus as $menu) { ?>
-        <div class="itemcard">
-            <img class="favoritestar" src="{{URL::asset('assets/IMGS/pizza1.jpg')}}" alt="Avatar" style="width:100%">
+        <div class="itemCard">
+            <img class="itemImg" src="{{URL::asset('assets/IMGS/Menu/'.$menu->id_truck.'/'.$menu->image)}}" alt="Avatar" style="width:100%">
             <div class="container">
                 <div class="iteminfo" name="iteminfo">
                     <h2 name="itemname" class="itemName">{{$menu->name}}</h2>
-                    <h2 class="itemPrice">Price</h2>
+                    <h2 class="itemPrice">{{$menu->price}}€</h2>
                 </div>
                 <hr class="itemseparator">
                 <form class="itemform" name="itemform" action="" method="POST">
