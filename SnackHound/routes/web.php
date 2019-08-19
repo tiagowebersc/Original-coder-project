@@ -35,6 +35,7 @@ Route::get('/truck/orderFilter', 'TruckController@filterOrder');
 Route::post('/truck/orderFilter', 'TruckController@updateOrders');
 
 Route::get('/truck/details/{id}', 'OrderController@detailsOrders')->name('details');
+Route::post('/truck/details/{id}', 'OrderController@updateOrdersDetails');
 
 Route::get('/test', function () {
     return view('layouts/customerSidebar');

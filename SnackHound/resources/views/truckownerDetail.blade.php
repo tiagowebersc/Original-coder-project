@@ -17,9 +17,14 @@
 
     @if($order->status < 2)
 
-    <form action="">
-        <input class='accept-order' type="submit" value="Accept Order">
-        <input class='decline-order' type="submit" value="DECLINE ORDER">
+    <form action="/truck/details/{{$order->id_order}}" method='POST'>
+        @csrf
+        @if($order->status === 0)
+            <input class='accept-order' name='updateBtn' type="submit" value="Accept Order">
+        @elseif($order->status === 1)
+            <input class='accept-order blue' name='updateBtn' type="submit" value="Delivered">
+        @endif
+        <input class='decline-order' name='cancelBtn' type="submit" value="DECLINE ORDER">
     </form>
 
     @endif
@@ -71,19 +76,19 @@
 
             @switch($order->status)
                 @case(0)
-                    <p>Waiting</p>
+                    <p class='waiting'>Waiting</p>
                     @break
                 @case(1)
-                    <p>Accepted</p>
+                    <p class='green'>Accepted</p>
                     @break
                 @case(2)
-                    <p>Not Accepted</p>
+                    <p class='red'>Not Accepted</p>
                     @break
                 @case(3)
-                    <p>Canceled</p>
+                    <p class='red'>Canceled</p>
                     @break
                 @case(4)
-                    <p>Delivered</p>
+                    <p class='done'>Delivered</p>
                     @break
             @endswitch
         </div>
