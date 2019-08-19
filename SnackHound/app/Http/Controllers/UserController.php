@@ -83,6 +83,8 @@ class UserController extends Controller
         $user->hash_password = password_hash($request->password, PASSWORD_DEFAULT);
         $user->save();
 
+        // save the user info in the session
+        Self::SaveSessionInfo($user);
         // redirect to a new page
         if (isset($request->redirect)) {
             return redirect()->route($request->redirect);
@@ -110,9 +112,9 @@ class UserController extends Controller
         // send email
         $name = $user->first_name . ' ' . $user->last_name;
         $email = $user->email;
-        $data = ['name' => $name, 'url_reset' => 'http://127.0.0.1:8000/reset_password/'.$token];
-        
-        Mail::send('mail', $data, function ($message) use ($name, $email){
+        $data = ['name' => $name, 'url_reset' => 'http://127.0.0.1:8000/reset_password/' . $token];
+
+        Mail::send('mail', $data, function ($message) use ($name, $email) {
             $message->to($email, $name)->subject('Reset password requested');
             $message->from('snackhound.lux@gmail.com', 'Snack Hound');
         });
@@ -128,7 +130,8 @@ class UserController extends Controller
         $user = $user[0];
         return view('reset_password', ['email' => $user->email, 'token' => $token]);
     }
-    public function resetPasswordPost($token, Request $request){
+    public function resetPasswordPost($token, Request $request)
+    {
         if (!isset($request->password)) return view("reset_password", ['error' => "inform password!", 'email' => $request->email, 'token' => $token]);
         if (!isset($request->confirmPassword)) return view("reset_password", ['error' => "inform password confirmation!", 'email' => $request->email, 'token' => $token]);
         // check if passwords match
@@ -138,7 +141,7 @@ class UserController extends Controller
         if (count($user) === 0 || count($user) > 1) return view('reset_password', ['token' => $token, 'email' => $request->email, 'error' => 'Invalid token!']);
         $user = $user[0];
         $user->hash_password = password_hash($request->password, PASSWORD_DEFAULT);
-        $user-> remember_token = '';
+        $user->remember_token = '';
         $user->save();
 
         return redirect()->route('login');
@@ -151,7 +154,7 @@ class UserController extends Controller
         Session::forget('first_name');
         Session::forget('last_name');
         Session::forget('user_type');
-        return view('index');
+        return redirect()->route('index');
     }
 
     // How take info from session

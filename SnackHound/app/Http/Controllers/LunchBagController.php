@@ -56,4 +56,9 @@ class LunchBagController extends Controller
 
         var_dump($lunchBag);
     }
+
+    public function main()
+    {
+        return view('lunchbag');
+    }
 }

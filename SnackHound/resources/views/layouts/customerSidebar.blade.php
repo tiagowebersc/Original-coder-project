@@ -29,13 +29,18 @@
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
-                <div> <a href='#' class='dropdown-item'> <img class='dropdown-icon' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-track-order (2).svg')}}" alt="FIX THE ALT."> <span>Coverage Area</span> </a> </div>
+                <div> <a href='/' class='dropdown-item'> <img class='dropdown-icon' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-track-order (2).svg')}}" alt="FIX THE ALT."> <span>Coverage Area</span> </a> </div>
 
-                <div> <a href='#' class='dropdown-item'> <img class='dropdown-icon' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-doggy-bag (2).svg')}}" alt="FIX THE ALT."> <span>Lunchbag</span> </a> </div>
-
+                <div> <a href='/lunchbag' class='dropdown-item'> <img class='dropdown-icon' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-doggy-bag (2).svg')}}" alt="FIX THE ALT."> <span>Lunchbag</span> </a> </div>
+                <?php if (Session::has('user_type') && Session::get('user_type') === 1) { ?>
+                <div> <a href='/truck' class='dropdown-item'> <img class='dropdown-icon' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-food-truck.svg')}}" alt="FIX THE ALT."> <span>Food Truck Owner?</span> </a> </div>
+                <?php } ?>
+                <?php if (Session::has('id_user')) { ?>
+                <div class='dropdown-sign'> <a href="/signout" class='dropdown-item'> SIGN OUT </a> </div>
+                <?php } else { ?>
                 <div class='dropdown-sign'> <a href="/signup" class='dropdown-item'> SIGN UP </a> </div>
-
                 <div class='dropdown-log'> <a href="/login" class='dropdown-item'> LOG IN </a> </div>
+                <?php } ?>
 
             </div>
         </div>
@@ -43,10 +48,20 @@
         <div class='sidebar-items'>
 
             <ul>
-                <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-track-order (1).svg')}}"> Coverage area </a></li>
-                <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-doggy-bag (1).svg')}}"> Lunchbag </a></li>
+                <li><a href="/"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-track-order (1).svg')}}"> Coverage area </a></li>
+                <li><a href="/lunchbag"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-doggy-bag (1).svg')}}"> Lunchbag </a></li>
+                <?php if (Session::has('user_type') && Session::get('user_type') === 1) { ?>
+                <li><a href="/truck"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-truck.svg')}}"> Food Truck Owner </a></li>
+                <?php } ?>
+                <?php if (Session::has('id_user')) { ?>
+                <li><a href="/signout"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/signout.svg')}}"> Logout </a></li>
+                <?php } else { ?>
                 <li><a href="/login"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-login-as-user (1).svg')}}"> Login | Sign Up </a></li>
+                <?php } ?>
+                <?php if (Session::has('id_user')) { ?>
                 <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-settings (1).svg')}}"> Account Settings </a></li>
+                <?php } ?>
+
             </ul>
 
         </div>
