@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,7 +22,7 @@ Route::post('/forgot_password', 'UserController@forgotPasswordPost');
 Route::get('/reset_password/{token}', 'UserController@resetPassword');
 Route::post('/reset_password/{token}', 'UserController@resetPasswordPost');
 // Lunchbag functions
-Route::get('/lunchbagTotal', 'LunchBagController@totalItens');
+Route::get('/lunchbagTotal', 'LunchBagController@totalItems');
 Route::put('/addlunchbag/{idMenu}', 'LunchBagController@addLunchBag');
 Route::delete('/removelunchbag/{idMenu}', 'LunchBagController@removeLunchBag');
 
@@ -41,6 +40,10 @@ Route::get('/test', function () {
     return view('layouts/customerSidebar');
 });
 
+// TEST VIEW for the RESET PASSWORD email
+Route::get('/testEmail', function () {
+    return view('mail');
+});
 
 Route::get('/foodtruckinfo/{id_truck}', 'foodTruckController@main');
 
@@ -54,6 +57,9 @@ Route::get('/footer', function () {
 
 Route::get('/test2', function () {
     return view('layouts/truckownerSidebar');
+});
+Route::get('/test3', function () {
+    return view('layouts/filterbar');
 });
 
 Route::get('/listTest', 'IndexController@foodTruckList');

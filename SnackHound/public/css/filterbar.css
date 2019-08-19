@@ -1,0 +1,48 @@
+html{
+    height: 4000px;
+}
+.filterbar-container {
+    width: 99%;
+    height: 90px;
+    background-color: white;
+    border: black solid 1px;
+    padding: 10px;
+    overflow: hidden;
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 98%;
+}
+.sticky + .content {
+    padding-top: 60px;
+}
+.filterbar-container ul {
+    list-style: none;
+    align-items: center;
+    text-align: center;
+    height: 50px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.filterbar-container ul a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: black;
+    margin: 5px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+
+.filterbar {
+    width: 40px;
+    height: 40px;
+}
+.filterbar-main-logo {
+    width: 80px;
+}
