@@ -21,7 +21,9 @@ Route::get('/forgot_password', 'UserController@forgotPassword');
 Route::post('/forgot_password', 'UserController@forgotPasswordPost');
 Route::get('/reset_password/{token}', 'UserController@resetPassword');
 Route::post('/reset_password/{token}', 'UserController@resetPasswordPost');
+Route::get('/signout', 'UserController@signout');
 // Lunchbag functions
+Route::get('/lunchbag', 'LunchBagController@main');
 Route::get('/lunchbagTotal', 'LunchBagController@totalItems');
 Route::put('/addlunchbag/{idMenu}', 'LunchBagController@addLunchBag');
 Route::delete('/removelunchbag/{idMenu}', 'LunchBagController@removeLunchBag');
@@ -37,6 +39,7 @@ Route::post('/truck/orderFilter', 'TruckController@updateOrders');
 Route::get('/truck/menu/{idTruck}', 'MenuController@main');
 
 Route::get('/truck/details/{id}', 'OrderController@detailsOrders')->name('details');
+Route::post('/truck/details/{id}', 'OrderController@updateOrdersDetails');
 
 Route::get('/test', function () {
     return view('layouts/customerSidebar');

@@ -11,8 +11,6 @@
 }
 
 h3, h4 {
-    font-family: "Raleway", sans-serif;
-    font-weight: 700;
     font-size: 36px;
     margin-left: 25px;
 }
@@ -79,8 +77,13 @@ section {
     border-top: 1px solid #ccc;
 }
 .row-total h4 {
-    font-size: 30px;
+    font-size: 26px;
 }
+
+.blue {
+    background-color: #06B7F9;
+}
+
 .row-item-total {
     width: 40%;
     text-align: left;
@@ -129,6 +132,30 @@ section {
     margin-left: 0px;
     font-weight: bold;
     margin-right: 30px;
+}
+
+.waiting {
+    color: #878787;
+}
+
+.green {
+    color: #02CB24;
+}
+
+.done {
+    color: #06B7F9;
+}
+
+.blue {
+    background-color: #06B7F9;
+}
+
+.red {
+    color: #FF0000;
+}
+
+.black {
+    color: #010101;
 }
 
 @media only screen and (min-width: 1024px) {

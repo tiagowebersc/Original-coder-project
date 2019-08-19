@@ -66,8 +66,8 @@
 
                         <tr>
                             <td class="daySchedule"><?= $weekdays[$schedule->weekday] ?>:</td>
-                            <td><?= $schedule->start_time . ' - ' . $schedule->end_time ?></td>
-                            <td> / Place:</td>
+                            <td class="daySchedule"><?= $schedule->start_time . ' - ' . $schedule->end_time ?></td>
+                            <td class="daySchedule">City: {{$schedule->city}}</td>
                         </tr>
 
                         <?php
@@ -97,7 +97,7 @@
             <div class="container">
                 <div class="iteminfo" name="iteminfo">
                     <h2 name="itemname" class="itemName">{{$menu->name}}</h2>
-                    <h2 class="itemPrice">{{$menu->price}}€</h2>
+                    <h2 class="itemPrice">{{number_format($menu->price, 2)}}€</h2>
                 </div>
                 <hr class="itemseparator">
                 <form class="itemform" name="itemform" action="" method="POST">

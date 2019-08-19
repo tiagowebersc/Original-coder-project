@@ -1,305 +1,299 @@
-
-*{
-  box-sizing: border-box;
-  animation-duration: 0.3s;
+* {
+    box-sizing: border-box;
+    animation-duration: 0.3s;
 }
 
 *:not(input) {
-  margin: 0;
-  padding:0;
-  border: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
-
 
 /* RESPONSIVE SMARTPHONE */
 
 /* HEADER */
 
-header {  
-  height: 640px;
-  resize: both;
-  overflow: scroll;
+header {
+    height: 640px;
+    resize: both;
+    overflow: scroll;
 }
 
-.backgrounddiv{
-  background-image: url("/assets/IMGS/frittenwerk.jpg");
-  background-size: cover;
-  background-position: 50% 50%;
+.backgrounddiv {
+    background-image: url('/assets/IMGS/frittenwerk.jpg');
+    background-size: cover;
+    background-position: 50% 50%;
 }
 
 .separator {
-  border: 1px solid #FFFFFF;
-  opacity: .5;
-  border-radius: 5px;
-  width: 300px;
-  margin: 0 auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
+    border: 1px solid #ffffff;
+    opacity: 0.5;
+    border-radius: 5px;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .truckinfo {
-  padding-top: 100px;
-  padding-bottom: 10px; 
-  text-align: center;
-  position: relative;
-  color: white;
+    padding-top: 100px;
+    padding-bottom: 10px;
+    text-align: center;
+    position: relative;
+    color: white;
 }
 
 .truckinfo h1 {
-  font-family: 'Raleway', sans-serif;
-  font-size: 46px;
-  text-shadow: 3px 0 0 black, -3px 0 0 black, 0 3px 0 black, 0 -3px 0 black, 2px 2px black, -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black;
+    font-family: 'Raleway', sans-serif;
+    font-size: 46px;
+    text-shadow: 3px 0 0 black, -3px 0 0 black, 0 3px 0 black, 0 -3px 0 black,
+        2px 2px black, -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black;
 }
 
-.reviewDiv{
-  display: flex;
+.reviewDiv {
+    display: flex;
 }
 
-.reviewNbr{
-  color: #FFFFFF;
-  font-size: 12px;
-  padding-top: 13px;
-  padding-left: 8px;
+.reviewNbr {
+    color: #ffffff;
+    font-size: 12px;
+    padding-top: 13px;
+    padding-left: 8px;
 }
 
 .favstar {
-  display: flex;
-  justify-content: space-around;
-  font-family: 'Roboto Slab', serif;
-  padding-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Roboto Slab', serif;
+    padding-top: 10px;
 }
 
-.truckcontact{
-  font-family: 'Roboto Slab', serif;
-  display: flex;
-  justify-content: space-around;
+.truckcontact {
+    font-family: 'Roboto Slab', serif;
+    display: flex;
+    justify-content: space-around;
 }
 
-.contactlist{
-  text-align: left;
+.contactlist {
+    text-align: left;
 }
 
 .contact {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
-.contactnumber{
-  font-size: 18px;
-  display: flex;
-  padding-bottom: 10px;
+.contactnumber {
+    font-size: 18px;
+    display: flex;
+    padding-bottom: 10px;
 }
 
-.phoneInfo{
-  padding-top: 30px;
+.phoneInfo {
+    padding-top: 30px;
 }
 
-.contactweb{
-  font-size: 18px;
-  display: flex;
+.contactweb {
+    font-size: 18px;
+    display: flex;
 }
 
-.webInfo{
-padding-top: 5px;
-padding-left: 5px;
+.webInfo {
+    padding-top: 5px;
+    padding-left: 5px;
 }
 
-.truckposition{
-  font-size: 12px;
+.truckposition {
+    font-size: 12px;
 }
 
 .hourinfo {
-  font-family: 'Roboto Slab', serif;
+    font-family: 'Roboto Slab', serif;
 }
 
-.scheduleTable{
-  margin: 0 auto;
+.scheduleTable {
+    margin: 0 auto;
 }
 
-
-.daySchedule{
-  font-family: 'Raleway', sans-serif;
+.daySchedule {
+    font-family: 'Raleway', sans-serif;
+    padding: 0 7px 0 7px;
 }
 
-.starlogo{
-  height: 38.12px;
+.starlogo {
+    height: 38.12px;
 }
 
-.heartlogo{
-  height: 38.12px;
+.heartlogo {
+    height: 38.12px;
 }
 
 .positionImg {
-  height: 38.11px;
+    height: 38.11px;
 }
 
 .scrollImg {
-  height: 29.31px;
+    height: 29.31px;
 }
 
 .phoneicon {
-  height: 45px;
-  margin-top: 20px;
+    height: 45px;
+    margin-top: 20px;
 }
 
 .webicon {
-  height: 40px;
+    height: 40px;
 }
-
-
 
 /* MAIN */
 
 main {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  align-content: center;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: center;
 }
 
 .itemCard {
-  /* Add shadows to create the "card" effect */
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  width: 270px;
-  height: 350px;
-  margin-bottom: 70px;
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 270px;
+    height: 350px;
+    margin-bottom: 70px;
 }
 
 /* On mouse-over, add a deeper shadow */
 .itemCard:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .itemImg {
-  height: 200px;
-  width: 3rem ;
+    height: 200px;
+    width: 3rem;
 }
 
 /* Add some padding inside the card container */
 .container {
-  padding: 2px 16px;
+    padding: 2px 16px;
 }
 
 .plusBtn {
-  background-color: #06B7F9;
-  color: white;
-  border-radius: 5px;
-  font-size: 2rem;
-  height: 2.5rem;
-  width: 2.5rem;
-  line-height: 1.2rem;
+    background-color: #06b7f9;
+    color: white;
+    border-radius: 5px;
+    font-size: 2rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    line-height: 1.2rem;
 }
 
 .minusBtn {
-  background-color: #FF0000;
-  color: white;
-  border-radius: 5px;
-  font-size: 2rem;
-  height: 2.5rem;
-  width: 2.5rem;
-  line-height: 1.2rem;
+    background-color: #ff0000;
+    color: white;
+    border-radius: 5px;
+    font-size: 2rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    line-height: 1.2rem;
 }
 
 .itemform {
-  display: flex;
-  justify-content: space-between;
-} 
-
-.iteminfo {
-  display: flex;
-  justify-content: space-around;
-  padding-top: 20px;
-  padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
 }
 
-.itemseparator{
-  border: 0.5px solid black;
+.iteminfo {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.itemseparator {
+    border: 0.5px solid black;
 }
 
 .itemName {
-  font-size: 18px;
-  font-weight: lighter;
-  padding-top: 5px;
+    font-size: 18px;
+    font-weight: lighter;
+    padding-top: 5px;
 }
 
 .itemPrice {
-  font-size: 28px;
+    font-size: 28px;
 }
 
-.itemform{
-  padding-top: 20px;
+.itemform {
+    padding-top: 20px;
 }
 
 .plusMinus {
-  display: flex;
+    display: flex;
 }
 
-.plusMinus p{
-  padding-top: 9px;
-} 
+.plusMinus p {
+    padding-top: 9px;
+}
 
 .addToBag {
-  background-color: #06B7F9;
-  color: white;
-  border-radius: 5px;
-  font-size: 1.5rem;
+    background-color: #06b7f9;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.5rem;
 }
 
 .background {
-  padding: 60px 0 0 0;
+    padding: 60px 0 0 0;
 }
 
 @media only screen and (min-width: 1024px) {
+    header {
+        height: 800px;
+    }
 
-  header{
-    height: 800px;
-  }
+    .backgrounddiv {
+        width: 100%;
+    }
 
-  .backgrounddiv{
-    width: 100%;
-  }
+    .separator {
+        width: 820px;
+    }
 
-  .separator {
-    width: 820px;
-  }
+    .truckinfo h1 {
+        font-size: 132px;
+    }
 
-  .truckinfo h1 {
-    font-size: 132px;
-  }
+    .reviewDiv {
+        width: 100px;
+    }
 
-  .reviewDiv {
-    width: 100px;
-  }
+    .contactnumber {
+        width: 300px;
+        padding-left: 60px;
+    }
 
-  .contactnumber {
-    width: 300px; 
-    padding-left: 60px;
-  }
+    .phoneInfo {
+        font-size: 25px;
+    }
 
+    .webInfo {
+        font-size: 25px;
+    }
 
-  .phoneInfo {
-    font-size: 25px;
-  }
+    .contactweb {
+        padding-left: 60px;
+        padding-bottom: 20px;
+    }
 
-  .webInfo {
-    font-size: 25px;
-  }
+    .positionInfo {
+        font-size: 25px;
+    }
 
-  .contactweb{
-    padding-left: 60px;
-    padding-bottom: 20px;
-  }
-
-  .positionInfo{
-    font-size: 25px;
-  }
-
-  .truckposition{
-    padding-right: 50px;
-  }
-  .background {
-    padding: 0 0 0 125px;
-  }
+    .truckposition {
+        padding-right: 50px;
+    }
+    .background {
+        padding: 0 0 0 125px;
+    }
 }
-
