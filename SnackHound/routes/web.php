@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,31 +10,30 @@
 |
 */
 
-Route::get('/','indexController@index')->name('index');
+Route::get('/', 'indexController@index')->name('index');
 
+// Login / Signup / ...
 Route::get('/login', 'UserController@login')->name('login');
-
-Route::get('/signup', 'UserController@signup');
-
 Route::post('/login', 'UserController@loginPost');
-
+Route::get('/signup', 'UserController@signup');
 Route::post('/signup', 'UserController@signupPost');
-
 Route::get('/forgot_password', 'UserController@forgotPassword');
 Route::post('/forgot_password', 'UserController@forgotPasswordPost');
-
 Route::get('/reset_password/{token}', 'UserController@resetPassword');
 Route::post('/reset_password/{token}', 'UserController@resetPasswordPost');
-
+// Lunchbag functions
+Route::get('/lunchbagTotal', 'LunchBagController@totalItems');
+Route::put('/addlunchbag/{idMenu}', 'LunchBagController@addLunchBag');
+Route::delete('/removelunchbag/{idMenu}', 'LunchBagController@removeLunchBag');
 
 // TRUCKS DASHBOARD
-Route::get('/truck', 'TruckController@getOrders');
+Route::get('/truck', 'TruckController@getOrders')->name('truck');
 Route::post('/truck', 'TruckController@updateOrders');
 
 Route::get('/truck/orderFilter', 'TruckController@filterOrder');
 Route::post('/truck/orderFilter', 'TruckController@updateOrders');
 
-Route::get('/truck/details/{id}', 'TruckController@detailsOrders')->name('details');
+Route::get('/truck/details/{id}', 'OrderController@detailsOrders')->name('details');
 
 Route::get('/test', function () {
     return view('layouts/customerSidebar');
@@ -58,6 +56,9 @@ Route::get('/footer', function () {
 
 Route::get('/test2', function () {
     return view('layouts/truckownerSidebar');
+});
+Route::get('/test3', function () {
+    return view('layouts/filterbar');
 });
 
 Route::get('/listTest', 'IndexController@foodTruckList');

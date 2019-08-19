@@ -151,17 +151,30 @@ padding-left: 5px;
 
 /* MAIN */
 
-.itemcard {
+main {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.itemCard {
   /* Add shadows to create the "card" effect */
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   width: 270px;
-  height: 370px;
+  height: 350px;
+  margin-bottom: 70px;
 }
 
 /* On mouse-over, add a deeper shadow */
-.itemcard:hover {
+.itemCard:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.itemImg {
+  height: 200px;
+  width: 3rem ;
 }
 
 /* Add some padding inside the card container */
@@ -169,18 +182,24 @@ padding-left: 5px;
   padding: 2px 16px;
 }
 
-.editbtn {
+.plusBtn {
   background-color: #06B7F9;
   color: white;
   border-radius: 5px;
   font-size: 2rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  line-height: 1.2rem;
 }
 
-.deletebtn {
+.minusBtn {
   background-color: #FF0000;
   color: white;
   border-radius: 5px;
   font-size: 2rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  line-height: 1.2rem;
 }
 
 .itemform {
@@ -190,13 +209,38 @@ padding-left: 5px;
 
 .iteminfo {
   display: flex;
+  justify-content: space-around;
+  padding-top: 20px;
+  padding-bottom: 10px;
 }
 
-.plusminus {
+.itemseparator{
+  border: 0.5px solid black;
+}
+
+.itemName {
+  font-size: 18px;
+  font-weight: lighter;
+  padding-top: 5px;
+}
+
+.itemPrice {
+  font-size: 28px;
+}
+
+.itemform{
+  padding-top: 20px;
+}
+
+.plusMinus {
   display: flex;
 }
 
-.addItem {
+.plusMinus p{
+  padding-top: 9px;
+} 
+
+.addToBag {
   background-color: #06B7F9;
   color: white;
   border-radius: 5px;

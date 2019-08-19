@@ -14,7 +14,7 @@ class TruckTableSeeder extends Seeder
         DB::table('truck')->insert([
             'id_truck' => 1,
             'id_user' => 2,
-            'name' => 'La maracas',
+            'name' => 'Las maracas',
             'image' => 'las-maracas.jpg',
             'price_range' => 3,
             'telephone' => '666 111 222',
@@ -38,6 +38,36 @@ class TruckTableSeeder extends Seeder
             'website' => 'http://www.themooseislose.lu',
             'facebook_link' => 'http://www.facebook.com',
             'instagram_link' => 'http://www.instagram.com',
+            'twitter_link' => 'http://www.twitter.com'
+        ]);
+
+        DB::table('truck')->insert([
+            'id_truck' => 3,
+            'id_user' => 3,
+            'name' => 'Arancino',
+            'image' => 'arancino.jpg',
+            'price_range' => 3,
+            'telephone' => '691 997 989',
+            'online_order' => false,
+            'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod hic facere ipsa fuga perferendis sunt pariatur perspiciatis tempora. Amet quos vero est distinctio praesentium veritatis blanditiis aut voluptatibus ducimus voluptate.',
+            'website' => 'http://www.arancino.lu/',
+            'facebook_link' => 'https://fr-fr.facebook.com/arancino.lu/',
+            'instagram_link' => 'https://www.instagram.com/arancino.lu/',
+            'twitter_link' => 'http://www.twitter.com'
+        ]);
+
+        DB::table('truck')->insert([
+            'id_truck' => 4,
+            'id_user' => 3,
+            'name' => 'Burger & Co.',
+            'image' => 'burger_and_co.jpg',
+            'price_range' => 2,
+            'telephone' => '691 997 994',
+            'online_order' => false,
+            'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod hic facere ipsa fuga perferendis sunt pariatur perspiciatis tempora. Amet quos vero est distinctio praesentium veritatis blanditiis aut voluptatibus ducimus voluptate.',
+            'website' => 'http://www.burgerandco.lu/',
+            'facebook_link' => 'https://fr-fr.facebook.com/BurgerandCo.lu/',
+            'instagram_link' => 'https://www.instagram.com/',
             'twitter_link' => 'http://www.twitter.com'
         ]);
     }
