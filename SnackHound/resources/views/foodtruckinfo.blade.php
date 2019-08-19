@@ -93,7 +93,7 @@
         <?php
         foreach ($menus as $menu) { ?>
         <div class="itemcard">
-            <img class="favoritestar" src="assets/IMGS/pizza1.jpg" alt="Avatar" style="width:100%">
+            <img class="favoritestar" src="{{URL::asset('assets/IMGS/pizza1.jpg')}}" alt="Avatar" style="width:100%">
             <div class="container">
                 <div class="iteminfo" name="iteminfo">
                     <h2 name="itemname">{{$menu->name}}</h2>
