@@ -221,6 +221,7 @@ main {
 .itemName {
   font-size: 18px;
   font-weight: lighter;
+  padding-top: 5px;
 }
 
 .itemPrice {
