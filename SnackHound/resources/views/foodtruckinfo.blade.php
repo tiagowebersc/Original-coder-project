@@ -96,18 +96,18 @@
             <img class="favoritestar" src="{{URL::asset('assets/IMGS/pizza1.jpg')}}" alt="Avatar" style="width:100%">
             <div class="container">
                 <div class="iteminfo" name="iteminfo">
-                    <h2 name="itemname">{{$menu->name}}</h2>
-                    <h2>Price</h2>
+                    <h2 name="itemname" class="itemName">{{$menu->name}}</h2>
+                    <h2 class="itemPrice">Price</h2>
                 </div>
-                <hr>
+                <hr class="itemseparator">
                 <form class="itemform" name="itemform" action="" method="POST">
-                    <div class="plusminus" name="plusminus">
-                        <input class="editbtn" name="editbtn" type="submit" value="+">
+                    <div class="plusMinus" name="plusminus">
+                        <input class="plusBtn" name="plusBtn" type="submit" value="+">
                         <p>Number</p>
-                        <input class="deletebtn" name="deletebtn" type="submit" value="-">
+                        <input class="minusBtn" name="minusBtn" type="submit" value="-">
                     </div>
                     <div class="addBtn" name="addBtn">
-                        <input name="addItem" class="addItem" type="submit" value="Add">
+                        <input name="addToBag" class="addToBag" type="submit" value="Add">
                     </div>
                 </form>
             </div>
