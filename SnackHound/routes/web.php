@@ -21,6 +21,7 @@ Route::get('/forgot_password', 'UserController@forgotPassword');
 Route::post('/forgot_password', 'UserController@forgotPasswordPost');
 Route::get('/reset_password/{token}', 'UserController@resetPassword');
 Route::post('/reset_password/{token}', 'UserController@resetPasswordPost');
+Route::get('/signout', 'UserController@signout');
 // Lunchbag functions
 Route::get('/lunchbagTotal', 'LunchBagController@totalItems');
 Route::put('/addlunchbag/{idMenu}', 'LunchBagController@addLunchBag');
