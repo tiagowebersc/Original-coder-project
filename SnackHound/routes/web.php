@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,7 +22,7 @@ Route::post('/forgot_password', 'UserController@forgotPasswordPost');
 Route::get('/reset_password/{token}', 'UserController@resetPassword');
 Route::post('/reset_password/{token}', 'UserController@resetPasswordPost');
 // Lunchbag functions
-Route::get('/lunchbagTotal', 'LunchBagController@totalItens');
+Route::get('/lunchbagTotal', 'LunchBagController@totalItems');
 Route::put('/addlunchbag/{idMenu}', 'LunchBagController@addLunchBag');
 Route::delete('/removelunchbag/{idMenu}', 'LunchBagController@removeLunchBag');
 
