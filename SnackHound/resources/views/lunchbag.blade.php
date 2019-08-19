@@ -1,7 +1,7 @@
 @extends('layouts.customerSidebar')
 
 @section('css')
-<link rel="stylesheet" href="{{ URL::asset('/css/password.css') }}" />
+<link rel="stylesheet" href="{{ URL::asset('/css/lunchbag.css') }}" />
 <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 @endsection
 
