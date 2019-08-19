@@ -83,6 +83,8 @@ class UserController extends Controller
         $user->hash_password = password_hash($request->password, PASSWORD_DEFAULT);
         $user->save();
 
+        // save the user info in the session
+        Self::SaveSessionInfo($user);
         // redirect to a new page
         if (isset($request->redirect)) {
             return redirect()->route($request->redirect);

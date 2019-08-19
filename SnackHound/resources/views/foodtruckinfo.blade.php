@@ -66,8 +66,8 @@
 
                         <tr>
                             <td class="daySchedule"><?= $weekdays[$schedule->weekday] ?>:</td>
-                            <td><?= $schedule->start_time . ' - ' . $schedule->end_time ?></td>
-                            <td> / Place:</td>
+                            <td class="daySchedule"><?= $schedule->start_time . ' - ' . $schedule->end_time ?></td>
+                            <td class="daySchedule">City: {{$schedule->city}}</td>
                         </tr>
 
                         <?php
