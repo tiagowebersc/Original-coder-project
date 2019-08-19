@@ -33,6 +33,9 @@ Route::post('/truck', 'TruckController@updateOrders');
 Route::get('/truck/orderFilter', 'TruckController@filterOrder');
 Route::post('/truck/orderFilter', 'TruckController@updateOrders');
 
+
+Route::get('/truck/menu/{idTruck}', 'MenuController@main');
+
 Route::get('/truck/details/{id}', 'OrderController@detailsOrders')->name('details');
 
 Route::get('/test', function () {
