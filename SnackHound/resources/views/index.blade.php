@@ -164,8 +164,7 @@
                     lng: 6.129583
                 },
                 iconImage: 'https://img.icons8.com/officel/40/000000/marker.png',
-                content: '<img src="{{URL::asset('
-                assets / IMGS / Food Trucks / ballucci_catering.jpg ')}}">',
+                content: '<img src="{{URL::asset('assets / IMGS / Food Trucks / ballucci_catering.jpg ')}}">',
                 animation: google.maps.Animation.DROP
             },
             {
@@ -174,16 +173,14 @@
                     lng: 5.915250
                 },
                 iconImage: 'https://img.icons8.com/officel/40/000000/marker.png',
-                content: '<img src="{{URL::asset('
-                assets / IMGS / Food Trucks / go_fish.jpg ')}}">'
+                content: '<img src="{{URL::asset('assets / IMGS / Food Trucks / go_fish.jpg ')}}">'
             },
             {
                 coords: {
                     lat: 49.495640,
                     lng: 5.985173
                 },
-                content: '<img src="{{URL::asset('
-                assets / IMGS / Food Trucks / mr.froopy - frozenjoghurt.jpg ')}}">',
+                content: '<img src="{{URL::asset('assets / IMGS / Food Trucks / mr.froopy - frozenjoghurt.jpg ')}}">',
                 iconImage: 'https://img.icons8.com/officel/40/000000/marker.png'
             }
 

@@ -27,7 +27,7 @@
                       type="button"
                       data-toggle="dropdown"
                     >
-                      Dropdown <span class="caret"></span>
+                      Filter <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
                       <li>
@@ -48,7 +48,6 @@
                     </ul>
                 </div>
             </div>
-
     </section>
 
 
@@ -76,18 +75,6 @@
     <h1>sdkffdsdkj</h1>
 
     <script>
-            window.onscroll = function() {myFunction()};
-
-        let navbar = document.getElementById("filterbar-container");
-        let sticky = navbar.offsetTop;
-
-        function myFunction() {
-          if (window.pageYOffset >= sticky) {
-            navbar.classList.add("sticky")
-          } else {
-            navbar.classList.remove("sticky");
-          }
-        }
 
              $(document).ready(function() {
               $(".dropdown").on("hide.bs.dropdown", function() {
@@ -102,12 +89,16 @@
 
             let filter = document.getElementById("filter-container");
             let stickyFilter = filter.offsetTop;
+            let navbar = document.getElementById("filterbar-container");
+            let sticky = navbar.offsetTop;
 
             function myFunction2() {
-              if (window.pageYOffset >= stickyFilter) {
+              if (window.pageYOffset >= stickyFilter && window.pageYOffset >= sticky ) {
                 filter.classList.add("sticky-filter")
+                navbar.classList.add("sticky")
                  } else {
                     filter.classList.remove("sticky-filter");
+                    navbar.classList.remove("sticky");
                 }
             }
         </script>

@@ -22,8 +22,8 @@ html {
     width: 100px;
 }
 .dropdown-menu {
-    align-items: center;
-    text-align: center;
+    text-align: center; 
+    width: 400px;
 }
 .dropdown-menu li a {
     display: flex;
@@ -52,23 +52,24 @@ html {
     .filter-container{
         display: none;
     }
-    
+
     .filterbar-container {
         display: inherit;
         width: 99%;
         height: 90px;
         background-color: white;
         padding: 10px;
-        overflow: hidden;
+        /* overflow: hidden; */
     }
     .sticky {
         position: fixed;
         top: 0;
         width: 98%;
-    }
+      }
+
     .sticky + .content {
         padding-top: 60px;
-    }
+     }
     .filterbar-container ul {
         list-style: none;
         align-items: center;
