@@ -48,8 +48,6 @@
             <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/icons8-mobile-shopping.svg')}}"> Orders </a></li>
             <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/surface347926.svg')}}"> Menu </a></li>
             <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/surface349757.svg')}}"> Schedule </a></li>
-            <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/surface351177.svg')}}"> Payment Settings </a></li>
-            <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/surface348289.svg')}}"> Media </a></li>
             <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-settings (1).svg')}}"> Settings </a></li>
         </ul>
 
