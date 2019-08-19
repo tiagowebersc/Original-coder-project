@@ -347,5 +347,577 @@ class MenuTableSeeder extends Seeder
             'available' => true,
             'image' => 'perrier.jpg'
         ]);
+
+        // Arancino
+        DB::table('menu')->insert([
+            'id_menu' => 35,
+            'id_truck' => 3,
+            'name' => 'Arancino Bianco',
+            'description' => 'Lorem ipsum',
+            'price' => 4.5,
+            'available' => true,
+            'image' => 'bianco.jpg'
+        ]);
+     
+        DB::table('menu')->insert([
+            'id_menu' => 36,
+            'id_truck' => 3,
+            'name' => 'Arancino Rosso',
+            'description' => 'Lorem ipsum',
+            'price' => 4.5,
+            'available' => true,
+            'image' => 'rosso.jpg'
+        ]);
+     
+        DB::table('menu')->insert([
+            'id_menu' => 37,
+            'id_truck' => 3,
+            'name' => 'Arancino Verde',
+            'description' => 'Lorem ipsum',
+            'price' => 4.5,
+            'available' => true,
+            'image' => 'verde.jpg'
+        ]);
+     
+        DB::table('menu')->insert([
+            'id_menu' => 38,
+            'id_truck' => 3,
+            'name' => 'Arancino Gluten-Free',
+            'description' => 'Lorem ipsum',
+            'price' => 4.5,
+            'available' => true,
+            'image' => 'verde.jpg'
+        ]);
+     
+        DB::table('menu')->insert([
+            'id_menu' => 39,
+            'id_truck' => 3,
+            'name' => 'Mini-Arancini',
+            'description' => 'Lorem ipsum',
+            'price' => 6.5,
+            'available' => true,
+            'image' => 'arancini.jpg'
+        ]);
+     
+        DB::table('menu')->insert([
+            'id_menu' => 40,
+            'id_truck' => 3,
+            'name' => 'Pizza Slice of the Day',
+            'description' => 'Lorem ipsum',
+            'price' => 4.5,
+            'available' => true,
+            'image' => 'pizza.jpg'
+        ]);
+     
+        DB::table('menu')->insert([
+            'id_menu' => 41,
+            'id_truck' => 3,
+            'name' => 'Soup of the Day',
+            'description' => 'Lorem ipsum',
+            'price' => 4.5,
+            'available' => true,
+            'image' => 'soup.jpg'
+        ]);
+     
+        DB::table('menu')->insert([
+            'id_menu' => 42,
+            'id_truck' => 3,
+            'name' => 'Mixed Salad LG',
+            'description' => 'Lorem ipsum',
+            'price' => 7.5,
+            'available' => true,
+            'image' => 'salad_lg.jpg'
+        ]);
+     
+        DB::table('menu')->insert([
+            'id_menu' => 43,
+            'id_truck' => 3,
+            'name' => 'Mixed Salad SM',
+            'description' => 'Lorem ipsum',
+            'price' => 3.5,
+            'available' => true,
+            'image' => 'salad_sm.jpg'
+        ]);
+     
+        DB::table('menu')->insert([
+            'id_menu' => 44,
+            'id_truck' => 3,
+            'name' => 'Panna Cotta',
+            'description' => 'Lorem ipsum',
+            'price' => 4,
+            'available' => true,
+            'image' => 'panna_cotta.jpg'
+        ]);
+     
+        DB::table('menu')->insert([
+            'id_menu' => 45,
+            'id_truck' => 3,
+            'name' => 'Tiramisu',
+            'description' => 'Lorem ipsum',
+            'price' => 4,
+            'available' => true,
+            'image' => 'tiramisu.jpg'
+        ]);
+     
+        DB::table('menu')->insert([
+            'id_menu' => 46,
+            'id_truck' => 3,
+            'name' => 'Cannolo Siciliano',
+            'description' => 'Lorem ipsum',
+            'price' => 4,
+            'available' => true,
+            'image' => 'cannolo.jpg'
+        ]);
+     
+        DB::table('menu')->insert([
+            'id_menu' => 47,
+            'id_truck' => 3,
+            'name' => 'Seasonal Fruit Salad',
+            'description' => 'Lorem ipsum',
+            'price' => 4,
+            'available' => true,
+            'image' => 'fruit_salad.jpg'
+        ]);
+     
+        DB::table('menu')->insert([
+            'id_menu' => 48,
+            'id_truck' => 3,
+            'name' => 'Beer',
+            'description' => 'Lorem ipsum',
+            'price' => 3.5,
+            'available' => true,
+            'image' => 'beer.jpg'
+        ]);
+     
+        DB::table('menu')->insert([
+            'id_menu' => 49,
+            'id_truck' => 3,
+            'name' => 'Italian Soda',
+            'description' => 'Lorem ipsum',
+            'price' => 3.5,
+            'available' => true,
+            'image' => 'italiansoda.jpg'
+        ]);
+     
+        DB::table('menu')->insert([
+            'id_menu' => 50,
+            'id_truck' => 3,
+            'name' => 'Salad Menu',
+            'description' => 'Lorem ipsum',
+            'price' => 10.4,
+            'available' => true,
+            'image' => 'rosso.jpg'
+        ]);
+     
+        DB::table('menu')->insert([
+            'id_menu' => 51,
+            'id_truck' => 3,
+            'name' => 'Pizza Menu',
+            'description' => 'Lorem ipsum',
+            'price' => 10.4,
+            'available' => true,
+            'image' => 'pizza.jpg'
+        ]);
+     
+        DB::table('menu')->insert([
+            'id_menu' => 52,
+            'id_truck' => 3,
+            'name' => 'Arancino + Pizza or Salad Menu',
+            'description' => 'Lorem ipsum',
+            'price' => 12,
+            'available' => true,
+            'image' => 'bianco.jpg'
+        ]);
+     
+        //BURGER & Co 
+        DB::table('menu')->insert([
+            'id_menu' => 53,
+            'id_truck' => 4,
+            'name' => 'Classic Burger',
+            'description' => 'Artisan bread + ground beef + ketchup + onions + tomatoes + pickles + lettuce',
+            'price' => 7,
+            'available' => true,
+            'image' => 'classic_burger.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 54,
+            'id_truck' => 4,
+            'name' => 'Classic Burger Menu',
+            'description' => 'Artisan bread + ground beef + ketchup + onions + tomatoes + pickles + lettuce',
+            'price' => 11.5,
+            'available' => true,
+            'image' => 'classic_burger.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 55,
+            'id_truck' => 4,
+            'name' => 'Cheeseburger',
+            'description' => 'Artisan bread + ground beef  + cheddar + ketchup + tomatoes + lettuce',
+            'price' => 7.5,
+            'available' => true,
+            'image' => 'cheeseburger.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 56,
+            'id_truck' => 4,
+            'name' => 'Cheeseburger Menu',
+            'description' => 'Artisan bread + ground beef  + cheddar + ketchup + tomatoes + lettuce/fries + drink',
+            'price' => 12,
+            'available' => true,
+            'image' => 'cheeseburger.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 57,
+            'id_truck' => 4,
+            'name' => 'Bacon + Cheese Burger',
+            'description' => 'Artisan bread + ground beef + bacon + cheddar + ketchup + tomatoes + lettuce',
+            'price' => 8,
+            'available' => true,
+            'image' => 'bacon_cheeseburger.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 58,
+            'id_truck' => 4,
+            'name' => 'Bacon + Cheese Burger Menu',
+            'description' => 'Artisan bread + ground beef + bacon + cheddar + ketchup + tomatoes + lettuce/fries + drink',
+            'price' => 12.5,
+            'available' => true,
+            'image' => 'bacon_cheeseburger.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 59,
+            'id_truck' => 4,
+            'name' => 'Veggie Burger',
+            'description' => 'Artisan bread + vegetarian patty + ketchup + tomatoes + pickles + lettuce',
+            'price' => 8,
+            'available' => true,
+            'image' => 'veggie_burger.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 60,
+            'id_truck' => 4,
+            'name' => 'Veggie Burger Menu',
+            'description' => 'Artisan bread + vegetarian patty + ketchup + tomatoes + pickles + lettuce/fries + drink',
+            'price' => 12.5,
+            'available' => true,
+            'image' => 'veggie_burger.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 61,
+            'id_truck' => 4,
+            'name' => 'Savoyard Burger',
+            'description' => 'Artisan bread + ground beef + parma ham + raclette + lettuce + tomatoes + ketchup',
+            'price' => 8.5,
+            'available' => true,
+            'image' => 'savoyard.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 62,
+            'id_truck' => 4,
+            'name' => 'Savoyard Burger Menu',
+            'description' => 'Artisan bread + ground beef + parma ham + raclette + lettuce + tomatoes + ketchup/fries + drink',
+            'price' => 13,
+            'available' => true,
+            'image' => 'savoyard.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 63,
+            'id_truck' => 4,
+            'name' => 'Chevre Burger',
+            'description' => 'Artisan bread + ground beef + goat cheese + honey + lettuce + tomatoes',
+            'price' => 8.5,
+            'available' => true,
+            'image' => 'chevre.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 64,
+            'id_truck' => 4,
+            'name' => 'Chevre Burger Menu',
+            'description' => 'Artisan bread + ground beef + goat cheese + honey + lettuce + tomatoes/fries + drink',
+            'price' => 13,
+            'available' => true,
+            'image' => 'chevre.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 65,
+            'id_truck' => 4,
+            'name' => 'Salmon Burger',
+            'description' => 'Artisan bread + smoked salmon + cream cheese + ketchup + red onions + tomatoes + lettuce',
+            'price' => 8.5,
+            'available' => true,
+            'image' => 'salmon_burger.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 66,
+            'id_truck' => 4,
+            'name' => 'Salmon Burger Menu',
+            'description' => 'Artisan bread + smoked salmon + cream cheese + ketchup + red onions + tomatoes + lettuce/fries + drink',
+            'price' => 13,
+            'available' => true,
+            'image' => 'salmon_burger.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 67,
+            'id_truck' => 4,
+            'name' => 'Fish Burger',
+            'description' => 'Artisan bread + fish filet + lemon juice + tartar sauce + red onions + tomatoes + lettuce',
+            'price' => 8.5,
+            'available' => true,
+            'image' => 'fish.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 68,
+            'id_truck' => 4,
+            'name' => 'Fish Burger Menu',
+            'description' => 'Artisan bread + fish filet + lemon juice + tartar sauce + red onions + tomatoes + lettuce/fries + drink',
+            'price' => 13,
+            'available' => true,
+            'image' => 'fish.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 69,
+            'id_truck' => 4,
+            'name' => 'Hot Salsa Burger',
+            'description' => 'Artisan bread + ground beef + cheddar + hot salsa + jalapenos + tomatoes + lettuce',
+            'price' => 8.5,
+            'available' => true,
+            'image' => 'hot_salsa.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 70,
+            'id_truck' => 4,
+            'name' => 'Hot Salsa Burger Menu',
+            'description' => 'Artisan bread + ground beef + cheddar + hot salsa + jalapenos + tomatoes + lettuce/fries + drink',
+            'price' => 13,
+            'available' => true,
+            'image' => 'hot_salsa.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 71,
+            'id_truck' => 4,
+            'name' => 'El Gringo Burger',
+            'description' => 'Artisan bread + ground beef + cheddar + guacamole + onions + tomatoes + lettuce',
+            'price' => 8.5,
+            'available' => true,
+            'image' => 'el_gringo.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 72,
+            'id_truck' => 4,
+            'name' => 'El Gringo Burger Menu',
+            'description' => 'Artisan bread + ground beef + cheddar + guacamole + onions + tomatoes + lettuce/fries + drink',
+            'price' => 13,
+            'available' => true,
+            'image' => 'el_gringo.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 73,
+            'id_truck' => 4,
+            'name' => 'Chicken Burger',
+            'description' => 'Artisan bread + chicken + ketchup + red onions + tomatoes + lettuce',
+            'price' => 8.5,
+            'available' => true,
+            'image' => 'grilled_chicken.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 74,
+            'id_truck' => 4,
+            'name' => 'Chicken Burger Menu',
+            'description' => 'Artisan bread + chicken + ketchup + red onions + tomatoes + lettuce/fries + drink',
+            'price' => 13,
+            'available' => true,
+            'image' => 'grilled_chicken.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 75,
+            'id_truck' => 4,
+            'name' => 'Chicken Nuggets',
+            'description' => 'Chicken Nuggets + ketchup + red onions + tomatoes + lettuce',
+            'price' => 8.5,
+            'available' => true,
+            'image' => 'chicken_nuggets.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 76,
+            'id_truck' => 4,
+            'name' => 'Chicken Nuggets Menu',
+            'description' => 'Chicken Nuggets + ketchup + red onions + tomatoes + lettuce/Fries + Drink',
+            'price' => 8.5,
+            'available' => true,
+            'image' => 'chicken_nuggets.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 77,
+            'id_truck' => 4,
+            'name' => 'Chicken Kebab Burger',
+            'description' => 'Chicken kebab + garlic sauce + red onions + tomatoes + salad',
+            'price' => 8.5,
+            'available' => true,
+            'image' => 'chicken_kebab.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 78,
+            'id_truck' => 4,
+            'name' => 'Chicken Kebab Burger Menu',
+            'description' => 'Chicken kebab + garlic sauce + red onions + tomatoes + salad/Fries + Drink',
+            'price' => 13,
+            'available' => true,
+            'image' => 'chicken_kebab.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 79,
+            'id_truck' => 4,
+            'name' => 'Chicken Crispy Burger',
+            'description' => 'Artisan bread + crispy chicken + red onions + tomatoes + lettuce',
+            'price' => 8.5,
+            'available' => true,
+            'image' => 'crispy_chicken.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 80,
+            'id_truck' => 4,
+            'name' => 'Chicken Crispy Burger Menu',
+            'description' => 'Artisan bread + crispy chicken + red onions + tomatoes + lettuce/Fries + Drink',
+            'price' => 13,
+            'available' => true,
+            'image' => 'crispy_chicken.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 81,
+            'id_truck' => 4,
+            'name' => 'Blue Cheese Burger',
+            'description' => 'Artisan bread + ground beef + blue cheese + walnuts + tomatoes + lettuce',
+            'price' => 8.5,
+            'available' => true,
+            'image' => 'blue_cheese.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 82,
+            'id_truck' => 4,
+            'name' => 'Blue Cheese Burger Menu',
+            'description' => 'Artisan bread + ground beef + blue cheese + walnuts + tomatoes + lettuce/Fries + Burger',
+            'price' => 13,
+            'available' => true,
+            'image' => 'blue_cheese.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 83,
+            'id_truck' => 4,
+            'name' => 'Chicken Nuggets Salad',
+            'description' => 'Plate of lettuce and raw vegetables, chicken nuggets and dressing',
+            'price' => 8,
+            'available' => true,
+            'image' => 'chicken_nuggets_salad.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 84,
+            'id_truck' => 4,
+            'name' => 'Grilled Chicken Salad',
+            'description' => 'Plate of lettuce with raw vbegetables, marinated chicken breast and dressing',
+            'price' => 8,
+            'available' => true,
+            'image' => 'grilled_chicken_salad.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 85,
+            'id_truck' => 4,
+            'name' => 'Chicken Caesar Salad',
+            'description' => 'Salad plate with vegetables, chicken breast, caesar dressing',
+            'price' => 8,
+            'available' => true,
+            'image' => 'grilled_chicken_salad.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 86,
+            'id_truck' => 4,
+            'name' => 'Vegetarian Salad',
+            'description' => 'Plate of salad,. vegetables, veggie patty',
+            'price' => 8,
+            'available' => true,
+            'image' => 'salad.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 87,
+            'id_truck' => 4,
+            'name' => 'Salmon Salad',
+            'description' => 'Plate of salad with smoked salmon + vinaigrette',
+            'price' => 9,
+            'available' => true,
+            'image' => 'salmon_salad.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 88,
+            'id_truck' => 4,
+            'name' => 'Fries',
+            'description' => 'Side of fries',
+            'price' => 3,
+            'available' => true,
+            'image' => 'fries.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 89,
+            'id_truck' => 4,
+            'name' => 'Dessert of the Day',
+            'description' => 'Desserts vary by day',
+            'price' => 2.5,
+            'available' => true,
+            'image' => 'dessert.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 90,
+            'id_truck' => 4,
+            'name' => 'Coke Light',
+            'description' => '',
+            'price' => 2.5,
+            'available' => true,
+            'image' => 'coke_light.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 91,
+            'id_truck' => 4,
+            'name' => 'Perrier',
+            'description' => '',
+            'price' => 2.5,
+            'available' => true,
+            'image' => 'perrier.jpg'
+        ]);
     }
 }
