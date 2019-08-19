@@ -41,6 +41,10 @@ Route::get('/test', function () {
     return view('layouts/customerSidebar');
 });
 
+// TEST VIEW for the RESET PASSWORD email
+Route::get('/testEmail', function () {
+    return view('mail');
+});
 
 Route::get('/foodtruckinfo/{id_truck}', 'foodTruckController@main');
 
