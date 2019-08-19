@@ -1,0 +1,180 @@
+* {
+    box-sizing: border-box;
+    font-family: "Roboto Slab", serif;
+}
+
+*:not(input) {
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    color: #010101;
+}
+
+h3, h4 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    margin-left: 25px;
+}
+
+main {
+    padding-top: 100px;
+}
+
+form {
+    width: 50%;
+    margin: 50px auto;
+    text-align: center;
+    min-width: 340px;
+}
+
+.decline-order {
+    margin-left: 8%;
+    background-color: #FF0000;
+}
+
+.accept-order {
+    background-color: #02CB24;
+}
+
+form input {
+    width: 45%;
+    padding: 5px;
+    color: white;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.order-date {
+    font-weight: normal;
+}
+
+section {
+    width: 50%;
+    border: 1px solid #010101;
+    margin: 40px auto;
+    text-align: center;
+    padding: 15px 5px;
+    min-width: 340px;
+    border-radius: 2px;
+    -webkit-box-shadow: 0px 3px 6px 2px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 3px 6px 2px rgba(0,0,0,0.1);
+    box-shadow: 0px 3px 6px 2px rgba(0,0,0,0.1);
+}
+
+
+.row {
+    margin: 0 auto;
+}
+
+.row-item {
+    display: inline-block;
+    width: 40%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.row-total {
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+}
+.row-total h4 {
+    font-size: 30px;
+}
+.row-item-total {
+    width: 40%;
+    text-align: left;
+    margin-left: 6%;
+}
+
+.row-total-value h4 {
+    text-align: right;
+    margin-right: 10%;
+}
+
+.row-name {
+    text-align: left;
+}
+
+.strong-quantity {
+    border: 1px solid black;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+}
+
+.row-quantity {
+    width: 20%;
+}
+
+.order-info {
+    width: 80%;
+    margin: auto;
+}
+
+.order-info p {
+    display: inline-block;
+    width: 40%;
+
+}
+
+.order-info div {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.info-label {
+    text-align: right;
+    margin-left: 0px;
+    font-weight: bold;
+    margin-right: 30px;
+}
+
+@media only screen and (min-width: 1024px) {
+
+    main {
+        margin-left: 124px;
+        padding-top: 62px;
+    }
+
+    h3, h4 {
+        margin-left: 55px;
+    }
+
+    .row-total-value h4 {
+        text-align: right;
+        margin-right: 16%;
+    }
+
+}
+
+
+/* BREAK POINTS FOR NOT OVERLAYING */
+@media only screen and (max-width: 455px) {
+    .order-info {
+        width: 95%;
+        margin: auto;
+    }
+
+    .order-info p:not(.info-label) {
+        text-align: center;
+    }
+
+    .order-info div {
+        margin-top: 20px;
+    }
+
+    .accept-order {
+        width: 100%;
+        display: block;
+    }
+
+    .decline-order {
+        width: 100%;
+        display: block;
+        margin-top: 10px;
+        margin-left: 0px;
+    }
+
+}

@@ -7,7 +7,7 @@ use Session;
 
 class LunchBagController extends Controller
 {
-    public function totalItens()
+    public function totalItems()
     {
         $total = 0;
         if (Session::has('lunchBag')) {
