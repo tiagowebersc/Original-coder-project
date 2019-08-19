@@ -23,9 +23,9 @@ Route::post('/forgot_password', 'UserController@forgotPasswordPost');
 Route::get('/reset_password/{token}', 'UserController@resetPassword');
 Route::post('/reset_password/{token}', 'UserController@resetPasswordPost');
 // Lunchbag functions
-Rout::get('/lunchbagTotal', 'LunchBagController@totalItens');
-Rout::put('/addlunchbag/{idMenu}', 'LunchBagController@addLunchBag');
-Rout::delete('/removelunchbag/{idMenu}', 'LunchBagController@removeLunchBag');
+Route::get('/lunchbagTotal', 'LunchBagController@totalItens');
+Route::put('/addlunchbag/{idMenu}', 'LunchBagController@addLunchBag');
+Route::delete('/removelunchbag/{idMenu}', 'LunchBagController@removeLunchBag');
 
 // TRUCKS DASHBOARD
 Route::get('/truck', 'TruckController@getOrders');
