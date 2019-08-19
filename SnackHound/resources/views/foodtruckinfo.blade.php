@@ -17,6 +17,7 @@
 
             <div name="truckinfo" class="truckinfo"> 
 
+                    {{-- Get the foodtruck name from the database --}}
                     <h1>{{$foodtruck->name}}</h1>
                     <div class="favstar">
                         <div class="reviewDiv">
@@ -32,11 +33,11 @@
                         <div class="contactlist">
                                 <div class="contactnumber" name="contactnumber">
                                     <img name="phoneicon" class="phoneicon" src="{{URL::asset('assets/ICONS/icons8-cell-phone (1).svg')}}" alt=""> 
-                                    <p class="phoneInfo" name="phoneInfo">Phone Number</p>
+                                    <p class="phoneInfo" name="phoneInfo">{{$foodtruck->telephone}}</p>
                                 </div>
                                 <div class="contactweb" name="contactweb">
                                     <img name="webicon" class="webicon" src="{{URL::asset('assets/ICONS/icons8-internet (1).svg')}}" alt="">
-                                    <p class="webInfo" name="webInfo">Website</p>
+                                    <p class="webInfo" name="webInfo">{{$foodtruck->website}}</p>
                                 </div>
                         </div>
                         <div class="truckposition" name="truckposition">
@@ -118,7 +119,7 @@
     <main>
 
             <div class="itemcard">
-                    <img class="favoritestar" src="assets/IMGS/pizza1.jpg" alt="Avatar" style="width:100%">
+                    <img class="favoritestar" src="{{URL::asset('assets/IMGS/pizza1.jpg')}}" alt="Avatar" style="width:100%">
                     <div class="container">
                         <div class="iteminfo" name="iteminfo">
                                 <h2 name="itemname">Item Name</h2>
