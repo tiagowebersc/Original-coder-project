@@ -169,7 +169,7 @@ padding-left: 5px;
   padding: 2px 16px;
 }
 
-.addBtn {
+.plusBtn {
   background-color: #06B7F9;
   color: white;
   border-radius: 5px;
@@ -178,7 +178,7 @@ padding-left: 5px;
   width: 2.5rem;
 }
 
-.removeBtn {
+.minusBtn {
   background-color: #FF0000;
   color: white;
   border-radius: 5px;
@@ -203,11 +203,11 @@ padding-left: 5px;
   border: 0.5px solid black;
 }
 
-.itemname {
+.itemName {
   font-size: 25px;
 }
 
-.itemprice {
+.itemPrice {
   font-size: 28px;
 }
 
