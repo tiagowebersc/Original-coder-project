@@ -287,7 +287,9 @@
   .background {
     padding: 60px 0 0 0;
   }
-
+.trucks-img{
+    height: 250px;
+}
 
   /*# sourceMappingURL=style.css.map */
 
@@ -357,10 +359,13 @@
         display: flex;
         justify-content:space-around;
     }
+    .map-container{
+        width: 70%;
+    }
     #map {
       padding-right: 50px;
-      height: 850px;
-      width: 900PX;
+      height: 1150px;
+      width: 100%;
     }
     .background {
       padding: 0 0 0 125px;

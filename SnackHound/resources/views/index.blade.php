@@ -41,7 +41,7 @@ rel="stylesheet"
                 <div class="wrapper">
                         <div class="container">
                           <div class="top">
-                            <img
+                            <img class="trucks-img"
                               src="{{URL::asset('assets/IMGS/Food Trucks/RESIZED/'. $truck['image'])}}"
                               alt=""
                             />

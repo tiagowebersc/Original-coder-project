@@ -1,33 +1,31 @@
-html{
+html {
     height: 4000px;
 }
-.filterbar-container {
-    width: 99%;
-    height: 90px;
-    background-color: white;
-    border: black solid 1px;
-    padding: 10px;
-    overflow: hidden;
+
+/* phone them */
+.filter-container{
+    display: inherit;
+    height: 50px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 20px;
 }
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 98%;
+.filterbar-container{
+    display: none;
 }
-.sticky + .content {
-    padding-top: 60px;
+.caret.caret-up {
+    border-top-width: 0;
+    border-bottom: 4px solid #fff;
+
 }
-.filterbar-container ul {
-    list-style: none;
+.dropdown-menu li a img {
+    width: 100px;
+}
+.dropdown-menu {
     align-items: center;
     text-align: center;
-    height: 50px;
-    padding: 5px;
-    display: flex;
-    justify-content: space-between;
 }
-
-.filterbar-container ul a {
+.dropdown-menu li a {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,14 +33,68 @@ html{
     color: black;
     margin: 5px;
     text-decoration: none;
-    font-size: 18px;
+}
+.sticky-filter {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.sticky-filter + .content {
+    padding-top: 60px;
+}
+.dropdown{
+    text-align: center;
 }
 
+@media only screen and (min-width: 1024px) {
+    /* big them */
 
-.filterbar {
-    width: 40px;
-    height: 40px;
-}
-.filterbar-main-logo {
-    width: 80px;
+    .filter-container{
+        display: none;
+    }
+    
+    .filterbar-container {
+        display: inherit;
+        width: 99%;
+        height: 90px;
+        background-color: white;
+        padding: 10px;
+        overflow: hidden;
+    }
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 98%;
+    }
+    .sticky + .content {
+        padding-top: 60px;
+    }
+    .filterbar-container ul {
+        list-style: none;
+        align-items: center;
+        text-align: center;
+        height: 50px;
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .filterbar-container ul a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        color: black;
+        margin: 5px;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .filterbar {
+        width: 40px;
+        height: 40px;
+    }
+    .filterbar-main-logo {
+        width: 80px;
+    }
 }
