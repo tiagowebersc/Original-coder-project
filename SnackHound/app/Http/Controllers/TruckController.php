@@ -40,8 +40,6 @@ class TruckController extends Controller
                     // Search orders by users
 
                     // Because user radio by default is checked, check if the fields and fullfield
-                    var_dump((!empty($request->firstName) || !empty($request->lastName) || !empty($request->phone)));
-
                     if((!empty($request->firstName) || !empty($request->lastName) || !empty($request->phone))) {
                         $orders = View_order::where("id_truck", $truck->id_truck)->where([['first_Name', "LIKE", "%" . $request->firstName . "%"],
                         ['last_Name', "LIKE", "%" . $request->lastName . "%"],
@@ -78,9 +76,6 @@ class TruckController extends Controller
                 } else {
                     return self::getOrders();
                 }
-
-
-
          } else {
              // If user is not a truck owner, return to index
              return redirect()->route('index');
