@@ -11,22 +11,21 @@
 |
 */
 
-Route::get('/','indexController@index')->name('index');
+Route::get('/', 'indexController@index')->name('index');
 
+// Login / Signup / ...
 Route::get('/login', 'UserController@login')->name('login');
-
-Route::get('/signup', 'UserController@signup');
-
 Route::post('/login', 'UserController@loginPost');
-
+Route::get('/signup', 'UserController@signup');
 Route::post('/signup', 'UserController@signupPost');
-
 Route::get('/forgot_password', 'UserController@forgotPassword');
 Route::post('/forgot_password', 'UserController@forgotPasswordPost');
-
 Route::get('/reset_password/{token}', 'UserController@resetPassword');
 Route::post('/reset_password/{token}', 'UserController@resetPasswordPost');
-
+// Lunchbag functions
+Rout::get('/lunchbagTotal', 'LunchBagController@totalItens');
+Rout::put('/addlunchbag/{idMenu}', 'LunchBagController@addLunchBag');
+Rout::delete('/removelunchbag/{idMenu}', 'LunchBagController@removeLunchBag');
 
 // TRUCKS DASHBOARD
 Route::get('/truck', 'TruckController@getOrders');
