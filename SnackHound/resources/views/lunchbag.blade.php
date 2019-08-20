@@ -64,13 +64,27 @@
                             </div>
                             <span class="minus">-</span>
                         </div>
-                        <p>Poutine, Québec Classic</p>
+                        <p class="foodName">Poutine, Québec Classic</p>
                         <h3>5,00€</h3>
                         <span class="ex">x</span>
                     </li>
                     <hr>
                     <li>
-                        <img class="imgs" src="{{URL::asset('assets/IMGS/Menu/frittenwerk/classic-quebec-poutine.jpg')}}" alt="photo of classic poutine">
+                        <img class="imgs" src="{{URL::asset('assets/IMGS/Menu/frittenwerk/montreal-style-poutine.jpg')}}" alt="photo of classic poutine">
+                        <div class="qtyCol">
+                            <span class="plus">+</span>
+                            <div class="qty">
+                                (2)
+                            </div>
+                            <span class="minus">-</span>
+                        </div>
+                        <p class="foodName">Poutine, Montreal Style</p>
+                        <h3>11,00€</h3>
+                        <span class="ex">x</span>
+                    </li>
+                    <hr>
+                    <li>
+                        <img class="imgs" src="{{URL::asset('assets/IMGS/Menu/frittenwerk/tijuana.jpg')}}" alt="photo of classic poutine">
                         <div class="qtyCol">
                             <span class="plus">+</span>
                             <div class="qty">
@@ -78,42 +92,15 @@
                             </div>
                             <span class="minus">-</span>
                         </div>
-                        <p>Poutine, Québec Classic</p>
-                        <h3>5,00€</h3>
+                        <p class="foodName">Tijuana Fries</p>
+                        <h3>6,90€</h3>
                         <span class="ex">x</span>
                     </li>
                     <hr>
-                    <li>
-                        <img class="imgs" src="{{URL::asset('assets/IMGS/Menu/frittenwerk/classic-quebec-poutine.jpg')}}" alt="photo of classic poutine">
-                        <div class="qtyCol">
-                            <span class="plus">+</span>
-                            <div class="qty">
-                                (1)
-                            </div>
-                            <span class="minus">-</span>
-                        </div>
-                        <p>Poutine, Québec Classic</p>
-                        <h3>5,00€</h3>
-                        <span class="ex">x</span>
-                    </li>
-                    <hr>
-                    <li>
-                        <img class="imgs" src="{{URL::asset('assets/IMGS/Menu/frittenwerk/classic-quebec-poutine.jpg')}}" alt="photo of classic poutine">
-                        <div class="qtyCol">
-                            <span class="plus">+</span>
-                            <div class="qty">
-                                (1)
-                            </div>
-                            <span class="minus">-</span>
-                        </div>
-                        <p>Poutine, Québec Classic</p>
-                        <h3>5,00€</h3>
-                        <span class="ex">x</span>
-                    </li>
                 </ul>
-                <input type="submit">
-                <input type="submit">
-                <input type="submit">
+                <button id="apple" type="submit"><img class="btnIcons" src="{{URL::asset('assets/ICONS/LUNCHBAG/apple.svg')}}" alt="the icon for Apple">Apple Pay</button>
+                <button id="paypal" type="submit"><img class="btnIcons" src="{{URL::asset('assets/ICONS/LUNCHBAG/icons8-paypal.svg')}}" alt="the icon for PayPal">PayPal</button>
+                <button id="checkout" type="submit">Checkout</button>
             </article>
         </form>
     </section>
