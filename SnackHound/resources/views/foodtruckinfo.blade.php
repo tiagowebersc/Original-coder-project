@@ -167,7 +167,10 @@
                     }
                 })
                 .then(response => {
-                    console.log(response)
+                    console.log(response);
+                    response.json().then(function(data) {
+                        console.log(data);
+                    });
                 }).catch(error => console.log(error));
         });
     }

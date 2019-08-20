@@ -18,13 +18,19 @@ class LunchBagController extends Controller
 
     public function addLunchBag(Request $request)
     {
-        return response()->json(['name' => 'Abigail', 'state' => 'CA']);
+        $cookie = Cookie::make('name', 'value', 60);
+        return response()->json(['a' => 'dd']);
+
+        //return response()->json(['idMenu' => $request->idMenu, 'quantity' => $request->quantity]);
 
         if ($request->quantity === 0) {
             Self::removeLunchBag($request->idMenu);
         } else {
             $lunchBag = [];
-            if (Session::has('lunchBag')) $lunchBag = unserialize(Session::get('lunchBag'));
+
+            if (Session::has('lunchBag')) {
+                $lunchBag = unserialize(Session::get('lunchBag'));
+            }
             $found = false;
             for ($i = 0; $i < count($lunchBag); $i++) {
                 if ($lunchBag[$i]->idMenu === $request->idMenu) {
@@ -33,12 +39,16 @@ class LunchBagController extends Controller
                 }
             }
             if (!$found) {
-                $object = new stdClass();
-                $object->idMenu = $request->idMenu;
-                $object->quantity = 1;
-                $lunchBag[] = object;
+                $data = [];
+                $data['idMenu'] = $request->idMenu;
+                $data['quantity'] = 1;
+                $lunchBag[] = $data;
             }
-            Session::put('lunchBag', serialize($lunchBag));
+            //return response()->json(['onde' => $lunchBag]);
+
+
+            //Session::put('lunchBag', serialize($lunchBag));
+            //return response()->json(['list' => Session::get('lunchBag')]);
         }
         return $request;
     }
