@@ -20,7 +20,8 @@
     z-index: 100;
 }
 
-.sidebar-items-img, .sidebar-logo-img {
+.sidebar-items-img,
+.sidebar-logo-img {
     width: 60px;
     height: 60px;
 }
@@ -65,7 +66,7 @@
     border-radius: 3px;
     text-align: center;
     height: 35px;
-    background-color: #06B7F9;
+    background-color: #06b7f9;
 }
 
 .dropdown-log {
@@ -79,11 +80,10 @@
     border: 1px solid black;
 }
 
-
-.dropdown-item:focus, .dropdown-item:hover {
+.dropdown-item:focus,
+.dropdown-item:hover {
     background-color: inherit;
 }
-
 
 /* SIDEBAR LOGO */
 
@@ -100,9 +100,12 @@
     display: none;
 }
 
-
 .sidebar-items li {
     display: inline-block;
+}
+
+.marginLeft {
+    margin-left: 20px;
 }
 
 .sidebar-items a {
@@ -116,9 +119,26 @@
     text-align: center;
 }
 
+.totalLunchBag {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    top: 0px;
+    left: 50px;
+    line-height: 28px;
+
+    border-radius: 50%;
+    background-color: rgb(255, 217, 0);
+    color: black;
+
+    text-align: center;
+}
+
+.lunchBagItem {
+    position: relative;
+}
 
 @media only screen and (min-width: 1024px) {
-
     .sidebar {
         height: 100vh;
         width: 125px;
@@ -127,14 +147,13 @@
         border-right: 1px solid #fcfcfc;
     }
 
-    .sidebar-logo{
+    .sidebar-logo {
         width: 100%;
         height: 10%;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-
 
     .side-mobile-pic {
         display: none;
@@ -162,8 +181,8 @@
         align-items: center;
     }
 
-
-    .dropdown-menu, .dropdown {
+    .dropdown-menu,
+    .dropdown {
         display: none;
     }
 }
