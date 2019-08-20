@@ -1,0 +1,268 @@
+* {
+    box-sizing: border-box;
+    font-family: "Roboto Slab", serif;
+}
+
+*:not(input) {
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    color: #010101;
+}
+
+h3, h4 {
+    font-size: 36px;
+    margin-left: 25px;
+}
+
+h4 {
+    margin-top: 45px;
+    text-transform: uppercase;
+}
+
+main {
+    padding-top: 100px;
+}
+
+
+hr {
+    border-top: 1px solid black;
+    width: 95%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+
+.edit-schedule {
+    margin: 25px auto;
+    text-align: center;
+}
+
+.edit-schedule input:not([type='submit']) {
+    margin-left: 15px;
+}
+
+.info-schedule {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 95%;
+    margin: auto;
+}
+
+input[name='location'] {
+    width: 367px;
+    margin-right: 33px;
+}
+
+.submit-btn {
+    text-align: right;
+    margin-top: 25px;
+    margin: auto;
+}
+
+.edit-schedule .submit-btn input {
+    display: inline-block;
+    width: 100px;
+    padding: 5px;
+    background-color: #02CB24;
+    color: white;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+#saveBtn {
+    margin-right: 5%;
+}
+
+.editBtn, .deleteBtn {
+    display: inline-block;
+    width: 100px;
+    padding: 5px;
+    background-color: #06B7F9;
+    color: white;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.deleteBtn {
+    background-color: #FF0000;
+}
+
+#helper {
+    display: inline;
+    font-size: 22px;
+    color: red;
+}
+
+.show-schedule {
+    width: 90%;
+    margin-left: 7%;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.show-schedule p {
+    display: inline-block;
+
+}
+
+.display-weekday {
+    width: 10%;
+    font-weight: 800;
+    text-align: left;
+    margin-right: 9%;
+}
+
+.display-time {
+    width: 20%;
+    text-align: center;
+}
+
+.display-city {
+    width: 22%;
+    text-align: center;
+}
+
+.display-btn {
+    text-align: right;
+    display: inline-block;
+    width: 35%;
+    margin-right: 0;
+}
+
+.div-btn {
+    display: inline;
+}
+
+
+@media only screen and (max-width: 745px) {
+
+    .show-schedule {
+        text-align: center;
+        margin: auto;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+
+    .display-weekday {
+        width: 50px;
+    }
+
+    .display-time {
+        width: 150px;
+        text-align: center;
+    }
+
+    .display-city {
+        width: 150px;
+    }
+
+    .display-btn {
+        display: block;
+        text-align: center;
+        margin: auto;
+        margin-top: 15px;
+        width: 45%;
+    }
+
+    .editBtn, .deleteBtn {
+        display: inline-block;
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+}
+
+@media only screen and (max-width: 900px) {
+
+    .info-schedule {
+        flex-wrap: wrap;
+    }
+
+    .info-schedule select {
+        width: 120px;
+    }
+
+    .time-schedule {
+        width: 150px;
+        text-align: right;
+        margin-left: 10px;
+    }
+
+    .time-schedule label {
+        display: block;
+        margin-top: 5px;
+    }
+
+    label[for='location'] {
+        width: 50%;
+        margin-left: 10px;
+    }
+    input[name='location'] {
+        width: 70%;
+    }
+}
+
+
+@media only screen and (max-width: 611px) {
+
+    .mobile-responsive {
+        display: block;
+    }
+    .show-schedule {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    label[for='location'] {
+        width: 95%;
+        margin: 20px auto 10px auto;
+        display: block;
+    }
+    input[name='location'] {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 410px) {
+
+    #saveBtn {
+    width: 100%;
+    }
+
+    .submit-btn {
+        width: 87%;
+        text-align: center;
+    }
+
+    .display-btn {
+        width: 100%;
+    }
+
+    .editBtn, .deleteBtn {
+        width: 97%;
+        margin-left: 0px;
+        padding: 5px;
+        margin-top: 10px;
+    }
+
+    .show-schedule {
+        border: 1px solid #010101;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    main {
+        margin-left: 124px;
+        padding-top: 62px;
+    }
+
+    h3, h4 {
+        margin-left: 55px;
+    }
+
+}

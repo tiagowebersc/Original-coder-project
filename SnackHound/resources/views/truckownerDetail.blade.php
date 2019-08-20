@@ -4,11 +4,6 @@
 
 @section('css')
 
-<link rel="stylesheet" href="{{ URL::asset('css/truckownerDetail.css') }}" />
-<link href="https://fonts.googleapis.com/css?family=Raleway:400,700|Roboto+Slab&display=swap" rel="stylesheet">
-
-@endsection
-
 @section('content')
 
 <main>
@@ -95,9 +90,5 @@
 
 
 </main>
-
-@section('js')
-{{-- <script type="text/javascript" src="{{ URL::asset('js/truckownerDashboard.js') }}"></script> --}}
-@endsection
 
 @endsection

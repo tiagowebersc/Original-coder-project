@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\Schedule;
 use App\Models\Truck;
 use App\Models\View_order;
 use Session;
@@ -112,5 +113,58 @@ class TruckController extends Controller
             $order->save();
         }
         return self::filterOrder($request);
+    }
+
+    // SCHEDULE
+
+    public function getSchedule() {
+        $userId = Session::get('id_user');
+        $truck = Truck::where('id_user', $userId)->first();
+
+        $schedules = Schedule::where('id_truck', $truck->id_truck)->get();
+        // return back()->with(['truck' => $truck, 'schedules' => $schedules]);
+        return view('truckOwnerSchedule', ['truck' => $truck, 'schedules' => $schedules]);
+    }
+
+    public function setSchedule(Request $request) {
+        $userId = Session::get('id_user');
+        $truck = Truck::where('id_user', $userId)->first();
+
+        $schedule = new Schedule;
+        $schedule->id_truck = $truck->id_truck;
+        $schedule->latitude = $request->latitude;
+        $schedule->longitude = $request->longitude;
+        $schedule->city = $request->city;
+
+        switch($request->dayWeek) {
+            case 'monday';
+            $schedule->weekday = 0;
+            break;
+            case 'tuesday';
+            $schedule->weekday = 1;
+            break;
+            case 'wednesday';
+            $schedule->weekday = 2;
+            break;
+            case 'thursday';
+            $schedule->weekday = 3;
+            break;
+            case 'friday';
+            $schedule->weekday = 4;
+            break;
+            case 'saturday';
+            $schedule->weekday = 5;
+            break;
+            case 'sunday';
+            $schedule->weekday = 6;
+            break;
+        }
+
+        $schedule->start_time = $request->fromTime;
+        $schedule->end_time = $request->toTime;
+        $schedule->save();
+
+        $schedules = Schedule::where('id_truck', $truck->id_truck)->get();
+        return back()->with(['truck' => $truck, 'schedules' => $schedules]);
     }
 }

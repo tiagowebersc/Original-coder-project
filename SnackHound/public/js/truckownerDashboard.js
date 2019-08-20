@@ -1,19 +1,12 @@
 $(document).ready (function() {
 
     $("#form_update").submit(function() {
-
-        // ! sessionStorage.scrollTop = $(window).scrollTop();
         $.ajax({
             url     : '/truck/orderFilter',
             type    : 'post',
             data    : $("#searchForm").serialize(),
         });
     })
-
-    // ! MAINTAIN SCROLL POSITION AFTER CONFIRMING
-    // if (sessionStorage.scrollTop != "undefined") {
-    //     $(window).scrollTop(sessionStorage.scrollTop);
-    // }
 })
 
 

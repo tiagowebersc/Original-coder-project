@@ -24,7 +24,7 @@ class OrderController extends Controller{
 
             if(isset($truck->id_truck) && isset($order->id_truck) && $truck->id_truck === $order->id_truck) {
 
-                return view('truckownerDetail', ['order' => $order, 'truck' => $truck, 'orderItems' => $orderItems]);
+                return view('truckOwnerDetail', ['order' => $order, 'truck' => $truck, 'orderItems' => $orderItems]);
             } else {
                 return redirect()->route('truck');
             }

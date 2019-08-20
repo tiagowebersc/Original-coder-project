@@ -29,17 +29,18 @@ Route::put('/addlunchbag/{idMenu}', 'LunchBagController@addLunchBag');
 Route::delete('/removelunchbag/{idMenu}', 'LunchBagController@removeLunchBag');
 
 // TRUCKS DASHBOARD
+
 Route::get('/truck', 'TruckController@getOrders')->name('truck');
 Route::post('/truck', 'TruckController@updateOrders');
-
 Route::get('/truck/orderFilter', 'TruckController@filterOrder');
 Route::post('/truck/orderFilter', 'TruckController@updateOrders');
-
-
 Route::get('/truck/menu/{idTruck}', 'MenuController@main');
-
 Route::get('/truck/details/{id}', 'OrderController@detailsOrders')->name('details');
 Route::post('/truck/details/{id}', 'OrderController@updateOrdersDetails');
+Route::get('/truck/schedule', 'TruckController@getSchedule');
+Route::post('/truck/schedule', 'TruckController@setSchedule');
+
+// TRUCKS DASHBOARD **
 
 Route::get('/test', function () {
     return view('layouts/customerSidebar');
@@ -61,7 +62,7 @@ Route::get('/footer', function () {
 });
 
 Route::get('/test2', function () {
-    return view('layouts/truckownerSidebar');
+    return view('layouts/truckOwnerSidebar');
 });
 Route::get('/test3', function () {
     return view('layouts/filterbar');
