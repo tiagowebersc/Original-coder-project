@@ -442,7 +442,7 @@
     .filterbar-container {
         display: inherit;
         width: 100%;
-        height: 112px;
+        height: 87px;
         align-content: center;
         align-items: center;
         background-color: white;
@@ -465,7 +465,7 @@
         list-style: none;
         align-items: center;
         text-align: center;
-        margin-top: 20px;
+        margin-top: 10px;
         height: 50px;
         padding: 5px;
         display: flex;

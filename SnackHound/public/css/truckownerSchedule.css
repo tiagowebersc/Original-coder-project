@@ -13,6 +13,8 @@
 h3, h4 {
     font-size: 36px;
     margin-left: 25px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
 }
 
 h4 {
@@ -92,6 +94,7 @@ input[name='location'] {
     border-radius: 2px;
     cursor: pointer;
     margin-left: 10px;
+    text-align: center;
 }
 
 .deleteBtn {
@@ -132,6 +135,7 @@ input[name='location'] {
 .display-city {
     width: 22%;
     text-align: center;
+    font-weight: 800;
 }
 
 .display-btn {

@@ -121,12 +121,16 @@
             @break
 
         @endswitch
-        <p class='display-time'>{{$schedule->start_time}} - {{$schedule->end_time}}</p>
+        <p class='display-time'>
+            <?php $start_time = \Carbon\Carbon::createFromFormat('H:i:s',$schedule->start_time)->format('h:i');
+                  $end_time = \Carbon\Carbon::createFromFormat('H:i:s',$schedule->end_time)->format('h:i')
+                  ?>
+            {{$start_time}} - {{$end_time}}</p>
         <p class='display-city'>{{$schedule->city}}</p>
         <input type="hidden" name='scheduleId' value='{{$schedule->id_schedule}}'>
         <div class='display-btn'>
             <input class='editBtn' type="submit" name='editBtn' value="Edit">
-                <a href='/truck/schedule/delete/{{$schedule->id_schedule}}' class='deleteBtn' form='deleteForm' type="submit" name='deleteBtn' value="Delete"> </a>
+                <a href='/truck/schedule/delete/{{$schedule->id_schedule}}' class='deleteBtn'>Delete</a>
         </div>
 
     </form>

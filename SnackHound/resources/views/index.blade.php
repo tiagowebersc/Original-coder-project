@@ -215,6 +215,43 @@
     </main>
 </div>
 <script>
+
+    let bar = document.querySelector('.filterbar-container');
+
+    window.addEventListener('scroll', function() {
+
+        let viewportOffset = bar.getBoundingClientRect();
+        let top = viewportOffset.top;
+
+        let sidebar = document.querySelector('.sidebar-logo');
+        let sidebarLogo = document.querySelector('.sidebar-logo-img');
+
+        if(top === 0 && window.innerWidth > 1024) {
+            sidebar.style.backgroundColor = 'white';
+            sidebarLogo.src = '{{URL::asset('assets/ICONS/LOGO/SVG/Logo_Black-White.svg')}}';
+        } else {
+            sidebar.style.backgroundColor = 'black';
+            sidebarLogo.src = '{{URL::asset('assets/ICONS/Logo_White.svg')}}';
+        }
+    })
+
+    window.addEventListener('resize', function() {
+
+    let viewportOffset = bar.getBoundingClientRect();
+    let top = viewportOffset.top;
+
+    let sidebar = document.querySelector('.sidebar-logo');
+    let sidebarLogo = document.querySelector('.sidebar-logo-img');
+
+    if(top === 0 && window.innerWidth > 1024) {
+        sidebar.style.backgroundColor = 'white';
+        sidebarLogo.src = '{{URL::asset('assets/ICONS/LOGO/SVG/Logo_Black-White.svg')}}';
+    } else {
+        sidebar.style.backgroundColor = 'black';
+        sidebarLogo.src = '{{URL::asset('assets/ICONS/Logo_White.svg')}}';
+    }
+})
+
     function initMap() {
         // Map options
         var options = {
