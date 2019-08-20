@@ -16,6 +16,7 @@ class CreateScheduleTable extends Migration
         Schema::create('schedule', function (Blueprint $table) {
             $table->bigIncrements('id_schedule');
             $table->bigInteger('id_truck')->unsigned();
+            $table->string('address', 75);
             $table->foreign('id_truck')->references('id_truck')->on('truck');
             $table->float('latitude', 8, 6);
             $table->float('longitude', 8, 6);

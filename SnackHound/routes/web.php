@@ -44,6 +44,8 @@ Route::get('/truck/details/{id}', 'OrderController@detailsOrders')->name('detail
 Route::post('/truck/details/{id}', 'OrderController@updateOrdersDetails');
 Route::get('/truck/schedule', 'TruckController@getSchedule');
 Route::post('/truck/schedule', 'TruckController@setSchedule');
+Route::post('/truck/schedule/info', 'TruckController@getEditSchedule');
+// Route::post('/truck/schedule/edit', 'TruckController@setSchedule');
 
 // TRUCKS DASHBOARD **
 

@@ -117,23 +117,45 @@ class TruckController extends Controller
         return self::filterOrder($request);
     }
 
-    // SCHEDULE
 
-    public function getSchedule() {
-        $userId = Session::get('id_user');
-        $truck = Truck::where('id_user', $userId)->first();
 
-        $schedules = Schedule::where('id_truck', $truck->id_truck)->get();
-        // return back()->with(['truck' => $truck, 'schedules' => $schedules]);
-        return view('truckOwnerSchedule', ['truck' => $truck, 'schedules' => $schedules]);
+
+    // ! SCHEDULE
+
+public function getSchedule() {
+
+    if(Session::has('id_user')){
+
+        $truck = Truck::where('id_user', Session::get('id_user'))->first() ;
+
+        $schedule = Schedule::where('id_truck', $truck->id_truck)->get();
+
+        if(isset($truck->id_truck)) {
+
+            $schedules = Schedule::where('id_truck', $truck->id_truck)->orderBy('weekday')->get();
+            return view('truckOwnerSchedule', ['truck' => $truck, 'schedules' => $schedules]);
+        } else {
+            return redirect()->route('index');
+        }
+    } else {
+        return redirect()->route('index');
     }
+}
 
     public function setSchedule(Request $request) {
         $userId = Session::get('id_user');
         $truck = Truck::where('id_user', $userId)->first();
+        var_dump($request->editBtn);
+        // If yes, its a update
+        if(isset($request->scheduleId)) {
 
-        $schedule = new Schedule;
+            $schedule = Schedule::find($request->scheduleId);
+        } else {
+            $schedule = new Schedule;
+        }
+
         $schedule->id_truck = $truck->id_truck;
+        $schedule->address = $request->location;
         $schedule->latitude = $request->latitude;
         $schedule->longitude = $request->longitude;
         $schedule->city = $request->city;
@@ -166,7 +188,33 @@ class TruckController extends Controller
         $schedule->end_time = $request->toTime;
         $schedule->save();
 
-        $schedules = Schedule::where('id_truck', $truck->id_truck)->get();
-        return back()->with(['truck' => $truck, 'schedules' => $schedules]);
+        if(isset($request->scheduleId)) {
+            return self::getSchedule();
+        } else {
+            $schedules = Schedule::where('id_truck', $truck->id_truck)->get();
+            return back()->with(['truck' => $truck, 'schedules' => $schedules]);
+        }
+    }
+
+    public function getEditSchedule(Request $request) {
+
+        if(Session::has('id_user')){
+
+            $truck = Truck::where('id_user', Session::get('id_user'))->first() ;
+
+            if(isset($truck->id_truck)) {
+
+                $userId = Session::get('id_user');
+                $truck = Truck::where('id_user', $userId)->first();
+                $schedules = Schedule::where('id_truck', $truck->id_truck)->orderBy('weekday')->get();
+                $scheduleEdit = Schedule::find($request->scheduleId);
+
+                return view('truckOwnerEditSchedule', ['truck' => $truck, 'scheduleEdit' => $scheduleEdit, 'schedules' => $schedules]);
+            } else {
+                return redirect()->route('index');
+            }
+        } else {
+            return redirect()->route('index');
+        }
     }
 }

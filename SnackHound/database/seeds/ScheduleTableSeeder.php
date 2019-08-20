@@ -13,6 +13,7 @@ class ScheduleTableSeeder extends Seeder
     {
         DB::table('schedule')->insert([
             'id_truck' => 1,
+            'address' => '',
             'latitude' => 49.504878,
             'longitude' => 5.948136,
             'city' => 'Esch-sur-Alzette',
@@ -23,6 +24,7 @@ class ScheduleTableSeeder extends Seeder
 
         DB::table('schedule')->insert([
             'id_truck' => 1,
+            'address' => '',
             'latitude' => 49.494345,
             'longitude' => 5.985247,
             'city' => 'Esch-sur-Alzette',
@@ -33,6 +35,7 @@ class ScheduleTableSeeder extends Seeder
 
         DB::table('schedule')->insert([
             'id_truck' => 1,
+            'address' => '',
             'latitude' => 49.600256,
             'longitude' => 6.133419,
             'city' => 'Luxembourg',
@@ -43,6 +46,7 @@ class ScheduleTableSeeder extends Seeder
 
         DB::table('schedule')->insert([
             'id_truck' => 2,
+            'address' => '',
             'latitude' => 49.746576,
             'longitude' => 6.102230,
             'city' => 'Mersch',
@@ -53,6 +57,7 @@ class ScheduleTableSeeder extends Seeder
 
         DB::table('schedule')->insert([
             'id_truck' => 2,
+            'address' => '',
             'latitude' => 49.847450,
             'longitude' => 6.099213,
             'city' => 'Ettelbruck',
@@ -63,6 +68,7 @@ class ScheduleTableSeeder extends Seeder
 
         DB::table('schedule')->insert([
             'id_truck' => 3,
+            'address' => '',
             'latitude' => 49.746576,
             'longitude' => 6.102230,
             'city' => 'Mersch',
@@ -73,6 +79,7 @@ class ScheduleTableSeeder extends Seeder
 
         DB::table('schedule')->insert([
             'id_truck' => 3,
+            'address' => '',
             'latitude' => 49.847450,
             'longitude' => 6.099213,
             'city' => 'Ettelbruck',

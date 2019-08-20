@@ -51,17 +51,18 @@ hr {
 }
 
 input[name='location'] {
-    width: 367px;
-    margin-right: 33px;
+    width: 250px;
+    margin-right: 10px;
 }
 
 .submit-btn {
     text-align: right;
     margin-top: 25px;
     margin: auto;
+    display: inline-block;
 }
 
-.edit-schedule .submit-btn input {
+.edit-schedule #saveBtn {
     display: inline-block;
     width: 100px;
     padding: 5px;
@@ -91,9 +92,10 @@ input[name='location'] {
 }
 
 #helper {
-    display: inline;
+    text-align: right;
     font-size: 22px;
     color: red;
+    margin-right: 8%;
 }
 
 .show-schedule {
@@ -170,9 +172,18 @@ input[name='location'] {
 
     .editBtn, .deleteBtn {
         display: inline-block;
-        width: 100%;
-        padding: 10px;
+        width: 180px;
+        padding: 5px;
         margin-top: 10px;
+        margin-left: 0px;
+    }
+
+    .edit-schedule #saveBtn {
+        display: inline-block;
+        width: 180px;
+        padding: 5px;
+        margin-top: 25px;
+        margin-right: 0px;
     }
 
 }
@@ -204,6 +215,10 @@ input[name='location'] {
     }
     input[name='location'] {
         width: 70%;
+    }
+
+    #saveBtn {
+        margin-top: 30px;
     }
 }
 

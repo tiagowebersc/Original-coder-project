@@ -4,6 +4,12 @@
 
 @section('css')
 
+
+<link rel="stylesheet" href="{{ URL::asset('css/truckownerDetail.css') }}" />
+<link href="https://fonts.googleapis.com/css?family=Raleway:400,700|Roboto+Slab&display=swap" rel="stylesheet">
+
+@endsection
+
 @section('content')
 
 <main>
@@ -16,10 +22,11 @@
         @csrf
         @if($order->status === 0)
             <input class='accept-order' name='updateBtn' type="submit" value="Accept Order">
+            <input class='decline-order' name='cancelBtn' type="submit" value="DECLINE ORDER">
         @elseif($order->status === 1)
             <input class='accept-order blue' name='updateBtn' type="submit" value="Delivered">
+            <input class='decline-order' name='cancelBtn' type="submit" value="CANCEL ORDER">
         @endif
-        <input class='decline-order' name='cancelBtn' type="submit" value="DECLINE ORDER">
     </form>
 
     @endif

@@ -35,6 +35,7 @@
             </div>
 
             <label for="location"> Location:<input required id='location' name='location' type="text"></label>
+            <input type="submit" id='saveBtn' name='saveBtn' value="Save">
         </div>
 
         <input type="hidden" name="latitude" id='latitude'>
@@ -42,16 +43,16 @@
         <input type="hidden" name="city" id='city'>
 
         <div class="submit-btn">
-            <div id='helper'></div>
-            <input type="submit" id='saveBtn' name='saveBtn' value="Save">
         </div>
+        <div id='helper'></div>
 
     </form>
     <hr>
 
+    {{-- DISPLAY SCHEDULES --}}
 @foreach ($schedules as $schedule)
 
-    <form class='show-schedule' action="">
+    <form class='show-schedule' method="post" action="/truck/schedule/info">
         @csrf
         @switch($schedule->weekday)
         @case(0)
@@ -79,7 +80,7 @@
         @endswitch
         <p class='display-time'>{{$schedule->start_time}} - {{$schedule->end_time}}</p>
         <p class='display-city'>{{$schedule->city}}</p>
-        <input type="hidden" name='orderId' value='{{$schedule->id_schedule}}'>
+        <input type="hidden" name='scheduleId' value='{{$schedule->id_schedule}}'>
         <div class='display-btn'>
             <input class='editBtn' type="submit" name='editBtn' value="Edit">
             <input class='deleteBtn' type="submit" name='deleteBtn' value="Delete">
