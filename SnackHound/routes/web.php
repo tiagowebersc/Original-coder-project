@@ -42,10 +42,11 @@ Route::get('/truck/menu/{idTruck}', 'MenuController@main'); //menu editing page
 
 Route::get('/truck/details/{id}', 'OrderController@detailsOrders')->name('details');
 Route::post('/truck/details/{id}', 'OrderController@updateOrdersDetails');
-Route::get('/truck/schedule', 'TruckController@getSchedule');
+Route::get('/truck/schedule', 'TruckController@getSchedule')->name('schedule');
 Route::post('/truck/schedule', 'TruckController@setSchedule');
 Route::post('/truck/schedule/info', 'TruckController@getEditSchedule');
-// Route::post('/truck/schedule/edit', 'TruckController@setSchedule');
+Route::get('/truck/schedule/info', 'TruckController@getSchedule');
+Route::get('/truck/schedule/delete/{id}', 'TruckController@deleteSchedule');
 
 // TRUCKS DASHBOARD **
 

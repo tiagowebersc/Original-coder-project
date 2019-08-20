@@ -83,7 +83,7 @@
         <input type="hidden" name='scheduleId' value='{{$schedule->id_schedule}}'>
         <div class='display-btn'>
             <input class='editBtn' type="submit" name='editBtn' value="Edit">
-            <input class='deleteBtn' type="submit" name='deleteBtn' value="Delete">
+            <a href='/truck/schedule/delete/{{$schedule->id_schedule}}' class='deleteBtn' form='deleteForm' type="submit" name='deleteBtn' value="Delete"> </a>
         </div>
 
     </form>

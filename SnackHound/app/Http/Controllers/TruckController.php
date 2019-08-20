@@ -145,7 +145,7 @@ public function getSchedule() {
     public function setSchedule(Request $request) {
         $userId = Session::get('id_user');
         $truck = Truck::where('id_user', $userId)->first();
-        // var_dump($request->editBtn);
+
         // If yes, its a update
         if(isset($request->scheduleId)) {
 
@@ -210,6 +210,25 @@ public function getSchedule() {
                 $scheduleEdit = Schedule::find($request->scheduleId);
 
                 return view('truckOwnerEditSchedule', ['truck' => $truck, 'scheduleEdit' => $scheduleEdit, 'schedules' => $schedules]);
+            } else {
+                return redirect()->route('index');
+            }
+        } else {
+            return redirect()->route('index');
+        }
+    }
+
+    public function deleteSchedule($id) {
+
+        if(Session::has('id_user')){
+
+            $truck = Truck::where('id_user', Session::get('id_user'))->first() ;
+
+            if(isset($truck->id_truck)) {
+                $schedule = Schedule::find($id);
+                $schedule->delete();
+
+                return redirect()->route('schedule');
             } else {
                 return redirect()->route('index');
             }
