@@ -1,3 +1,19 @@
+/* ! GLOBAL RESETS ! */
+* {
+    box-sizing: border-box;
+    transition-duration: 0.3s;
+}
+*:not(input) {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+section {
+    background-color: red;
+}
+/* ! END - RESETS ! */
+
+/* * GLOBAL STYLES * */
 .background {
     display: flex;
     padding: 60px 0 0 0;
@@ -6,30 +22,218 @@
     width: 100%;
     height: 100vh;
     background-size: cover;
-    background-image: url('../assets/IMGS/paula-vermeulen-URjZkhqsuBk-unsplash.jpg');
+    background-image: url("../assets/IMGS/paula-vermeulen-URjZkhqsuBk-unsplash.jpg");
 }
 
-.frame {
-    width: 100%;
-    padding: 25px;
-    background-color: #fcfcfc;
+hr {
+    border: 1px solid #999999;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
-.center {
+
+ul {
+    list-style: none;
+}
+/* * END - GLOBAL STYLES * */
+
+/* * MAIN STYLING * */
+.frame {
+    width: 90%;
+    height: 90%;
+    background-color: #fcfcfc;
+    border-radius: 2px;
+}
+
+/* ? HEADER STYLING */
+#lockContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+}
+
+#securityWords {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px;
+}
+
+#securityTop {
+    font-weight: 600;
+    letter-spacing: 3.5px;
+}
+
+#securityBottom {
+    font-weight: 100;
+}
+
+.securityWords {
+    color: #fcfcfc;
+    font-family: "Raleway";
+    line-height: 0.9;
+}
+
+#left-aligned {
+    display: flex;
+    padding-top: 10px;
+}
+
+#securityHeader {
+    background-color: #010101;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+    width: 100%;
+    height: 80px;
+}
+/* ? END - HEADER STYLING */
+
+/* ? FORM STYLING */
+form {
+    display: flex;
+}
+
+.panel {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 2px;
+    -webkit-box-shadow: 0px 1px 10px 0px #333333;
+    box-shadow: 0px 1px 10px 0px #333333;
+}
+
+#left-content {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+#lunchbagList {
+    width: 50%;
+}
+
+/* Lunchbag */
+#title {
+    font-family: "Raleway", sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+
+#lunchbagTotal {
+    display: flex;
+    flex-direction: column;
+}
+
+.labels {
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    width: 40%;
+    text-align: right;
+    padding: 10px;
+}
+
+#code {
+    width: 100px;
+    height: 35px;
+}
+
+#orderTotal {
+    font-family: "Roboto Slab", serif;
+}
+
+#totalAmt {
+    font-family: "Roboto Slab", serif;
+}
+
+.labelContent {
+    padding: 10px;
+}
+
+.rows {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Mailing List */
+#lunchbagMailingList {
+    font-family: "Roboto Slab", serif;
+}
+
+#mailCheckbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+#joinMsg {
     text-align: center;
 }
-h2 {
-    font-family: 'Raleway', sans-serif;
+
+#check {
+    font-size: 12px;
+    padding-right: 5px;
 }
 
+/* Shopping List */
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.imgs {
+    height: 50px;
+}
+
+.plus {
+    font-family: "Roboto Slab", serif;
+    color: #00c300;
+}
+
+.qtyCol {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.qty {
+    height: 25px;
+    width: 25px;
+    border: 1px solid #333333;
+    border-radius: 2px;
+    font-family: "Roboto Slab", serif;
+    padding-bottom: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.minus {
+    font-family: "Roboto Slab", serif;
+    color: #fa0000;
+}
+
+.ex {
+    font-family: "Raleway", serif;
+    font-weight: 600;
+    color: #fa0000;
+}
+/* ? END - FORM STYLING */
+
+/* * END - MAIN STYLING */
+
+/* ! MEDIA QUERIES ! */
 @media only screen and (min-width: 1024px) {
     .background {
         align-items: center;
         padding: 0 0 0 125px;
     }
-    .frame {
+    /* .frame {
         width: 550px;
         padding: 25px;
         box-shadow: 0px 3px 6px #000000;
         background-color: #fcfcfc;
-    }
+    } */
 }
