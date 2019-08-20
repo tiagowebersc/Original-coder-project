@@ -36,7 +36,7 @@ Route::get('/truck/orderFilter', 'TruckController@filterOrder');
 Route::post('/truck/orderFilter', 'TruckController@updateOrders');
 
 
-Route::get('/truck/menu/{idTruck}', 'MenuController@main');
+Route::get('/truck/menu/{idTruck}', 'MenuController@main'); //menu editing page
 
 Route::get('/truck/details/{id}', 'OrderController@detailsOrders')->name('details');
 Route::post('/truck/details/{id}', 'OrderController@updateOrdersDetails');
@@ -45,12 +45,15 @@ Route::get('/test', function () {
     return view('layouts/customerSidebar');
 });
 
+Route::get('/foodtruckinfo/{id_truck}', 'foodTruckController@main'); //foodtruck information+item page
+
+Route::get('/adminedit', 'admineditController@main'); // Admin page to edit user
+
 // TEST VIEW for the RESET PASSWORD email
 Route::get('/testEmail', function () {
     return view('mail');
 });
 
-Route::get('/foodtruckinfo/{id_truck}', 'foodTruckController@main');
 
 
 // Route::get('/index', function () {
