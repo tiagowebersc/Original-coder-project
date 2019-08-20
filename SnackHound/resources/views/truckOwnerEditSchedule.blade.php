@@ -88,8 +88,12 @@
     {{-- DISPLAY SCHEDULES --}}
 
     @foreach ($schedules as $schedule)
+        @if($schedule->id_schedule === $scheduleEdit->id_schedule)
+            <form class='show-schedule selected' method="post" action="/truck/schedule/info">
+        @else
+            <form class='show-schedule' method="post" action="/truck/schedule/info">
+        @endif
 
-<form class='show-schedule' method="post" action="/truck/schedule/info">
         @csrf
 
         @switch($schedule->weekday)

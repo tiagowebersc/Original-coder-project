@@ -145,7 +145,7 @@ public function getSchedule() {
     public function setSchedule(Request $request) {
         $userId = Session::get('id_user');
         $truck = Truck::where('id_user', $userId)->first();
-        var_dump($request->editBtn);
+        // var_dump($request->editBtn);
         // If yes, its a update
         if(isset($request->scheduleId)) {
 

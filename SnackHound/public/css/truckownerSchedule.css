@@ -48,11 +48,18 @@ hr {
     align-items: center;
     width: 95%;
     margin: auto;
+    margin-right: 0;
 }
 
 input[name='location'] {
     width: 250px;
     margin-right: 10px;
+}
+
+.selected {
+    padding: 15px 5px;
+    padding-left: 18px;
+    background-color: #dbdbdb;
 }
 
 .submit-btn {
