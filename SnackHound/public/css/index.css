@@ -9,6 +9,7 @@
 }
 
 .bg-text {
+    margin-top: 25px;
     color: white;
     font-weight: bold;
     font-family: "Roboto Slab", serif;
@@ -66,14 +67,84 @@
     color: white;
 }
 
+.main-container{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.map-container{
+    width: 100%;
+
+
+}
 #map {
     padding-right: 50px;
     height: 850px;
-    width: 900PX;
+    width: 100%;
   }
   .truck-img{
       height: 20px;
   }
+
+
+  /* the filter start here */
+  .container{
+      padding: 0px;
+  }
+  .filter-container {
+    display: inherit;
+    z-index: 200;
+    height: 80px;
+    margin: 0 auto;
+    align-content: center;
+    width: 100%;
+    padding: 20px 0;
+    position: sticky;
+    top:3rem;
+}
+.filterbar-container {
+    display: none;
+}
+.caret.caret-up {
+    border-top-width: 0;
+    border-bottom: 4px solid #fff;
+}
+.dropdown-menu li a img {
+    width: 100px;
+}
+
+#filter-container .dropdown-menu {
+    transform: none !important ;
+    text-align: center;
+    position: relative;
+    top: 40px !important;
+    left: inherit !important;
+    min-width: 380PX;
+    width: 100%;
+    margin: auto;
+}
+.dropdown-menu.show{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.dropdown-menu li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: black;
+    margin: 5px;
+    text-decoration: none;
+}
+.filter-buttom {
+    text-align: center;
+    margin: 0px;
+    width: 100%;
+}
+.filterbar {
+    height: 50px;
+}
+
 
   /* start with the careds css */
   .wrapper {
@@ -354,11 +425,76 @@
     }
 
     .main-container{
+        display: flex;
+        flex-direction: inherit;
         margin: auto;
         width: 100%;
         display: flex;
         justify-content:space-around;
     }
+
+
+    /* the filter start here */
+    .filter-container {
+        display: none;
+    }
+
+    .filterbar-container {
+        display: inherit;
+        width: 100%;
+        height: 112px;
+        align-content: center;
+        align-items: center;
+        background-color: white;
+        padding: 10px;
+        overflow: hidden;
+        position: sticky;
+        top:0.0rem;
+        z-index: 200;
+    }
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 98%;
+    }
+
+    .sticky + .content {
+        padding-top: 60px;
+    }
+    .filterbar-container ul {
+        list-style: none;
+        align-items: center;
+        text-align: center;
+        margin-top: 20px;
+        height: 50px;
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .filterbar-container ul a {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        color: black;
+        margin: 5px;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .filterbar {
+        width: 40px;
+        height: 40px;
+    }
+    .filterbar-main-logo {
+        width: 80px;
+    }
+
+
+
+
+    /* the map start here */
     .map-container{
         width: 70%;
     }

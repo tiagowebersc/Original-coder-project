@@ -3,26 +3,25 @@ html {
 }
 
 /* phone them */
-.filter-container{
+.filter-container {
     display: inherit;
     height: 50px;
     margin: 0 auto;
     width: 100%;
     padding: 20px;
 }
-.filterbar-container{
+.filterbar-container {
     display: none;
 }
 .caret.caret-up {
     border-top-width: 0;
     border-bottom: 4px solid #fff;
-
 }
 .dropdown-menu li a img {
     width: 100px;
 }
 .dropdown-menu {
-    text-align: center; 
+    text-align: center;
     width: 400px;
 }
 .dropdown-menu li a {
@@ -42,34 +41,41 @@ html {
 .sticky-filter + .content {
     padding-top: 60px;
 }
-.dropdown{
+.dropdown {
     text-align: center;
+}
+.filterbar {
+    height: 50px;
 }
 
 @media only screen and (min-width: 1024px) {
     /* big them */
 
-    .filter-container{
+    .filter-container {
         display: none;
     }
 
     .filterbar-container {
         display: inherit;
         width: 99%;
-        height: 90px;
+        height: 100px;
         background-color: white;
         padding: 10px;
-        /* overflow: hidden; */
+        overflow: hidden;
+        /* position: fixed; */
+        /* position: relative;
+        z-index: 500;
+        top: 110vh; */
     }
     .sticky {
         position: fixed;
         top: 0;
         width: 98%;
-      }
+    }
 
     .sticky + .content {
         padding-top: 60px;
-     }
+    }
     .filterbar-container ul {
         list-style: none;
         align-items: center;

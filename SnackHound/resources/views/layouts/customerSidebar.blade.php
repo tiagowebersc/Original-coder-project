@@ -29,11 +29,13 @@
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
-                <div> <a href='/' class='dropdown-item'> <img class='dropdown-icon' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-track-order (2).svg')}}" alt="FIX THE ALT."> <span>Coverage Area</span> </a> </div>
+                <div> <a href='/' class='dropdown-item'> <img class='dropdown-icon' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-track-order (2).svg')}}" alt="FIX THE ALT."> <span class="marginLeft">Coverage Area</span> </a> </div>
 
-                <div> <a href='/lunchbag' class='dropdown-item'> <img class='dropdown-icon' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-doggy-bag (2).svg')}}" alt="FIX THE ALT."> <span>Lunchbag</span> </a> </div>
+                <div class="lunchBagItem"> <a href='/lunchbag' class='dropdown-item'> <img class='dropdown-icon' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-doggy-bag (2).svg')}}" alt="FIX THE ALT."> <span class="marginLeft">Lunchbag</span> </a>
+                    <strong class="totalLunchBag">0</strong>
+                </div>
                 <?php if (Session::has('user_type') && Session::get('user_type') === 1) { ?>
-                <div> <a href='/truck' class='dropdown-item'> <img class='dropdown-icon' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-food-truck.svg')}}" alt="FIX THE ALT."> <span>Food Truck Owner?</span> </a> </div>
+                <div> <a href='/truck' class='dropdown-item'> <img class='dropdown-icon' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-food-truck.svg')}}" alt="FIX THE ALT."> <span class="marginLeft">Food Truck Owner?</span> </a> </div>
                 <?php } ?>
                 <?php if (Session::has('id_user')) { ?>
                 <div class='dropdown-sign'> <a href="/signout" class='dropdown-item'> SIGN OUT </a> </div>
@@ -49,7 +51,7 @@
 
             <ul>
                 <li><a href="/"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-track-order (1).svg')}}"> Coverage area </a></li>
-                <li><a href="/lunchbag"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-doggy-bag (1).svg')}}"> Lunchbag </a></li>
+                <li class="lunchBagItem"><a href="/lunchbag"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-doggy-bag (1).svg')}}"> Lunchbag </a><strong class="totalLunchBag">0</strong></li>
                 <?php if (Session::has('user_type') && Session::get('user_type') === 1) { ?>
                 <li><a href="/truck"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-truck.svg')}}"> Food Truck Owner </a></li>
                 <?php } ?>
@@ -74,6 +76,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     @yield('js')
+    <script>
+        function updateLunchBag() {
+            fetch("/lunchbagTotal", {
+                    method: "GET"
+                })
+                .then(response => {
+                    response.json().then(function(data) {
+                        btnList = document.querySelectorAll(".totalLunchBag");
+                        for (let btn of btnList) {
+                            btn.innerHTML = data;
+                        }
+
+                    });
+                });
+        }
+        const id = setInterval(updateLunchBag, 500);
+    </script>
 </body>
 
 </html>
