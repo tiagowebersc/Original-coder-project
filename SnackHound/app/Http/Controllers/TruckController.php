@@ -115,29 +115,4 @@ class TruckController extends Controller
         }
         return self::filterOrder($request);
     }
-
-    // Favorite control
-    public function getFavorite($idTruck)
-    {
-        if (!Session::has('id_user')) return 0;
-
-        $favorite = Favorite::where('id_user', Session::get('id_user'))->where('id_truck', $idTruck)->first();
-        if ($favorite != null) return 1;
-        return 0;
-    }
-    public function setFavorite($idTruck)
-    {
-        if (is_int($idTruck) && Session::has('id_user')) {
-            $favorite = Favorite::where('id_user', Session::get('id_user'))->where('id_truck', $idTruck)->first();
-            if ($favorite == null) {
-                $favorite = new Favorite();
-                $favorite->id_truck = $idTruck;
-                $favorite->id_user = Session::get('id_user');
-                $favorite->save();
-            } else {
-                Magazine::destroy($favorite->id_favorite);
-            }
-        }
-        return response()->json(['action' => 'updated']);
-    }
 }
