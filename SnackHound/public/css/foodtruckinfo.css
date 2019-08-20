@@ -17,10 +17,10 @@ header {
     height: 640px;
     resize: both;
     overflow: scroll;
+    resize: none;
 }
 
 .backgrounddiv {
-    background-image: url('/assets/IMGS/frittenwerk.jpg');
     background-size: cover;
     background-position: 50% 50%;
 }
@@ -266,6 +266,7 @@ main {
 
     .reviewDiv {
         width: 100px;
+        padding-bottom: 15px;
     }
 
     .contactnumber {
