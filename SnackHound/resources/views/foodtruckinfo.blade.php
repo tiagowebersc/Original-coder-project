@@ -92,6 +92,7 @@
     <main>
         <?php
         foreach ($menus as $menu) { ?>
+        @csrf
         <div class="itemCard">
             <img class="itemImg" src="{{URL::asset('assets/IMGS/Menu/'.$menu->id_truck.'/'.$menu->image)}}" alt="Avatar" style="width:100%">
             <div class="container">
@@ -100,20 +101,75 @@
                     <h2 class="itemPrice">{{number_format($menu->price, 2)}}€</h2>
                 </div>
                 <hr class="itemseparator">
-                <form class="itemform" name="itemform" action="" method="POST">
+                <section class="itemform" name="itemform">
                     <div class="plusMinus" name="plusminus">
-                        <input class="plusBtn" name="plusBtn" type="submit" value="+">
-                        <p>Number</p>
-                        <input class="minusBtn" name="minusBtn" type="submit" value="-">
+                        <input class="plusBtn" name="plusBtn" type="button" value="+">
+                        <p class="itemNumber">1</p>
+                        <input class="minusBtn" name="minusBtn" type="button" value="-">
                     </div>
                     <div class="addBtn" name="addBtn">
-                        <input name="addToBag" class="addToBag" type="submit" value="Add">
+                        <input type="hidden" name="idMenu" value="{{$menu->id_menu}}">
+                        <input name="addToBag" class="addToBag" type="button" value="Add">
                     </div>
-                </form>
+                </section>
             </div>
         </div>
         <?php } ?>
 
     </main>
 </div>
+@endsection
+
+@section('js')
+<script>
+    // plus button
+    let btnList = document.querySelectorAll(".plusBtn");
+    for (let btn of btnList) {
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            let total = parseInt(e.target.parentElement.querySelector(".itemNumber").innerHTML, 10);
+            if (isNaN(total)) total = 0;
+            total += 1;
+            e.target.parentElement.querySelector(".itemNumber").innerHTML = total;
+        });
+    }
+    // minus button
+    btnList = document.querySelectorAll(".minusBtn");
+    for (let btn of btnList) {
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            let total = parseInt(e.target.parentElement.querySelector(".itemNumber").innerHTML, 10);
+            if (isNaN(total)) total = 0;
+            total -= 1;
+            if (total == 0) total = 1;
+            e.target.parentElement.querySelector(".itemNumber").innerHTML = total;
+        });
+    }
+    // add button
+    btnList = document.querySelectorAll(".addToBag");
+    for (let btn of btnList) {
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            let total = parseInt(e.target.parentElement.parentElement.querySelector(".plusMinus").querySelector(".itemNumber").innerHTML, 10);
+            if (isNaN(total)) total = 1;
+            const lunchBag = {
+                _token: document.querySelector('input[name="_token"]').value,
+                idMenu: e.target.parentElement.querySelector('input[name="idMenu"]').value,
+                quantity: total
+            };
+            // ajax call
+            console.log(lunchBag);
+            fetch("/addlunchbag", {
+                    method: "PUT",
+                    body: JSON.stringify(lunchBag),
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                })
+                .then(response => {
+                    console.log(response)
+                }).catch(error => console.log(error));
+        });
+    }
+</script>
 @endsection

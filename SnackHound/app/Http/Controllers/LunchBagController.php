@@ -16,35 +16,40 @@ class LunchBagController extends Controller
         return $total;
     }
 
-    public function addLunchBag($idMenu)
+    public function addLunchBag(Request $request)
     {
-        $lunchBag = [];
-        if (Session::has('lunchBag')) $lunchBag = unserialize(Session::get('lunchBag'));
-        $found = false;
-        for ($i = 0; $i < count($lunchBag); $i++) {
-            if ($lunchBag[$i]->idMenu === $idMenu) {
-                $found = true;
-                $lunchBag[$i]->quantity += 1;
-            }
-        }
-        if (!$found) {
-            $object = new stdClass();
-            $object->idMenu = $idMenu;
-            $object->quantity = 1;
-            $lunchBag[] = object;
-        }
-        Session::put('lunchBag', serialize($lunchBag));
+        return response()->json(['name' => 'Abigail', 'state' => 'CA']);
 
-        var_dump($lunchBag);
+        if ($request->quantity === 0) {
+            Self::removeLunchBag($request->idMenu);
+        } else {
+            $lunchBag = [];
+            if (Session::has('lunchBag')) $lunchBag = unserialize(Session::get('lunchBag'));
+            $found = false;
+            for ($i = 0; $i < count($lunchBag); $i++) {
+                if ($lunchBag[$i]->idMenu === $request->idMenu) {
+                    $found = true;
+                    $lunchBag[$i]->quantity = $request->quantity;
+                }
+            }
+            if (!$found) {
+                $object = new stdClass();
+                $object->idMenu = $request->idMenu;
+                $object->quantity = 1;
+                $lunchBag[] = object;
+            }
+            Session::put('lunchBag', serialize($lunchBag));
+        }
+        return $request;
     }
 
-    public function removeLunchBag($idMenu)
+    public function removeLunchBag(Request $request)
     {
         $lunchBag = [];
         if (Session::has('lunchBag')) $lunchBag = unserialize(Session::get('lunchBag'));
         $remove = -1;
         for ($i = 0; $i < count($lunchBag); $i++) {
-            if ($lunchBag[$i]->idMenu === $idMenu) {
+            if ($lunchBag[$i]->idMenu === $request->idMenu) {
                 $lunchBag[$i]->quantity -= 1;
                 if ($lunchBag[$i]->quantity <= 0) $remove = i;
             }
