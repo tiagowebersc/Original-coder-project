@@ -17,10 +17,10 @@ header {
     height: 640px;
     resize: both;
     overflow: scroll;
+    resize: none;
 }
 
 .backgrounddiv {
-    background-image: url('/assets/IMGS/frittenwerk.jpg');
     background-size: cover;
     background-position: 50% 50%;
 }
@@ -173,6 +173,13 @@ main {
     width: 3rem;
 }
 
+.itemNumber {
+    text-align: center;
+    width: 50px;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+}
+
 /* Add some padding inside the card container */
 .container {
     padding: 2px 16px;
@@ -266,6 +273,7 @@ main {
 
     .reviewDiv {
         width: 100px;
+        padding-bottom: 15px;
     }
 
     .contactnumber {

@@ -25,8 +25,8 @@ Route::get('/signout', 'UserController@signout');
 // Lunchbag functions
 Route::get('/lunchbag', 'LunchBagController@main');
 Route::get('/lunchbagTotal', 'LunchBagController@totalItems');
-Route::put('/addlunchbag/{idMenu}', 'LunchBagController@addLunchBag');
-Route::delete('/removelunchbag/{idMenu}', 'LunchBagController@removeLunchBag');
+Route::put('/addlunchbag', 'LunchBagController@addLunchBag');
+Route::delete('/removelunchbag', 'LunchBagController@removeLunchBag');
 
 // TRUCKS DASHBOARD
 Route::get('/truck', 'TruckController@getOrders')->name('truck');
