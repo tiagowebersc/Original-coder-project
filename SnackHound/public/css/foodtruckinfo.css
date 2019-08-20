@@ -17,10 +17,10 @@ header {
     height: 640px;
     resize: both;
     overflow: scroll;
+    resize: none;
 }
 
 .backgrounddiv {
-    background-image: url('/assets/IMGS/frittenwerk.jpg');
     background-size: cover;
     background-position: 50% 50%;
 }
@@ -72,6 +72,8 @@ header {
     font-family: 'Roboto Slab', serif;
     display: flex;
     justify-content: space-around;
+    text-shadow: 1px 0 0 black, -1px 0 0 black, 0 1px 0 black, 0 -1px 0 black,
+    0.5px 0.5px black, -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black;
 }
 
 .contactlist {
@@ -112,6 +114,8 @@ header {
 }
 
 .scheduleTable {
+    text-shadow: 1px 0 0 black, -1px 0 0 black, 0 1px 0 black, 0 -1px 0 black,
+    0.5px 0.5px black, -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black;
     margin: 0 auto;
 }
 
@@ -171,6 +175,13 @@ main {
 .itemImg {
     height: 200px;
     width: 3rem;
+}
+
+.itemNumber {
+    text-align: center;
+    width: 50px;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
 }
 
 /* Add some padding inside the card container */
@@ -266,6 +277,7 @@ main {
 
     .reviewDiv {
         width: 100px;
+        padding-bottom: 15px;
     }
 
     .contactnumber {

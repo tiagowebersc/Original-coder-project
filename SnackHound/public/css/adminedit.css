@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+    animation-duration: 0.3s;
+}
+
+*:not(input) {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.background {
+    padding: 60px 0 0 0;
+}
+
+.userContact,
+.userDate,
+.buisnessUser,
+.submitBtn {
+    padding: 5px;
+    font-size: 13px;
+}
+
+h1 {
+    padding-left: 10px;
+    padding-top: 40px;
+    font-size: 23px;
+}
+
+.mainForm {
+    padding-left: 20px;
+    padding-top: 30px;
+}
+
+.mainForm h2 {
+    font-size: 21px;
+}
+
+.mainForm h3 {
+    font-size: 15px;
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+.submitBtn input {
+    border: 1px solid #06b7f9;
+    color: white;
+    background-color: #06b7f9;
+    width: 5rem;
+    height: 1.5rem;
+}
+
+.separator {
+    border: 1px solid grey;
+    margin: 30px;
+}
+
+.limiter {
+    margin: 50px;
+}
+
+tbody {
+    border: 1px solid black;
+}
+
+.viewBtn {
+    border: 1px solid #06b7f9;
+    color: white;
+    background-color: #06b7f9;
+}
+
+.viewBtn2 {
+    border: 1px solid green;
+    color: white;
+    background-color: lightgreen;
+}
+
+.blockBtn,
+.deleteBtn {
+    border: 1px solid red;
+    color: white;
+    background-color: red;
+}
+
+@media only screen and (min-width: 1024px) {
+    .background {
+        padding: 0 0 0 125px;
+    }
+
+    h1 {
+        padding-left: 40px;
+        font-size: 23px;
+    }
+
+    .mainForm {
+        padding-left: 55px;
+    }
+
+    th {
+        padding-left: 25px;
+        padding-bottom: 30px;
+    }
+
+    td {
+        padding-left: 25px;
+    }
+
+    tbody {
+        border: 1px solid black;
+    }
+}

@@ -1,3 +1,19 @@
+/* ! GLOBAL RESETS ! */
+* {
+    box-sizing: border-box;
+    transition-duration: 0.3s;
+}
+*:not(input) {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+section {
+    background-color: red;
+}
+/* ! END - RESETS ! */
+
+/* * GLOBAL STYLES * */
 .background {
     display: flex;
     padding: 60px 0 0 0;
@@ -6,19 +22,421 @@
     width: 100%;
     height: 100vh;
     background-size: cover;
-    background-image: url('../assets/IMGS/paula-vermeulen-URjZkhqsuBk-unsplash.jpg');
+    background-image: url("../assets/IMGS/paula-vermeulen-URjZkhqsuBk-unsplash.jpg");
 }
 
+hr {
+    border: 1px solid #999999;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+}
+/* * END - GLOBAL STYLES * */
+
+/* * MAIN STYLING * */
 .frame {
-    width: 100%;
-    padding: 25px;
+    width: 90%;
+    height: 575px;
     background-color: #fcfcfc;
+    border-radius: 2px;
 }
-.center {
+
+/* ? HEADER STYLING */
+#lockContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+}
+
+#securityWords {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px;
+}
+
+#securityTop {
+    font-weight: 600;
+    letter-spacing: 3.5px;
+}
+
+#securityBottom {
+    font-weight: 100;
+}
+
+.securityWords {
+    color: #fcfcfc;
+    font-family: "Raleway";
+    line-height: 0.9;
+}
+
+#left-aligned {
+    display: flex;
+    padding-top: 10px;
+}
+
+#securityHeader {
+    background-color: #010101;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+    width: 100%;
+    height: 80px;
+}
+/* ? END - HEADER STYLING */
+
+/* ? FORM STYLING */
+form {
+    display: flex;
+}
+
+.panel {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 2px;
+    -webkit-box-shadow: 0px 1px 2px 0px #333333;
+    box-shadow: 0px 1px 2px 0px #333333;
+}
+
+#left-content {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+#lunchbagCost {
+    height: 250px;
+}
+
+#lunchbagMailingList {
+    height: 145px;
+}
+
+#lunchbagList {
+    width: 50%;
+}
+
+/* Lunchbag */
+#title {
+    font-family: "Raleway", sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+
+#lunchbagTotal {
+    display: flex;
+    flex-direction: column;
+}
+
+.labels {
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    width: 40%;
+    text-align: right;
+    padding: 10px;
+}
+
+#code {
+    width: 100px;
+    height: 35px;
+}
+
+#orderTotal {
+    font-family: "Roboto Slab", serif;
+}
+
+#totalAmt {
+    font-family: "Roboto Slab", serif;
+}
+
+.labelContent {
+    padding: 10px;
+}
+
+.rows {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Mailing List */
+#lunchbagMailingList {
+    font-family: "Roboto Slab", serif;
+}
+
+#mailCheckbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+#joinMsg {
     text-align: center;
+    padding-top: 20px;
 }
-h2 {
-    font-family: 'Raleway', sans-serif;
+
+#check {
+    font-size: 12px;
+    padding-right: 5px;
+}
+
+/* Shopping List */
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.imgs {
+    height: 80px;
+}
+
+.qtyBtn {
+    border: none;
+}
+
+.plus {
+    font-family: "Roboto Slab", serif;
+    font-size: 18px;
+    color: #00c300;
+}
+
+.qtyCol {
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.qty {
+    height: 25px;
+    width: 25px;
+    border: 1px solid #333333;
+    border-radius: 2px;
+    font-family: "Roboto Slab", serif;
+    margin-top: 4px;
+    padding-bottom: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.minus {
+    font-family: "Roboto Slab", serif;
+    font-size: 24px;
+    color: #fa0000;
+}
+
+.foodName {
+    width: 250px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+.ex {
+    font-family: "Raleway", serif;
+    font-weight: 600;
+    color: #fa0000;
+}
+
+/* button styling */
+button {
+    width: 150px;
+    height: 35px;
+    border-radius: 2px;
+    -webkit-box-shadow: 0px 1px 10px 0px #333333;
+    box-shadow: 0px 0px 2px 0px #333333;
+}
+
+.btnIcons {
+    height: 25px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+}
+
+#apple {
+    background-color: #010101;
+    font-family: "Raleway", sans-serif;
+    text-transform: uppercase;
+    color: #fcfcfc;
+}
+
+#paypal {
+    background-color: #013083;
+    font-family: "Raleway", sans-serif;
+    text-transform: uppercase;
+    color: #fcfcfc;
+}
+
+#checkout {
+    background-color: #06b7f9;
+    font-family: "Raleway", sans-serif;
+    text-transform: uppercase;
+    color: #fcfcfc;
+}
+/* ? END - FORM STYLING */
+
+/* * END - MAIN STYLING */
+
+/* ! MEDIA QUERIES ! */
+@media only screen and (max-width: 370px) {
+    /*  ** GLOBAL Styling for mobile ** */
+
+    .background {
+        align-items: center;
+        background-image: unset;
+    }
+
+    /*  ** Styling for the mobile header ** */
+
+    #securityHeader {
+        display: none;
+    }
+    #mobileHeader {
+        margin-top: 50px;
+        margin-left: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #mobileTitle {
+        font-family: "Raleway", sans-serif;
+        font-weight: 600;
+        font-size: 24px;
+        text-transform: uppercase;
+        color: #333333;
+        padding-top: 10px;
+    }
+
+    #right-aligned {
+        display: flex;
+        padding-top: 10px;
+        padding-right: 20px;
+    }
+
+    #blackLockContainer {
+        padding-right: 5px;
+    }
+
+    .blackSecurityWords {
+        color: #333333;
+        font-family: "Raleway";
+        font-size: 16px;
+        line-height: 0.9;
+    }
+
+    #blackSecurityTop {
+        font-weight: 600;
+        letter-spacing: 1.75px;
+    }
+
+    #blackSecurityBottom {
+        font-weight: 100;
+    }
+
+    /*  ** END - Styling for the mobile header ** */
+
+    /* ** Styling for the mobile body ** */
+
+    .frame {
+        width: 100%;
+    }
+
+    form {
+        display: block;
+    }
+
+    #left-content {
+        display: block;
+        width: 100%;
+    }
+
+    #lunchbagCost {
+        margin-top: 25px;
+    }
+
+    #lunchbagMailingList {
+        display: none;
+    }
+
+    #lunchbagList {
+        display: block;
+        width: 90%;
+    }
+    article {
+        width: 90%;
+    }
+
+    #title {
+        font-size: 18px;
+    }
+
+    .labels {
+        font-weight: 400;
+        padding-top: 10px;
+        width: 50%;
+    }
+
+    #code {
+        border: 1px solid #333333;
+    }
+
+    /* Shopping List */
+    .imgs {
+        display: none;
+    }
+
+    .plus {
+        display: none;
+    }
+
+    .minus {
+        display: none;
+    }
+
+    .qtyCol {
+        padding-top: 0;
+    }
+
+    .foodName {
+        padding-left: 10px;
+    }
+    h3 {
+        font-size: 14px;
+        padding-right: 10px;
+    }
+
+    /* Mailing List Checkbox */
+    #mailCheckbox {
+        padding-bottom: 20px;
+    }
+
+    /* Submit Buttons */
+    #apple {
+        width: 125px;
+    }
+
+    #paypal {
+        width: 125px;
+    }
+
+    #extraBtns {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #checkout {
+        width: 100%;
+        margin-top: 20px;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -26,10 +444,10 @@ h2 {
         align-items: center;
         padding: 0 0 0 125px;
     }
-    .frame {
+    /* .frame {
         width: 550px;
         padding: 25px;
         box-shadow: 0px 3px 6px #000000;
         background-color: #fcfcfc;
-    }
+    } */
 }
