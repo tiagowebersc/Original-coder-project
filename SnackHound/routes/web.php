@@ -35,6 +35,8 @@ Route::post('/truck', 'TruckController@updateOrders');
 Route::get('/truck/orderFilter', 'TruckController@filterOrder');
 Route::post('/truck/orderFilter', 'TruckController@updateOrders');
 
+Route::get('/truck/favorite/{idTruck}', 'TruckController@getFavorite');
+Route::post('/truck/favorite/{idTruck}', 'TruckController@setFavorite');
 
 Route::get('/truck/menu/{idTruck}', 'MenuController@main');
 
