@@ -160,18 +160,18 @@
             // ajax call
             console.log(lunchBag);
             fetch("/addlunchbag", {
-                    method: "PUT",
-                    body: JSON.stringify(lunchBag),
-                    headers: {
-                        "Content-Type": "application/json"
-                    }
-                })
-                .then(response => {
-                    console.log(response);
-                    response.json().then(function(data) {
-                        console.log(data);
-                    });
-                }).catch(error => console.log(error));
+                method: "PUT",
+                body: JSON.stringify(lunchBag),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+            // .then(response => {
+            //     console.log(response);
+            //     response.json().then(function(data) {
+            //         console.log(data);
+            //     });
+            // }).catch(error => console.log(error));
         });
     }
 </script>
