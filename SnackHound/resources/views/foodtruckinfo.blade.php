@@ -13,7 +13,7 @@
 <div class="background">
     <header>
         <!-- principal div header start here -->
-        <div class="backgrounddiv" name="backgrounddiv">
+        <div class="backgrounddiv" name="backgrounddiv" style="background-image: url('/assets/IMGS/Food Trucks/BLURRED/{{$foodtruck->image}}');">
 
             <div name="truckinfo" class="truckinfo">
 
