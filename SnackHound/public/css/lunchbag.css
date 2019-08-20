@@ -287,29 +287,155 @@ button {
 
 /* ! MEDIA QUERIES ! */
 @media only screen and (max-width: 370px) {
+    /*  ** GLOBAL Styling for mobile ** */
+
     .background {
         align-items: center;
         background-image: unset;
     }
+
+    /*  ** Styling for the mobile header ** */
+
     #securityHeader {
         display: none;
     }
+    #mobileHeader {
+        margin-top: 50px;
+        margin-left: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #mobileTitle {
+        font-family: "Raleway", sans-serif;
+        font-weight: 600;
+        font-size: 24px;
+        text-transform: uppercase;
+        color: #333333;
+        padding-top: 10px;
+    }
+
+    #right-aligned {
+        display: flex;
+        padding-top: 10px;
+        padding-right: 20px;
+    }
+
+    #blackLockContainer {
+        padding-right: 5px;
+    }
+
+    .blackSecurityWords {
+        color: #333333;
+        font-family: "Raleway";
+        font-size: 16px;
+        line-height: 0.9;
+    }
+
+    #blackSecurityTop {
+        font-weight: 600;
+        letter-spacing: 1.75px;
+    }
+
+    #blackSecurityBottom {
+        font-weight: 100;
+    }
+
+    /*  ** END - Styling for the mobile header ** */
+
+    /* ** Styling for the mobile body ** */
+
     .frame {
         width: 100%;
     }
+
     form {
         display: block;
     }
+
     #left-content {
         display: block;
         width: 100%;
     }
+
+    #lunchbagCost {
+        margin-top: 25px;
+    }
+
+    #lunchbagMailingList {
+        display: none;
+    }
+
     #lunchbagList {
         display: block;
         width: 90%;
     }
     article {
         width: 90%;
+    }
+
+    #title {
+        font-size: 18px;
+    }
+
+    .labels {
+        font-weight: 400;
+        padding-top: 10px;
+        width: 50%;
+    }
+
+    #code {
+        border: 1px solid #333333;
+    }
+
+    /* Shopping List */
+    .imgs {
+        display: none;
+    }
+
+    .plus {
+        display: none;
+    }
+
+    .minus {
+        display: none;
+    }
+
+    .qtyCol {
+        padding-top: 0;
+    }
+
+    .foodName {
+        padding-left: 10px;
+    }
+    h3 {
+        font-size: 14px;
+        padding-right: 10px;
+    }
+
+    /* Mailing List Checkbox */
+    #mailCheckbox {
+        padding-bottom: 20px;
+    }
+
+    /* Submit Buttons */
+    #apple {
+        width: 125px;
+    }
+
+    #paypal {
+        width: 125px;
+    }
+
+    #extraBtns {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #checkout {
+        width: 100%;
+        margin-top: 20px;
     }
 }
 
