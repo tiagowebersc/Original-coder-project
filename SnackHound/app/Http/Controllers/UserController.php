@@ -17,16 +17,10 @@ class UserController extends Controller
         //    return view('login');
         //}
 
-        // for the moment to erase the session
-        if (Session::has('id_user')) Session::flush();
-
         return view('login', ['form' => 'login']);
     }
     public function signup()
     {
-        // for the moment to erase the session
-        if (Session::has('id_user')) Session::flush();
-
         return view('login', ['form' => 'signup']);
     }
 
