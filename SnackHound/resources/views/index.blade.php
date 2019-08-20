@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="{{ URL::asset('/css/index.css') }}" />
 <link href="https://fonts.googleapis.com/css?family=Raleway:400,700|Roboto+Slab&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
 @endsection
 
 @section('title', 'SnackHound - Homepage')
@@ -30,6 +31,101 @@
     </header>
     <img src="" alt="">
     <main>
+       {{-- the filter start here --}}
+       <section id="filter-container" class="filter-container">
+            <div class="container">
+                <div class="dropdown filter-buttom">
+                    <button
+                      class="btn btn-primary dropdown-toggle"
+                      type="button"
+                      data-toggle="dropdown"
+                    >
+                      Filter <span class="caret"></span>
+                    </button>
+                    <ul id="dropdown-menu" class="dropdown-menu">
+                      <li>
+                        <a href="#">
+                          <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}"> Location
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-chinese-fried-rice (2).svg')}}"> Asian
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter//icons8-cake.svg')}}"> Bakery|Desserts
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-grill (1).svg')}}"> Barbecue
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter//icons8-cheeseburger (1).svg')}}"> Burgers
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-coconut-cocktail.svg')}}"> Caribbean
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-coffee-to-go (1).svg')}}"> Coffee|Beverages
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-baguette (1).svg')}}"> French
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-taco (2).svg')}}"> Fries
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-taco (2).svg')}}"> Mexican
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-salami-pizza (1).svg')}}"> Pizza|Pasta
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-crab (2).svg')}}"> Seafood
+                        </a>
+                      </li>
+                    </ul>
+                </div>
+            </div>
+    </section>
+
+
+    <section id="filterbar-container" class="filterbar-container">
+        <ul>
+            {{-- <li><a href="#"> <img class='filterbar-main-logo' src="{{URL::asset('assets/ICONS/LOGO/SVG/Logo_Black-White.svg')}}"></a></li> --}}
+            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}"> Location </a></li>
+            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-chinese-fried-rice (2).svg')}}"> Asian </a></li>
+            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter//icons8-cake.svg')}}"> Bakery|Desserts </a></li>
+            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-grill (1).svg')}}"> Barbecue </a></li>
+            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter//icons8-cheeseburger (1).svg')}}"> Burgers </a></li>
+            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-coconut-cocktail.svg')}}"> Caribbean </a></li>
+            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-coffee-to-go (1).svg')}}"> Coffee|Beverages </a></li>
+            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-baguette (1).svg')}}"> French </a></li>
+            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-french-fries (2).svg')}}"> Fries </a></li>
+            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-taco (2).svg')}}"> Mexican </a></li>
+            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-salami-pizza (1).svg')}}"> Pizza|Pasta </a></li>
+            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-crab (2).svg')}}"> Seafood </a></li>
+        </ul>
+    </section>
         <section class="main-container">
             <section class="cards-container">
                 <?php
@@ -157,6 +253,21 @@
         });
         */
 
+
+        var example=[
+            <?php
+                foreach ($trucks as $truck) {?>
+                    {
+                        name : "<?php echo $truck['name'] ?>"
+                    },
+            <?php
+                }
+                ?>
+
+        ]
+        console.log(example);
+
+
         // Array of markers
         var markers = [{
                 coords: {
@@ -164,7 +275,7 @@
                     lng: 6.129583
                 },
                 iconImage: 'https://img.icons8.com/officel/40/000000/marker.png',
-                content: '<img src="{{URL::asset('assets / IMGS / Food Trucks / ballucci_catering.jpg ')}}">',
+                content: '<img src="{{URL::asset('assets/IMGS/Food Trucks/RESIZED/burger_and_co.jpg')}}" alt="" />',
                 animation: google.maps.Animation.DROP
             },
             {
@@ -173,14 +284,14 @@
                     lng: 5.915250
                 },
                 iconImage: 'https://img.icons8.com/officel/40/000000/marker.png',
-                content: '<img src="{{URL::asset('assets / IMGS / Food Trucks / go_fish.jpg ')}}">'
+                content: '<img src="{{URL::asset('assets/IMGS/Food Trucks/RESIZED/burger_and_co.jpg')}}" alt="" />',
             },
             {
                 coords: {
                     lat: 49.495640,
                     lng: 5.985173
                 },
-                content: '<img src="{{URL::asset('assets / IMGS / Food Trucks / mr.froopy - frozenjoghurt.jpg ')}}">',
+                content: '<img src="{{URL::asset('assets/IMGS/Food Trucks/RESIZED/burger_and_co.jpg')}}" alt="" /><h1>hloo</h1>',
                 iconImage: 'https://img.icons8.com/officel/40/000000/marker.png'
             }
 
