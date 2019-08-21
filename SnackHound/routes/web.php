@@ -44,6 +44,8 @@ Route::post('/truck/menu', 'TruckController@setMenu');
 // Route::get('/truck/schedule/info', 'TruckController@getSchedule');
 // Route::get('/truck/schedule/delete/{id}', 'TruckController@deleteSchedule');
 
+
+
 Route::get('/truck/details/{id}', 'OrderController@detailsOrders')->name('details');
 Route::post('/truck/details/{id}', 'OrderController@updateOrdersDetails');
 Route::get('/truck/schedule', 'TruckController@getSchedule')->name('schedule');
@@ -62,16 +64,21 @@ Route::get('/foodtruckinfo/{id_truck}', 'foodTruckController@main'); //foodtruck
 
 Route::get('/adminedit', 'AdminEditController@getUsers'); // Admin page to edit user
 
+
+
 // TEST VIEW for the RESET PASSWORD email
-Route::get('/testEmail', function () {
-    return view('mail');
+Route::get('/mailTruckConfirm', function () {
+    return view('mailTruckConfirm');
 });
-
-
 
 // Route::get('/index', function () {
 //     return view('index');
 // });
+
+// ! REVIEW SCROLL BOX
+Route::get('/scrollbox', 'ScrollBoxController@scrollBox');
+
+
 Route::get('/footer', function () {
     return view('footer');
 });

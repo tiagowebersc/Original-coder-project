@@ -17,7 +17,7 @@
 
     <h4>USERS: </h4>
 
-    <form id='searchForm' action="/truck/orderFilter" method="GET">
+    <form id='searchForm' method="GET">
         @csrf
         <strong>Search users:</strong>
 
@@ -83,7 +83,7 @@
         <div class="desktop-btn">
             <input id='searchForm-search' form='searchForm' name='filterBtn' type="submit" value="Search">
 
-            <form id='searchForm-showall' class='show-all' action="/truck">
+            <form id='searchForm-showall' class='show-all'>
                 <input type="submit" value="Show All">
             </form>
         </div>
@@ -153,7 +153,7 @@
         <div class="mobile-btn">
             <input id='searchFormMobile-search' form='searchFormMobile' type="submit" value="Search">
 
-            <form id='searchFormMobile-showall' class='show-all' action="/truck">
+            <form id='searchFormMobile-showall' class='show-all'>
                 <input type="submit" value="Show all">
             </form>
         </div>
@@ -200,9 +200,5 @@
     </table>
 
 </main>
-
-@section('js')
-<script type="text/javascript" src="{{ URL::asset('js/truckownerDashboard.js') }}"></script>
-@endsection
 
 @endsection

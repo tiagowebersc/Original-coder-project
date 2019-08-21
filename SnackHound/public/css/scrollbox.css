@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
+
+*:not(input) {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+
+.scrollBoxReview {
+    border: 1px solid black;
+    width: 450px;
+    height: 150px;
+    line-height: 3em;
+    overflow: scroll;
+    padding: 5px;
+    background-color: #fcfadd;
+    color: #714d03;
+    scrollbar-base-color: gray;
+}
+
+.userInfo{
+    display: flex;
+}
+.userInfo p{ 
+    padding-left: 5px;
+}
+
+.userNameInBox{
+    font-weight: bold;
+}
+
+
+
+@media only screen and (min-width: 1024px) {
+
+
+.scrollBoxReview {
+    width: 900px;
+
+}
+
+
+}
