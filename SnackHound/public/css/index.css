@@ -176,6 +176,10 @@
 
 
   /* start with the careds css */
+  .cards-container{
+    display: flex;
+    flex-wrap: wrap;
+  }
   .wrapper {
     width: 281px;
     height: 350px;
@@ -470,6 +474,10 @@ hr {
         justify-content: space-around;
     }
 
+    /* cards container */
+    .cards-container{
+        display: block;
+    }
     /* the filter start here */
     .filter-container {
         display: none;
@@ -489,15 +497,7 @@ hr {
         top: 0rem;
         z-index: 200;
     }
-    .sticky {
-        position: fixed;
-        top: 0;
-        width: 98%;
-    }
 
-    .sticky + .content {
-        padding-top: 60px;
-    }
     .filterbar-container ul {
         list-style: none;
         align-items: center;
@@ -531,10 +531,13 @@ hr {
     /* the map start here */
     .map-container {
         width: 70%;
+        height: 800px;
+        position: sticky;
+        top: 8rem;
     }
     #map {
         padding-right: 50px;
-        height: 1150px;
+        height: 800px;
         width: 100%;
     }
     .background {
