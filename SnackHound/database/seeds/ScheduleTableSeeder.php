@@ -87,5 +87,15 @@ class ScheduleTableSeeder extends Seeder
             'start_time' => '13:00',
             'end_time' => '21:00'
         ]);
+        DB::table('schedule')->insert([
+            'id_truck' => 4,
+            'address' => '88 Grand-Rue, Vianden',
+            'latitude' => 49.933311,
+            'longitude' => 6.203290,
+            'city' => 'Vianden',
+            'weekday' => 4,
+            'start_time' => '17:00',
+            'end_time' => '23:00'
+        ]);
     }
 }
