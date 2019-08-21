@@ -402,7 +402,6 @@ hr {
   height: 216px;
 }
 
-/*# sourceMappingURL=style.css.map */
 
 @media only screen and (min-width: 1024px) {
     .bg-image {
@@ -415,11 +414,12 @@ hr {
         top: 50%;
     }
     .bg-text h1 {
-        font-size: 120px;
-        padding-bottom: 10px;
+        font-size: 100px;
+        padding-bottom: 50px;
     }
     .bg-text p {
-        font-size: 40px;
+        font-size: 30px;
+        padding: 40px;
     }
     .search {
         background: transparent;
@@ -544,4 +544,23 @@ hr {
     .background {
         padding: 0 0 0 125px;
     }
+
+}
+@media only screen and (min-width: 1250px) {
+    .bg-image {
+        background-image: url('/assets/IMGS/paula-vermeulen-URjZkhqsuBk-unsplash-blur.jpg');
+        height: 100vh;
+    }
+    .bg-text {
+        padding-left: 125px;
+        width: 70%;
+        top: 50%;
+    }
+    .bg-text h1 {
+        font-size: 120px;
+        padding-bottom: 10px;
+    }
+    .bg-text p {
+        font-size: 40px;
+
 }
