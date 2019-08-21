@@ -16,7 +16,7 @@ section {
 /* * GLOBAL STYLES * */
 .background {
     display: flex;
-    padding: 60px 0 0 0;
+    padding: 0 0 0 0;
     justify-content: center;
     align-items: flex-start;
     width: 100%;
@@ -27,8 +27,8 @@ section {
 
 hr {
     border: 1px solid #999999;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 ul {
@@ -38,10 +38,12 @@ ul {
 
 /* * MAIN STYLING * */
 .frame {
-    width: 90%;
-    height: 575px;
+    width: 80%;
+    height: 95%;
     background-color: #fcfcfc;
     border-radius: 2px;
+    margin-left: 100px;
+    margin-top: 1rem;
 }
 
 /* ? HEADER STYLING */
@@ -117,6 +119,7 @@ form {
 
 #lunchbagList {
     width: 50%;
+    height: 435px;
 }
 
 /* Lunchbag */
@@ -167,7 +170,7 @@ form {
     font-family: "Roboto Slab", serif;
 }
 
-#mailCheckbox {
+#mailCheckboxWide {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -179,7 +182,7 @@ form {
     padding-top: 20px;
 }
 
-#check {
+#checkWide {
     font-size: 12px;
     padding-right: 5px;
 }
@@ -192,7 +195,7 @@ li {
 }
 
 .imgs {
-    height: 80px;
+    height: 60px;
 }
 
 .qtyBtn {
@@ -214,8 +217,8 @@ li {
 }
 
 .qty {
-    height: 25px;
-    width: 25px;
+    height: 20px;
+    width: 20px;
     border: 1px solid #333333;
     border-radius: 2px;
     font-family: "Roboto Slab", serif;
@@ -247,12 +250,17 @@ h3 {
 }
 
 /* button styling */
-button {
-    width: 150px;
+.checkoutButton {
+    width: 200px;
     height: 35px;
     border-radius: 2px;
     -webkit-box-shadow: 0px 1px 10px 0px #333333;
     box-shadow: 0px 0px 2px 0px #333333;
+}
+
+#extraBtns {
+    display: flex;
+    justify-content: space-between;
 }
 
 .btnIcons {
@@ -280,17 +288,16 @@ button {
     font-family: "Raleway", sans-serif;
     text-transform: uppercase;
     color: #fcfcfc;
+    margin-top: 10px;
+    width: 100%;
 }
 /* ? END - FORM STYLING */
 
 /* * END - MAIN STYLING */
 
 /* ! MEDIA QUERIES ! */
-@media only screen and (max-width: 370px) {
-    /*  ** GLOBAL Styling for mobile ** */
-
+@media only screen and (max-width: 1023px) {
     .background {
-        align-items: center;
         background-image: unset;
     }
 
@@ -299,12 +306,14 @@ button {
     #securityHeader {
         display: none;
     }
+
     #mobileHeader {
-        margin-top: 50px;
         margin-left: 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        width: 93%;
+        margin-top: 50px;
     }
 
     #mobileTitle {
@@ -345,9 +354,9 @@ button {
     /*  ** END - Styling for the mobile header ** */
 
     /* ** Styling for the mobile body ** */
-
     .frame {
         width: 100%;
+        margin-left: 0;
     }
 
     form {
@@ -370,7 +379,9 @@ button {
     #lunchbagList {
         display: block;
         width: 90%;
+        height: auto;
     }
+
     article {
         width: 90%;
     }
@@ -387,6 +398,48 @@ button {
 
     #code {
         border: 1px solid #333333;
+    }
+
+    #apple {
+        width: 300px;
+    }
+
+    #paypal {
+        width: 300px;
+    }
+    #extraBtns {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    #checkout {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    /* Mailing List Checkbox */
+    #mailCheckbox {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 20px;
+    }
+
+    #mobileCheckbox {
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+}
+
+@media only screen and (max-width: 500px) {
+    #mobileHeader {
+        margin-left: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     /* Shopping List */
@@ -414,11 +467,6 @@ button {
         padding-right: 10px;
     }
 
-    /* Mailing List Checkbox */
-    #mailCheckbox {
-        padding-bottom: 20px;
-    }
-
     /* Submit Buttons */
     #apple {
         width: 125px;
@@ -427,27 +475,26 @@ button {
     #paypal {
         width: 125px;
     }
+}
 
-    #extraBtns {
-        display: flex;
-        justify-content: space-between;
+@media only screen and (max-width: 360px) {
+    /*  ** GLOBAL Styling for mobile at 360px or less ** */
+    /* Submit Buttons */
+    #apple {
+        width: 125px;
     }
 
-    #checkout {
-        width: 100%;
-        margin-top: 20px;
+    #paypal {
+        width: 125px;
     }
 }
 
 @media only screen and (min-width: 1024px) {
-    .background {
-        align-items: center;
-        padding: 0 0 0 125px;
+    #mobileHeader {
+        display: none;
     }
-    /* .frame {
-        width: 550px;
-        padding: 25px;
-        box-shadow: 0px 3px 6px #000000;
-        background-color: #fcfcfc;
-    } */
+
+    #mailCheckbox {
+        display: none;
+    }
 }

@@ -16,7 +16,7 @@
         <div class="backgrounddiv" name="backgrounddiv" style="background-image: url('/assets/IMGS/Food Trucks/BLURRED/{{$foodtruck->image}}');">
 
             <div name="truckinfo" class="truckinfo">
-
+                <input type="hidden" id="idTruck" value="{{$foodtruck->id_truck}}">
                 <h1>{{$foodtruck->name}}</h1>
                 <div class="favstar">
                     <div class="reviewDiv">
@@ -30,7 +30,13 @@
                         <?php } ?>
                         <p class="reviewNbr">{{COUNT($reviews)}}</p>
                     </div>
+                    <?php if (Session::has('id_user')) {
+                        if ($favorite) { ?>
                     <img class="heartlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-heart-outline.svg')}}" alt="">
+                    <?php } else { ?>
+                    <img class="heartlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-heart-blank.svg')}}" alt="">
+                    <?php }
+                    } ?>
                 </div>
 
                 <hr class="separator">
@@ -122,57 +128,83 @@
 
 @section('js')
 <script>
-    // plus button
-    let btnList = document.querySelectorAll(".plusBtn");
-    for (let btn of btnList) {
-        btn.addEventListener("click", (e) => {
-            e.preventDefault();
-            let total = parseInt(e.target.parentElement.querySelector(".itemNumber").innerHTML, 10);
-            if (isNaN(total)) total = 0;
-            total += 1;
-            e.target.parentElement.querySelector(".itemNumber").innerHTML = total;
-        });
-    }
-    // minus button
-    btnList = document.querySelectorAll(".minusBtn");
-    for (let btn of btnList) {
-        btn.addEventListener("click", (e) => {
-            e.preventDefault();
-            let total = parseInt(e.target.parentElement.querySelector(".itemNumber").innerHTML, 10);
-            if (isNaN(total)) total = 0;
-            total -= 1;
-            if (total == 0) total = 1;
-            e.target.parentElement.querySelector(".itemNumber").innerHTML = total;
-        });
-    }
-    // add button
-    btnList = document.querySelectorAll(".addToBag");
-    for (let btn of btnList) {
-        btn.addEventListener("click", (e) => {
-            e.preventDefault();
-            let total = parseInt(e.target.parentElement.parentElement.querySelector(".plusMinus").querySelector(".itemNumber").innerHTML, 10);
-            if (isNaN(total)) total = 1;
-            const lunchBag = {
-                _token: document.querySelector('input[name="_token"]').value,
-                idMenu: e.target.parentElement.querySelector('input[name="idMenu"]').value,
-                quantity: total
+    window.addEventListener('DOMContentLoaded', (event) => {
+        // favorite
+        let btnFavorite = document.querySelector(".heartlogo");
+        btnFavorite.addEventListener("click", (e) => {
+            const paramFavorite = {
+                _token: document.querySelector('input[name="_token"]').value
             };
-            // ajax call
-            console.log(lunchBag);
-            fetch("/addlunchbag", {
-                method: "PUT",
-                body: JSON.stringify(lunchBag),
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            });
-            // .then(response => {
-            //     console.log(response);
-            //     response.json().then(function(data) {
-            //         console.log(data);
-            //     });
-            // }).catch(error => console.log(error));
+            const urlFavorite = "/foodtruck/favorite/" + document.querySelector("#idTruck").value;
+            fetch(urlFavorite, {
+                    method: "POST",
+                    body: JSON.stringify(paramFavorite),
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                })
+                .then(response => {
+                    response.json().then(function(data) {
+                        if (data.favorite) {
+                            btnFavorite.src = btnFavorite.src.replace("icons8-heart-blank.svg", "icons8-heart-outline.svg");
+                        } else {
+                            btnFavorite.src = btnFavorite.src.replace("icons8-heart-outline.svg", "icons8-heart-blank.svg");
+                        }
+                    });
+                });
         });
-    }
+
+        // plus button
+        let btnList = document.querySelectorAll(".plusBtn");
+        for (let btn of btnList) {
+            btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                let total = parseInt(e.target.parentElement.querySelector(".itemNumber").innerHTML, 10);
+                if (isNaN(total)) total = 0;
+                total += 1;
+                e.target.parentElement.querySelector(".itemNumber").innerHTML = total;
+            });
+        }
+        // minus button
+        btnList = document.querySelectorAll(".minusBtn");
+        for (let btn of btnList) {
+            btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                let total = parseInt(e.target.parentElement.querySelector(".itemNumber").innerHTML, 10);
+                if (isNaN(total)) total = 0;
+                total -= 1;
+                if (total == 0) total = 1;
+                e.target.parentElement.querySelector(".itemNumber").innerHTML = total;
+            });
+        }
+        // add button
+        btnList = document.querySelectorAll(".addToBag");
+        for (let btn of btnList) {
+            btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                let total = parseInt(e.target.parentElement.parentElement.querySelector(".plusMinus").querySelector(".itemNumber").innerHTML, 10);
+                if (isNaN(total)) total = 1;
+                const lunchBag = {
+                    _token: document.querySelector('input[name="_token"]').value,
+                    idMenu: e.target.parentElement.querySelector('input[name="idMenu"]').value,
+                    quantity: total
+                };
+                // ajax call
+                fetch("/addlunchbag", {
+                    method: "PUT",
+                    body: JSON.stringify(lunchBag),
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                });
+                // .then(response => {
+                //     console.log(response);
+                //     response.json().then(function(data) {
+                //         console.log(data);
+                //     });
+                // }).catch(error => console.log(error));
+            });
+        }
+    });
 </script>
 @endsection

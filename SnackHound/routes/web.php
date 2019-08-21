@@ -60,7 +60,7 @@ Route::get('/test', function () {
 
 Route::get('/foodtruckinfo/{id_truck}', 'foodTruckController@main'); //foodtruck information+item page
 
-Route::get('/adminedit', 'admineditController@main'); // Admin page to edit user
+Route::get('/adminedit', 'AdminEditController@getUsers'); // Admin page to edit user
 
 // TEST VIEW for the RESET PASSWORD email
 Route::get('/testEmail', function () {

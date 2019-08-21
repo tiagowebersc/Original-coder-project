@@ -43,7 +43,7 @@ class TruckTableSeeder extends Seeder
 
         DB::table('truck')->insert([
             'id_truck' => 3,
-            'id_user' => 3,
+            'id_user' => 5,
             'name' => 'Arancino',
             'image' => 'arancino.jpg',
             'price_range' => 3,
@@ -58,7 +58,7 @@ class TruckTableSeeder extends Seeder
 
         DB::table('truck')->insert([
             'id_truck' => 4,
-            'id_user' => 3,
+            'id_user' => 6,
             'name' => 'Burger & Co.',
             'image' => 'burger_and_co.jpg',
             'price_range' => 2,

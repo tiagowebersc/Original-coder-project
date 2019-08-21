@@ -8,9 +8,10 @@ use App\Models\Truck;
 
 class IndexController extends Controller
 {
-    public function index(){
-        $trucks=Self::foodTruckList();
-        return view('index',['trucks'=>$trucks]);
+    public function index()
+    {
+        $trucks = Self::foodTruckList();
+        return view('index', ['trucks' => $trucks]);
     }
     public function foodTruckList()
     {
@@ -36,6 +37,7 @@ class IndexController extends Controller
                     $truck->weekday = $queryResult->weekday;
                     $truck->start_time = $queryResult->start_time;
                     $truck->end_time = $queryResult->end_time;
+                    $truck->favorite = app(\App\Http\Controllers\foodTruckController::class)->getFavorite($truck->id_truck);;
                     $result[] = $truck;
                 }
             }

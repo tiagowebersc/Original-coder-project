@@ -11,6 +11,7 @@
 .footer{
     background-color: black;
     height: 350px;
+
 }
 .header {
     margin: 0px, auto;
@@ -63,6 +64,8 @@
     .footer {
         background-color: black;
         height: 550px;
+        margin-left: 125px;
+        margin-top: 50px;
     }
     .header {
         background-color: black;

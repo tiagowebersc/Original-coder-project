@@ -47,5 +47,23 @@ class UserTableSeeder extends Seeder
             'email' => 'john@gmail.com',
             'hash_password' => '$2y$10$X3SNX4rXgBQJBxDTtUWL9.uFOuzJm.eceNh/BVfHujZL71iQvKSry'
         ]);
+        DB::table('user')->insert([
+            'id_user' => 5,
+            'first_name' => 'John',
+            'last_name' => 'Raviolli',
+            'user_type' => 1,
+            'user_status' => 0,
+            'email' => 'johnr@gmail.com',
+            'hash_password' => '$2y$10$X3SNX4rXgBQJBxDTtUWL9.uFOuzJm.eceNh/BVfHujZL71iQvKSry'
+        ]);
+        DB::table('user')->insert([
+            'id_user' => 6,
+            'first_name' => 'John',
+            'last_name' => 'Katchup',
+            'user_type' => 1,
+            'user_status' => 0,
+            'email' => 'johnk@gmail.com',
+            'hash_password' => '$2y$10$X3SNX4rXgBQJBxDTtUWL9.uFOuzJm.eceNh/BVfHujZL71iQvKSry'
+        ]);
     }
 }
