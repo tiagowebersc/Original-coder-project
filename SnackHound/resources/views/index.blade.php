@@ -18,8 +18,8 @@
                 and get directions to your favorite stop. Enter in your address below to get started!</p>
 
             <form action="">
-                <input type="search" class="search" placeholder="  Enter your address..." name="search-location">
-                <input type="submit" class="submit-location" name="submit-location" value="Search">
+                <input type="textbox" id="address" class="search" placeholder="  Enter your address..." name="search-location">
+                <input type="button" id="submit" class="submit-location" name="submit-location" value="Search">
                 <p class="or">or</p>
                 <input type="submit" value="Turn on Location" name="turn-on-locaton" class="turn-on-location">
             </form>
@@ -226,6 +226,8 @@ document.getElementById("now").addEventListener("click", function(event){
     }
 })
 
+
+    // start the map
     function initMap() {
         // Map options
         let options = {
@@ -238,8 +240,6 @@ document.getElementById("now").addEventListener("click", function(event){
 
         // New map
         var map = new google.maps.Map(document.getElementById('map'), options);
-
-
 
         // Array of markers
         var markers=[
@@ -259,14 +259,11 @@ document.getElementById("now").addEventListener("click", function(event){
                 ?>
 
         ];
-
-
         // Loop through markers
         for (let i = 0; i < markers.length; i++) {
             // Add marker
             addMarker(markers[i]);
         }
-
         // Add Marker Function
         function addMarker(props) {
             let marker = new google.maps.Marker({
@@ -280,20 +277,36 @@ document.getElementById("now").addEventListener("click", function(event){
                 // Set icon image
                 marker.setIcon(props.iconImage);
             }
-
             // Check content
             if (props.content) {
                 let infoWindow = new google.maps.InfoWindow({
                     content: props.content
                 });
-
                 marker.addListener('click', function() {
                     infoWindow.open(map, marker);
                 });
             }
-
         }
+        var geocoder = new google.maps.Geocoder();
 
+        document.getElementById('submit').addEventListener('click', function() {
+          geocodeAddress(geocoder, map);
+        });
+      }
+
+      function geocodeAddress(geocoder, resultsMap) {
+        var address = document.getElementById('address').value;
+        geocoder.geocode({'address': address}, function(results, status) {
+          if (status === 'OK') {
+            resultsMap.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+              map: resultsMap,
+              position: results[0].geometry.location
+            });
+          } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+          }
+        });
     }
 
 
