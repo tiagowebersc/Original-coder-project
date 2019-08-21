@@ -28,8 +28,7 @@ Route::get('/lunchbagTotal', 'LunchBagController@totalItems');
 Route::put('/addlunchbag', 'LunchBagController@addLunchBag');
 Route::delete('/removelunchbag', 'LunchBagController@removeLunchBag');
 
-// TRUCKS DASHBOARD
-
+//  !TRUCKS DASHBOARD
 Route::get('/truck', 'TruckController@getOrders')->name('truck');
 Route::post('/truck', 'TruckController@updateOrders');
 Route::get('/truck/orderFilter', 'TruckController@filterOrder');
@@ -38,7 +37,12 @@ Route::post('/truck/orderFilter', 'TruckController@updateOrders');
 Route::get('/foodtruck/favorite/{idTruck}', 'foodTruckController@getFavorite');
 Route::post('/foodtruck/favorite/{idTruck}', 'foodTruckController@setFavorite');
 
-Route::get('/truck/menu/{idTruck}', 'MenuController@main'); //menu editing page
+// ! MENU
+Route::get('/truck/menu', 'MenuController@getMenu')->name('menu'); //menu editing page
+// Route::post('/truck/schedule', 'TruckController@setSchedule');
+Route::post('/truck/menu', 'TruckController@setMenu');
+// Route::get('/truck/schedule/info', 'TruckController@getSchedule');
+// Route::get('/truck/schedule/delete/{id}', 'TruckController@deleteSchedule');
 
 Route::get('/truck/details/{id}', 'OrderController@detailsOrders')->name('details');
 Route::post('/truck/details/{id}', 'OrderController@updateOrdersDetails');

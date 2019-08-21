@@ -50,7 +50,6 @@ hr {
     align-items: center;
     width: 95%;
     margin: auto;
-    margin-right: 0;
 }
 
 input[name='location'] {
@@ -109,10 +108,8 @@ input[name='location'] {
 }
 
 .show-schedule {
-    width: 90%;
-    margin-left: 7%;
-    margin-top: 30px;
-    margin-bottom: 10px;
+    width: 95%;
+    margin: 30px auto 10px auto;
 }
 
 .show-schedule p {
@@ -157,7 +154,6 @@ input[name='location'] {
         margin: auto;
         margin-top: 30px;
         margin-bottom: 10px;
-        padding: 10px;
     }
 
     .display-weekday {
@@ -255,8 +251,8 @@ input[name='location'] {
 
 @media only screen and (max-width: 410px) {
 
-    #saveBtn {
-    width: 100%;
+    .edit-schedule #saveBtn {
+        width: 100%;
     }
 
     .submit-btn {

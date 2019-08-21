@@ -1,16 +1,34 @@
 * {
     box-sizing: border-box;
     animation-duration: 0.3s;
+    font-family: "Roboto Slab", serif;
+}
+
+main p {
+    font-size: 18px;
 }
 
 *:not(input) {
     margin: 0;
     padding: 0;
     border: 0;
+    color: #010101;
 }
 
+h4 {
+    margin-top: 45px;
+}
+
+h3, h4 {
+    font-size: 36px;
+    margin-left: 25px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+}
+
+
 .background {
-    padding: 100px 0 0 0;
+    padding-top: 100px;
 }
 
 main {
@@ -18,30 +36,27 @@ main {
     overflow: scroll;
 }
 
-.truckName h1 {
-    font-size: 25px;
-}
-
-.truckName h2 {
-    padding-top: 80px;
-    font-size: 25px;
-}
 
 .settingCard {
     border: 1px solid lightgray;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    margin: 5px;
     padding: 10px;
-    margin-bottom: 40px;
+    margin-top: 30px;
+    width: 70%;
+    margin: 30px auto 40px auto;
+    max-width: 460px;
 }
 
 .descriptionArea {
     resize: none;
     border: 1px solid gainsboro;
+    display: block;
+    width: 100%;
+    max-width: 276px;
 }
 
 .itemList {
-    margin: 30px;
+    margin: 13px;
 }
 
 .itemCard {
@@ -51,6 +66,7 @@ main {
     width: 270px;
     height: 350px;
     margin: 0 auto;
+    border-radius: 2px;
 }
 
 .itemCard:hover {
@@ -60,6 +76,8 @@ main {
 .itemImg {
     height: 200px;
     width: 3rem;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
 }
 
 .container {
@@ -90,6 +108,7 @@ main {
 .iteminfo {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     padding-top: 20px;
     padding-bottom: 10px;
 }
@@ -99,14 +118,19 @@ main {
 }
 
 .itemName {
-    font-size: 18px;
-    font-weight: lighter;
-    padding-top: 5px;
+    width: 100%;
+    font-family: "Raleway", sans-serif;
 }
 
 .itemPrice {
-    font-size: 28px;
+    display: block;
 }
+
+.itemPrice-card {
+    font-size: 30px;
+
+}
+
 
 .itemform {
     padding-top: 20px;
@@ -121,9 +145,43 @@ main {
     padding-top: 9px;
 }
 
+.settingCard input[type='submit'] {
+    display: block;
+    width: 94%;
+    margin: 20px auto;
+    box-shadow: 0px 3px 6px 2px rgba(0,0,0,0.1);
+    border-radius: 2px;
+    background-color: #02CB24;
+    padding: 5px;
+    color: white;
+}
+
+.upload {
+    margin-top: 5px;
+}
+
+#item-price {
+    width: 80px;
+}
+
+.settingCard label {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+section {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
 @media only screen and (min-width: 1024px) {
     .background {
-        padding: 0 0 0 125px;
+        padding-top: 0px;
+        /* padding: 100px 0 0 0; */
+        margin-left: 124px;
     }
 
     main {
@@ -131,15 +189,17 @@ main {
     }
 
     section {
-        width: 60%;
-        height: 90vh;
+        width: 75%;
+        height: 100vh;
         display: flex;
         flex-wrap: wrap;
         overflow: scroll;
+        justify-content: center;
     }
 
     .mainquery {
         padding-left: 30px;
+        padding-top: 62px;
     }
 
     .truckName h1 {
@@ -154,6 +214,8 @@ main {
     }
 
     .settingCard {
-        padding: 30px;
+        padding: 15px;
+        width: 100%;
+
     }
 }

@@ -143,57 +143,72 @@ public function getSchedule() {
 }
 
     public function setSchedule(Request $request) {
-        $userId = Session::get('id_user');
-        $truck = Truck::where('id_user', $userId)->first();
 
-        // If yes, its a update
-        if(isset($request->scheduleId)) {
+        if(Session::has('id_user')){
 
-            $schedule = Schedule::find($request->scheduleId);
+            $truck = Truck::where('id_user', Session::get('id_user'))->first() ;
+
+            $schedule = Schedule::where('id_truck', $truck->id_truck)->get();
+
+            if(isset($truck->id_truck)) {
+
+                // $schedules = Schedule::where('id_truck', $truck->id_truck)->orderBy('weekday')->get();
+                // return view('truckOwnerSchedule', ['truck' => $truck, 'schedules' => $schedules]);
+
+                if(isset($request->scheduleId)) {
+                    $schedule = Schedule::find($request->scheduleId);
+                } else {
+                    $schedule = new Schedule;
+                }
+
+                $schedule->id_truck = $truck->id_truck;
+                $schedule->address = $request->location;
+                $schedule->latitude = $request->latitude;
+                $schedule->longitude = $request->longitude;
+                $schedule->city = $request->city;
+
+                switch($request->dayWeek) {
+                    case 'monday';
+                    $schedule->weekday = 0;
+                    break;
+                    case 'tuesday';
+                    $schedule->weekday = 1;
+                    break;
+                    case 'wednesday';
+                    $schedule->weekday = 2;
+                    break;
+                    case 'thursday';
+                    $schedule->weekday = 3;
+                    break;
+                    case 'friday';
+                    $schedule->weekday = 4;
+                    break;
+                    case 'saturday';
+                    $schedule->weekday = 5;
+                    break;
+                    case 'sunday';
+                    $schedule->weekday = 6;
+                    break;
+                }
+
+                $schedule->start_time = $request->fromTime;
+                $schedule->end_time = $request->toTime;
+                $schedule->save();
+
+                if(isset($request->scheduleId)) {
+                    return self::getSchedule();
+                } else {
+                    $schedules = Schedule::where('id_truck', $truck->id_truck)->get();
+                    return back()->with(['truck' => $truck, 'schedules' => $schedules]);
+                }
+            } else {
+                return redirect()->route('index');
+            }
         } else {
-            $schedule = new Schedule;
+            return redirect()->route('index');
         }
 
-        $schedule->id_truck = $truck->id_truck;
-        $schedule->address = $request->location;
-        $schedule->latitude = $request->latitude;
-        $schedule->longitude = $request->longitude;
-        $schedule->city = $request->city;
 
-        switch($request->dayWeek) {
-            case 'monday';
-            $schedule->weekday = 0;
-            break;
-            case 'tuesday';
-            $schedule->weekday = 1;
-            break;
-            case 'wednesday';
-            $schedule->weekday = 2;
-            break;
-            case 'thursday';
-            $schedule->weekday = 3;
-            break;
-            case 'friday';
-            $schedule->weekday = 4;
-            break;
-            case 'saturday';
-            $schedule->weekday = 5;
-            break;
-            case 'sunday';
-            $schedule->weekday = 6;
-            break;
-        }
-
-        $schedule->start_time = $request->fromTime;
-        $schedule->end_time = $request->toTime;
-        $schedule->save();
-
-        if(isset($request->scheduleId)) {
-            return self::getSchedule();
-        } else {
-            $schedules = Schedule::where('id_truck', $truck->id_truck)->get();
-            return back()->with(['truck' => $truck, 'schedules' => $schedules]);
-        }
     }
 
     public function getEditSchedule(Request $request) {
