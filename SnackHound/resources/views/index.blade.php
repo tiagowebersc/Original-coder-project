@@ -127,12 +127,21 @@
         </ul>
     </section>
         <section class="main-container">
+        @csrf
             <section class="cards-container">
                 <?php
                 foreach ($trucks as $truck) {
                     ?>
                 <div class="wrapper">
                     <div class="container">
+                    <input type="hidden" name="idTruck" value= "{{$truck->id_truck}}">
+                    <?php if (Session::has('id_user')) {
+                        if ($truck->favorite) { ?>
+                    <img class="heartlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-heart-outline.svg')}}" alt="">
+                    <?php } else { ?>
+                    <img class="heartlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-heart-blank.svg')}}" alt="">
+                    <?php }
+                    } ?>
                         <div class="top">
                             <img src="{{URL::asset('assets/IMGS/Food Trucks/RESIZED/'. $truck['image'])}}" alt="" />
                         </div>
@@ -366,6 +375,34 @@
 
         }
 
+    }
+
+
+    // Favorite ----------------------------------------------------------------
+    let favoriteList = document.querySelectorAll(".heartlogo");
+    for (let btnFavorite of favoriteList) {
+        btnFavorite.addEventListener("click", (e) => {
+            const paramFavorite = {
+                _token: document.querySelector('input[name="_token"]').value
+            };
+            const urlFavorite = "/foodtruck/favorite/" + e.target.parentElement.querySelector('input[name="idTruck"]').value;
+            fetch(urlFavorite, {
+                    method: "POST",
+                    body: JSON.stringify(paramFavorite),
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                })
+                .then(response => {
+                    response.json().then(function(data) {
+                        if (data.favorite) {
+                            e.target.src = e.target.src.replace("icons8-heart-blank.svg", "icons8-heart-outline.svg");
+                        } else {
+                            e.target.src = e.target.src.replace("icons8-heart-outline.svg", "icons8-heart-blank.svg");
+                        }
+                    });
+                });
+        });
     }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtlX1KloHpjKujAEto6qDggr_-ibVatcA&callback=initMap" async defer></script>

@@ -130,7 +130,6 @@
 <script>
     // favorite
     let btnFavorite = document.querySelector(".heartlogo");
-    console.log(btnFavorite);
     btnFavorite.addEventListener("click", (e) => {
         const paramFavorite = {
             _token: document.querySelector('input[name="_token"]').value
@@ -190,7 +189,6 @@
                 quantity: total
             };
             // ajax call
-            console.log(lunchBag);
             fetch("/addlunchbag", {
                 method: "PUT",
                 body: JSON.stringify(lunchBag),

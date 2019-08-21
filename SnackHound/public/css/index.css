@@ -1,5 +1,5 @@
 .bg-image {
-    background-image: url("/assets/IMGS/paula-vermeulen-URjZkhqsuBk-unsplash.jpg");
+    background-image: url('/assets/IMGS/paula-vermeulen-URjZkhqsuBk-unsplash.jpg');
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -12,7 +12,7 @@
     margin-top: 25px;
     color: white;
     font-weight: bold;
-    font-family: "Roboto Slab", serif;
+    font-family: 'Roboto Slab', serif;
     position: absolute;
     top: 30%;
     left: 50%;
@@ -25,11 +25,11 @@
 .bg-text h1 {
     font-size: 58px;
     padding-bottom: 10px;
-    font-family: "Raleway", sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 .bg-text p {
     font-size: 16px;
-    font-family: "Roboto Slab", serif;
+    font-family: 'Roboto Slab', serif;
     padding: 14px;
     padding-bottom: 20px;
 }
@@ -67,31 +67,37 @@
     color: white;
 }
 
-.main-container{
+.main-container {
     display: flex;
     flex-direction: column-reverse;
 }
 
-.map-container{
+.map-container {
     width: 100%;
-
-
 }
 #map {
     padding-right: 50px;
     height: 850px;
     width: 100%;
-  }
-  .truck-img{
-      height: 20px;
-  }
+}
+.truck-img {
+    height: 20px;
+}
 
+/* Favorite icon */
+.heartlogo {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: 10px;
+    left: 10px;
+}
 
-  /* the filter start here */
-  .container{
-      padding: 0px;
-  }
-  .filter-container {
+/* the filter start here */
+.container {
+    padding: 0px;
+}
+.filter-container {
     display: inherit;
     z-index: 200;
     height: 80px;
@@ -100,7 +106,7 @@
     width: 100%;
     padding: 20px 0;
     position: sticky;
-    top:3rem;
+    top: 3rem;
 }
 .filterbar-container {
     display: none;
@@ -119,11 +125,11 @@
     position: relative;
     top: 40px !important;
     left: inherit !important;
-    min-width: 380PX;
+    min-width: 380px;
     width: 100%;
     margin: auto;
 }
-.dropdown-menu.show{
+.dropdown-menu.show {
     display: grid;
     grid-template-columns: auto auto auto;
 }
@@ -145,9 +151,8 @@
     height: 50px;
 }
 
-
-  /* start with the careds css */
-  .wrapper {
+/* start with the careds css */
+.wrapper {
     width: 294px;
     height: 350px;
     background: white;
@@ -156,76 +161,77 @@
     overflow: hidden;
     border-radius: 10px 10px 10px 10px;
     -webkit-box-shadow: 0;
-            box-shadow: 0;
+    box-shadow: 0;
     -webkit-transform: scale(0.95);
-            transform: scale(0.95);
+    transform: scale(0.95);
     -webkit-transition: -webkit-box-shadow 0.5s, -webkit-transform 0.5s;
     transition: -webkit-box-shadow 0.5s, -webkit-transform 0.5s;
     transition: box-shadow 0.5s, transform 0.5s;
-    transition: box-shadow 0.5s, transform 0.5s, -webkit-box-shadow 0.5s, -webkit-transform 0.5s;
-  }
+    transition: box-shadow 0.5s, transform 0.5s, -webkit-box-shadow 0.5s,
+        -webkit-transform 0.5s;
+}
 
-  .wrapper:hover {
+.wrapper:hover {
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
     -webkit-box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);
-            box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);
-  }
+    box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);
+}
 
-  .wrapper .container {
+.wrapper .container {
     width: 100%;
     height: 100%;
-    padding: 0PX;
-  }
+    padding: 0px;
+}
 
-  .wrapper .container .top {
+.wrapper .container .top {
     height: 60%;
     width: 100%;
-  }
+}
 
-  .wrapper .container .bottom {
+.wrapper .container .bottom {
     width: 200%;
     height: 40%;
     -webkit-transition: -webkit-transform 0.5s;
     transition: -webkit-transform 0.5s;
     transition: transform 0.5s;
     transition: transform 0.5s, -webkit-transform 0.5s;
-  }
+}
 
-  .wrapper .container .bottom.clicked {
+.wrapper .container .bottom.clicked {
     -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-  }
+    transform: translateX(-50%);
+}
 
-  .wrapper .container .bottom h1 {
+.wrapper .container .bottom h1 {
     margin: 0;
     padding: 0;
-  }
+}
 
-  .wrapper .container .bottom p {
+.wrapper .container .bottom p {
     margin: 0;
     padding: 0;
-  }
+}
 
-  .wrapper .container .bottom .left {
+.wrapper .container .bottom .left {
     height: 100%;
     width: 65%;
     background: white;
     position: relative;
     float: left;
-    border:solid black 1px;
+    border: solid black 1px;
     border-radius: 10px;
     width: 293px;
-  }
+}
 
-  .wrapper .container .bottom .left .details {
+.wrapper .container .bottom .left .details {
     padding-left: 15px;
     font-size: 10px;
     float: left;
     width: calc(100% - 40px);
-  }
+}
 
-  .wrapper .container .bottom .left .buy {
+.wrapper .container .bottom .left .buy {
     float: right;
     width: calc(30% - 2px);
     height: 100%;
@@ -233,9 +239,9 @@
     -webkit-transition: background 0.5s;
     transition: background 0.5s;
     border-left: solid thin rgba(0, 0, 0, 0.1);
-  }
+}
 
-  .wrapper .container .bottom .left .buy i {
+.wrapper .container .bottom .left .buy i {
     font-size: 30px;
     padding: 30px;
     color: #254053;
@@ -243,19 +249,19 @@
     transition: -webkit-transform 0.5s;
     transition: transform 0.5s;
     transition: transform 0.5s, -webkit-transform 0.5s;
-  }
+}
 
-  .wrapper .container .bottom .left .buy:hover {
+.wrapper .container .bottom .left .buy:hover {
     background: #a6cdde;
-  }
+}
 
-  .wrapper .container .bottom .left .buy:hover i {
+.wrapper .container .bottom .left .buy:hover i {
     -webkit-transform: translateY(5px);
-            transform: translateY(5px);
+    transform: translateY(5px);
     color: #00394b;
-  }
+}
 
-  .wrapper .inside {
+.wrapper .inside {
     z-index: 9;
     background: black;
     width: 140px;
@@ -267,106 +273,106 @@
     -webkit-transition: all 0.5s, border-radius 2s, top 1s;
     transition: all 0.5s, border-radius 2s, top 1s;
     overflow: hidden;
-  }
+}
 
-  .wrapper .inside .icon {
+.wrapper .inside .icon {
     position: absolute;
     right: 85px;
     top: 85px;
     color: white;
     opacity: 1;
-  }
+}
 
-  .wrapper .inside:hover {
+.wrapper .inside:hover {
     width: 100%;
     right: 0;
     top: 0;
     border-radius: 0;
     height: 100%;
-  }
+}
 
-  .wrapper .inside:hover .icon {
+.wrapper .inside:hover .icon {
     opacity: 0;
     right: 15px;
     top: 15px;
-  }
+}
 
-  .wrapper .inside:hover .contents {
+.wrapper .inside:hover .contents {
     opacity: 1;
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
     -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
+    transform: translateY(0);
+}
 
-  .wrapper .inside .contents {
+.wrapper .inside .contents {
     padding: 5%;
     opacity: 0;
     -webkit-transform: scale(0.5);
-            transform: scale(0.5);
+    transform: scale(0.5);
     -webkit-transform: translateY(-200%);
-            transform: translateY(-200%);
+    transform: translateY(-200%);
     -webkit-transition: opacity 0.2s, -webkit-transform 0.8s;
     transition: opacity 0.2s, -webkit-transform 0.8s;
     transition: opacity 0.2s, transform 0.8s;
     transition: opacity 0.2s, transform 0.8s, -webkit-transform 0.8s;
-  }
+}
 
-  .wrapper .inside .contents table {
+.wrapper .inside .contents table {
     text-align: left;
     width: 100%;
-  }
+}
 
-  .wrapper .inside .contents h1,
-  .wrapper .inside .contents p,
-  .wrapper .inside .contents table {
+.wrapper .inside .contents h1,
+.wrapper .inside .contents p,
+.wrapper .inside .contents table {
     color: white;
-  }
+}
 
-  .wrapper .inside .contents p {
+.wrapper .inside .contents p {
     font-size: 13px;
-  }
+}
 
-  h1 {
+h1 {
     font-size: 24px;
-  }
-  hr {
+}
+hr {
     border: 0;
-    clear:both;
-    display:block;
+    clear: both;
+    display: block;
     width: 110%;
-    background-color:black;
+    background-color: black;
     height: 1px;
     margin-bottom: 20px;
-  }
-  .stars-lication{
-      width: 250px;
-      display: flex;
-      justify-content: space-between;
-  }
-  .card-category{
-      padding: 5px 30px;
-      color: white;
-      background-color: #06B7F9;
-      border-radius: 0px 0px 0px 10px;
-  }
-  .category-€{
-      display: flex;
-      justify-content: space-between;
-      width: 250px;
-  }
-  .background {
+}
+.stars-lication {
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+}
+.card-category {
+    padding: 5px 30px;
+    color: white;
+    background-color: #06b7f9;
+    border-radius: 0px 0px 0px 10px;
+}
+.category-€ {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+}
+.background {
     padding: 60px 0 0 0;
-  }
-.trucks-img{
+}
+.trucks-img {
     height: 250px;
 }
 
-  /*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style.css.map */
 
 @media only screen and (min-width: 1024px) {
     .bg-image {
-        background-image: url("/assets/IMGS/paula-vermeulen-URjZkhqsuBk-unsplash-blur.jpg");
+        background-image: url('/assets/IMGS/paula-vermeulen-URjZkhqsuBk-unsplash-blur.jpg');
         height: 100vh;
     }
     .bg-text {
@@ -385,7 +391,7 @@
         background: transparent;
         background-size: 50px;
         border-radius: 50px;
-        background-image: url("../assets/ICONS/icons8-search.svg");
+        background-image: url('../assets/ICONS/icons8-search.svg');
         background-repeat: no-repeat;
         background-position: 98%;
         font-size: 36px;
@@ -424,15 +430,14 @@
         font-size: 24px;
     }
 
-    .main-container{
+    .main-container {
         display: flex;
         flex-direction: inherit;
         margin: auto;
         width: 100%;
         display: flex;
-        justify-content:space-around;
+        justify-content: space-around;
     }
-
 
     /* the filter start here */
     .filter-container {
@@ -449,7 +454,7 @@
         padding: 10px;
         overflow: hidden;
         position: sticky;
-        top:0.0rem;
+        top: 0rem;
         z-index: 200;
     }
     .sticky {
@@ -491,20 +496,16 @@
         width: 80px;
     }
 
-
-
-
     /* the map start here */
-    .map-container{
+    .map-container {
         width: 70%;
     }
     #map {
-      padding-right: 50px;
-      height: 1150px;
-      width: 100%;
+        padding-right: 50px;
+        height: 1150px;
+        width: 100%;
     }
     .background {
-      padding: 0 0 0 125px;
+        padding: 0 0 0 125px;
     }
-
 }
