@@ -62,8 +62,8 @@
                 <!-- This arrticle is hidden on mobile -->
                 <article id="lunchbagMailingList" class="panel">
                     <p id="joinMsg">Want to stay up to date? We’d be happy to update you as new trucks or specials become available!</p>
-                    <div id="mailCheckbox">
-                        <p id="check" >Sign up to for our mailing list:</p>
+                    <div id="mailCheckboxWide">
+                        <p id="checkWide" >Sign up to for our mailing list:</p>
                         <input type="checkbox">
                     </div>
                 </article>
@@ -116,13 +116,13 @@
                 <!-- This checkbox should be hidden on wider screens -->
                 <div id="mailCheckbox">
                         <p id="check" >Sign up to for our mailing list:</p>
-                        <input type="checkbox">
+                        <input id="mobileCheckbox" type="checkbox">
                 </div>
                 <div id="extraBtns">
-                    <button id="apple" type="submit"><img class="btnIcons" src="{{URL::asset('assets/ICONS/LUNCHBAG/apple.svg')}}" alt="the icon for Apple">Apple Pay</button>
-                    <button id="paypal" type="submit"><img class="btnIcons" src="{{URL::asset('assets/ICONS/LUNCHBAG/icons8-paypal.svg')}}" alt="the icon for PayPal">PayPal</button>
+                    <button id="apple" class="checkoutButton" type="submit"><img class="btnIcons" src="{{URL::asset('assets/ICONS/LUNCHBAG/apple.svg')}}" alt="the icon for Apple">Apple Pay</button>
+                    <button id="paypal" class="checkoutButton" type="submit"><img class="btnIcons" src="{{URL::asset('assets/ICONS/LUNCHBAG/icons8-paypal.svg')}}" alt="the icon for PayPal">PayPal</button>
                 </div>
-                <button id="checkout" type="submit">Checkout</button>
+                <button id="checkout" class="checkoutButton" type="submit">Checkout</button>
             </article>
         </form>
     </section>
