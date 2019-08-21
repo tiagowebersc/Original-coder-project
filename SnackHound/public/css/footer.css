@@ -2,11 +2,9 @@
         box-sizing: border-box;
     }
 
-    *:not(input) {
-        margin: 0;
-        padding: 0;
-        border: 0;
-    }
+.first-footer h3 {
+    margin: 0px;
+}
 
 .footer{
     background-color: black;
