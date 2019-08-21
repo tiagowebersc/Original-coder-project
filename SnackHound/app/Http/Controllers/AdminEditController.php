@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Truck;
-use App\Models\Review;
-use App\Models\Menu;
+use App\Models\Order;
 use App\Models\Schedule;
+use App\Models\Truck;
+use App\Models\View_order;
+use App\Models\Favorite;
+use Session;
+use Illuminate\Http\Request;
 
 class AdminEditController extends Controller
 {
-    public function main() {
+    public function getUsers() {
         return view("adminedit");
     }
 }
