@@ -40,7 +40,7 @@ Route::post('/foodtruck/favorite/{idTruck}', 'foodTruckController@setFavorite');
 // ! MENU
 Route::get('/truck/menu', 'MenuController@getMenu')->name('menu'); //menu editing page
 // Route::post('/truck/schedule', 'TruckController@setSchedule');
-Route::post('/truck/menu', 'TruckController@setMenu');
+Route::post('/truck/menu', 'MenuController@setMenu');
 // Route::get('/truck/schedule/info', 'TruckController@getSchedule');
 // Route::get('/truck/schedule/delete/{id}', 'TruckController@deleteSchedule');
 
