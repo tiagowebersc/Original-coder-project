@@ -43,66 +43,18 @@
                       Filter> <span class="caret"></span>
                     </button>
                     <ul id="custome-drpdown" class="custome-drpdown">
-                      <li>
-                        <a href="#">
-                          <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}"> Location
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-chinese-fried-rice (2).svg')}}"> Asian
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter//icons8-cake.svg')}}"> Bakery|Desserts
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-grill (1).svg')}}"> Barbecue
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter//icons8-cheeseburger (1).svg')}}"> Burgers
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-coconut-cocktail.svg')}}"> Caribbean
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-coffee-to-go (1).svg')}}"> Coffee|Beverages
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-baguette (1).svg')}}"> French
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-taco (2).svg')}}"> Fries
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-taco (2).svg')}}"> Mexican
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-salami-pizza (1).svg')}}"> Pizza|Pasta
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-crab (2).svg')}}"> Seafood
-                        </a>
-                      </li>
+                        <li><a href="#" id="now"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}'" onmousedown="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'"> Location </a></li>
+                        <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-chinese-fried-rice (2).svg' )}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-chinese-fried-rice (1).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-chinese-fried-rice (2).svg')}}'"> Asian </a></li>
+                        <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-cake.svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-cake (2).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-cake.svg')}}'"> Bakery|Desserts </a></li>
+                        <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-grill (1).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-grill.svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-grill (1).svg')}}'"> Barbecue </a></li>
+                        <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-cheeseburger (1).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-cheeseburger.svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-cheeseburger (1).svg')}}'"> Burgers </a></li>
+                        <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-coconut-cocktail.svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-coconut-cocktail (1).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-coconut-cocktail.svg')}}'"> Caribbean </a></li>
+                        <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-coffee-to-go (1).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-coffee-to-go.svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-coffee-to-go (1).svg')}}'"> Coffee|Beverages </a></li>
+                        <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-baguette (1).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-baguette.svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-baguette (1).svg')}}'"> French </a></li>
+                        <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-french-fries (2).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-french-fries (1).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-french-fries (2).svg')}}'"> Fries </a></li>
+                        <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-taco (2).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-taco.svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-taco (2).svg')}}'"> Mexican </a></li>
+                        <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-salami-pizza (1).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-salami-pizza.svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-salami-pizza (1).svg')}}'"> Pizza|Pasta </a></li>
+                        <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-crab (2).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-crab (1).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-crab (2).svg')}}'"> Seafood </a></li>
                     </ul>
                 </div>
             </div>
@@ -111,19 +63,18 @@
 
     <section id="filterbar-container" class="filterbar-container">
         <ul>
-            {{-- <li><a href="#"> <img class='filterbar-main-logo' src="{{URL::asset('assets/ICONS/LOGO/SVG/Logo_Black-White.svg')}}"></a></li> --}}
-            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}"> Location </a></li>
-            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-chinese-fried-rice (2).svg')}}"> Asian </a></li>
-            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter//icons8-cake.svg')}}"> Bakery|Desserts </a></li>
-            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-grill (1).svg')}}"> Barbecue </a></li>
-            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter//icons8-cheeseburger (1).svg')}}"> Burgers </a></li>
-            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-coconut-cocktail.svg')}}"> Caribbean </a></li>
-            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-coffee-to-go (1).svg')}}"> Coffee|Beverages </a></li>
-            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-baguette (1).svg')}}"> French </a></li>
-            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-french-fries (2).svg')}}"> Fries </a></li>
-            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-taco (2).svg')}}"> Mexican </a></li>
-            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-salami-pizza (1).svg')}}"> Pizza|Pasta </a></li>
-            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-crab (2).svg')}}"> Seafood </a></li>
+            <li><a href="#" id="now"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}'" onmousedown="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'"> Location </a></li>
+            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-chinese-fried-rice (2).svg' )}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-chinese-fried-rice (1).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-chinese-fried-rice (2).svg')}}'"> Asian </a></li>
+            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-cake.svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-cake (2).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-cake.svg')}}'"> Bakery|Desserts </a></li>
+            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-grill (1).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-grill.svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-grill (1).svg')}}'"> Barbecue </a></li>
+            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-cheeseburger (1).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-cheeseburger.svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-cheeseburger (1).svg')}}'"> Burgers </a></li>
+            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-coconut-cocktail.svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-coconut-cocktail (1).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-coconut-cocktail.svg')}}'"> Caribbean </a></li>
+            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-coffee-to-go (1).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-coffee-to-go.svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-coffee-to-go (1).svg')}}'"> Coffee|Beverages </a></li>
+            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-baguette (1).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-baguette.svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-baguette (1).svg')}}'"> French </a></li>
+            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-french-fries (2).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-french-fries (1).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-french-fries (2).svg')}}'"> Fries </a></li>
+            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-taco (2).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-taco.svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-taco (2).svg')}}'"> Mexican </a></li>
+            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-salami-pizza (1).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-salami-pizza.svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-salami-pizza (1).svg')}}'"> Pizza|Pasta </a></li>
+            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-crab (2).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-crab (1).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-crab (2).svg')}}'"> Seafood </a></li>
         </ul>
     </section>
         <section class="main-container">
@@ -225,14 +176,19 @@
 </div>
 <script>
 
-function show() {
-  var x = document.getElementById("custome-drpdown");
-  if (x.style.display === "none") {
-    x.style.display = "grid";
-  } else {
-    x.style.display = "none";
-  }
-}
+document.getElementById("now").addEventListener("click", function(event){
+  event.preventDefault()
+});
+
+
+    function show() {
+    let x = document.getElementById("custome-drpdown");
+    if (x.style.display === "none") {
+        x.style.display = "grid";
+    } else {
+        x.style.display = "none";
+    }
+    }
 
     let bar = document.querySelector('.filterbar-container');
 
@@ -272,85 +228,38 @@ function show() {
 
     function initMap() {
         // Map options
-        var options = {
+        let options = {
             zoom: 10,
             center: {
                 lat: 49.779705,
                 lng: 6.091878
-            }
+            },
         }
 
         // New map
         var map = new google.maps.Map(document.getElementById('map'), options);
 
-        // Listen for click on map
-        google.maps.event.addListener(map, 'click', function(event) {
-            // Add marker
-            addMarker({
-                coords: event.latLng
-            });
-        });
-
-        /*
-        // Add marker
-        var marker = new google.maps.Marker({
-            position:{lat:42.4668,lng:-70.9495},
-            map:map,
-            icon:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
-        });
-
-        var infoWindow = new google.maps.InfoWindow({
-            content:'<h1>Lynn MA</h1>'
-        });
-
-        marker.addListener('click', function(){
-            infoWindow.open(map, marker);
-        });
-        */
 
 
-        var example=[
+        // Array of markers
+        var markers=[
             <?php
                 foreach ($trucks as $truck) {?>
                     {
-                        name : "<?php echo $truck['name'] ?>"
-                    },
+                coords: {
+                    lat: <?php echo $truck['latitude'] ?>,
+                    lng: <?php echo $truck['longitude'] ?>
+                },
+                iconImage: 'https://img.icons8.com/officel/40/000000/marker.png',
+                content: '<img src="{{URL::asset('assets/IMGS/Food Trucks/RESIZED/'. $truck['image'])}}" alt="" /><h1>"<?php echo $truck['name'] ?>"</h1>',
+                animation: google.maps.Animation.DROP
+            },
             <?php
                 }
                 ?>
 
-        ]
-        console.log(example);
-
-
-        // Array of markers
-        var markers = [{
-                coords: {
-                    lat: 49.815273,
-                    lng: 6.129583
-                },
-                iconImage: 'https://img.icons8.com/officel/40/000000/marker.png',
-                content: '<img src="{{URL::asset('assets/IMGS/Food Trucks/RESIZED/burger_and_co.jpg')}}" alt="" />',
-                animation: google.maps.Animation.DROP
-            },
-            {
-                coords: {
-                    lat: 49.659599,
-                    lng: 5.915250
-                },
-                iconImage: 'https://img.icons8.com/officel/40/000000/marker.png',
-                content: '<img src="{{URL::asset('assets/IMGS/Food Trucks/RESIZED/burger_and_co.jpg')}}" alt="" />',
-            },
-            {
-                coords: {
-                    lat: 49.495640,
-                    lng: 5.985173
-                },
-                content: '<img src="{{URL::asset('assets/IMGS/Food Trucks/RESIZED/burger_and_co.jpg')}}" alt="" /><h1>hloo</h1>',
-                iconImage: 'https://img.icons8.com/officel/40/000000/marker.png'
-            }
-
         ];
+
 
         // Loop through markers
         for (let i = 0; i < markers.length; i++) {
@@ -363,6 +272,7 @@ function show() {
             let marker = new google.maps.Marker({
                 position: props.coords,
                 map: map,
+                animation: google.maps.Animation.DROP,
                 //icon:props.iconImage
             });
             // Check for customicon
