@@ -91,7 +91,9 @@
                     });
                 });
         }
-        const id = setInterval(updateLunchBag, 500);
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const id = setInterval(updateLunchBag, 1000);
+        });
     </script>
 </body>
 
