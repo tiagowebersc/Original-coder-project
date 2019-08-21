@@ -7,6 +7,7 @@ use App\Models\Truck;
 use App\Models\Review;
 use App\Models\Menu;
 use App\Models\Schedule;
+use App\Models\Favorite;
 use Session;
 
 class foodTruckController extends Controller
@@ -27,8 +28,9 @@ class foodTruckController extends Controller
         }
         $schedules = Schedule::where("id_truck", $idTruck)->orderby('weekday')->orderby('start_time')->get();
         $menus = Menu::where("id_truck", $idTruck)->get();
+        $favorite = Self::getFavorite($idTruck);
 
-        return view("foodtruckinfo", ["foodtruck" => $foodTruck, "avg_rate" => $avg_rate, "reviews" => $reviews, "menus" => $menus, "schedules" => $schedules]);
+        return view("foodtruckinfo", ["foodtruck" => $foodTruck, "avg_rate" => $avg_rate, "reviews" => $reviews, "menus" => $menus, "schedules" => $schedules, "favorite" => $favorite]);
     }
 
     // Favorite control
@@ -42,17 +44,19 @@ class foodTruckController extends Controller
     }
     public function setFavorite($idTruck)
     {
-        if (is_int($idTruck) && Session::has('id_user')) {
+        $return = 0;
+        if (Session::has('id_user')) {
             $favorite = Favorite::where('id_user', Session::get('id_user'))->where('id_truck', $idTruck)->first();
             if ($favorite == null) {
                 $favorite = new Favorite();
                 $favorite->id_truck = $idTruck;
                 $favorite->id_user = Session::get('id_user');
                 $favorite->save();
+                $return = 1;
             } else {
-                Magazine::destroy($favorite->id_favorite);
+                Favorite::destroy($favorite->id_favorite);
             }
         }
-        return response()->json(['action' => 'updated']);
+        return response()->json(['favorite' => $return]);
     }
 }

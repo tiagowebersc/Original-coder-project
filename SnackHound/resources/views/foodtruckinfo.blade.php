@@ -16,7 +16,7 @@
         <div class="backgrounddiv" name="backgrounddiv" style="background-image: url('/assets/IMGS/Food Trucks/BLURRED/{{$foodtruck->image}}');">
 
             <div name="truckinfo" class="truckinfo">
-
+                <input type="hidden" id="idTruck" value="{{$foodtruck->id_truck}}">
                 <h1>{{$foodtruck->name}}</h1>
                 <div class="favstar">
                     <div class="reviewDiv">
@@ -30,7 +30,13 @@
                         <?php } ?>
                         <p class="reviewNbr">{{COUNT($reviews)}}</p>
                     </div>
+                    <?php if (Session::has('id_user')) {
+                        if ($favorite) { ?>
                     <img class="heartlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-heart-outline.svg')}}" alt="">
+                    <?php } else { ?>
+                    <img class="heartlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-heart-blank.svg')}}" alt="">
+                    <?php }
+                    } ?>
                 </div>
 
                 <hr class="separator">
@@ -122,6 +128,32 @@
 
 @section('js')
 <script>
+    // favorite
+    let btnFavorite = document.querySelector(".heartlogo");
+    console.log(btnFavorite);
+    btnFavorite.addEventListener("click", (e) => {
+        const paramFavorite = {
+            _token: document.querySelector('input[name="_token"]').value
+        };
+        const urlFavorite = "/foodtruck/favorite/" + document.querySelector("#idTruck").value;
+        fetch(urlFavorite, {
+                method: "POST",
+                body: JSON.stringify(paramFavorite),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(response => {
+                response.json().then(function(data) {
+                    if (data.favorite) {
+                        btnFavorite.src = btnFavorite.src.replace("icons8-heart-blank.svg", "icons8-heart-outline.svg");
+                    } else {
+                        btnFavorite.src = btnFavorite.src.replace("icons8-heart-outline.svg", "icons8-heart-blank.svg");
+                    }
+                });
+            });
+    });
+
     // plus button
     let btnList = document.querySelectorAll(".plusBtn");
     for (let btn of btnList) {
