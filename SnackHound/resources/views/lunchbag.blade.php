@@ -43,88 +43,120 @@
                 <article id="lunchbagCost" class="panel">
                     @csrf
                     <h1 id="title">Lunchbag</h2>
-                    <div id="lunchbagTotal">
-                        <div class="rows" id="row1">
-                            <p class="labels">Order Total :</p>
-                            <p class="labelContent" id="orderTotal">(totalAmt)</p>
+                        <div id="lunchbagTotal">
+                            <div class="rows" id="row1">
+                                <p class="labels">Order Total :</p>
+                                <p class="labelContent" id="orderTotal">{{number_format($total, 2)}}€</p>
+                            </div>
+                            <div class="rows" id="row2">
+                                <p class="labels">Promo Code :</p>
+                                <input class="labelContent" id="code" type="text" placeholder="code">
+                            </div>
+                            <hr>
+                            <div class="rows" id="row3">
+                                <p class="labels">Total :</p>
+                                <h5 class="labelContent" id="totalAmt">{{number_format($total, 2)}}€</h5>
+                            </div>
                         </div>
-                        <div class="rows" id="row2">
-                            <p class="labels">Promo Code :</p>
-                            <input class="labelContent" id="code" type="text" placeholder="code">
-                        </div>
-                        <hr >
-                        <div class="rows" id="row3">
-                            <p class="labels">Total :</p>
-                            <h5 class="labelContent" id="totalAmt">(totalAmt)</h5>
-                        </div>
-                    </div>
                 </article>
                 <!-- This arrticle is hidden on mobile -->
                 <article id="lunchbagMailingList" class="panel">
                     <p id="joinMsg">Want to stay up to date? We’d be happy to update you as new trucks or specials become available!</p>
                     <div id="mailCheckboxWide">
-                        <p id="checkWide" >Sign up to for our mailing list:</p>
+                        <p id="checkWide">Sign up to for our mailing list:</p>
                         <input type="checkbox">
                     </div>
                 </article>
             </div>
             <article id="lunchbagList" class="panel">
-                <ul>
+                <ul class="lunchBagitems">
+                    <?php foreach ($itemList as $item) { ?>
                     <li>
-                        <img class="imgs" src="{{URL::asset('assets/IMGS/Menu/frittenwerk/classic-quebec-poutine.jpg')}}" alt="photo of classic poutine">
+                        <img class="imgs" src="{{URL::asset('assets/IMGS/Menu/'.$item->id_truck.'/'.$item->image)}}" alt="photo of classic poutine">
                         <div class="qtyCol">
                             <span class="plus">+</span>
                             <div class="qty">
-                                1
+                                {{$item->quantity}}
                             </div>
                             <span class="minus">-</span>
                         </div>
-                        <p class="foodName">Poutine, Québec Classic</p>
-                        <h3>5,00€</h3>
+                        <p class="foodName">{{$item->name}}</p>
+                        <h3>{{number_format($item->price, 2)}}€</h3>
                         <span class="ex">x</span>
                     </li>
                     <hr>
-                    <li>
-                        <img class="imgs" src="{{URL::asset('assets/IMGS/Menu/frittenwerk/montreal-style-poutine.jpg')}}" alt="photo of classic poutine">
-                        <div class="qtyCol">
-                            <span class="plus">+</span>
-                            <div class="qty">
-                                2
-                            </div>
-                            <span class="minus">-</span>
-                        </div>
-                        <p class="foodName">Poutine, Montreal Style</p>
-                        <h3>11,00€</h3>
-                        <span class="ex">x</span>
-                    </li>
-                    <hr>
-                    <li>
-                        <img class="imgs" src="{{URL::asset('assets/IMGS/Menu/frittenwerk/tijuana.jpg')}}" alt="photo of classic poutine">
-                        <div class="qtyCol">
-                            <span class="plus">+</span>
-                            <div class="qty">
-                                1
-                            </div>
-                            <span class="minus">-</span>
-                        </div>
-                        <p class="foodName">Tijuana Fries</p>
-                        <h3>6,90€</h3>
-                        <span class="ex">x</span>
-                    </li>
-                    <hr>
+                    <?php } ?>
                 </ul>
                 <!-- This checkbox should be hidden on wider screens -->
                 <div id="mailCheckbox">
-                        <p id="check" >Sign up to for our mailing list:</p>
-                        <input id="mobileCheckbox" type="checkbox">
+                    <p id="check">Sign up to for our mailing list:</p>
+                    <input id="mobileCheckbox" type="checkbox">
                 </div>
-                <div id="extraBtns">
+                <!-- <div id="extraBtns">
                     <button id="apple" class="checkoutButton" type="submit"><img class="btnIcons" src="{{URL::asset('assets/ICONS/LUNCHBAG/apple.svg')}}" alt="the icon for Apple">Apple Pay</button>
                     <button id="paypal" class="checkoutButton" type="submit"><img class="btnIcons" src="{{URL::asset('assets/ICONS/LUNCHBAG/icons8-paypal.svg')}}" alt="the icon for PayPal">PayPal</button>
-                </div>
+                </div> -->
                 <button id="checkout" class="checkoutButton" type="submit">Checkout</button>
             </article>
         </form>
     </section>
 </main>
+@endsection
+
+@section('js')
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        // plus button
+        let btnList = document.querySelectorAll(".plusBtn");
+        for (let btn of btnList) {
+            btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                let total = parseInt(e.target.parentElement.querySelector(".itemNumber").innerHTML, 10);
+                if (isNaN(total)) total = 0;
+                total += 1;
+                e.target.parentElement.querySelector(".itemNumber").innerHTML = total;
+            });
+        }
+        // minus button
+        btnList = document.querySelectorAll(".minusBtn");
+        for (let btn of btnList) {
+            btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                let total = parseInt(e.target.parentElement.querySelector(".itemNumber").innerHTML, 10);
+                if (isNaN(total)) total = 0;
+                total -= 1;
+                if (total == 0) total = 1;
+                e.target.parentElement.querySelector(".itemNumber").innerHTML = total;
+            });
+        }
+        // add button
+        btnList = document.querySelectorAll(".addToBag");
+        for (let btn of btnList) {
+            btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                let total = parseInt(e.target.parentElement.parentElement.querySelector(".plusMinus").querySelector(".itemNumber").innerHTML, 10);
+                if (isNaN(total)) total = 1;
+                const lunchBag = {
+                    _token: document.querySelector('input[name="_token"]').value,
+                    idMenu: e.target.parentElement.querySelector('input[name="idMenu"]').value,
+                    quantity: total
+                };
+                // ajax call
+                fetch("/addlunchbag", {
+                    method: "PUT",
+                    body: JSON.stringify(lunchBag),
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                });
+                // .then(response => {
+                //     console.log(response);
+                //     response.json().then(function(data) {
+                //         console.log(data);
+                //     });
+                // }).catch(error => console.log(error));
+            });
+        }
+    });
+</script>
 @endsection

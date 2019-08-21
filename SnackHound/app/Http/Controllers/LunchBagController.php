@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Menu;
 use Session;
 use Cookie;
 
@@ -11,7 +12,6 @@ class LunchBagController extends Controller
     public function totalItems()
     {
         $total = 0;
-        $lunchBag = [];
         if (Cookie::get('lunchBag') != null) {
             $total =  count(unserialize(Cookie::get('lunchBag')));
         }
@@ -66,6 +66,21 @@ class LunchBagController extends Controller
 
     public function main()
     {
-        return view('lunchbag');
+        $total = 0;
+        $itemList = [];
+        if (Cookie::get('lunchBag') != null) {
+            $lunchBagList = unserialize(Cookie::get('lunchBag'));
+            foreach ($lunchBagList as $item) {
+
+                $menu = Menu::where('id_menu', $item['idMenu'])->first();
+                $menu->quantity = $item['quantity'];
+                $menu->total = $menu->price * $menu->quantity;
+                $total += $menu->total;
+                $itemList[] = $menu;
+            }
+        }
+
+
+        return view('lunchbag', ['total' => $total, 'itemList' => $itemList]);
     }
 }
