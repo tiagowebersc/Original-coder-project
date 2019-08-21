@@ -13,7 +13,7 @@
                     <p>1856 Luxembourg City</p>
                 </div>
                 <div>
-                    <h3>Comments / Suggestions?</h3>
+                    <h3>Comments/ Suggestions?</h3>
                     <p>hello@snackhound.com</p>
                     <br>
                     <h3>Food Truck Owner?</h3>
