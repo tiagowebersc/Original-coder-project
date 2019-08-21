@@ -12,14 +12,13 @@ main p {
     margin: 0;
     padding: 0;
     border: 0;
-    color: #010101;
 }
 
-h4 {
+.main-title h4 {
     margin-top: 45px;
 }
 
-h3, h4 {
+.main-title {
     font-size: 36px;
     margin-left: 25px;
     font-family: "Raleway", sans-serif;
@@ -169,7 +168,7 @@ main {
     margin-left: 10px;
 }
 
-section {
+.menu-section {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -188,18 +187,19 @@ section {
         display: flex;
     }
 
-    section {
+    .menu-section {
         width: 75%;
         height: 100vh;
         display: flex;
         flex-wrap: wrap;
-        overflow: scroll;
         justify-content: center;
     }
 
     .mainquery {
         padding-left: 30px;
         padding-top: 62px;
+        position: sticky;
+        top: 0;
     }
 
     .truckName h1 {
