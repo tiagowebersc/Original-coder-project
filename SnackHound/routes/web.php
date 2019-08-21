@@ -63,11 +63,9 @@ Route::get('/foodtruckinfo/{id_truck}', 'foodTruckController@main'); //foodtruck
 Route::get('/adminedit', 'AdminEditController@getUsers'); // Admin page to edit user
 
 // TEST VIEW for the RESET PASSWORD email
-Route::get('/testEmail', function () {
-    return view('mail');
+Route::get('/mailTruckConfirm', function () {
+    return view('mailTruckConfirm');
 });
-
-
 
 // Route::get('/index', function () {
 //     return view('index');
