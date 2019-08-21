@@ -94,5 +94,5 @@
         const id = setInterval(updateLunchBag, 500);
     </script>
 </body>
-
+@include('layouts.footer')
 </html>

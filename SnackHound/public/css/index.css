@@ -531,7 +531,7 @@ hr {
     /* the map start here */
     .map-container {
         width: 70%;
-        height: 800px;
+        height: 809px;
         position: sticky;
         top: 8rem;
     }
@@ -539,6 +539,7 @@ hr {
         padding-right: 50px;
         height: 800px;
         width: 100%;
+        border-radius: 10px;
     }
     .background {
         padding: 0 0 0 125px;
