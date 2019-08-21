@@ -75,7 +75,7 @@
                         <div class="qtyCol">
                             <span class="plus">+</span>
                             <div class="qty">
-                                (1)
+                                1
                             </div>
                             <span class="minus">-</span>
                         </div>
@@ -89,7 +89,7 @@
                         <div class="qtyCol">
                             <span class="plus">+</span>
                             <div class="qty">
-                                (2)
+                                2
                             </div>
                             <span class="minus">-</span>
                         </div>
@@ -103,7 +103,7 @@
                         <div class="qtyCol">
                             <span class="plus">+</span>
                             <div class="qty">
-                                (1)
+                                1
                             </div>
                             <span class="minus">-</span>
                         </div>
