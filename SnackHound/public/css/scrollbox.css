@@ -9,39 +9,71 @@
     border: 0;
 }
 
+.reviewBox {
+    display: flex;
+}
+.reviewBox{
+    margin: 0 auto;
+}
 
-.scrollBoxReview {
+
+.formReview {
     border: 1px solid black;
-    width: 450px;
-    height: 150px;
+    width: 400px;
+    height: 200px;
     line-height: 3em;
     overflow: scroll;
     padding: 5px;
-    background-color: #fcfadd;
-    color: #714d03;
+    background-color: #fcfcfc;
+    color: black;
     scrollbar-base-color: gray;
 }
 
 .userInfo{
     display: flex;
 }
+
+
 .userInfo p{ 
     padding-left: 5px;
 }
+
 
 .userNameInBox{
     font-weight: bold;
 }
 
 
+.separator {
+    border: 1px solid black;
+    margin: 20px;
+}
+
+
+form {
+    border: 1px solid black;
+    padding: 20px;
+    width: 400px;
+    margin: 20px;
+}
+
+form textarea {
+    border: 1px solid black;
+    resize: none;
+    width: 300px;
+}
+
 
 @media only screen and (min-width: 1024px) {
 
 
 .scrollBoxReview {
-    width: 900px;
+    width: 400px;
 
 }
 
+section h1 {
+    padding: 20px;
+}
 
 }
