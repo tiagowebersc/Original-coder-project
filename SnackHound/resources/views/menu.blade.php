@@ -42,9 +42,9 @@
                         </form>
                     </div>
                 </div>
-        <section>
 
 
+    <section class='menu-section'>
         @foreach ($menus as $menu)
             <div class="itemList">
                 <div class="itemCard">
@@ -74,3 +74,4 @@
 </div>
 
 @endsection
+

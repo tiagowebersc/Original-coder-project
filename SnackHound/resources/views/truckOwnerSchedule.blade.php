@@ -11,7 +11,7 @@
 
 @section('content')
 
-<main>
+<main class='main'>
     <h3>Hello, {{$truck->name}}</h3>
 
     <h4>Schedule:</h4>

@@ -38,9 +38,6 @@ class MenuController extends Controller{
 
             if(isset($truck->id_truck)) {
 
-
-
-
                 if(isset($request->menuId)) {
                     return self::getMenu();
                 } else {
