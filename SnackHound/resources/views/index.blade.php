@@ -36,13 +36,13 @@
             <div class="container">
                 <div class="dropdown filter-buttom">
                     <button
-                      class="btn btn-primary dropdown-toggle"
+                      {{-- class="btn btn-primary dropdown-toggle"
                       type="button"
-                      data-toggle="dropdown"
+                      data-toggle="dropdown" --}} onclick="show()" class="filter-button"
                     >
-                      Filter <span class="caret"></span>
+                      Filter> <span class="caret"></span>
                     </button>
-                    <ul id="dropdown-menu" class="dropdown-menu">
+                    <ul id="custome-drpdown" class="custome-drpdown">
                       <li>
                         <a href="#">
                           <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}"> Location
@@ -224,6 +224,15 @@
     </main>
 </div>
 <script>
+
+function show() {
+  var x = document.getElementById("custome-drpdown");
+  if (x.style.display === "none") {
+    x.style.display = "grid";
+  } else {
+    x.style.display = "none";
+  }
+}
 
     let bar = document.querySelector('.filterbar-container');
 
