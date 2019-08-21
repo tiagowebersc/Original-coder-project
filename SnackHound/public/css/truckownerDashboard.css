@@ -14,11 +14,11 @@
 }
 
 
-h4 {
+.main-title h4 {
     margin-top: 45px;
 }
 
-h3, h4 {
+.main-title {
     font-family: "Raleway", sans-serif;
     font-weight: 700;
     font-size: 36px;
@@ -291,7 +291,7 @@ td a {
         margin-left: 25px;
     }
 
-    h3, h4, #searchForm, .desktop-btn {
+    .main-title, #searchForm, .desktop-btn {
         margin-left: 55px;
     }
 

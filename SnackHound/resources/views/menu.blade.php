@@ -17,8 +17,8 @@
     <main>
             <div class="mainquery">
                     <div class="truckName">
-                        <h3>Hello, {{$truck->name}}</h3>
-                        <h4>MENU:</h4>
+                        <h3 class='main-title'>Hello, {{$truck->name}}</h3>
+                        <h4 class='main-title'>MENU:</h4>
                     </div>
                     <div class="settingCard" name="settingCard">
                         <form action="/truck/menu" method="POST">

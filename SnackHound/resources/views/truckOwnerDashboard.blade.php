@@ -13,9 +13,9 @@
 
 <main class='main'>
 
-    <h3> Hello, {{$truck->name}} </h3>
+    <h3 class='main-title'> Hello, {{$truck->name}} </h3>
 
-    <h4>ORDERS: </h4>
+    <h4 class='main-title'>ORDERS: </h4>
 
     <form id='searchForm' action="/truck/orderFilter" method="GET">
         @csrf
