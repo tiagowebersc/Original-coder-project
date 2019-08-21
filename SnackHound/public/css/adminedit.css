@@ -1,111 +1,302 @@
+
 * {
     box-sizing: border-box;
-    animation-duration: 0.3s;
+    font-family: "Roboto Slab", serif;
 }
 
 *:not(input) {
-    margin: 0;
-    padding: 0;
-    border: 0;
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
 }
 
-.background {
-    padding: 60px 0 0 0;
+
+main {
+    padding-top: 100px;
 }
 
-.userContact,
-.userDate,
-.buisnessUser,
-.submitBtn {
+
+h4 {
+    margin-top: 45px;
+}
+
+h3, h4 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    margin-left: 25px;
+}
+
+#searchForm {
+    margin-top: 30px;
+    display: none;
+}
+
+fieldset {
+    padding: 10px 10px 10px 0px;
+}
+input:not([type='radio']):not([type='submit']) {
+    border-radius: 2px;
+    border: 1px solid #333333;
+}
+
+input:not([type='radio']):not([type='tel']):not(.update-order-btn):not(.decline-order) {
+    width: 145px;
+}
+input[type='radio'] {
+    margin-right: 5px;
+}
+
+.update-order-btn {
+    width: 100px;
+    cursor: pointer;
+}
+
+input[type='tel'] {
+    width: 160px;
+}
+
+label[for="typeSearch"] {
+    display: inline-block;
+    width: 100px;
+}
+
+label[for="firstName"], label[for="fromDate"], label[for='fromAmount'], label[for='lastName'], label[for='toDate'], label[for='toAmount'] {
+    display: inline-block;
+    width: 245px;
+    text-align: right;
+}
+
+#searchForm-search, #searchForm-showall input, #searchFormMobile-search, #searchFormMobile-showall input {
+    margin-top: 25px;
+    width: 150px;
     padding: 5px;
-    font-size: 13px;
-}
-
-h1 {
-    padding-left: 10px;
-    padding-top: 40px;
-    font-size: 23px;
-}
-
-.mainForm {
-    padding-left: 20px;
-    padding-top: 30px;
-}
-
-.mainForm h2 {
-    font-size: 21px;
-}
-
-.mainForm h3 {
-    font-size: 15px;
-    padding-top: 10px;
-    font-weight: bold;
-}
-
-.submitBtn input {
-    border: 1px solid #06b7f9;
+    margin-right: 20px;
+    background-color: #06B7F9;
     color: white;
-    background-color: #06b7f9;
-    width: 5rem;
-    height: 1.5rem;
+    -webkit-box-shadow: 0px 3px 6px 2px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 3px 6px 2px rgba(0,0,0,0.1);
+    box-shadow: 0px 3px 6px 2px rgba(0,0,0,0.1);
+    border-radius: 2px;
 }
 
-.separator {
-    border: 1px solid grey;
-    margin: 30px;
+input[type='date'] {
+    width: 173px;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
 }
 
-.limiter {
-    margin: 50px;
+table {
+    width: 97%;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-collapse: collapse;
+    margin-bottom: 50px;
+    margin: 40px auto;
 }
 
-tbody {
+.table-head {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.table-content {
+    text-align: center;
+}
+
+td {
+    padding: 15px 0px;
+    text-align: center;
+}
+
+.order-date {
+    width: 120px;
+}
+
+tr {
     border: 1px solid black;
 }
 
-.viewBtn {
-    border: 1px solid #06b7f9;
+.view-details, .accept-order {
+    display: inline-block;
+    width: 100px;
+    padding: 5px;
+    background-color: #06B7F9;
     color: white;
-    background-color: #06b7f9;
+    -webkit-box-shadow: 0px 3px 6px 2px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 3px 6px 2px rgba(0,0,0,0.1);
+    box-shadow: 0px 3px 6px 2px rgba(0,0,0,0.1);
+    border-radius: 2px;
 }
 
-.viewBtn2 {
-    border: 1px solid green;
-    color: white;
-    background-color: lightgreen;
+a:hover, a:visited, a:active
+{
+    text-decoration: none;
 }
 
-.blockBtn,
-.deleteBtn {
-    border: 1px solid red;
+.accept-order {
+    background-color: #02CB24;
+    -webkit-box-shadow: 0px 3px 6px 2px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 3px 6px 2px rgba(0,0,0,0.1);
+    box-shadow: 0px 3px 6px 2px rgba(0,0,0,0.1);
+    border-radius: 2px;
+}
+
+.not-accepted-order {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 4px;
+}
+
+td a {
+    width: 100px;
+    display: inline-block;
+}
+
+.decline-order {
+    background-color: #FF0000;
+    display: inline-block;
+    width: 30px;
     color: white;
-    background-color: red;
+    padding: 5px;
+    cursor: pointer;
+    margin-left: 30px;
+    -webkit-box-shadow: 0px 3px 6px 2px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 3px 6px 2px rgba(0,0,0,0.1);
+    box-shadow: 0px 3px 6px 2px rgba(0,0,0,0.1);
+    font-family: "Raleway", sans-serif;
+    font-weight: 900;
+    border-radius: 2px;
+}
+
+.disabled {
+    pointer-events: none;
+    cursor: default;
+    color: #02CB24;
+    width: 100px;
+    padding: 8px;
+}
+
+.disabled-x {
+    pointer-events: none;
+    cursor: default;
+    background-color: #fff;
+    color: #ad0000;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.no-order {
+    margin-top: 50px;
+}
+
+.show-all {
+    display: inline;
+}
+
+.waiting {
+    color: #878787;
+}
+
+.green {
+    color: #02CB24;
+}
+
+.done {
+    color: #06B7F9;
+}
+
+.blue {
+    background-color: #06B7F9;
+}
+
+.red {
+    color: #FF0000;
+}
+
+.black {
+    color: #010101;
+}
+
+.x-hidden {
+    visibility: hidden;
+}
+
+
+/* MOBILE FORM */
+
+#searchFormMobile {
+    width: 97%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#searchFormMobile label:not(.label-radio-mobile)  {
+    display: block;
+    width: 50%;
+    min-width: 340px;
+    margin: auto;
+    margin-top: 10px;
+    text-align: right;
+}
+
+
+#searchFormMobile input:not([type='radio']) {
+    width: 70%;
+}
+
+#searchFormMobile fieldset {
+    margin: 30px auto 0px auto;
+}
+
+#searchForm-search, #searchForm-showall {
+    display: none;
+}
+
+.mobile-btn {
+    text-align: center;
+}
+
+.desktop-row {
+    display: none;
+}
+
+.width {
+    width: 100px;
 }
 
 @media only screen and (min-width: 1024px) {
-    .background {
-        padding: 0 0 0 125px;
+
+    main {
+        margin-left: 124px;
+        padding-top: 62px;
+    }
+    #searchFormMobile {
+        display: none;
     }
 
-    h1 {
-        padding-left: 40px;
-        font-size: 23px;
+    #searchForm {
+        display: inherit;
+        margin-left: 25px;
+    }
+    #searchForm-search, #searchForm-showall {
+        display: inline;
     }
 
-    .mainForm {
-        padding-left: 55px;
+    .mobile-btn {
+        display: none;
     }
 
-    th {
-        padding-left: 25px;
-        padding-bottom: 30px;
+    .desktop-btn {
+        margin-left: 25px;
     }
 
-    td {
-        padding-left: 25px;
+    h3, h4, #searchForm, .desktop-btn {
+        margin-left: 55px;
     }
 
-    tbody {
-        border: 1px solid black;
-    }
 }
+
+
