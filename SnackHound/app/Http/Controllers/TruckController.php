@@ -13,8 +13,7 @@ use Illuminate\Http\Request;
 class TruckController extends Controller
 {
 
-    public function getOrders()
-    {
+    public function getOrders() {
         // Check if user is food truck owner
         if (Session::get('user_type') === 1) {
             $userId = Session::get('id_user');
@@ -31,8 +30,7 @@ class TruckController extends Controller
         }
     }
 
-    public function filterOrder(Request $request)
-    {
+    public function filterOrder(Request $request) {
 
         if (Session::get('user_type') === 1) {
 

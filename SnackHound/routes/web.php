@@ -12,7 +12,7 @@
 
 Route::get('/', 'indexController@index')->name('index');
 
-// Login / Signup / ...
+// ! Login / Signup / ...
 Route::get('/login', 'UserController@login')->name('login');
 Route::post('/login', 'UserController@loginPost');
 Route::get('/signup', 'UserController@signup');
@@ -22,13 +22,13 @@ Route::post('/forgot_password', 'UserController@forgotPasswordPost');
 Route::get('/reset_password/{token}', 'UserController@resetPassword');
 Route::post('/reset_password/{token}', 'UserController@resetPasswordPost');
 Route::get('/signout', 'UserController@signout');
-// Lunchbag functions
+// ! Lunchbag functions
 Route::get('/lunchbag', 'LunchBagController@main');
 Route::get('/lunchbagTotal', 'LunchBagController@totalItems');
 Route::put('/addlunchbag', 'LunchBagController@addLunchBag');
 Route::delete('/removelunchbag', 'LunchBagController@removeLunchBag');
 
-//  !TRUCKS DASHBOARD
+// ! TRUCKS DASHBOARD
 Route::get('/truck', 'TruckController@getOrders')->name('truck');
 Route::post('/truck', 'TruckController@updateOrders');
 Route::get('/truck/orderFilter', 'TruckController@filterOrder');
@@ -40,7 +40,7 @@ Route::post('/foodtruck/favorite/{idTruck}', 'foodTruckController@setFavorite');
 // ! MENU
 Route::get('/truck/menu', 'MenuController@getMenu')->name('menu'); //menu editing page
 // Route::post('/truck/schedule', 'TruckController@setSchedule');
-Route::post('/truck/menu', 'TruckController@setMenu');
+Route::post('/truck/menu', 'MenuController@setMenu');
 // Route::get('/truck/schedule/info', 'TruckController@getSchedule');
 // Route::get('/truck/schedule/delete/{id}', 'TruckController@deleteSchedule');
 
@@ -54,7 +54,7 @@ Route::post('/truck/schedule/info', 'TruckController@getEditSchedule');
 Route::get('/truck/schedule/info', 'TruckController@getSchedule');
 Route::get('/truck/schedule/delete/{id}', 'TruckController@deleteSchedule');
 
-// TRUCKS DASHBOARD **
+// ! TRUCKS DASHBOARD **
 
 Route::get('/test', function () {
     return view('layouts/customerSidebar');
@@ -67,11 +67,9 @@ Route::get('/adminedit', 'AdminEditController@getUsers'); // Admin page to edit 
 
 
 // TEST VIEW for the RESET PASSWORD email
-Route::get('/testEmail', function () {
-    return view('mail');
+Route::get('/mailTruckConfirm', function () {
+    return view('mailTruckConfirm');
 });
-
-
 
 // Route::get('/index', function () {
 //     return view('index');

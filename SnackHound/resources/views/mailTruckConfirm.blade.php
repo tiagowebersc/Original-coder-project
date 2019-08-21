@@ -42,28 +42,6 @@
             font-size: 18px;
             font-family: "Raleway";
         }
-        /* ? BUTTON STYLING ***** ? */
-        #resetBtn {
-            text-align: center;
-        }
-        button {
-            height: 50px;
-            width: 250px;
-            border-radius: 2px;
-            font-family: "Raleway";
-            font-size: 16px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            background-color: #06b7f9;
-            color: #fcfcfc;
-        }
-        button:hover {
-            background-color: #fcfcfc;
-            color: #06b7f9;
-            border: 1px solid #06b7f9;
-        }
-        /* ? END BUTTON STYLING ? */
         /* ***** END BODY STYLING ***** */
         /* ***** FOOTER STYLING ***** */
         #copyrightContainer {
@@ -82,15 +60,11 @@
     <main>
         <section>
             <article>
-                <h1 id="greeting">Hi, {{ $name }} </h1>
-                <p>Someone has requested for your password to be changed.</p>
-                <p>If this wasn't you, no action needs to be taken. If this was you, please follow <a href="   {{ $url_reset }} ">this link</a> to reset your password, or click the button below.</p>
+                <h1 id="greeting">Hi, {{ $name }}  </h1>
+                <p>Your order at {{ $foodTruckName }} has been approved! Please allow them 5 - 10 minutes to prepare your meal(s) before making your way to the truck. (Wait times might be a little longer depending on business). Thank you for using SnackHound!</p>
                 <p>If you have further questions, feel free to reach out to us at <a href="">info@snackhound.com</a>.</p>
                 <p id="cheers">Cheers,</p>
                 <p id="closing">The SnackHound Team</p>
-                <div id="resetBtn">
-                    <a href=" {{ $url_reset }} "><button>Reset your password</button></a>
-                </div>
             </article>
         </section>
     </main>
