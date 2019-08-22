@@ -17,6 +17,7 @@ class CreateFoodCategoryTable extends Migration
             $table->bigIncrements('id_food_category');
             $table->string('name', 45);
             $table->string('image', 100);
+            $table->string('image_hover', 100);
             $table->timestamps();
         });
     }

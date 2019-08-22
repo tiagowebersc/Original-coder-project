@@ -31,16 +31,14 @@
     </header>
     <img src="" alt="">
     <main>
-       {{-- the filter start here --}}
-       <section id="filter-container" class="filter-container">
+        {{-- the filter start here --}}
+        <section id="filter-container" class="filter-container">
             <div class="container">
                 <div class="dropdown filter-buttom">
-                    <button
-                      {{-- class="btn btn-primary dropdown-toggle"
+                    <button {{-- class="btn btn-primary dropdown-toggle"
                       type="button"
-                      data-toggle="dropdown" --}} onclick="show()" class="filter-button"
-                    >
-                      Filter> <span class="caret"></span>
+                      data-toggle="dropdown" --}} onclick="show()" class="filter-button">
+                        Filter> <span class="caret"></span>
                     </button>
                     <ul id="custome-drpdown" class="custome-drpdown">
                         <li><a href="#" id="now"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}'" onmousedown="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'"> Location </a></li>
@@ -58,41 +56,41 @@
                     </ul>
                 </div>
             </div>
-    </section>
+        </section>
 
 
-    <section id="filterbar-container" class="filterbar-container">
-        <ul>
-            <li><a href="#" id="now"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}'" onmousedown="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'"> Location </a></li>
-            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-chinese-fried-rice (2).svg' )}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-chinese-fried-rice (1).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-chinese-fried-rice (2).svg')}}'"> Asian </a></li>
-            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-cake.svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-cake (2).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-cake.svg')}}'"> Bakery|Desserts </a></li>
-            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-grill (1).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-grill.svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-grill (1).svg')}}'"> Barbecue </a></li>
-            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-cheeseburger (1).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-cheeseburger.svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-cheeseburger (1).svg')}}'"> Burgers </a></li>
-            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-coconut-cocktail.svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-coconut-cocktail (1).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-coconut-cocktail.svg')}}'"> Caribbean </a></li>
-            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-coffee-to-go (1).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-coffee-to-go.svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-coffee-to-go (1).svg')}}'"> Coffee|Beverages </a></li>
-            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-baguette (1).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-baguette.svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-baguette (1).svg')}}'"> French </a></li>
-            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-french-fries (2).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-french-fries (1).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-french-fries (2).svg')}}'"> Fries </a></li>
-            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-taco (2).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-taco.svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-taco (2).svg')}}'"> Mexican </a></li>
-            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-salami-pizza (1).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-salami-pizza.svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-salami-pizza (1).svg')}}'"> Pizza|Pasta </a></li>
-            <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-crab (2).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-crab (1).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-crab (2).svg')}}'"> Seafood </a></li>
-        </ul>
-    </section>
+        <section id="filterbar-container" class="filterbar-container">
+            <ul>
+                <li><a href="#" id="now"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}'" onmousedown="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'"> Location </a></li>
+                <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-chinese-fried-rice (2).svg' )}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-chinese-fried-rice (1).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-chinese-fried-rice (2).svg')}}'"> Asian </a></li>
+                <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-cake.svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-cake (2).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-cake.svg')}}'"> Bakery|Desserts </a></li>
+                <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-grill (1).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-grill.svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-grill (1).svg')}}'"> Barbecue </a></li>
+                <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-cheeseburger (1).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-cheeseburger.svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-cheeseburger (1).svg')}}'"> Burgers </a></li>
+                <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-coconut-cocktail.svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-coconut-cocktail (1).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-coconut-cocktail.svg')}}'"> Caribbean </a></li>
+                <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-coffee-to-go (1).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-coffee-to-go.svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-coffee-to-go (1).svg')}}'"> Coffee|Beverages </a></li>
+                <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-baguette (1).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-baguette.svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-baguette (1).svg')}}'"> French </a></li>
+                <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-french-fries (2).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-french-fries (1).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-french-fries (2).svg')}}'"> Fries </a></li>
+                <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-taco (2).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-taco.svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-taco (2).svg')}}'"> Mexican </a></li>
+                <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-salami-pizza (1).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-salami-pizza.svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-salami-pizza (1).svg')}}'"> Pizza|Pasta </a></li>
+                <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-crab (2).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-crab (1).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-crab (2).svg')}}'"> Seafood </a></li>
+            </ul>
+        </section>
         <section class="main-container">
-        @csrf
+            @csrf
             <section class="cards-container">
                 <?php
                 foreach ($trucks as $truck) {
                     ?>
                 <div class="wrapper">
                     <div class="container">
-                    <input type="hidden" name="idTruck" value= "{{$truck->id_truck}}">
-                    <?php if (Session::has('id_user')) {
-                        if ($truck->favorite) { ?>
-                    <img class="heartlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-heart-outline.svg')}}" alt="">
-                    <?php } else { ?>
-                    <img class="heartlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-heart-blank.svg')}}" alt="">
-                    <?php }
-                    } ?>
+                        <input type="hidden" name="idTruck" value="{{$truck->id_truck}}">
+                        <?php if (Session::has('id_user')) {
+                                if ($truck->favorite) { ?>
+                        <img class="heartlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-heart-outline.svg')}}" alt="">
+                        <?php } else { ?>
+                        <img class="heartlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-heart-blank.svg')}}" alt="">
+                        <?php }
+                            } ?>
                         <div class="top">
                             <img src="{{URL::asset('assets/IMGS/Food Trucks/RESIZED/'. $truck['image'])}}" alt="" />
                         </div>
@@ -175,19 +173,18 @@
     </main>
 </div>
 <script>
-
-document.getElementById("now").addEventListener("click", function(event){
-  event.preventDefault()
-});
+    document.getElementById("now").addEventListener("click", function(event) {
+        event.preventDefault()
+    });
 
 
     function show() {
-    let x = document.getElementById("custome-drpdown");
-    if (x.style.display === "none") {
-        x.style.display = "grid";
-    } else {
-        x.style.display = "none";
-    }
+        let x = document.getElementById("custome-drpdown");
+        if (x.style.display === "none") {
+            x.style.display = "grid";
+        } else {
+            x.style.display = "none";
+        }
     }
 
     let bar = document.querySelector('.filterbar-container');
@@ -200,31 +197,35 @@ document.getElementById("now").addEventListener("click", function(event){
         let sidebar = document.querySelector('.sidebar-logo');
         let sidebarLogo = document.querySelector('.sidebar-logo-img');
 
-        if(top === 0 && window.innerWidth > 1024) {
+        if (top === 0 && window.innerWidth > 1024) {
             sidebar.style.backgroundColor = 'white';
-            sidebarLogo.src = '{{URL::asset('assets/ICONS/LOGO/SVG/Logo_Black-White.svg')}}';
+            sidebarLogo.src = '{{URL::asset('
+            assets / ICONS / LOGO / SVG / Logo_Black - White.svg ')}}';
         } else {
             sidebar.style.backgroundColor = 'black';
-            sidebarLogo.src = '{{URL::asset('assets/ICONS/Logo_White.svg')}}';
+            sidebarLogo.src = '{{URL::asset('
+            assets / ICONS / Logo_White.svg ')}}';
         }
     })
 
     window.addEventListener('resize', function() {
 
-    let viewportOffset = bar.getBoundingClientRect();
-    let top = viewportOffset.top;
+        let viewportOffset = bar.getBoundingClientRect();
+        let top = viewportOffset.top;
 
-    let sidebar = document.querySelector('.sidebar-logo');
-    let sidebarLogo = document.querySelector('.sidebar-logo-img');
+        let sidebar = document.querySelector('.sidebar-logo');
+        let sidebarLogo = document.querySelector('.sidebar-logo-img');
 
-    if(top === 0 && window.innerWidth > 1024) {
-        sidebar.style.backgroundColor = 'white';
-        sidebarLogo.src = '{{URL::asset('assets/ICONS/LOGO/SVG/Logo_Black-White.svg')}}';
-    } else {
-        sidebar.style.backgroundColor = 'black';
-        sidebarLogo.src = '{{URL::asset('assets/ICONS/Logo_White.svg')}}';
-    }
-})
+        if (top === 0 && window.innerWidth > 1024) {
+            sidebar.style.backgroundColor = 'white';
+            sidebarLogo.src = '{{URL::asset('
+            assets / ICONS / LOGO / SVG / Logo_Black - White.svg ')}}';
+        } else {
+            sidebar.style.backgroundColor = 'black';
+            sidebarLogo.src = '{{URL::asset('
+            assets / ICONS / Logo_White.svg ')}}';
+        }
+    })
 
 
     // start the map
@@ -242,21 +243,22 @@ document.getElementById("now").addEventListener("click", function(event){
         var map = new google.maps.Map(document.getElementById('map'), options);
 
         // Array of markers
-        var markers=[
+        var markers = [
             <?php
-                foreach ($trucks as $truck) {?>
-                    {
+            foreach ($trucks as $truck) { ?> {
                 coords: {
                     lat: <?php echo $truck['latitude'] ?>,
                     lng: <?php echo $truck['longitude'] ?>
                 },
                 iconImage: 'https://img.icons8.com/officel/40/000000/marker.png',
-                content: '<img src="{{URL::asset('assets/IMGS/Food Trucks/RESIZED/'. $truck['image'])}}" alt="" /><h1>"<?php echo $truck['name'] ?>"</h1>',
+                content: '<img src="{{URL::asset('
+                assets / IMGS / Food Trucks / RESIZED / '. $truck['
+                image '])}}" alt="" /><h1>"<?php echo $truck['name'] ?>"</h1>',
                 animation: google.maps.Animation.DROP
             },
             <?php
-                }
-                ?>
+            }
+            ?>
 
         ];
         // Loop through markers
@@ -290,22 +292,24 @@ document.getElementById("now").addEventListener("click", function(event){
         var geocoder = new google.maps.Geocoder();
 
         document.getElementById('submit').addEventListener('click', function() {
-          geocodeAddress(geocoder, map);
+            geocodeAddress(geocoder, map);
         });
-      }
+    }
 
-      function geocodeAddress(geocoder, resultsMap) {
+    function geocodeAddress(geocoder, resultsMap) {
         var address = document.getElementById('address').value;
-        geocoder.geocode({'address': address}, function(results, status) {
-          if (status === 'OK') {
-            resultsMap.setCenter(results[0].geometry.location);
-            var marker = new google.maps.Marker({
-              map: resultsMap,
-              position: results[0].geometry.location
-            });
-          } else {
-            alert('Geocode was not successful for the following reason: ' + status);
-          }
+        geocoder.geocode({
+            'address': address
+        }, function(results, status) {
+            if (status === 'OK') {
+                resultsMap.setCenter(results[0].geometry.location);
+                var marker = new google.maps.Marker({
+                    map: resultsMap,
+                    position: results[0].geometry.location
+                });
+            } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
         });
     }
 
