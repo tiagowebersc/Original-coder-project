@@ -25,6 +25,7 @@ Route::get('/signout', 'UserController@signout');
 // ! Lunchbag functions
 Route::get('/lunchbag', 'LunchBagController@main');
 Route::get('/lunchbagTotal', 'LunchBagController@totalItems');
+Route::get('/lunchbagTotalPrice', 'LunchBagController@totalPriceItems');
 Route::put('/addlunchbag', 'LunchBagController@addLunchBag');
 Route::delete('/removelunchbag', 'LunchBagController@removeLunchBag');
 
@@ -39,15 +40,16 @@ Route::post('/foodtruck/favorite/{idTruck}', 'foodTruckController@setFavorite');
 
 // ! MENU
 Route::get('/truck/menu', 'MenuController@getMenu')->name('menu'); //menu editing page
-// Route::post('/truck/schedule', 'TruckController@setSchedule');
 Route::post('/truck/menu', 'MenuController@setMenu');
-// Route::get('/truck/schedule/info', 'TruckController@getSchedule');
-// Route::get('/truck/schedule/delete/{id}', 'TruckController@deleteSchedule');
+Route::post('/truck/menu/info', 'MenuController@getEditMenu');
+Route::get('/truck/menu/info', 'MenuController@getMenu');
+Route::get('/truck/menu/delete/{id}', 'MenuController@deleteMenu');
 
 
 
 Route::get('/truck/details/{id}', 'OrderController@detailsOrders')->name('details');
 Route::post('/truck/details/{id}', 'OrderController@updateOrdersDetails');
+
 Route::get('/truck/schedule', 'TruckController@getSchedule')->name('schedule');
 Route::post('/truck/schedule', 'TruckController@setSchedule');
 Route::post('/truck/schedule/info', 'TruckController@getEditSchedule');
@@ -64,7 +66,10 @@ Route::get('/foodtruckinfo/{id_truck}', 'foodTruckController@main'); //foodtruck
 
 Route::get('/adminedit', 'AdminEditController@getUsers'); // Admin page to edit user
 
-
+// ! USER SETTINGS PAGE **
+Route::get('/userDashboard', function(){
+    return view('userDashboard');
+}); // User settings page
 
 // TEST VIEW for the RESET PASSWORD email
 Route::get('/mailTruckConfirm', function () {
