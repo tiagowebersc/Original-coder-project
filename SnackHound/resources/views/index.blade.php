@@ -113,7 +113,9 @@
                                     </div>
                                     <div class="category-€">
                                         <div class="category">
-                                            <a class="card-category" href="#">category</a>
+                                            <?php foreach ($truck->categories as $category) { ?>
+                                                <a class="card-category" href="#">{{$category->name}}</a>
+                                            <?php } ?>
                                         </div>
                                         <div class="price_range">
                                             <?php for ($i = 1; $i <= $truck['price_range']; $i++) { ?>
@@ -144,7 +146,31 @@
                                     $end_time = \Carbon\Carbon::createFromFormat('H:i:s',$Schedle->end_time)->format('h:i');
                                 ?>
                                 <tr>
-                                    <th>{{$Schedle->weekday}}</th>
+                                    @switch($Schedle->weekday)
+
+                                    @case(0)
+                                        <th class='display-weekday'>Monday:</th>
+                                        @break
+                                    @case(1)
+                                        <th class='display-weekday'>Tuesday:</th>
+                                        @break
+                                    @case(2)
+                                        <th class='display-weekday'>Wednesday:</th>
+                                        @break
+                                    @case(3)
+                                        <th class='display-weekday'>Thursday:</th>
+                                        @break
+                                    @case(4)
+                                        <th class='display-weekday'>Friday:</th>
+                                        @break
+                                    @case(5)
+                                        <th class='display-weekday'>Saturday:</th>
+                                        @break
+                                    @case(6)
+                                        <th class='display-weekday'>Sunday:</th>
+                                        @break
+
+                                    @endswitch
                                     <th>{{$start_time}}</th>
                                     <th>{{$end_time}}</th>
                                     <th>{{$Schedle->city}}</th>
