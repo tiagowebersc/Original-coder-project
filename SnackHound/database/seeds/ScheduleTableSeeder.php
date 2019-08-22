@@ -72,7 +72,7 @@ class ScheduleTableSeeder extends Seeder
             'latitude' => 49.746576,
             'longitude' => 6.102230,
             'city' => 'Mersch',
-            'weekday' => 2,
+            'weekday' => 0,
             'start_time' => '11:00',
             'end_time' => '17:00'
         ]);
@@ -83,7 +83,7 @@ class ScheduleTableSeeder extends Seeder
             'latitude' => 49.847450,
             'longitude' => 6.099213,
             'city' => 'Ettelbruck',
-            'weekday' => 5,
+            'weekday' => 1,
             'start_time' => '13:00',
             'end_time' => '21:00'
         ]);
