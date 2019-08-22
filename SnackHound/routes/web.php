@@ -25,6 +25,7 @@ Route::get('/signout', 'UserController@signout');
 // ! Lunchbag functions
 Route::get('/lunchbag', 'LunchBagController@main');
 Route::get('/lunchbagTotal', 'LunchBagController@totalItems');
+Route::get('/lunchbagTotalPrice', 'LunchBagController@totalPriceItems');
 Route::put('/addlunchbag', 'LunchBagController@addLunchBag');
 Route::delete('/removelunchbag', 'LunchBagController@removeLunchBag');
 
