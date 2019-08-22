@@ -13,7 +13,6 @@
 @section('content')
 
 <div class="background">
-
     <main>
             <div class="mainquery">
                     <div class="truckName">

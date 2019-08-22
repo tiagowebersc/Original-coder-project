@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use App\Models\Schedule;
 use App\Models\Truck;
+use App\Models\User;
 use App\Models\View_order;
 use App\Models\Favorite;
+use Mail;
 use Session;
 use Illuminate\Http\Request;
 
@@ -111,6 +113,23 @@ class TruckController extends Controller
                     break;
             }
             $order->save();
+        }
+
+        if ($request->updateBtn === 'ACCEPT') {
+
+            $truckOwner = Truck::where('id_user', Session::get('id_user'))->first();
+
+            $user = User::find($order->id_user);
+            $user_email = $user->email;
+            $user_name = $user->first_name . " " . $user->last_name;
+
+
+            $data = ['name' => $user_name, 'foodTruckName' => $truckOwner ];
+
+            Mail::send('mailTruckConfirm', $data, function ($message) use ($user_name, $user_email) {
+                $message->to($user_email, $user_name)->subject('Order confirmation');
+                $message->from('snackhound.lux@gmail.com', 'Snack Hound');
+            });
         }
         return self::filterOrder($request);
     }
@@ -249,4 +268,7 @@ public function getSchedule() {
             return redirect()->route('index');
         }
     }
+
+
+
 }
