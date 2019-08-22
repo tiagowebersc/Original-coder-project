@@ -27,12 +27,46 @@ hr {
     margin-top: 5px;
     margin-bottom: 5px;
 }
+h2{
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: x-large;
+    margin-bottom: 1rem;
+}
 
 ul {
     list-style: none;
 }
 /* * END - GLOBAL STYLES * */
 
+.starlogo{
+    height: 24px;
+}
+.reviewNbr{
+    color: white;
+    margin: 5px;
+}
+.starheart{
+    display: flex;
+    justify-content: space-evenly;
+}
+.heartlogo{
+    height: 32px;
+}
+.foodTruckName{
+    text-align: center;
+    margin-bottom: 0px;
+    color: white;
+    font-weight: normal;
+    text-shadow: 3px 0 0 black, -3px 0 0 black, 0 3px 0 black, 0 -3px 0 black,
+        2px 2px black, -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black;
+}
+.icons{
+    height: 26px;
+}
+.info{
+    color: white;
+}
 /* * MAIN STYLING * */
 .frame {
     width: 80%;
@@ -88,7 +122,7 @@ ul {
 /* ? END - HEADER STYLING */
 
 /* ? FORM STYLING */
-.divflex {
+form {
     display: flex;
 }
 
@@ -112,6 +146,7 @@ ul {
 
 #lunchbagMailingList {
     height: 145px;
+    background-size: cover;
 }
 
 #lunchbagList {
@@ -119,42 +154,12 @@ ul {
     /*height: 435px;*/
 }
 .lunchBagitems {
+    display: none;
     overflow-y: scroll;
     overflow-x: hidden;
     height: 315px;
 }
 
-/* Lunchbag */
-/* Style the tab */
-.tab {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
-}
-/* Style the buttons inside the tab */
-.tab button {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 8px 16px;
-    transition: 0.3s;
-    font-size: 17px;
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-    background-color: #ddd;
-}
-/* Create an active/current tablink class */
-.tab button.active {
-    background-color: #ccc;
-}
-/* Style the tab content */
-/* .tabcontent {
-    height: 315px;
-} */
 
 #title {
     font-family: 'Raleway', sans-serif;
@@ -331,6 +336,7 @@ h3 {
     color: #fcfcfc;
     margin-top: 10px;
     width: 100%;
+    display: none;
 }
 /* ? END - FORM STYLING */
 
@@ -400,7 +406,7 @@ h3 {
         margin-left: 0;
     }
 
-    .divflex {
+    form {
         display: block;
     }
 
@@ -414,7 +420,7 @@ h3 {
     }
 
     #lunchbagMailingList {
-        display: none;
+        /* display: none; */
     }
 
     #lunchbagList {

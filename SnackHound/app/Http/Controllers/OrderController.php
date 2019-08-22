@@ -6,6 +6,7 @@ use App\Models\View_order_item;
 use App\Models\View_order;
 use App\Models\Order;
 use App\Models\Truck;
+use App\Models\Review;
 use Illuminate\Http\Request;
 use Session;
 
@@ -68,6 +69,20 @@ class OrderController extends Controller
 
     public function generateOrder(Request $request)
     {
-        return "test";
+        if(!isset($request->idTruck)) return redirect()->route('lunchBag');
+        $truck = Truck::where('id_truck', $request->idTruck)->first();
+        if($truck == null) if(!isset($request->idTruck)) return redirect()->route('lunchBag');
+        
+        $avg_rate = 0;
+        $reviews = Review::where("id_truck", $request->idTruck)->get();
+        if (count($reviews) > 0) {
+            foreach ($reviews as $review) {
+                $avg_rate += $review->rate;
+            }
+            $avg_rate = round($avg_rate / count($reviews));
+        }
+        $favorite = app(\App\Http\Controllers\foodTruckController::class)->getFavorite($request->idTruck);
+
+        return view('orderconfirmation', ['truck'=> $truck, 'avg_rate' => $avg_rate, 'total_reviews' => count($reviews), 'favorite' => $favorite]);
     }
 }

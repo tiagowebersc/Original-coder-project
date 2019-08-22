@@ -23,7 +23,7 @@ Route::get('/reset_password/{token}', 'UserController@resetPassword');
 Route::post('/reset_password/{token}', 'UserController@resetPasswordPost');
 Route::get('/signout', 'UserController@signout');
 // ! Lunchbag functions
-Route::get('/lunchbag', 'LunchBagController@main');
+Route::get('/lunchbag', 'LunchBagController@main')->name('lunchBag');
 Route::get('/lunchbagTotal', 'LunchBagController@totalItems');
 Route::get('/lunchbagTotalPrice', 'LunchBagController@totalPriceItems');
 Route::put('/addlunchbag', 'LunchBagController@addLunchBag');

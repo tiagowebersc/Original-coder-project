@@ -49,7 +49,7 @@ class IndexController extends Controller
                         $categories[$i]->name = Food_category::where('id_food_category', $categories[$i]->id_food_category)->first()->name;
                     }
                     $truck->categories = $categories;
-                    $truck->favorite = app(\App\Http\Controllers\foodTruckController::class)->getFavorite($truck->id_truck);;
+                    $truck->favorite = app(\App\Http\Controllers\foodTruckController::class)->getFavorite($truck->id_truck);
                     $result[] = $truck;
                 }
             }
