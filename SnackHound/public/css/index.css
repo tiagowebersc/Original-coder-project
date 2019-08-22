@@ -200,6 +200,7 @@
     position: relative;
     margin: auto;
     overflow: hidden;
+    cursor: pointer;
     border-radius: 10px 10px 10px 10px;
     -webkit-box-shadow: 0;
     box-shadow: 0;
@@ -232,7 +233,6 @@
 }
 
 .wrapper .container .bottom {
-    width: 200%;
     height: 40%;
     -webkit-transition: -webkit-transform 0.5s;
     transition: -webkit-transform 0.5s;
