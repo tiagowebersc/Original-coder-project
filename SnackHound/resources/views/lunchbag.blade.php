@@ -38,7 +38,7 @@
             </div>
         </div>
         <!-- End header -->
-        <form action="" method="post">
+        <form action="/generateOrder" method="post">
             <div id="left-content">
                 <article id="lunchbagCost" class="panel">
                     @csrf
@@ -82,21 +82,23 @@
                         $tabName = 'foodTruck_' . $foodTruck['idTruck']; ?>
                     <ul id="{{$tabName}}" class="lunchBagitems">
                         <?php foreach ($foodTruck['list'] as $item) { ?>
-                        <li>
-                            <input type="hidden" name="idMenu" value="{{$item->id_menu}}">
-                            <img class="imgs" src="{{URL::asset('assets/IMGS/Menu/'.$item->id_truck.'/'.$item->image)}}" alt="photo of classic poutine">
-                            <div class="qtyCol">
-                                <button class="plus">+</button>
-                                <div class="qty">
-                                    {{$item->quantity}}
+                        <div>
+                            <li>
+                                <input type="hidden" name="idMenu" value="{{$item->id_menu}}">
+                                <img class="imgs" src="{{URL::asset('assets/IMGS/Menu/'.$item->id_truck.'/'.$item->image)}}" alt="photo of classic poutine">
+                                <div class="qtyCol">
+                                    <button class="plus">+</button>
+                                    <div class="qty">
+                                        {{$item->quantity}}
+                                    </div>
+                                    <button class="minus">-</button>
                                 </div>
-                                <button class="minus">-</button>
-                            </div>
-                            <p class="foodName">{{$item->name}}</p>
-                            <h3>{{number_format($item->price, 2)}}€</h3>
-                            <button class="ex">x</button>
-                        </li>
-                        <hr>
+                                <p class="foodName">{{$item->name}}</p>
+                                <h3>{{number_format($item->price, 2)}}€</h3>
+                                <button class="ex">x</button>
+                            </li>
+                            <hr>
+                        </div>
                         <?php } ?>
                     </ul>
                     <?php } ?>
@@ -134,6 +136,20 @@
         document.getElementById(foodTruckTab).style.display = "block";
         evt.currentTarget.className += " active";
     }
+    // update total value
+    function updateTotalValue() {
+        fetch("/lunchbagTotalPrice", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(response => {
+            response.json().then(function(data) {
+                document.querySelector('#orderTotal').textContent = data.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') + "€";
+                document.querySelector('#totalAmt').textContent = data.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') + "€";
+            });
+        });
+    }
 
     window.addEventListener('DOMContentLoaded', (event) => {
 
@@ -143,6 +159,7 @@
             tabcontent = tabcontent[0];
             openFoodTruck(event, document.getElementsByClassName("lunchBagitems")[0].id);
             document.getElementsByClassName("tablinks")[0].className += " active";
+            document.getElementById("checkout").style.display = "block";
         }
 
         // plus button
@@ -154,6 +171,23 @@
                 if (isNaN(total)) total = 0;
                 total += 1;
                 e.target.parentElement.querySelector(".qty").innerHTML = total;
+
+                const lunchBag = {
+                    _token: document.querySelector('input[name="_token"]').value,
+                    idMenu: e.target.parentElement.parentElement.querySelector('input[name="idMenu"]').value,
+                    quantity: total
+                };
+                fetch("/addlunchbag", {
+                    method: "PUT",
+                    body: JSON.stringify(lunchBag),
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                }).then(response => {
+                    response.json().then(function(data) {
+                        updateTotalValue();
+                    });
+                });
             });
         }
         // minus button
@@ -166,6 +200,23 @@
                 total -= 1;
                 if (total == 0) total = 1;
                 e.target.parentElement.querySelector(".qty").innerHTML = total;
+
+                const lunchBag = {
+                    _token: document.querySelector('input[name="_token"]').value,
+                    idMenu: e.target.parentElement.parentElement.querySelector('input[name="idMenu"]').value,
+                    quantity: total
+                };
+                fetch("/addlunchbag", {
+                    method: "PUT",
+                    body: JSON.stringify(lunchBag),
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                }).then(response => {
+                    response.json().then(function(data) {
+                        updateTotalValue();
+                    });
+                });
             });
         }
         // delete button
@@ -185,11 +236,17 @@
                         "Content-Type": "application/json"
                     }
                 }).then(response => {
-                    console.log(response);
                     response.json().then(function(data) {
-                        console.log(data);
+                        if (data.removed) {
+                            if (e.target.parentElement.parentElement.parentElement.childElementCount > 1) {
+                                e.target.parentElement.parentElement.remove();
+                                updateTotalValue();
+                            } else {
+                                location.reload();
+                            }
+                        }
                     });
-                }).catch(error => console.log(error));
+                });
 
             });
         }
