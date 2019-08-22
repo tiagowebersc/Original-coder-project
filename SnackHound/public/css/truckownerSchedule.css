@@ -34,6 +34,12 @@ hr {
 }
 
 
+.display-btn a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+
 .edit-schedule {
     margin: 25px auto;
     text-align: center;

@@ -14,7 +14,7 @@
 <main class='main'>
     <h3 class='main-title'>Hello, {{$truck->name}}</h3>
 
-    <h4 class='main-title'>Schedule:</h4>
+    <h4 class='main-title'>SCHEDULE:</h4>
 
     <form class='edit-schedule' id='edit-schedule-form' action="/truck/schedule" method='POST'>
     @csrf
