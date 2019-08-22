@@ -204,12 +204,10 @@
 
         if (top === 0 && window.innerWidth > 1024) {
             sidebar.style.backgroundColor = 'white';
-            sidebarLogo.src = '{{URL::asset('
-            assets / ICONS / LOGO / SVG / Logo_Black - White.svg ')}}';
+            sidebarLogo.src = '{{URL::asset('assets/ICONS/LOGO/SVG/Logo_Black-White.svg')}}';
         } else {
             sidebar.style.backgroundColor = 'black';
-            sidebarLogo.src = '{{URL::asset('
-            assets / ICONS / Logo_White.svg ')}}';
+            sidebarLogo.src = '{{URL::asset('assets/ICONS/Logo_White.svg')}}';
         }
     })
 
@@ -223,12 +221,10 @@
 
         if (top === 0 && window.innerWidth > 1024) {
             sidebar.style.backgroundColor = 'white';
-            sidebarLogo.src = '{{URL::asset('
-            assets / ICONS / LOGO / SVG / Logo_Black - White.svg ')}}';
+            sidebarLogo.src = '{{URL::asset('assets/ICONS/LOGO/SVG/Logo_Black - White.svg')}}';
         } else {
             sidebar.style.backgroundColor = 'black';
-            sidebarLogo.src = '{{URL::asset('
-            assets / ICONS / Logo_White.svg ')}}';
+            sidebarLogo.src = '{{URL::asset('assets/ICONS/Logo_White.svg ')}}';
         }
     })
 
@@ -256,9 +252,7 @@
                     lng: <?php echo $truck['longitude'] ?>
                 },
                 iconImage: 'https://img.icons8.com/officel/40/000000/marker.png',
-                content: '<img src="{{URL::asset('
-                assets / IMGS / Food Trucks / RESIZED / '. $truck['
-                image '])}}" alt="" /><h1>"<?php echo $truck['name'] ?>"</h1>',
+                content: '<img src="{{URL::asset('assets/IMGS/Food Trucks/RESIZED/'. $truck['image'])}}" alt="" /><h1>"<?php echo $truck['name'] ?>"</h1>',
                 animation: google.maps.Animation.DROP
             },
             <?php
