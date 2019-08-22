@@ -69,24 +69,38 @@
                 </article>
             </div>
             <article id="lunchbagList" class="panel">
-                <ul class="lunchBagitems">
-                    <?php foreach ($itemList as $item) { ?>
-                    <li>
-                        <img class="imgs" src="{{URL::asset('assets/IMGS/Menu/'.$item->id_truck.'/'.$item->image)}}" alt="photo of classic poutine">
-                        <div class="qtyCol">
-                            <span class="plus">+</span>
-                            <div class="qty">
-                                {{$item->quantity}}
-                            </div>
-                            <span class="minus">-</span>
-                        </div>
-                        <p class="foodName">{{$item->name}}</p>
-                        <h3>{{number_format($item->price, 2)}}€</h3>
-                        <span class="ex">x</span>
-                    </li>
-                    <hr>
+                <div class="tab">
+                    <?php for ($i = 0; $i < count($ftList); $i++) {
+                        $tabName = 'foodTruck_' . $ftList[$i]['idTruck'];
+                        ?>
+
+                    <button class="tablinks" onclick="openFoodTruck(event, '{{$tabName}}')">{{$ftList[$i]['name']}}</button>
                     <?php } ?>
-                </ul>
+                </div>
+                <div class="tabcontent">
+                    <?php foreach ($ftList as $foodTruck) {
+                        $tabName = 'foodTruck_' . $foodTruck['idTruck']; ?>
+                    <ul id="{{$tabName}}" class="lunchBagitems">
+                        <?php foreach ($foodTruck['list'] as $item) { ?>
+                        <li>
+                            <input type="hidden" name="idMenu" value="{{$item->id_menu}}">
+                            <img class="imgs" src="{{URL::asset('assets/IMGS/Menu/'.$item->id_truck.'/'.$item->image)}}" alt="photo of classic poutine">
+                            <div class="qtyCol">
+                                <button class="plus">+</button>
+                                <div class="qty">
+                                    {{$item->quantity}}
+                                </div>
+                                <button class="minus">-</button>
+                            </div>
+                            <p class="foodName">{{$item->name}}</p>
+                            <h3>{{number_format($item->price, 2)}}€</h3>
+                            <button class="ex">x</button>
+                        </li>
+                        <hr>
+                        <?php } ?>
+                    </ul>
+                    <?php } ?>
+                </div>
                 <!-- This checkbox should be hidden on wider screens -->
                 <div id="mailCheckbox">
                     <p id="check">Sign up to for our mailing list:</p>
@@ -105,56 +119,78 @@
 
 @section('js')
 <script>
+    // foodtruck selector
+    function openFoodTruck(evt, foodTruckTab) {
+        evt.preventDefault();
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("lunchBagitems");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(foodTruckTab).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
     window.addEventListener('DOMContentLoaded', (event) => {
+
+        // select the first foodtruck when open the page
+        tabcontent = document.getElementsByClassName("lunchBagitems");
+        if (tabcontent.length > 0) {
+            tabcontent = tabcontent[0];
+            openFoodTruck(event, document.getElementsByClassName("lunchBagitems")[0].id);
+            document.getElementsByClassName("tablinks")[0].className += " active";
+        }
+
         // plus button
-        let btnList = document.querySelectorAll(".plusBtn");
+        let btnList = document.querySelectorAll(".plus");
         for (let btn of btnList) {
             btn.addEventListener("click", (e) => {
                 e.preventDefault();
-                let total = parseInt(e.target.parentElement.querySelector(".itemNumber").innerHTML, 10);
+                let total = parseInt(e.target.parentElement.querySelector(".qty").innerHTML, 10);
                 if (isNaN(total)) total = 0;
                 total += 1;
-                e.target.parentElement.querySelector(".itemNumber").innerHTML = total;
+                e.target.parentElement.querySelector(".qty").innerHTML = total;
             });
         }
         // minus button
-        btnList = document.querySelectorAll(".minusBtn");
+        btnList = document.querySelectorAll(".minus");
         for (let btn of btnList) {
             btn.addEventListener("click", (e) => {
                 e.preventDefault();
-                let total = parseInt(e.target.parentElement.querySelector(".itemNumber").innerHTML, 10);
+                let total = parseInt(e.target.parentElement.querySelector(".qty").innerHTML, 10);
                 if (isNaN(total)) total = 0;
                 total -= 1;
                 if (total == 0) total = 1;
-                e.target.parentElement.querySelector(".itemNumber").innerHTML = total;
+                e.target.parentElement.querySelector(".qty").innerHTML = total;
             });
         }
-        // add button
-        btnList = document.querySelectorAll(".addToBag");
+        // delete button
+        btnList = document.querySelectorAll(".ex");
         for (let btn of btnList) {
             btn.addEventListener("click", (e) => {
                 e.preventDefault();
-                let total = parseInt(e.target.parentElement.parentElement.querySelector(".plusMinus").querySelector(".itemNumber").innerHTML, 10);
-                if (isNaN(total)) total = 1;
+
                 const lunchBag = {
                     _token: document.querySelector('input[name="_token"]').value,
-                    idMenu: e.target.parentElement.querySelector('input[name="idMenu"]').value,
-                    quantity: total
+                    idMenu: e.target.parentElement.querySelector('input[name="idMenu"]').value
                 };
-                // ajax call
-                fetch("/addlunchbag", {
-                    method: "PUT",
+                fetch("/removelunchbag", {
+                    method: "DELETE",
                     body: JSON.stringify(lunchBag),
                     headers: {
                         "Content-Type": "application/json"
                     }
-                });
-                // .then(response => {
-                //     console.log(response);
-                //     response.json().then(function(data) {
-                //         console.log(data);
-                //     });
-                // }).catch(error => console.log(error));
+                }).then(response => {
+                    console.log(response);
+                    response.json().then(function(data) {
+                        console.log(data);
+                    });
+                }).catch(error => console.log(error));
+
             });
         }
     });

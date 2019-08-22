@@ -387,10 +387,22 @@ hr {
     height: 1px;
     margin-bottom: 20px;
   }
-  .stars-lication{
+ .stars-lication{
       width: 250px;
       display: flex;
       justify-content: space-between;
+  }
+  .reviewDiv{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 5px;
+  }
+  .reviewDiv img{
+      width: 15px;
+  }
+  .wrapper .container .bottom .reviewNbr{
+      padding-left: 8px;
   }
   .card-category{
       padding: 5px 30px;
@@ -403,6 +415,10 @@ hr {
       justify-content: space-between;
       width: 250px;
   }
+  .price_range{
+      display: flex;
+      justify-content: space-around;
+  }
   .background {
     padding: 60px 0 0 0;
   }
@@ -413,6 +429,31 @@ hr {
 .top img{
   width: 318px;
   height: 216px;
+}
+.contents{
+    height: 351px;
+    /* align-items: center; */
+    /* align-content: center; */
+    text-align: center;
+}
+.contents img{
+    height: 50%;
+}
+.contents h3{
+    color: white;
+}
+
+.contents table tbody tr{
+    border: 1px solid white;
+    width: 257px;
+    text-align: center;
+}
+.contents table tr th{
+    font-size: 11px;
+    align-items: center;
+    align-content: center;
+    width: 70px;
+    padding: 2px;
 }
 
 
