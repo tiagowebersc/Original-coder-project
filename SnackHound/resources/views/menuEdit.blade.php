@@ -24,15 +24,15 @@
                         <form action="/truck/menu" enctype="multipart/form-data" method="POST" class='form-edit-submit'>
                             @csrf
                             <label for='itemName'>Name:
-                            <input value='{{$menuEdit->name}}' type="text" name="itemName" class="itemName">
+                            <input required value='{{$menuEdit->name}}' type="text" name="itemName" class="itemName">
                             </label>
 
                             <label class="itemPrice" for="itemPrice">Price (€):
-                                    <input max="9999.99" step="0.01" value='{{$menuEdit->price}}' name='itemPrice' class="itemPrice" id='item-price' type="number">
+                                    <input required max="9999.99" step="0.01" value='{{$menuEdit->price}}' name='itemPrice' class="itemPrice" id='item-price' type="number">
                             </label>
 
                             <label for="itemDescription"> Description:
-                                    <textarea class="descriptionArea" name="itemDescription" id="" cols="30" rows="5"> {{$menuEdit->description}} </textarea>
+                                    <textarea required class="descriptionArea" name="itemDescription" id="" cols="30" rows="5"> {{$menuEdit->description}} </textarea>
                             </label>
                             <input type="hidden" name='menuId' value='{{$menuEdit->id_menu}}'>
                             <label class="itemPrice" for="upload"> Image:
