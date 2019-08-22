@@ -82,7 +82,8 @@
                 foreach ($trucks as $truck) {
                     ?>
                 <div class="wrapper">
-                    <div class="container">
+
+                        <div class="container">
                         <input type="hidden" name="idTruck" value="{{$truck->id_truck}}">
                         <?php if (Session::has('id_user')) {
                                 if ($truck->favorite) { ?>
@@ -166,6 +167,8 @@
                             <img class=""  src="{{URL::asset('assets/ICONS/Footer%20Content/MadeInLuxLogo.svg')}}">
                         </div>
                     </div>
+
+
                 </div>
                 <?php
                 }
@@ -177,10 +180,25 @@
         </section>
     </main>
 </div>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+
 <script>
-    document.getElementById("now").addEventListener("click", function(event) {
-        event.preventDefault()
-    });
+
+
+    $(function() {
+            $(".wrapper").click(function() {
+            window.location = $(this).find("a").attr("href");
+            return false;
+            });
+            document.getElementById("now").addEventListener("click", function(event) {
+                event.preventDefault()
+            });
+
+        })
 
 
     function show() {
@@ -221,10 +239,10 @@
 
         if (top === 0 && window.innerWidth > 1024) {
             sidebar.style.backgroundColor = 'white';
-            sidebarLogo.src = '{{URL::asset('assets/ICONS/LOGO/SVG/Logo_Black - White.svg')}}';
+            sidebarLogo.src = '{{URL::asset('assets/ICONS/LOGO/SVG/Logo_Black-White.svg')}}';
         } else {
             sidebar.style.backgroundColor = 'black';
-            sidebarLogo.src = '{{URL::asset('assets/ICONS/Logo_White.svg ')}}';
+            sidebarLogo.src = '{{URL::asset('assets/ICONS/Logo_White.svg')}}';
         }
     })
 

@@ -24,19 +24,19 @@
                         <form action="/truck/menu" enctype="multipart/form-data" method="POST" class='form-submit'>
                             @csrf
                             <label for='itemName'>Name:
-                                <input type="text" name="itemName" class="itemName">
+                                <input required type="text" name="itemName" class="itemName">
                             </label>
 
                             <label class="itemPrice" for="itemPrice">Price (€):
-                                    <input max="9999.99" step="0.01" name='itemPrice' class="itemPrice" id='item-price' type="number">
+                                    <input required max="9999.99" step="0.01" name='itemPrice' class="itemPrice" id='item-price' type="number">
                             </label>
 
                             <label for="itemDescription"> Description:
-                                    <textarea class="descriptionArea" name="itemDescription" id="" cols="30" rows="5"></textarea>
+                                    <textarea required class="descriptionArea" name="itemDescription" id="" cols="30" rows="5"></textarea>
                             </label>
 
                             <label class="itemPrice" for="upload"> Image:
-                                <input class="itemPrice upload" name="upload" type="file">
+                                <input required class="itemPrice upload" name="upload" type="file">
                             </label>
                             <div id="helper"></div>
                             <input class="submit" name="submit" type="submit" value="Add Item">
