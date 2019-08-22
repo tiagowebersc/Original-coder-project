@@ -20,7 +20,8 @@
                 <h1>{{$foodtruck->name}}</h1>
                 <div class="favstar">
                     <div class="reviewDiv">
-                        <?php for ($i = 1; $i <= $avg_rate; $i++) { ?>
+                        <?php
+                             for ($i = 1; $i <= $avg_rate; $i++) { ?>
                         <img class="starlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-filled.svg')}}" alt="">
                         <?php }
                         $blankStars = 5 - $avg_rate;

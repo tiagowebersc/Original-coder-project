@@ -5,13 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\Truck;
+use App\Models\Food_category;
+use App\Models\Schedule;
 
 class IndexController extends Controller
 {
     public function index()
     {
         $trucks = Self::foodTruckList();
-        return view('index', ['trucks' => $trucks]);
+        $categories = Food_category::ALL();
+        return view('index', ['trucks' => $trucks, 'categories' => $categories]);
     }
     public function foodTruckList()
     {
@@ -32,11 +35,14 @@ class IndexController extends Controller
                 if (count($queryResult) > 0) {
                     // take the first option
                     $queryResult = $queryResult[0];
+                    $truck->avgRate = 4;
+                    $truck->reviewsNbr = 50;
                     $truck->latitude = $queryResult->latitude;
                     $truck->longitude = $queryResult->longitude;
                     $truck->weekday = $queryResult->weekday;
                     $truck->start_time = $queryResult->start_time;
                     $truck->end_time = $queryResult->end_time;
+                    $truck->schedules = Schedule::WHERE('id_truck', $truck->id_truck)->GET();
                     $truck->favorite = app(\App\Http\Controllers\foodTruckController::class)->getFavorite($truck->id_truck);;
                     $result[] = $truck;
                 }

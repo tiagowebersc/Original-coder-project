@@ -64,6 +64,7 @@
     <section id="filterbar-container" class="filterbar-container">
         <ul>
             <li><a href="#" id="now"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}'" onmousedown="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'"> Location </a></li>
+            
             <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-chinese-fried-rice (2).svg' )}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-chinese-fried-rice (1).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-chinese-fried-rice (2).svg')}}'"> Asian </a></li>
             <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-cake.svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-cake (2).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-cake.svg')}}'"> Bakery|Desserts </a></li>
             <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-grill (1).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-grill.svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-grill (1).svg')}}'"> Barbecue </a></li>
@@ -94,7 +95,7 @@
                     <?php }
                     } ?>
                         <div class="top">
-                            <img src="{{URL::asset('assets/IMGS/Food Trucks/RESIZED/'. $truck['image'])}}" alt="" />
+                            <a href="/foodtruckinfo/{{$truck['id_truck']}}"><img src="{{URL::asset('assets/IMGS/Food Trucks/RESIZED/'. $truck['image'])}}" alt="" /></a>
                         </div>
                         <div class="bottom">
                             <div class="left">
@@ -103,7 +104,18 @@
                                         <h1><?= $truck['name'] ?></h1>
                                     </a>
                                     <div class="stars-lication">
-                                        <h4>stars</h4>
+                                        <div class="reviewDiv">
+                                            <?php
+                                                for ($i = 1; $i <= $truck['avgRate']; $i++) { ?>
+                                            <img class="starlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-filled.svg')}}" alt="">
+                                            <?php }
+                                            $blankStars = 5 - $truck['avgRate'];
+                                            for ($i = 1; $i <= $blankStars ; $i++) {
+                                                ?>
+                                            <img class="starlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-blank.svg')}}" alt="">
+                                            <?php } ?>
+                                            <p class="reviewNbr" id="reviewNbr"> {{($truck['reviewsNbr'])}} Reviews</p>
+                                        </div>
                                         <div class="location-icon-meter">
                                             <p>
                                                 <img src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-marker.svg')}}" alt="" height="25" width="25" />
@@ -115,8 +127,14 @@
                                         <hr />
                                     </div>
                                     <div class="category-€">
-                                        <a class="card-category" href="#">category</a>
-                                        <h4>€€€</h4>
+                                        <div class="category">
+                                            <a class="card-category" href="#">category</a>
+                                        </div>
+                                        <div class="price_range">
+                                            <?php for ($i = 1; $i <= $truck['price_range']; $i++) { ?>
+                                             <h5>€</h5>
+                                            <?php } ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -129,38 +147,26 @@
                         <div class="contents">
                             <table>
                                 <tr>
-                                    <th>Width</th>
-                                    <th>Height</th>
+                                    <h3>Schedules</h3>
+                                    <th>weekday</th>
+                                    <th>Start-Time</th>
+                                    <th>End-Time</th>
+                                    <th>City</th>
                                 </tr>
+                                <?php
+                                foreach ($truck->schedules as $Schedle) {
+                                    $start_time = \Carbon\Carbon::createFromFormat('H:i:s',$Schedle->start_time)->format('h:i');
+                                    $end_time = \Carbon\Carbon::createFromFormat('H:i:s',$Schedle->end_time)->format('h:i');
+                                ?>
                                 <tr>
-                                    <td>3000mm</td>
-                                    <td>4000mm</td>
+                                    <th>{{$Schedle->weekday}}</th>
+                                    <th>{{$start_time}}</th>
+                                    <th>{{$end_time}}</th>
+                                    <th>{{$Schedle->city}}</th>
                                 </tr>
-                                <tr>
-                                    <th>Something</th>
-                                    <th>Something</th>
-                                </tr>
-                                <tr>
-                                    <td>200mm</td>
-                                    <td>200mm</td>
-                                </tr>
-                                <tr>
-                                    <th>Something</th>
-                                    <th>Something</th>
-                                </tr>
-                                <tr>
-                                    <td>200mm</td>
-                                    <td>200mm</td>
-                                </tr>
-                                <tr>
-                                    <th>Something</th>
-                                    <th>Something</th>
-                                </tr>
-                                <tr>
-                                    <td>200mm</td>
-                                    <td>200mm</td>
-                                </tr>
+                                <?php } ?>
                             </table>
+                            <img class=""  src="{{URL::asset('assets/ICONS/Footer%20Content/MadeInLuxLogo.svg')}}">
                         </div>
                     </div>
                 </div>
