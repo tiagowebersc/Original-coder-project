@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,39 +14,48 @@
             box-sizing: border-box;
             transition-duration: 0.3;
         }
+
         *:not(input) {
             margin: 0;
             padding: 0;
             border: 0;
         }
+
         /* ***** BODY STYLING ***** */
         section {
             margin: 50px;
             background-color: #f0f0f0;
         }
+
         article {
             padding: 25px;
         }
+
         #greeting {
             font-size: 24px;
             font-family: "Raleway";
             padding-bottom: 20px;
         }
+
         p {
             font-family: "Roboto Slab";
             line-height: 2;
         }
+
         #cheers {
             padding-top: 20px;
         }
+
         #closing {
             font-size: 18px;
             font-family: "Raleway";
         }
+
         /* ? BUTTON STYLING ***** ? */
         #resetBtn {
             text-align: center;
         }
+
         button {
             height: 50px;
             width: 250px;
@@ -58,24 +68,29 @@
             background-color: #06b7f9;
             color: #fcfcfc;
         }
+
         button:hover {
             background-color: #fcfcfc;
             color: #06b7f9;
             border: 1px solid #06b7f9;
         }
+
         /* ? END BUTTON STYLING ? */
         /* ***** END BODY STYLING ***** */
         /* ***** FOOTER STYLING ***** */
         #copyrightContainer {
             text-align: center;
         }
+
         #footerContent1 {
             font-size: 14px;
             line-height: 1;
         }
+
         /* ***** END FOOTER STYLING ***** */
     </style>
 </head>
+
 <body>
     <header>
     </header>
@@ -97,4 +112,5 @@
         </div>
     </footer>
 </body>
+
 </html>

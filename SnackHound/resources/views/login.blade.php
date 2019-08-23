@@ -54,6 +54,9 @@
                     @isset($errorSignUp)
                     <p class="error center">{{$errorSignUp}}</p>
                     @endisset
+                    @isset($redirect)
+                    <input type="hidden" name="redirect" value="{{$redirect}}">
+                    @endisset
                 </form>
             </article>
             <div class="verticalLine"></div>
@@ -76,6 +79,9 @@
                     </div>
                     @isset($errorSignIn)
                     <p class="error center">{{$errorSignIn}}</p>
+                    @endisset
+                    @isset($redirect)
+                    <input type="hidden" name="redirect" value="{{$redirect}}">
                     @endisset
                 </form>
             </article>

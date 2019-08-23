@@ -1,6 +1,11 @@
 // Create a new laravel project
 composer create-project --prefer-dist laravel/laravel myProject
 
+// to install the components
+composer update
+// generate key
+php artisan key:generate
+
 //run laravel server
 //open bash inside the new folder
 php artisan serve
