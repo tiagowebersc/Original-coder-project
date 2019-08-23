@@ -16,7 +16,7 @@
 <div class="background">
     <header>
         <!-- principal div header start here -->
-        <div class="backgrounddiv" name="backgrounddiv" style="background-image: url('/assets/IMGS/Food Trucks/BLURRED/{{$foodtruck->image}}');">
+        <div class="backgrounddiv" name="backgrounddiv" style="background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.52), rgba(0, 0, 20, 0.73)), url('/assets/IMGS/Food Trucks/BLURRED/{{$foodtruck->image}}');">
 
             <div name="truckinfo" class="truckinfo">
                 <input type="hidden" id="idTruck" value="{{$foodtruck->id_truck}}">
