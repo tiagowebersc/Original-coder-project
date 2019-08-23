@@ -17,5 +17,11 @@ class ReviewTableSeeder extends Seeder
             'rate' => 4,
             'comment' => 'The best food in town'
         ]);
+        DB::table('review')->insert([
+            'id_truck' => 1,
+            'id_user' => 4,
+            'rate' => 4,
+            'comment' => 'The best food in town'
+        ]);
     }
 }

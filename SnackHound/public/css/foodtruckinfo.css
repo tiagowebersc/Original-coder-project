@@ -264,9 +264,10 @@ main {
 
 .reviewBox{
     display: flex;
-    width: 900px;
+    flex-direction: column;
+    width: 100%;
     margin: auto;
-    padding-top: 130px
+    padding-top: 50px
 }
 
 .scrollBoxReview {
@@ -447,4 +448,14 @@ h1, h3, .userNameInBox, input {
     .background {
         padding: 0 0 0 125px;
     }
+
+    /* REVIEW */
+    .reviewBox{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin: auto;
+        padding-top: 50px
+    }
+
 }
