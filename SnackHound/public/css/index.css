@@ -70,6 +70,7 @@
 .main-container {
     display: flex;
     flex-direction: column-reverse;
+    margin-bottom: 50px;
 }
 #floating-panel {
     position: absolute;
