@@ -59,30 +59,25 @@ class LunchBagController extends Controller
 
     public function removeLunchBag(Request $request)
     {
-        try {
-
-            $lunchBag = [];
-            if (Cookie::get('lunchBag') != null) $lunchBag = unserialize(Cookie::get('lunchBag'));
-            $remove = -1;
+        $lunchBag = [];
+        if (Cookie::get('lunchBag') != null) $lunchBag = unserialize(Cookie::get('lunchBag'));
+        $remove = -1;
 
 
-            for ($i = 0; $i < count($lunchBag); $i++) {
-                if ($lunchBag[$i]['idMenu'] == $request->idMenu) {
-                    $remove = $i;
-                    break;
-                }
+        for ($i = 0; $i < count($lunchBag); $i++) {
+            if ($lunchBag[$i]['idMenu'] == $request->idMenu) {
+                $remove = $i;
+                break;
             }
-
-            $return = 0;
-            if ($remove >= 0) {
-                $return = 1;
-                array_splice($lunchBag, $remove, 1);
-            }
-            Cookie::queue('lunchBag', serialize($lunchBag), 60 * 12);
-            return response()->json(['removed' => $return]);
-        } catch (Exception $e) {
-            return response()->json(['error' => $e]);
         }
+
+        $return = 0;
+        if ($remove >= 0) {
+            $return = 1;
+            array_splice($lunchBag, $remove, 1);
+        }
+        Cookie::queue('lunchBag', serialize($lunchBag), 60 * 12);
+        return response()->json(['removed' => $return]);
     }
 
     public function main()

@@ -258,6 +258,146 @@ main {
     padding: 60px 0 0 0;
 }
 
+
+
+/* REVIEW */
+
+.reviewBox{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    padding-top: 50px
+}
+
+.scrollBoxReview {
+   margin: 20px;
+}
+
+h1, h3, .userNameInBox, input {
+    font-family: 'Raleway', sans-serif;
+
+}
+ 
+.reviewList {
+    width: 400px;
+    height: 300px;
+    line-height: 3vh;
+    overflow: scroll;
+}
+
+.formReview {
+    width: 400px;
+    height: 150px;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: black;
+    scrollbar-base-color: gray;
+    border: 1px solid gainsboro
+}
+
+.userInfo{
+    display: flex;
+}
+
+
+.userInfo p{ 
+    padding-left: 5px;
+}
+
+
+.userNameInBox{
+    font-weight: bold;
+}
+
+.userReview{
+    font-family: 'Roboto Slab', serif;
+}
+
+.dateReview {
+    font-family: 'Roboto Slab', serif;
+    font-size: 10px;
+    padding-top: 2px
+}
+
+
+.review{
+    margin: 20px;
+}
+
+
+.formbox {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-shadow: 0px -1px 29px 5px rgba(0,0,0,0.12);
+    -moz-box-shadow: 0px -1px 29px 5px rgba(0,0,0,0.12);
+    box-shadow: 0px -1px 29px 5px rgba(0,0,0,0.12);
+    width: 400px;
+    height: 300px;
+}
+
+.reviewForm {
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    height: 270px;
+}
+
+
+.reviewForm h3 {
+    font-size: 13px;
+    width: 150px;
+}
+
+.reviewForm textarea {
+    border: 1px solid  black;
+    resize: none;
+    width: 300px;
+}
+
+
+.reviewForm input {
+    width: 200px;
+    border: none;
+    background-color: #06b7f9;
+    color: white;
+
+}
+
+.subReview {
+    padding-left: 50px;
+    padding-top: 5px;
+}
+
+.ratingReview {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.rateStarLogo{
+    padding-right: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 35px;
+}
+
+.bottomComment{
+    margin: auto;
+}
+
+.ratingReview input {
+    width: 8rem;
+    height: 1.7rem ;
+    background-color: #06b7f9;
+    color: white;
+    border: none;
+    border-radius: 5%;
+    font-size: 15px;
+}
+
 @media only screen and (min-width: 1024px) {
     header {
         height: 800px;
@@ -308,4 +448,14 @@ main {
     .background {
         padding: 0 0 0 125px;
     }
+
+    /* REVIEW */
+    .reviewBox{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin: auto;
+        padding-top: 50px
+    }
+
 }

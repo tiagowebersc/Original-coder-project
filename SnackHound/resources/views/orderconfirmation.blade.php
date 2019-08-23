@@ -3,7 +3,7 @@
 @section('css')
 <link rel="stylesheet" href="{{ URL::asset('/css/orderconfirmation.css') }}" />
 <link href="https://fonts.googleapis.com/css?family=Raleway:100,400,600|Roboto+Slab&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 @endsection
 
 @section('title', 'SnackHound - Lunch Bag')
@@ -44,30 +44,32 @@
                 <article id="lunchbagCost" class="panel">
                     <h2>Your order has been accepted!</h2>
                     <p>Thank you for your order, your order number is D5JLTL. You can find directions to your truck on the map to the right and contact details below! Did you like your experience, or not so much? Please leave a review on the food truck’s page!</p>
-                    
+                    <div class="divButtonMap">
+                        <a class="buttonMap" href="https://maps.google.com/maps?q={{$latitude}},{{$longitude}}&hl=es;z=14&amp;output=embed" target="_blank">Open in google maps</a>
+                    </div>
                 </article>
                 @csrf
                 <input type="hidden" id="idTruck" value="{{$truck->id_truck}}">
                 <article id="lunchbagMailingList" class="panel" style="background-image: url('/assets/IMGS/Food Trucks/BLURRED/{{$truck->image}}');">
                     <h2 class="foodTruckName">{{$truck->name}}</h2>
                     <div class="starheart">
-                    <div>
-                        <?php
-                             for ($i = 1; $i <= $avg_rate; $i++) { ?>
-                        <img class="starlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-filled.svg')}}" alt="">
-                        <?php }
-                        $blankStars = 5 - $avg_rate;
-                        for ($i = 1; $i <= $blankStars; $i++) {
-                            ?>
-                        <img class="starlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-blank.svg')}}" alt="">
+                        <div>
+                            <?php
+                            for ($i = 1; $i <= $avg_rate; $i++) { ?>
+                            <img class="starlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-filled.svg')}}" alt="">
+                            <?php }
+                            $blankStars = 5 - $avg_rate;
+                            for ($i = 1; $i <= $blankStars; $i++) {
+                                ?>
+                            <img class="starlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-blank.svg')}}" alt="">
+                            <?php } ?>
+                            <span class="reviewNbr">{{$total_reviews}}</span>
+                        </div>
+                        <?php if ($favorite) { ?>
+                        <img class="heartlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-heart-outline.svg')}}" alt="">
+                        <?php } else { ?>
+                        <img class="heartlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-heart-blank.svg')}}" alt="">
                         <?php } ?>
-                        <span class="reviewNbr">{{$total_reviews}}</span>
-                    </div>
-                    <?php if ($favorite) { ?>
-                    <img class="heartlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-heart-outline.svg')}}" alt="">
-                    <?php } else { ?>
-                    <img class="heartlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-heart-blank.svg')}}" alt="">
-                    <?php } ?>
                     </div>
                     <div class="contactlist">
                         <div class="contactnumber" name="contactnumber">
@@ -82,7 +84,8 @@
                 </article>
             </div>
             <article id="lunchbagList" class="panel map-container">
-                <div id="map"></div>
+                <iframe class='map' frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q={{$latitude}},{{$longitude}}&hl=es;z=14&amp;output=embed">
+                </iframe>
             </article>
         </form>
     </section>
@@ -92,78 +95,6 @@
 @section('js')
 <script>
     window.addEventListener('DOMContentLoaded', (event) => {
-
-        // start the map
-        function initMap() {
-            // Map options
-            let options = {
-                zoom: 10,
-                center: {
-                    lat: 49.779705,
-                    lng: 6.091878
-                },
-            }
-
-            // New map
-            var map = new google.maps.Map(document.getElementById('map'), options);
-
-            // Array of markers
-            var markers = [
-                // insert the mark of the foodtruck
-
-            ];
-            // Loop through markers
-            for (let i = 0; i < markers.length; i++) {
-                // Add marker
-                addMarker(markers[i]);
-            }
-            // Add Marker Function
-            function addMarker(props) {
-                let marker = new google.maps.Marker({
-                    position: props.coords,
-                    map: map,
-                    animation: google.maps.Animation.DROP,
-                    //icon:props.iconImage
-                });
-                // Check for customicon
-                if (props.iconImage) {
-                    // Set icon image
-                    marker.setIcon(props.iconImage);
-                }
-                // Check content
-                if (props.content) {
-                    let infoWindow = new google.maps.InfoWindow({
-                        content: props.content
-                    });
-                    marker.addListener('click', function() {
-                        infoWindow.open(map, marker);
-                    });
-                }
-            }
-            var geocoder = new google.maps.Geocoder();
-
-            document.getElementById('submit').addEventListener('click', function() {
-                geocodeAddress(geocoder, map);
-            });
-        }
-
-        function geocodeAddress(geocoder, resultsMap) {
-            var address = document.getElementById('address').value;
-            geocoder.geocode({
-                'address': address
-            }, function(results, status) {
-                if (status === 'OK') {
-                    resultsMap.setCenter(results[0].geometry.location);
-                    var marker = new google.maps.Marker({
-                        map: resultsMap,
-                        position: results[0].geometry.location
-                    });
-                } else {
-                    alert('Geocode was not successful for the following reason: ' + status);
-                }
-            });
-        }
-
         // favorite
         let btnFavorite = document.querySelector(".heartlogo");
         btnFavorite.addEventListener("click", (e) => {

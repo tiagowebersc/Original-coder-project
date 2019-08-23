@@ -19,7 +19,7 @@
                 <div class="formReview">
                     
                     <div class="userInfo">
-                        <p class="userNameInBox">User Name</p><p>Rating</p><p class="dateReview">(Date):</p>
+                        <p class="userNameInBox">User Name</p><p>Rating</p><p class="dateReview">(Date) :</p>
                     </div>
                     
                     <div class="userReview">
@@ -32,7 +32,7 @@
                 <div class="formReview">
                     
                         <div class="userInfo">
-                            <p class="userNameInBox">User Name</p><p>Rating</p><p class="dateReview">(Date):</p>
+                            <p class="userNameInBox">User Name</p><p>Rating</p><p class="dateReview">(Date) :</p>
                         </div>
                         
                         <div class="userReview">
@@ -45,7 +45,7 @@
                     <div class="formReview">
                     
                             <div class="userInfo">
-                                <p class="userNameInBox">User Name</p><p>Rating</p><p class="dateReview">(Date):</p>
+                                <p class="userNameInBox">User Name</p><p>Rating</p><p class="dateReview">(Date) :</p>
                             </div>
                             
                             <div class="userReview">
@@ -61,21 +61,22 @@
 
         <hr class="separator">
 
-        <div class="leavReview">
+        <div class="review">
             <h1>Leave A Review</h1>
-            <form action="" method="POST">
-                <div>
-                    <h3>Comments:</h3>
-                    <div class="ratingReview">
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
-                        <br>
-                        <img class="starlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-blank.svg')}}" alt="">
-                        <br>
-                        <input type="submit" value="Post">
-                    </div>
-                </div>
-            </form>
 
+            <div class="formbox">
+
+                
+                <form action="">
+                        <h3>Comments:</h3>
+
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <img class="starlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-blank.svg')}}" alt="">
+                    <input type="submit" value="Post">
+
+                </form>
+
+            </div>
 
         </div>
         
