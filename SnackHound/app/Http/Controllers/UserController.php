@@ -4,8 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Order_item;
+use App\Models\Order;
+use App\Models\Truck;
 use Session;
 use Mail;
+use DB;
 
 class UserController extends Controller
 {
@@ -144,6 +148,18 @@ class UserController extends Controller
         Session::forget('last_name');
         Session::forget('user_type');
         return redirect()->route('index');
+    }
+
+    // Create a public function  to populate the user table
+    public function orderHistory(){
+        $orders=Order::all();
+        foreach ($orders as $order) {
+            $order->truckName=Truck::WHERE('id_truck', $order->id_truck)->GET()->first()->name;
+            $order->orderSum=DB::select('SELECT SUM(price * quantity) AS total FROM order_item WHERE id_order = ?', [$order->id_order])[0]->total;
+        }
+        
+        $name=Session::get('first_name');
+        return  view('userDashboard', ['orders'=>$orders, 'name'=>$name]);
     }
 
     // How take info from session

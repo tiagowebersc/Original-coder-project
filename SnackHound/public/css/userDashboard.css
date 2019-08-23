@@ -25,7 +25,8 @@
 
 /* ? Main Styling */
 main {
-    padding-top: 100px;
+    padding-top: 50px;
+    margin-left: 50px;
 }
 
 #main-content {
@@ -34,9 +35,8 @@ main {
 }
 
 #main-title {
-    margin-top: 45px;
     padding-left: 100px;
-    padding-bottom: 100px;
+    padding-bottom: 50px;
 }
 
 #main-title {
@@ -48,6 +48,11 @@ main {
 
 #left-side {
     margin-left: 150px;
+}
+
+form {
+    width: 90%;
+    /* border: 1px solid black; */
 }
 
 /* Search form styling */
@@ -68,6 +73,19 @@ input[type='radio'] {
     margin-right: 5px;
 }
 
+#orderInput {
+    margin-left: 110px;
+}
+
+#dateInput {
+    margin-left: 75px;
+    display: inline;
+}
+
+#businessInput {
+    width: 200px;
+}
+
 /* input[type='tel'] {
     width: 160px;
 } */
@@ -78,11 +96,12 @@ input[type='radio'] {
 } */
 
 #searchForm-search,
+#searchForm-showall,
 #searchForm-showall input,
 #searchFormMobile-search,
 #searchFormMobile-showall input {
-    margin-top: 25px;
-    width: 150px;
+    margin-top: 10px;
+    width: 190px;
     padding: 5px;
     margin-right: 20px;
     background-color: #06b7f9;
@@ -93,23 +112,27 @@ input[type='radio'] {
     border-radius: 2px;
 }
 
+.desktop-btn {
+    width: 100%;
+}
+
 input[type='date'] {
     width: 173px;
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
 }
 
-#table {
-    width: 100%;
-}
+/* #table {
+    width: 80%;
+} */
 
 table {
-    margin: auto;
+    /* margin: auto; */
     margin-top: 30px;
     padding-top: 20px;
     border-collapse: collapse;
     margin-bottom: 50px;
-    width: 800px;
+    width: 500px;
 }
 
 .table-head {
@@ -150,6 +173,58 @@ a:active {
 }
 
 .green_truck {
-    width: 850px;
-    padding-right: 100px;
+    width: 600px;
+    margin: 50px;
 }
+
+/* !!!!! MEDIA QUERIES !!!!! */
+
+@media only screen and (max-width: 1024px) {
+    #left-side {
+        margin-left: 0;
+    }
+
+    .green_truck {
+        width: 350px;
+        margin-top: 100px;
+    }
+}
+
+@media only screen and (min-width: 360px) and (max-width:768px) {
+    #main-title {
+        padding-left: 0;
+        padding-bottom: 0;
+        padding-top: 75px;
+        margin: 0;
+        font-size: 18px;
+    }
+
+    #orderHistory {
+        padding-top: 25px;
+    }
+
+    #searchForm {
+        margin-top: 0;
+    }
+
+    #formSets {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    label {
+        width: 200px;
+    }
+
+    fieldset {
+        width: 5px;
+    }
+
+    #dateInput {
+        display: none;
+    }
+
+    }
+
+
