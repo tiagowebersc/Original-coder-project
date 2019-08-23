@@ -115,6 +115,7 @@ class OrderController extends Controller
             $orderItem->id_menu = $items[$i]['menu']->id_menu;
             $orderItem->price = $items[$i]['menu']->price;
             $orderItem->quantity = $items[$i]['quantity'];
+            $orderItem->save();
         }
         // update the lunchbag cookie
         Cookie::queue('lunchBag', serialize($lunchBag), 60 * 12);
@@ -124,10 +125,14 @@ class OrderController extends Controller
         $email = $user->email;
         $data = ['name' => $name, 'foodTruckName' => $truck->name];
 
-        Mail::send('mailConfirm', $data, function ($message) use ($name, $email) {
-            $message->to($email, $name)->subject('Order has been placed and is awaiting approval');
-            $message->from('snackhound.lux@gmail.com', 'Snack Hound');
-        });
+        try {
+            Mail::send('mailConfirm', $data, function ($message) use ($name, $email) {
+                $message->to($email, $name)->subject('Order has been placed and is awaiting approval');
+                $message->from('snackhound.lux@gmail.com', 'Snack Hound');
+            });
+        } catch (Exception $e) {
+            // if there is a problem with the email to not mess up the order itself
+        }
 
         // return values
         $avg_rate = 0;
