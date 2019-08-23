@@ -216,10 +216,10 @@
 
     function show() {
         let x = document.getElementById("custome-drpdown");
-        if (x.style.display === "none") {
-            x.style.display = "grid";
-        } else {
+        if (x.style.display === "grid") {
             x.style.display = "none";
+        } else {
+            x.style.display = "grid";
         }
     }
 
