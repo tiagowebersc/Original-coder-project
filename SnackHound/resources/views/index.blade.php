@@ -202,17 +202,6 @@
 <script>
 
 
-    $(function() {
-            $(".wrapper").click(function() {
-            window.location = $(this).find("a").attr("href");
-            return false;
-            });
-            document.getElementById("now").addEventListener("click", function(event) {
-                event.preventDefault()
-            });
-
-        })
-
 
     function show() {
         let x = document.getElementById("custome-drpdown");
