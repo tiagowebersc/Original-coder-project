@@ -16,7 +16,7 @@
 <div class="background">
     <header>
         <!-- principal div header start here -->
-        <div class="backgrounddiv" name="backgrounddiv" style="background-image: url('/assets/IMGS/Food Trucks/BLURRED/{{$foodtruck->image}}');">
+        <div class="backgrounddiv" name="backgrounddiv" style="background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.52), rgba(0, 0, 20, 0.73)), url('/assets/IMGS/Food Trucks/BLURRED/{{$foodtruck->image}}');">
 
             <div name="truckinfo" class="truckinfo">
                 <input type="hidden" id="idTruck" value="{{$foodtruck->id_truck}}">
@@ -137,45 +137,34 @@
                             <h1>REVIEWS</h1>
                         
                         <div class="reviewList">
-                            
+                                <?php
+                                foreach ($reviews as $review)
+                                 {
+
+                                 ?>
                             <div class="formReview">
                                 
                                 <div class="userInfo">
-                                    <p class="userNameInBox">User Name</p><p>Rating</p><p class="dateReview">(Date) :</p>
+                                    <p class="userNameInBox">{{$review->userName}}</p>
+                                    <p><?php
+                                        for ($i = 1; $i <= $review->rate; $i++) { ?>
+                                   <img class="ratingStar" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-filled.svg')}}" alt="">
+                                   <?php }
+                                   $blankStars = 5 - $review->rate;
+                                   for ($i = 1; $i <= $blankStars; $i++) {
+                                       ?>
+                                   <img class="ratingStar" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-blank.svg')}}" alt="">
+                                   <?php } ?>
+                                    </p>
+                                    <p class="dateReview">({{$review->created_at}}) :</p>
                                 </div>
                                 
                                 <div class="userReview">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                    Aliquid tempora magni placeat labore pariatur, laboriosam optio molestiae 
-                                    voluptatibus accusamus cupiditate impedit corrupti consequatur repellendus ea ipsam
-                                </div>
-                            </div>
-            
-                            <div class="formReview">
-                                
-                                    <div class="userInfo">
-                                        <p class="userNameInBox">User Name</p><p>Rating</p><p class="dateReview">(Date) :</p>
-                                    </div>
                                     
-                                    <div class="userReview">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                        Aliquid tempora magni placeat labore pariatur, laboriosam optio molestiae 
-                                        voluptatibus accusamus cupiditate impedit corrupti consequatur repellendus ea ipsam
-                                    </div>
+                                    <p>{{$review->comment}}</p>
                                 </div>
-            
-                                <div class="formReview">
-                                
-                                        <div class="userInfo">
-                                            <p class="userNameInBox">User Name</p><p>Rating</p><p class="dateReview">(Date) :</p>
-                                        </div>
-                                        
-                                        <div class="userReview">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                            Aliquid tempora magni placeat labore pariatur, laboriosam optio molestiae 
-                                            voluptatibus accusamus cupiditate impedit corrupti consequatur repellendus ea ipsam
-                                        </div>
-                                    </div>
+                            </div>           
+                            <?php } ?>
             
                         </div>
                     </div>

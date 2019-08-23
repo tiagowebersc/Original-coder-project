@@ -16,6 +16,7 @@
 header {
     height: 640px;
     resize: both;
+    overflow: scroll;
     resize: none;
 }
 
@@ -72,8 +73,7 @@ header {
     display: flex;
     justify-content: space-around;
     text-shadow: 1px 0 0 black, -1px 0 0 black, 0 1px 0 black, 0 -1px 0 black,
-        0.5px 0.5px black, -0.5px -0.5px 0 black, 0.5px -0.5px 0 black,
-        -0.5px 0.5px 0 black;
+    0.5px 0.5px black, -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black;
 }
 
 .contactlist {
@@ -115,8 +115,7 @@ header {
 
 .scheduleTable {
     text-shadow: 1px 0 0 black, -1px 0 0 black, 0 1px 0 black, 0 -1px 0 black,
-        0.5px 0.5px black, -0.5px -0.5px 0 black, 0.5px -0.5px 0 black,
-        -0.5px 0.5px 0 black;
+    0.5px 0.5px black, -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black;
     margin: 0 auto;
 }
 
@@ -259,27 +258,27 @@ main {
     padding: 60px 0 0 0;
 }
 
+
+
 /* REVIEW */
 
-.reviewBox {
+.reviewBox{
     display: flex;
     flex-direction: column;
     width: 100%;
     margin: auto;
-    padding-top: 50px;
+    padding-top: 50px
 }
 
 .scrollBoxReview {
-    margin: 20px;
+   margin: 20px;
 }
 
-h1,
-h3,
-.userNameInBox,
-input {
+h1, h3, .userNameInBox, input {
     font-family: 'Raleway', sans-serif;
-}
 
+}
+ 
 .reviewList {
     width: 400px;
     height: 300px;
@@ -294,41 +293,50 @@ input {
     margin-bottom: 10px;
     color: black;
     scrollbar-base-color: gray;
-    border: 1px solid gainsboro;
+    border: 1px solid gainsboro
 }
 
-.userInfo {
+.userInfo{
     display: flex;
 }
 
-.userInfo p {
+
+.userInfo p{ 
     padding-left: 5px;
 }
 
-.userNameInBox {
+.ratingStar{
+    width: 16px;
+    height: 16px;
+}
+
+
+.userNameInBox{
     font-weight: bold;
 }
 
-.userReview {
+.userReview{
     font-family: 'Roboto Slab', serif;
 }
 
 .dateReview {
     font-family: 'Roboto Slab', serif;
     font-size: 10px;
-    padding-top: 2px;
+    padding-top: 2px
 }
 
-.review {
+
+.review{
     margin: 20px;
 }
+
 
 .formbox {
     display: flex;
     flex-direction: column;
-    -webkit-box-shadow: 0px -1px 29px 5px rgba(0, 0, 0, 0.12);
-    -moz-box-shadow: 0px -1px 29px 5px rgba(0, 0, 0, 0.12);
-    box-shadow: 0px -1px 29px 5px rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: 0px -1px 29px 5px rgba(0,0,0,0.12);
+    -moz-box-shadow: 0px -1px 29px 5px rgba(0,0,0,0.12);
+    box-shadow: 0px -1px 29px 5px rgba(0,0,0,0.12);
     width: 400px;
     height: 300px;
 }
@@ -341,22 +349,25 @@ input {
     height: 270px;
 }
 
+
 .reviewForm h3 {
     font-size: 13px;
     width: 150px;
 }
 
 .reviewForm textarea {
-    border: 1px solid black;
+    border: 1px solid  black;
     resize: none;
     width: 300px;
 }
+
 
 .reviewForm input {
     width: 200px;
     border: none;
     background-color: #06b7f9;
     color: white;
+
 }
 
 .subReview {
@@ -370,20 +381,21 @@ input {
     flex-direction: column;
 }
 
-.rateStarLogo {
+
+.rateStarLogo{
     padding-right: 50px;
     padding-top: 5px;
     padding-bottom: 5px;
     height: 35px;
 }
 
-.bottomComment {
+.bottomComment{
     margin: auto;
 }
 
 .ratingReview input {
     width: 8rem;
-    height: 1.7rem;
+    height: 1.7rem ;
     background-color: #06b7f9;
     color: white;
     border: none;
@@ -443,11 +455,12 @@ input {
     }
 
     /* REVIEW */
-    .reviewBox {
+    .reviewBox{
         display: flex;
         flex-direction: row;
         width: 100%;
         margin: auto;
-        padding-top: 50px;
+        padding-top: 50px
     }
+
 }

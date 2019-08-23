@@ -183,6 +183,7 @@ class ReviewTableSeeder extends Seeder
             'id_truck' => 4,
             'id_user' => 6,
             'rate' => 5,
+            'created_at'=>"2018-02-28 18:23:55",
             'comment' => 'Savoyard for the cheese amator'
         ]);
     }
