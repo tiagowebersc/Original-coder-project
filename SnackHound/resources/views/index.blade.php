@@ -38,14 +38,24 @@
                     <button {{-- class="btn btn-primary dropdown-toggle"
                       type="button"
                       data-toggle="dropdown" --}} onclick="show()" class="filter-button">
-                        Filter> <span class="caret"></span>
+                        Filter <span class="caret"></span>
+
                     </button>
                     <ul id="custome-drpdown" class="custome-drpdown">
-                        <li><a href="#" id="now"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}'" onmousedown="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'"> Location </a></li>
+                            <li><a onclick="categoryAll()" href="/" id="now"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}'" onmousedown="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'"> All </a></li>
 
                         <?php foreach ($categories as $category) {
                             ?>
-                        <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/'.$category->image)}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image_hover)}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image)}}'"> {{$category->name}} </a></li>
+
+
+                         <li>
+                            <form class='form-anchor-submit' action="/" method='POST'>
+                                @csrf
+                                <input type="hidden" name="categoryId" value="{{$category->id_food_category}}">
+                                <a href="" onclick="categorySubmit({{$category->id_food_category}}); return false;" class='anchor-submit'> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/'.$category->image)}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image_hover)}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image)}}'"> {{$category->name}} </a></li>
+                            </form>
+                        </li>
+
                         <?php } ?>
                     </ul>
                 </div>
@@ -55,7 +65,7 @@
 
         <section id="filterbar-container" class="filterbar-container">
             <ul>
-                <li><a href="#" id="now"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}'" onmousedown="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'"> Location </a></li>
+                <li><a onclick="categoryAll()" href="/" id="now"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}'" onmousedown="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'"> All </a></li>
                 <?php foreach ($categories as $category) {
                     ?>
                 <li>
@@ -203,24 +213,20 @@
 
 <script>
 
-    console.log(localStorage.top);
-    console.log(window.scrollY)
-
-
-        scrollTo(0, 0);
-        localStorage.top = 0;
+    if(localStorage.top > 0) {
+        scrollTo(0, localStorage.top);
+    }
 
     function categorySubmit(id) {
         let forms = document.querySelectorAll(".form-anchor-submit");
         localStorage.top = window.scrollY;
         forms[id - 1].submit();
+
     }
 
-    // let anchor = document.querySelector('.anchor-submit');
-
-    // anchor.addEventListener('click', function() {
-    //     console.log(anchor.parentElement);
-    // })
+    function categoryAll() {
+        localStorage.top = window.scrollY;
+    }
 
     function show() {
         let x = document.getElementById("custome-drpdown");

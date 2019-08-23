@@ -31,6 +31,8 @@ class IndexController extends Controller
         $trucks = Truck::all();
         if (count($trucks) > 0) {
             foreach ($trucks as $truck) {
+
+
                 $queryResult = DB::select("(SELECT s.latitude, s.longitude, s.weekday, s.start_time, s.end_time
                                               FROM schedule s
                                              WHERE ((s.weekday = WEEKDAY(CURDATE()) AND s.end_time >= CURTIME()) OR (s.weekday > WEEKDAY(CURDATE())))
@@ -43,9 +45,18 @@ class IndexController extends Controller
                                              ORDER BY s.weekday, s.start_time)", [$truck->id_truck, $truck->id_truck]);
                 if (count($queryResult) > 0) {
                     // take the first option
+
+                    $truckReview = DB::select('SELECT avg(rate) as rate, count(id_review) as numReviews FROM review WHERE id_truck = ? ', [$truck->id_truck]);
+
+                    if(isset($truckReview[0]->rate)) {
+                        $truck->avgRate = $truckReview[0]->rate;
+                        $truck->reviewsNbr = $truckReview[0]->numReviews;
+                    } else {
+                        $truck->avgRate = 0;
+                        $truck->reviewsNbr = 0;
+                    }
+
                     $queryResult = $queryResult[0];
-                    $truck->avgRate = 4;
-                    $truck->reviewsNbr = 50;
                     $truck->latitude = $queryResult->latitude;
                     $truck->longitude = $queryResult->longitude;
                     $truck->weekday = $queryResult->weekday;
@@ -73,7 +84,7 @@ class IndexController extends Controller
 
         $trucks = View_foodtruck_category::where('id_food_category', $id)->get();
 
-        // var_dump($trucks->get());
+
 
             foreach ($trucks as $truck) {
                 $queryResult = DB::select("(SELECT s.latitude, s.longitude, s.weekday, s.start_time, s.end_time
@@ -89,9 +100,19 @@ class IndexController extends Controller
 
                 if (count($queryResult) > 0) {
                     // take the first option
+
+                    $truckReview = DB::select('SELECT avg(rate) as rate, count(id_review) as numReviews FROM review WHERE id_truck = ? ', [$truck->id_truck]);
+
+                    if(isset($truckReview[0]->rate)) {
+                        $truck->avgRate = $truckReview[0]->rate;
+                        $truck->reviewsNbr = $truckReview[0]->numReviews;
+                    } else {
+                        $truck->avgRate = 0;
+                        $truck->reviewsNbr = 0;
+                    }
+
+
                     $queryResult = $queryResult[0];
-                    $truck->avgRate = 4;
-                    $truck->reviewsNbr = 50;
                     $truck->latitude = $queryResult->latitude;
                     $truck->longitude = $queryResult->longitude;
                     $truck->weekday = $queryResult->weekday;

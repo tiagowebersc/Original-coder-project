@@ -16,7 +16,6 @@
 header {
     height: 640px;
     resize: both;
-    overflow: scroll;
     resize: none;
 }
 
@@ -278,7 +277,7 @@ h1, h3, .userNameInBox, input {
     font-family: 'Raleway', sans-serif;
 
 }
- 
+
 .reviewList {
     width: 400px;
     height: 300px;
@@ -301,7 +300,7 @@ h1, h3, .userNameInBox, input {
 }
 
 
-.userInfo p{ 
+.userInfo p{
     padding-left: 5px;
 }
 
