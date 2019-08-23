@@ -23,12 +23,12 @@ Route::get('/reset_password/{token}', 'UserController@resetPassword');
 Route::post('/reset_password/{token}', 'UserController@resetPasswordPost');
 Route::get('/signout', 'UserController@signout');
 // ! Lunchbag functions
-Route::get('/lunchbag', 'LunchBagController@main');
+Route::get('/lunchbag', 'LunchBagController@main')->name('lunchBag');
 Route::get('/lunchbagTotal', 'LunchBagController@totalItems');
 Route::get('/lunchbagTotalPrice', 'LunchBagController@totalPriceItems');
 Route::put('/addlunchbag', 'LunchBagController@addLunchBag');
 Route::delete('/removelunchbag', 'LunchBagController@removeLunchBag');
-
+Route::post('/generateOrder', 'OrderController@generateOrder');
 // ! TRUCKS DASHBOARD
 Route::get('/truck', 'TruckController@getOrders')->name('truck');
 Route::post('/truck', 'TruckController@updateOrders');
@@ -67,7 +67,7 @@ Route::get('/foodtruckinfo/{id_truck}', 'foodTruckController@main'); //foodtruck
 Route::get('/adminedit', 'AdminEditController@getUsers'); // Admin page to edit user
 
 // ! USER SETTINGS PAGE **
-Route::get('/userDashboard', function(){
+Route::get('/userDashboard', function () {
     return view('userDashboard');
 }); // User settings page
 

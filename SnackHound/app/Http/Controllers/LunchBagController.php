@@ -25,7 +25,7 @@ class LunchBagController extends Controller
         if (Cookie::get('lunchBag') != null) {
             $lunchBagList = unserialize(Cookie::get('lunchBag'));
             foreach ($lunchBagList as $item) {
-                $total += $item['quantity'] * Menu::where('id_menu', $item['idMenu'])->first()->price;
+                $total += ($item['quantity'] * Menu::where('id_menu', $item['idMenu'])->first()->price);
             }
         }
         return $total;
@@ -33,8 +33,8 @@ class LunchBagController extends Controller
 
     public function addLunchBag(Request $request)
     {
-        if ($request->quantity === 0) {
-            Self::removeLunchBag($request->idMenu);
+        if ($request->quantity == 0) {
+            Self::removeLunchBag($request);
         } else {
             $lunchBag = [];
             if (Cookie::get('lunchBag') != null)  $lunchBag = unserialize(Cookie::get('lunchBag'));
@@ -49,7 +49,7 @@ class LunchBagController extends Controller
             if (!$found) {
                 $data = [];
                 $data['idMenu'] = $request->idMenu;
-                $data['quantity'] = 1;
+                $data['quantity'] = $request->quantity;
                 $lunchBag[] = $data;
             }
             Cookie::queue('lunchBag', serialize($lunchBag), 60 * 12);
@@ -68,8 +68,7 @@ class LunchBagController extends Controller
 
             for ($i = 0; $i < count($lunchBag); $i++) {
                 if ($lunchBag[$i]['idMenu'] == $request->idMenu) {
-                    $lunchBag[$i]['quantity'] -= 1;
-                    if ($lunchBag[$i]['quantity'] <= 0) $remove = $i;
+                    $remove = $i;
                     break;
                 }
             }
@@ -115,7 +114,6 @@ class LunchBagController extends Controller
                 }
             }
         }
-
         return view('lunchbag', ['total' => $total, 'ftList' => $ftList]);
     }
 }

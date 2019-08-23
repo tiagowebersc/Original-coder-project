@@ -62,7 +62,7 @@
             <article>
                 <h1 id="greeting">Hi, {{ $name }}  </h1>
                 <p>Your order at {{ $foodTruckName }} has been approved! Please allow them 5 - 10 minutes to prepare your meal(s) before making your way to the truck. (Wait times might be a little longer depending on business). Thank you for using SnackHound!</p>
-                <p>If you have further questions, feel free to reach out to us at <a href="">info@snackhound.com</a>.</p>
+                <p>If you have further questions, feel free to reach out to us at <a href="mailto:info@snackhound.com"></a>.</p>
                 <p id="cheers">Cheers,</p>
                 <p id="closing">The SnackHound Team</p>
             </article>

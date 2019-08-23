@@ -108,7 +108,7 @@ class UserController extends Controller
         $email = $user->email;
         $data = ['name' => $name, 'url_reset' => 'http://127.0.0.1:8000/reset_password/' . $token];
 
-        Mail::send('mail', $data, function ($message) use ($name, $email) {
+        Mail::send('mailResetPW', $data, function ($message) use ($name, $email) {
             $message->to($email, $name)->subject('Reset password requested');
             $message->from('snackhound.lux@gmail.com', 'Snack Hound');
         });

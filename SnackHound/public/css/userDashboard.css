@@ -1,0 +1,155 @@
+/* ! GLOBAL RESETS */
+
+* {
+    box-sizing: border-box;
+    transition-duration: 0.3s;
+}
+
+*:not(input) {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* ! END RESETS */
+
+/* ** GLOBAL STYLING ** */
+
+* {
+    font-family: 'Roboto Slab', 'serif';
+}
+
+/* ** END GLOBAL STYLING ** */
+
+/* ** BODY STYLING ** */
+
+/* ? Main Styling */
+main {
+    padding-top: 100px;
+}
+
+#main-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+#main-title {
+    margin-top: 45px;
+    padding-left: 100px;
+    padding-bottom: 100px;
+}
+
+#main-title {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    margin-left: 25px;
+}
+
+#left-side {
+    margin-left: 150px;
+}
+
+/* Search form styling */
+#searchForm {
+    margin-top: 30px;
+}
+
+fieldset {
+    padding: 10px 10px 10px 0px;
+}
+
+input:not([type='radio']):not([type='submit']) {
+    border-radius: 2px;
+    border: 1px solid #333333;
+}
+
+input[type='radio'] {
+    margin-right: 5px;
+}
+
+/* input[type='tel'] {
+    width: 160px;
+} */
+
+/* label[for='typeSearch'] {
+    display: inline-block;
+    width: 100px;
+} */
+
+#searchForm-search,
+#searchForm-showall input,
+#searchFormMobile-search,
+#searchFormMobile-showall input {
+    margin-top: 25px;
+    width: 150px;
+    padding: 5px;
+    margin-right: 20px;
+    background-color: #06b7f9;
+    color: white;
+    -webkit-box-shadow: 0px 3px 6px 2px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 3px 6px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 3px 6px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+input[type='date'] {
+    width: 173px;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+#table {
+    width: 100%;
+}
+
+table {
+    margin: auto;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-collapse: collapse;
+    margin-bottom: 50px;
+    width: 800px;
+}
+
+.table-head {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.table-content {
+    text-align: center;
+}
+
+td {
+    padding: 15px 0px;
+    text-align: center;
+}
+
+tr {
+    border: 1px solid black;
+}
+
+.view-details,
+.accept-order {
+    display: inline-block;
+    width: 100px;
+    padding: 5px;
+    background-color: #06b7f9;
+    color: white;
+    -webkit-box-shadow: 0px 3px 6px 2px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 3px 6px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 3px 6px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+a:hover,
+a:visited,
+a:active {
+    text-decoration: none;
+}
+
+.green_truck {
+    width: 850px;
+    padding-right: 100px;
+}

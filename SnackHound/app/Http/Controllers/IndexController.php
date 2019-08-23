@@ -7,6 +7,7 @@ use DB;
 use App\Models\Truck;
 use App\Models\Food_category;
 use App\Models\Schedule;
+use App\Models\Truck_food_category;
 
 class IndexController extends Controller
 {
@@ -43,7 +44,12 @@ class IndexController extends Controller
                     $truck->start_time = $queryResult->start_time;
                     $truck->end_time = $queryResult->end_time;
                     $truck->schedules = Schedule::WHERE('id_truck', $truck->id_truck)->GET();
-                    $truck->favorite = app(\App\Http\Controllers\foodTruckController::class)->getFavorite($truck->id_truck);;
+                    $categories = Truck_food_category::where('id_truck', $truck->id_truck)->GET();
+                    for($i = 0; $i < count($categories);$i ++) {
+                        $categories[$i]->name = Food_category::where('id_food_category', $categories[$i]->id_food_category)->first()->name;
+                    }
+                    $truck->categories = $categories;
+                    $truck->favorite = app(\App\Http\Controllers\foodTruckController::class)->getFavorite($truck->id_truck);
                     $result[] = $truck;
                 }
             }

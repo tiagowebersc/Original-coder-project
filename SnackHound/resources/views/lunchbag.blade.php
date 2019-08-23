@@ -38,10 +38,9 @@
             </div>
         </div>
         <!-- End header -->
-        <form action="" method="post">
+        <div class="divflex">
             <div id="left-content">
                 <article id="lunchbagCost" class="panel">
-                    @csrf
                     <h1 id="title">Lunchbag</h2>
                         <div id="lunchbagTotal">
                             <div class="rows" id="row1">
@@ -80,39 +79,43 @@
                 <div class="tabcontent">
                     <?php foreach ($ftList as $foodTruck) {
                         $tabName = 'foodTruck_' . $foodTruck['idTruck']; ?>
-                    <ul id="{{$tabName}}" class="lunchBagitems">
-                        <?php foreach ($foodTruck['list'] as $item) { ?>
-                        <li>
-                            <input type="hidden" name="idMenu" value="{{$item->id_menu}}">
-                            <img class="imgs" src="{{URL::asset('assets/IMGS/Menu/'.$item->id_truck.'/'.$item->image)}}" alt="photo of classic poutine">
-                            <div class="qtyCol">
-                                <button class="plus">+</button>
-                                <div class="qty">
-                                    {{$item->quantity}}
-                                </div>
-                                <button class="minus">-</button>
+                    <form class="lunchBagForm" id="{{$tabName}}" action="/generateOrder" method="post">
+                    @csrf
+                        <input type="hidden" name="idTruck" value="{{$foodTruck['idTruck']}}">
+                        <ul class="lunchBagitems">
+                            <?php foreach ($foodTruck['list'] as $item) { ?>
+                            <div>
+                                <li>
+                                    <input type="hidden" name="idMenu" value="{{$item->id_menu}}">
+                                    <img class="imgs" src="{{URL::asset('assets/IMGS/Menu/'.$item->id_truck.'/'.$item->image)}}" alt="photo of classic poutine">
+                                    <div class="qtyCol">
+                                        <button class="plus">+</button>
+                                        <div class="qty">
+                                            {{$item->quantity}}
+                                        </div>
+                                        <button class="minus">-</button>
+                                    </div>
+                                    <p class="foodName">{{$item->name}}</p>
+                                    <h3>{{number_format($item->price, 2)}}€</h3>
+                                    <button class="ex">x</button>
+                                </li>
+                                <hr>
                             </div>
-                            <p class="foodName">{{$item->name}}</p>
-                            <h3>{{number_format($item->price, 2)}}€</h3>
-                            <button class="ex">x</button>
-                        </li>
-                        <hr>
-                        <?php } ?>
-                    </ul>
-                    <?php } ?>
-                </div>
+                            <?php } ?>
+                        </ul>
+
                 <!-- This checkbox should be hidden on wider screens -->
                 <div id="mailCheckbox">
                     <p id="check">Sign up to for our mailing list:</p>
                     <input id="mobileCheckbox" type="checkbox">
                 </div>
-                <!-- <div id="extraBtns">
-                    <button id="apple" class="checkoutButton" type="submit"><img class="btnIcons" src="{{URL::asset('assets/ICONS/LUNCHBAG/apple.svg')}}" alt="the icon for Apple">Apple Pay</button>
-                    <button id="paypal" class="checkoutButton" type="submit"><img class="btnIcons" src="{{URL::asset('assets/ICONS/LUNCHBAG/icons8-paypal.svg')}}" alt="the icon for PayPal">PayPal</button>
-                </div> -->
                 <button id="checkout" class="checkoutButton" type="submit">Checkout</button>
+
+                    </form>
+                    <?php } ?>
+                </div>
             </article>
-        </form>
+            </div>
     </section>
 </main>
 @endsection
@@ -123,7 +126,7 @@
     function openFoodTruck(evt, foodTruckTab) {
         evt.preventDefault();
         var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("lunchBagitems");
+        tabcontent = document.getElementsByClassName("lunchBagForm");
         for (i = 0; i < tabcontent.length; i++) {
             tabcontent[i].style.display = "none";
         }
@@ -134,15 +137,30 @@
         document.getElementById(foodTruckTab).style.display = "block";
         evt.currentTarget.className += " active";
     }
+    // update total value
+    function updateTotalValue() {
+        fetch("/lunchbagTotalPrice", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(response => {
+            response.json().then(function(data) {
+                document.querySelector('#orderTotal').textContent = data.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') + "€";
+                document.querySelector('#totalAmt').textContent = data.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') + "€";
+            });
+        });
+    }
 
     window.addEventListener('DOMContentLoaded', (event) => {
 
         // select the first foodtruck when open the page
-        tabcontent = document.getElementsByClassName("lunchBagitems");
+        tabcontent = document.getElementsByClassName("lunchBagForm");
         if (tabcontent.length > 0) {
             tabcontent = tabcontent[0];
-            openFoodTruck(event, document.getElementsByClassName("lunchBagitems")[0].id);
+            openFoodTruck(event, document.getElementsByClassName("lunchBagForm")[0].id);
             document.getElementsByClassName("tablinks")[0].className += " active";
+            document.getElementById("checkout").style.display = "block";
         }
 
         // plus button
@@ -154,6 +172,23 @@
                 if (isNaN(total)) total = 0;
                 total += 1;
                 e.target.parentElement.querySelector(".qty").innerHTML = total;
+
+                const lunchBag = {
+                    _token: document.querySelector('input[name="_token"]').value,
+                    idMenu: e.target.parentElement.parentElement.querySelector('input[name="idMenu"]').value,
+                    quantity: total
+                };
+                fetch("/addlunchbag", {
+                    method: "PUT",
+                    body: JSON.stringify(lunchBag),
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                }).then(response => {
+                    response.json().then(function(data) {
+                        updateTotalValue();
+                    });
+                });
             });
         }
         // minus button
@@ -166,6 +201,23 @@
                 total -= 1;
                 if (total == 0) total = 1;
                 e.target.parentElement.querySelector(".qty").innerHTML = total;
+
+                const lunchBag = {
+                    _token: document.querySelector('input[name="_token"]').value,
+                    idMenu: e.target.parentElement.parentElement.querySelector('input[name="idMenu"]').value,
+                    quantity: total
+                };
+                fetch("/addlunchbag", {
+                    method: "PUT",
+                    body: JSON.stringify(lunchBag),
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                }).then(response => {
+                    response.json().then(function(data) {
+                        updateTotalValue();
+                    });
+                });
             });
         }
         // delete button
@@ -185,11 +237,17 @@
                         "Content-Type": "application/json"
                     }
                 }).then(response => {
-                    console.log(response);
                     response.json().then(function(data) {
-                        console.log(data);
+                        if (data.removed) {
+                            if (e.target.parentElement.parentElement.parentElement.childElementCount > 1) {
+                                e.target.parentElement.parentElement.remove();
+                                updateTotalValue();
+                            } else {
+                                location.reload();
+                            }
+                        }
                     });
-                }).catch(error => console.log(error));
+                });
 
             });
         }
