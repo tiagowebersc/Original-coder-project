@@ -8,6 +8,7 @@ use App\Models\Review;
 use App\Models\Menu;
 use App\Models\Schedule;
 use App\Models\Favorite;
+use App\Models\User;
 use Session;
 
 class foodTruckController extends Controller
@@ -19,6 +20,9 @@ class foodTruckController extends Controller
         $foodTruck = $foodTruck[0];
 
         $reviews = Review::where("id_truck", $idTruck)->get();
+        foreach ($reviews as $review) {
+            $review->userName = User::where("id_user", $review->id_user)->get()->first()->first_name;
+        }
         $avg_rate = 0;
         if (count($reviews) > 0) {
             foreach ($reviews as $review) {
@@ -31,6 +35,21 @@ class foodTruckController extends Controller
         $favorite = Self::getFavorite($idTruck);
 
         return view("foodtruckinfo", ["foodtruck" => $foodTruck, "avg_rate" => $avg_rate, "reviews" => $reviews, "menus" => $menus, "schedules" => $schedules, "favorite" => $favorite]);
+    }
+
+    public function saveReview(Request $request)
+    {
+        if (!Session::has('id_user')) return response()->json(['erro' => 'User not defined!']);
+        if (!isset($request->idTruck)) return response()->json(['erro' => 'Foodtruck not defined!']);
+        if (!isset($request->rate)) return response()->json(['erro' => 'Rate not defined!']);
+
+        $review = new Review();
+        $review->id_user = Session::get('id_user');
+        $review->id_truck = $request->idTruck;
+        $review->rate = $request->rate;
+        if (isset($request->comment)) $review->comment = $request->comment;
+        $review->save();
+        return response()->json('inserted', 1);
     }
 
     // Favorite control
