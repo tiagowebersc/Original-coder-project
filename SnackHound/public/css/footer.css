@@ -38,6 +38,9 @@
     display: flex;
     justify-content: space-between;
 }
+.first-footer div:nth-child(2){
+    text-align: right;
+}
 
 .contact-information {
     display: flex;
@@ -75,6 +78,9 @@
     }
     .first-footer h3{
         font-size: 20px;
+    }
+    .first-footer div:nth-child(2){
+        text-align: left;
     }
     .header {
         background-color: black;
@@ -129,6 +135,10 @@
     }
     .first-footer h3{
         font-size: inherit;
+    }
+
+    .first-footer div:nth-child(2){
+        text-align: left;
     }
     .header {
         background-color: black;
