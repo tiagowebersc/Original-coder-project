@@ -24,7 +24,7 @@
                 <div class="favstar">
                     <div class="reviewDiv">
                         <?php
-                             for ($i = 1; $i <= $avg_rate; $i++) { ?>
+                        for ($i = 1; $i <= $avg_rate; $i++) { ?>
                         <img class="starlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-filled.svg')}}" alt="">
                         <?php }
                         $blankStars = 5 - $avg_rate;
@@ -130,72 +130,71 @@
         {{-- REVIEW --}}
 
         <section class="mainReview">
-    
-                <div class="reviewBox">
-                    
-                    <div class="scrollBoxReview">
-                            <h1>REVIEWS</h1>
-                        
-                        <div class="reviewList">
-                                <?php
-                                foreach ($reviews as $review)
-                                 {
 
-                                 ?>
-                            <div class="formReview">
-                                
-                                <div class="userInfo">
-                                    <p class="userNameInBox">{{$review->userName}}</p>
-                                    <p><?php
+            <div class="reviewBox">
+
+                <div class="scrollBoxReview">
+                    <h1>REVIEWS</h1>
+
+                    <div class="reviewList">
+                        <?php
+                        foreach ($reviews as $review) {
+
+                            ?>
+                        <div class="formReview">
+
+                            <div class="userInfo">
+                                <p class="userNameInBox">{{$review->userName}}</p>
+                                <p><?php
                                         for ($i = 1; $i <= $review->rate; $i++) { ?>
-                                   <img class="ratingStar" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-filled.svg')}}" alt="">
-                                   <?php }
-                                   $blankStars = 5 - $review->rate;
-                                   for ($i = 1; $i <= $blankStars; $i++) {
-                                       ?>
-                                   <img class="ratingStar" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-blank.svg')}}" alt="">
-                                   <?php } ?>
-                                    </p>
-                                    <p class="dateReview">({{$review->created_at}}) :</p>
-                                </div>
-                                
-                                <div class="userReview">
-                                    
-                                    <p>{{$review->comment}}</p>
-                                </div>
-                            </div>           
-                            <?php } ?>
-            
-                        </div>
-                    </div>
-            
-                    <div class="review">
-                        
-                        <div class="leavReview">
-                                <h1>Leave A Review</h1>
+                                    <img class="ratingStar" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-filled.svg')}}" alt="">
+                                    <?php }
+                                        $blankStars = 5 - $review->rate;
+                                        for ($i = 1; $i <= $blankStars; $i++) {
+                                            ?>
+                                    <img class="ratingStar" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-blank.svg')}}" alt="">
+                                    <?php } ?>
+                                </p>
+                                <p class="dateReview">({{$review->created_at}}) :</p>
+                            </div>
 
-                                <div class="formbox">
+                            <div class="userReview">
 
-                                    <form class="reviewForm" action="" method="POST">
-                                        <h3>Comments:</h3>
-                                        
-                                        <textarea name="" id="" cols="30" rows="10"></textarea>
-                                        <img class="rateStarLogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-blank.svg')}}" alt="">
-                                       <div class="subReview">
-                                           <input type="submit" value="Post">
-                                       </div>
-                                        
-                                    </form>
-                                </div>
-            
+                                <p>{{$review->comment}}</p>
+                            </div>
                         </div>
-            
+                        <?php } ?>
+
                     </div>
-                    
                 </div>
-            </section>
 
-            {{-- END OF REVIEW --}}
+                <div class="review">
+
+                    <div class="leavReview">
+                        <h1>Leave A Review</h1>
+
+                        <div class="formbox">
+
+                            <form class="reviewForm" action="" method="POST">
+                                <h3>Comments:</h3>
+
+                                <textarea name="" id="" cols="30" rows="10"></textarea>
+                                <img class="rateStarLogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-blank.svg')}}" alt="">
+                                <div class="subReview">
+                                    <input type="submit" id="insertReview" value="Post">
+                                </div>
+
+                            </form>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        {{-- END OF REVIEW --}}
 
     </main>
 </div>
@@ -204,9 +203,11 @@
 @section('js')
 <script>
     window.addEventListener('DOMContentLoaded', (event) => {
+        // add comment
+        let btnFavorite = document.querySelector(".heartlogo");
         // favorite
         let btnFavorite = document.querySelector(".heartlogo");
-        if (btnFavorite != null){
+        if (btnFavorite != null) {
             btnFavorite.addEventListener("click", (e) => {
                 const paramFavorite = {
                     _token: document.querySelector('input[name="_token"]').value
