@@ -30,7 +30,7 @@
         </section>
     </header>
     <img src="" alt="">
-    <main>
+    <main id='main-anchor'>
         {{-- the filter start here --}}
         <section id="filter-container" class="filter-container">
             <div class="container">
@@ -38,14 +38,24 @@
                     <button {{-- class="btn btn-primary dropdown-toggle"
                       type="button"
                       data-toggle="dropdown" --}} onclick="show()" class="filter-button">
-                        Filter> <span class="caret"></span>
+                        Filter <span class="caret"></span>
+
                     </button>
                     <ul id="custome-drpdown" class="custome-drpdown">
-                        <li><a href="#" id="now"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}'" onmousedown="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'"> Location </a></li>
+                            <li><a onclick="categoryAll()" href="/" id="now"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}'" onmousedown="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'"> All </a></li>
 
                         <?php foreach ($categories as $category) {
                             ?>
-                        <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/'.$category->image)}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image_hover)}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image)}}'"> {{$category->name}} </a></li>
+
+
+                         <li>
+                            <form class='form-anchor-submit' action="/" method='POST'>
+                                @csrf
+                                <input type="hidden" name="categoryId" value="{{$category->id_food_category}}">
+                                <a href="" onclick="categorySubmit({{$category->id_food_category}}); return false;" class='anchor-submit'> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/'.$category->image)}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image_hover)}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image)}}'"> {{$category->name}} </a></li>
+                            </form>
+                        </li>
+
                         <?php } ?>
                     </ul>
                 </div>
@@ -55,13 +65,20 @@
 
         <section id="filterbar-container" class="filterbar-container">
             <ul>
-                <li><a href="#" id="now"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}'" onmousedown="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'"> Location </a></li>
+                <li><a onclick="categoryAll()" href="/" id="now"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}'" onmousedown="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'"> All </a></li>
                 <?php foreach ($categories as $category) {
                     ?>
-                <li><a href="#"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/'.$category->image)}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image_hover)}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image)}}'"> {{$category->name}} </a></li>
+                <li>
+                    <form class='form-anchor-submit' action="/" method='POST'>
+                    @csrf
+                        <input type="hidden" name="categoryId" value="{{$category->id_food_category}}">
+                        <a href="" onclick="categorySubmit({{$category->id_food_category}}); return false;" class='anchor-submit'> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/'.$category->image)}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image_hover)}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image)}}'"> {{$category->name}} </a></li>
+                    </form>
                 <?php } ?>
             </ul>
         </section>
+
+
         <section class="main-container">
             @csrf
             <section class="cards-container">
@@ -193,33 +210,30 @@
         </section>
     </main>
 </div>
-<script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-
 
 <script>
 
+    if(localStorage.top > 0) {
+        scrollTo(0, localStorage.top);
+    }
 
-    $(function() {
-            $(".wrapper").click(function() {
-            window.location = $(this).find("a").attr("href");
-            return false;
-            });
-            document.getElementById("now").addEventListener("click", function(event) {
-                event.preventDefault()
-            });
+    function categorySubmit(id) {
+        let forms = document.querySelectorAll(".form-anchor-submit");
+        localStorage.top = window.scrollY;
+        forms[id - 1].submit();
 
-        })
+    }
 
+    function categoryAll() {
+        localStorage.top = window.scrollY;
+    }
 
     function show() {
         let x = document.getElementById("custome-drpdown");
-        if (x.style.display === "none") {
-            x.style.display = "grid";
-        } else {
+        if (x.style.display === "grid") {
             x.style.display = "none";
+        } else {
+            x.style.display = "grid";
         }
     }
 
@@ -374,3 +388,4 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtlX1KloHpjKujAEto6qDggr_-ibVatcA&callback=initMap" async defer></script>
 
 @endsection
+

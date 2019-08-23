@@ -29,15 +29,15 @@
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
-            <div> <a class='dropdown-item'> <img class='dropdown-icon' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-track-order (2).svg')}}" alt="FIX THE ALT."> <span>Coverage Area</span> </a> </div>
+            <div> <a href='/truck' class='dropdown-item'> <img class='dropdown-icon' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/orders_black.svg')}}" onmousemove="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/orders_yellow.svg')}}'" onmouseout="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/orders_black.svg')}}'" alt="FIX THE ALT."> <span class="marginLeft">Orders</span> </a> </div>
 
-            <div> <a class='dropdown-item'> <img class='dropdown-icon' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-doggy-bag (2).svg')}}" alt="FIX THE ALT."> <span>Lunchbag</span> </a> </div>
+            <div> <a href='/truck/menu' class='dropdown-item'> <img class='dropdown-icon' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/menu_black.svg')}}" onmousemove="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/menu_yellow.svg')}}'" onmouseout="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/menu_black.svg')}}'" alt="FIX THE ALT."> <span class="marginLeft">Menu</span> </a> </div>
 
-            <div> <a class='dropdown-item'> <img class='dropdown-icon' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-food-truck.svg')}}" alt="FIX THE ALT."> <span>Food Truck Owner?</span> </a> </div>
+            <div> <a href='/truck/schedule' class='dropdown-item'> <img class='dropdown-icon' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/schedule_black.svg')}}" onmousemove="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/schedule_yellow.svg')}}'" onmouseout="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/schedule_black.svg')}}'" alt="FIX THE ALT."> <span class="marginLeft"> Schedule </span> </a> </div>
 
-            <div class='dropdown-sign'> <a class='dropdown-item'> SIGN UP </a> </div>
+            <div> <a href='#' class='dropdown-item'> <img class='dropdown-icon' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/settings_black.svg')}}" onmousemove="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/settings_yellow.svg')}}'" onmouseout="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/settings_black.svg')}}'" alt="FIX THE ALT."> <span class="marginLeft">Settings</span> </a> </div>
 
-            <div class='dropdown-log'> <a class='dropdown-item'> LOG IN </a> </div>
+            <div class='dropdown-sign'> <a href="/signout" class='dropdown-item'> SIGN OUT </a> </div>
 
         </div>
     </div>
@@ -45,10 +45,10 @@
     <div class='sidebar-items'>
 
         <ul>
-            <li><a href="/truck"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/icons8-mobile-shopping.svg')}}"> Orders </a></li>
-            <li><a href="/truck/menu"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/surface347926.svg')}}"> Menu </a></li>
-            <li><a href="/truck/schedule"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/surface349757.svg')}}"> Schedule </a></li>
-            <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-settings (1).svg')}}"> Settings </a></li>
+            <li><a href="/truck"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/icons8-mobile-shopping.svg')}}" onmousemove="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/orders_yellow.svg')}}'" onmouseout="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/icons8-mobile-shopping.svg')}}'"> Orders </a></li>
+            <li><a href="/truck/menu"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/surface347926.svg')}}" onmousemove="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/menu_new_yellow.svg')}}'" onmouseout="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/surface347926.svg')}}'"> Menu </a></li>
+            <li><a href="/truck/schedule"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/icons8-schedule.svg')}}" onmousemove="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/schedule_yellow.svg')}}'" onmouseout="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/icons8-schedule.svg')}}'"> Schedule </a></li>
+            <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-settings (1).svg')}}" onmousemove="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/settings_yellow.svg')}}'" onmouseout="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-settings (1).svg')}}'"> Settings </a></li>
         </ul>
 
     </div>

@@ -13,15 +13,10 @@ use DB;
 
 class UserController extends Controller
 {
-    public function login()
+    public function login(Request $request)
     {
-        //if (Session::has('id_user')) {
-        //    return redirect()->route('index');
-        //} else {
-        //    return view('login');
-        //}
-
-        return view('login', ['form' => 'login']);
+        $redirect = $request->redirect;
+        return view('login', ['form' => 'login', 'redirect' => $redirect]);
     }
     public function signup()
     {

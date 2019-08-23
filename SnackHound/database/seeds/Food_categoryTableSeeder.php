@@ -19,7 +19,7 @@ class Food_categoryTableSeeder extends Seeder
         ]);
         DB::table('food_category')->insert([
             'id_food_category' => 2,
-            'name' => 'Bakery|Desserts',
+            'name' => 'Bakeries',
             'image' => 'icons8-cake.svg',
             'image_hover' => 'icons8-cake (2).svg'
         ]);
@@ -43,7 +43,7 @@ class Food_categoryTableSeeder extends Seeder
         ]);
         DB::table('food_category')->insert([
             'id_food_category' => 6,
-            'name' => 'Coffee|Beverages',
+            'name' => 'Drinks',
             'image' => 'icons8-coffee-to-go (1).svg',
             'image_hover' => 'icons8-coffee-to-go.svg'
         ]);
@@ -67,7 +67,7 @@ class Food_categoryTableSeeder extends Seeder
         ]);
         DB::table('food_category')->insert([
             'id_food_category' => 10,
-            'name' => 'Pizza|Pasta',
+            'name' => 'Pizza',
             'image' => 'icons8-salami-pizza (1).svg',
             'image_hover' => 'icons8-salami-pizza.svg'
         ]);

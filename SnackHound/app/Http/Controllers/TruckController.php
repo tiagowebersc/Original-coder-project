@@ -124,7 +124,7 @@ class TruckController extends Controller
             $user_name = $user->first_name . " " . $user->last_name;
 
 
-            $data = ['name' => $user_name, 'foodTruckName' => $truckOwner ];
+            $data = ['name' => $user_name, 'foodTruckName' => $truckOwner->name ];
 
             Mail::send('mailTruckConfirm', $data, function ($message) use ($user_name, $user_email) {
                 $message->to($user_email, $user_name)->subject('Order confirmation');

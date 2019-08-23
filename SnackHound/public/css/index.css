@@ -70,6 +70,7 @@
 .main-container {
     display: flex;
     flex-direction: column-reverse;
+    margin-bottom: 50px;
 }
 #floating-panel {
     position: absolute;
@@ -112,14 +113,12 @@
 }
 .filter-container {
     display: inherit;
-    z-index: 200;
-    height: 80px;
+    z-index: 50;
     margin: 0 auto;
     align-content: center;
     width: 100%;
-    padding: 20px 0;
     position: sticky;
-    top: 3rem;
+    top: 5rem;
 }
 .filterbar-container {
     display: none;
@@ -151,7 +150,15 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #010101;
 }
+
+.filter-buttom button:focus {
+    outline: 0;
+}
+
 .custome-drpdown{
     display: none;
     position: absolute;
@@ -159,7 +166,7 @@
     transform: none !important;
     text-align: center;
     position: relative;
-    top: 40px !important;
+    top: -1px !important;
     left: inherit !important;
     min-width: 374PX;
     width: 100%;
@@ -168,6 +175,7 @@
     grid-template-columns: auto auto auto;
     list-style: none;
     will-change: transform;
+    border: 1px solid #010101;
 }
 .custome-drpdown li a{
     display: flex;
@@ -192,6 +200,7 @@
   .cards-container{
     display: flex;
     flex-wrap: wrap;
+    margin-top: 50px;
   }
   .wrapper {
     width: 281px;
@@ -200,7 +209,6 @@
     position: relative;
     margin: auto;
     overflow: hidden;
-    cursor: pointer;
     border-radius: 10px 10px 10px 10px;
     -webkit-box-shadow: 0;
     box-shadow: 0;
@@ -211,7 +219,7 @@
     transition: box-shadow 0.5s, transform 0.5s;
     transition: box-shadow 0.5s, transform 0.5s, -webkit-box-shadow 0.5s, -webkit-transform 0.5s;
     -webkit-box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);
-            box-shadow: 40px 20px 74px rgba(0, 0, 0, 0.2);
+    box-shadow: 40px 20px 74px rgba(0, 0, 0, 0.2);
   }
 
 .wrapper:hover {
@@ -537,6 +545,7 @@ hr {
     /* cards container */
     .cards-container{
         display: block;
+        margin-top: 0px;
     }
     /* the filter start here */
     .filter-container {
