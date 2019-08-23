@@ -12,6 +12,8 @@
 
 Route::get('/', 'indexController@index')->name('index');
 
+Route::post('/', 'indexController@filterCategory');
+
 // ! Login / Signup / ...
 Route::get('/login', 'UserController@login')->name('login');
 Route::post('/login', 'UserController@loginPost');
