@@ -4,13 +4,14 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ URL::asset('css/userFavorites.css') }}" />
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700|Roboto+Slab&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700|Roboto+Slab&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />  
 @endsection
 
 @section('content')
 <div class="background">
     <section class="cards-container">
+        @csrf
         <?php
         if (count($favorites) == 0){
             ?>
@@ -132,4 +133,30 @@
 </div>
 @endsection
 @section('js')
+<script>
+    // Favorite ----------------------------------------------------------------
+    let favoriteList = document.querySelectorAll(".heartlogo");
+    for (let btnFavorite of favoriteList) {
+        btnFavorite.addEventListener("click", (e) => {
+            const paramFavorite = {
+                _token: document.querySelector('input[name="_token"]').value
+            };
+            const urlFavorite = "/foodtruck/favorite/" + e.target.parentElement.querySelector('input[name="idTruck"]').value;
+            fetch(urlFavorite, {
+                    method: "POST",
+                    body: JSON.stringify(paramFavorite),
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                })
+                .then(response => {
+                    response.json().then(function(data) {
+                        if (!data.favorite) {
+                            e.target.parentElement.parentElement.remove();
+                        }
+                    });
+                });
+        });
+    }
+</script>
 @endsection

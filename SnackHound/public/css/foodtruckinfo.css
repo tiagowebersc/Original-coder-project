@@ -173,7 +173,7 @@ main {
     transition: 0.3s;
     width: 270px;
     height: 350px;
-    margin-bottom: 70px;
+    margin: 0 10px 70px 10px;
 }
 
 /* On mouse-over, add a deeper shadow */
