@@ -26,10 +26,9 @@
             <div class="use-location-link">
                 <a href="#">or click here to use your location</a>
             </div>
-            <a href="#"><img src="{{URL::asset('assets/ICONS/icons8-move-down (1).svg')}}"></a>
+            <a href="#main-anchor"><img src="{{URL::asset('assets/ICONS/icons8-move-down (1).svg')}}"></a>
         </section>
     </header>
-    <img src="" alt="">
     <main id='main-anchor'>
         {{-- the filter start here --}}
         <section id="filter-container" class="filter-container">
