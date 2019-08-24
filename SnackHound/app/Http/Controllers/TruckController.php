@@ -270,5 +270,48 @@ public function getSchedule() {
     }
 
 
+    // ! TRUCK SETINGS
+
+    public function getTruckSettings() {
+
+        if(Session::has('id_user')){
+
+            $truck = Truck::where('id_user', Session::get('id_user'))->first() ;
+
+            if(isset($truck->id_truck)) {
+
+            } else {
+                return redirect()->route('index');
+            }
+        } else {
+            return redirect()->route('index');
+        }
+
+        return view('settingsFoodtruck', ['truck' => $truck]);
+    }
+
+    public function updateTruckSettings(Request $request) {
+
+        if(Session::has('id_user')){
+
+            $truck = Truck::where('id_user', Session::get('id_user'))->first();
+
+            if(isset($truck->id_truck)) {
+                $truck->name = $request->truck_name;
+                $truck->price_range = $request->truck_price;
+                $truck->telephone = $request->truck_phone;
+                $truck->description = $request->truck_desc;
+                $truck->website = $request->truck_website;
+                $truck->save();
+
+                    return back()->with(['truck' => $truck]);
+                } else {
+                return redirect()->route('index');
+            }
+        } else {
+            return redirect()->route('index');
+        }
+    }
+
 
 }

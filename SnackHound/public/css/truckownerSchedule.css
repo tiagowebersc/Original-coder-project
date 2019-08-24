@@ -21,6 +21,10 @@
     text-transform: uppercase;
 }
 
+.main {
+    margin-bottom: 50px;
+}
+
 main {
     padding-top: 100px;
 }
