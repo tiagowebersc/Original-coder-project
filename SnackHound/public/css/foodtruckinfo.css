@@ -18,12 +18,10 @@ header {
     resize: both;
     resize: none;
 }
-
 .backgrounddiv {
     background-size: cover;
     background-position: 50% 50%;
 }
-
 .separator {
     border: 1px solid #ffffff;
     opacity: 0.5;
@@ -32,6 +30,18 @@ header {
     margin: 0 auto;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+.error{
+    display: block;
+    color: red;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+}
+.success{
+    display: block;
+    color: green;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
 }
 
 .truckinfo {
@@ -266,7 +276,8 @@ main {
     flex-direction: column;
     width: 100%;
     margin: auto;
-    padding-top: 50px
+    justify-content: center;
+    align-items: center;
 }
 
 .scrollBoxReview {
@@ -279,20 +290,25 @@ h1, h3, .userNameInBox, input {
 }
 
 .reviewList {
-    width: 400px;
     height: 300px;
     line-height: 3vh;
     overflow: scroll;
+    overflow-x: hidden;
 }
 
 .formReview {
-    width: 400px;
     height: 150px;
     padding: 10px;
     margin-bottom: 10px;
     color: black;
     scrollbar-base-color: gray;
     border: 1px solid gainsboro
+}
+
+#divStar{
+    width: 300px;
+    display: flex;
+    justify-content: center;
 }
 
 .userInfo{
@@ -362,16 +378,11 @@ h1, h3, .userNameInBox, input {
 
 
 .reviewForm input {
-    width: 200px;
+    width: 300px;
     border: none;
     background-color: #06b7f9;
     color: white;
 
-}
-
-.subReview {
-    padding-left: 50px;
-    padding-top: 5px;
 }
 
 .ratingReview {
@@ -382,7 +393,7 @@ h1, h3, .userNameInBox, input {
 
 
 .rateStarLogo{
-    padding-right: 50px;
+    padding-right: 5px;
     padding-top: 5px;
     padding-bottom: 5px;
     height: 35px;
@@ -403,6 +414,12 @@ h1, h3, .userNameInBox, input {
 }
 
 @media only screen and (min-width: 1024px) {
+    .reviewList {
+        width: 420px;
+    }
+    .formReview {
+        width: 400px;
+    }
     header {
         height: 800px;
     }
@@ -459,7 +476,6 @@ h1, h3, .userNameInBox, input {
         flex-direction: row;
         width: 100%;
         margin: auto;
-        padding-top: 50px
     }
 
 }
