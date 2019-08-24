@@ -176,6 +176,9 @@ class UserController extends Controller
         Session::put('user_type', $user->user_type);
     }
 
+    public function userFavorites(){
+        return view('userFavorites');
+    }
     // ! User SETINGS
 
     public function getUserSettings() {
