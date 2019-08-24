@@ -14,7 +14,8 @@
 
 <main>
 
-    <h3> Hello, {{$truck->name}}</h3>
+    <h3 class='main-title'> Hello, {{$truck->name}}</h3>
+    <h4 class='main-title'>DETAILS: </h4>
 
     @if($order->status < 2)
 

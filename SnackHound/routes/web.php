@@ -24,6 +24,10 @@ Route::post('/forgot_password', 'UserController@forgotPasswordPost');
 Route::get('/reset_password/{token}', 'UserController@resetPassword');
 Route::post('/reset_password/{token}', 'UserController@resetPasswordPost');
 Route::get('/signout', 'UserController@signout');
+
+Route::get('/settings', 'UserController@getUserSettings');
+Route::post('/settings', 'UserController@updateUserSettings');
+
 // ! Lunchbag functions
 Route::get('/lunchbag', 'LunchBagController@main')->name('lunchBag');
 Route::get('/lunchbagTotal', 'LunchBagController@totalItems');
@@ -38,6 +42,11 @@ Route::get('/truck/orderFilter', 'TruckController@filterOrder');
 Route::post('/truck/orderFilter', 'TruckController@updateOrders');
 Route::get('/foodtruck/favorite/{idTruck}', 'foodTruckController@getFavorite');
 Route::post('/foodtruck/favorite/{idTruck}', 'foodTruckController@setFavorite');
+
+// ! TRUCK SETTINGS
+Route::get('/truck/settings', "TruckController@getTruckSettings");
+Route::post('/truck/settings', "TruckController@updateTruckSettings");
+
 // ! MENU
 Route::get('/truck/menu', 'MenuController@getMenu')->name('menu'); //menu editing page
 Route::post('/truck/menu', 'MenuController@setMenu');
@@ -65,6 +74,8 @@ Route::get('/adminedit', 'AdminEditController@getUsers'); // Admin page to edit 
 
 // ! USER SETTINGS PAGE **
 Route::get('/userDashboard', 'UserController@orderHistory');
+Route::get('/userFavorites', 'UserController@userFavorites');
+Route::get('/userReviews', 'UserController@userReviews');
 // User settings page
 
 // TEST VIEW for the RESET PASSWORD email

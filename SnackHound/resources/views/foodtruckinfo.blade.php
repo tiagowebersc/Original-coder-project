@@ -125,24 +125,17 @@
             </div>
         </div>
         <?php } ?>
-
-
-        {{-- REVIEW --}}
-
+    </main>
+    {{-- REVIEW --}}
         <section class="mainReview">
-
             <div class="reviewBox">
-
                 <div class="scrollBoxReview">
                     <h1>REVIEWS</h1>
-
                     <div class="reviewList">
                         <?php
                         foreach ($reviews as $review) {
-
                             ?>
                         <div class="formReview">
-
                             <div class="userInfo">
                                 <p class="userNameInBox">{{$review->userName}}</p>
                                 <p><?php
@@ -157,9 +150,7 @@
                                 </p>
                                 <p class="dateReview">({{$review->created_at}}) :</p>
                             </div>
-
                             <div class="userReview">
-
                                 <p>{{$review->comment}}</p>
                             </div>
                         </div>
@@ -167,44 +158,90 @@
 
                     </div>
                 </div>
-
+                <?php if (Session::has('id_user')) { ?>
                 <div class="review">
-
                     <div class="leavReview">
                         <h1>Leave A Review</h1>
-
                         <div class="formbox">
-
-                            <form class="reviewForm" action="" method="POST">
+                            <form id="formReview" class="reviewForm" action="" method="POST">
                                 <h3>Comments:</h3>
-
-                                <textarea name="" id="" cols="30" rows="10"></textarea>
-                                <img class="rateStarLogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-blank.svg')}}" alt="">
+                                <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+                                <input type="hidden" name="rate" id="rate" value="0">
+                                <div id="divStar">
+                                    <img class="rateStarLogo" id="star1" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-blank.svg')}}" alt="">
+                                    <img class="rateStarLogo" id="star2" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-blank.svg')}}" alt="">
+                                    <img class="rateStarLogo" id="star3" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-blank.svg')}}" alt="">
+                                    <img class="rateStarLogo" id="star4" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-blank.svg')}}" alt="">
+                                    <img class="rateStarLogo" id="star5" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-blank.svg')}}" alt="">
+                                </div>
                                 <div class="subReview">
                                     <input type="submit" id="insertReview" value="Post">
+                                    <span class="error" id="errorReview"></span>
+                                    <span class="success" id="successReview"></span>
                                 </div>
-
                             </form>
                         </div>
-
                     </div>
-
                 </div>
+                <?php } ?>
 
             </div>
         </section>
 
         {{-- END OF REVIEW --}}
-
-    </main>
 </div>
 @endsection
 
 @section('js')
 <script>
+    function updateRate(nbr){
+        document.querySelector("#rate").value = nbr;
+        for(let i = 1; i <= 5; i++){
+            if (i <= nbr){
+                document.querySelector("#star"+i).src = document.querySelector("#star"+i).src.replace("star-blank", "star-filled");
+            }else{
+                document.querySelector("#star"+i).src = document.querySelector("#star"+i).src.replace("star-filled", "star-blank");
+            }
+        }
+
+    }
+
     window.addEventListener('DOMContentLoaded', (event) => {
-        // add comment
-        //let btnFavorite = document.querySelector(".heartlogo");
+        // comment/review
+        const starlst = document.querySelectorAll(".rateStarLogo");
+        for (let star of starlst){
+            star.addEventListener("click", (e) => {
+                updateRate(e.target.id.substr(4,1));
+            })
+        }
+        let frmReview = document.querySelector("#formReview");
+        frmReview.addEventListener("submit", (e) => {
+            e.preventDefault();
+            document.querySelector('#errorReview').innerHTML = "";
+            if (document.querySelector('#comment').value == ""){
+                document.querySelector('#errorReview').innerHTML = "Leave a comment!";
+            }
+
+            const paramReview = {
+                    _token: document.querySelector('input[name="_token"]').value,
+                    idTruck: document.querySelector("#idTruck").value,
+                    rate: document.querySelector('#rate').value,
+                    comment: document.querySelector('#comment').value
+            };
+            fetch("/addReview", {
+                    method: "POST",
+                    body: JSON.stringify(paramReview),
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                })
+                .then(response => {
+                    document.querySelector('#comment').value = "";
+                    updateRate(0);
+                    document.querySelector('#successReview').innerHTML = "Review inserted!";
+                });
+
+        });
         // favorite
         let btnFavorite = document.querySelector(".heartlogo");
         if (btnFavorite != null) {
