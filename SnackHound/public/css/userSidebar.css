@@ -51,9 +51,6 @@
 
 /* ? MOBILE STYLING ? */
 
-
-
-
 .side-mobile-pic {
     color: white;
     margin-left: 2rem;
@@ -81,7 +78,6 @@
     height: 40px;
 }
 
-
 .dropdown-item {
     cursor: pointer;
 }
@@ -97,7 +93,8 @@
     border-radius: 2px;
     text-align: center;
     height: 35px;
-    background-color: #06b7f9;}
+    background-color: #06b7f9;
+}
 
 .dropdown-log {
     width: 200px;
@@ -114,41 +111,33 @@
 
 /* ? END MOBILE STYLING ? */
 
-
-
 .nav > li.dropdown.open {
     position: static;
-  }
-  
-  .nav > li.dropdown.open .dropdown-menu {
+}
+
+.nav > li.dropdown.open .dropdown-menu {
     display: table;
     border-radius: 0px;
     width: 100%;
     text-align: center;
     left: 0;
     right: 0;
-  }
-  
-  .dropdown-menu > li {
+}
+
+.dropdown-menu > li {
     display: table-cell;
     height: 50px;
     line-height: 50px;
     vertical-align: middle;
-  }
-  
-  @media screen and (max-width: 767px) {
+}
+
+@media screen and (max-width: 767px) {
     .dropdown-menu > li {
-      display: block;
+        display: block;
     }
-  }
+}
 
 /* !!!!! END */
-
-
-
-
-
-
 
 /* SIDEBAR ITEMS */
 

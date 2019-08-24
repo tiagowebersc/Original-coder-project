@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" href="{{ URL::asset('css/userDashboard.css') }}" />
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700|Roboto+Slab&display=swap" rel="stylesheet">
-    
+
 @endsection
 
 @section('content')
@@ -26,7 +26,7 @@
 
                     <!-- Field for ORDER ID -->
                     <div id="formSets">
-                        <fieldset>
+                        <fieldset id="orderID">
                             <label for="typeSearch">
                                 <input checked type="radio" name='typeSearch' value='id'> Order ID:
                                 <input id="orderInput" type="number" name='orderID' placeholder="3" value= "">
@@ -34,7 +34,7 @@
                         </fieldset>
 
                         <!-- Field for date ordered -->
-                        <fieldset>
+                        <fieldset id="orderDate">
                             <label for="typeSearch">
                                 <input type="radio" name='typeSearch' value='date'>Date Ordered:
                             </label>
@@ -47,12 +47,12 @@
                         </fieldset>
 
                         <!-- Field for business name -->
-                        <fieldset>
+                        <fieldset id="businessName">
                             <label for="typeSearch">
                                 <input type="radio" name='typeSearch' value=''>
                                 Business Name:
                             </label>
-                            <label for="businessName">Name:
+                            <label for="businessName">
                                 <input id="businessInput" type="text" name='businessName' placeholder='name of business' value="">
                             </label>
                         </fieldset>
@@ -79,9 +79,9 @@
                         </tr>
                     </thead>
                     <!-- Row 1 -->
-                    <?php 
+                    <?php
                         foreach ($orders as $order) {
-                           ?> 
+                           ?>
                     <tr class="table-content">
                         <td class='green'>{{ $order->id_order }}</td>
                         <td class=''>{{ $order->created_at }}</td>
@@ -92,7 +92,6 @@
                            <?php
                         }
                     ?>
-
                 </table>
             </div>
             </section>

@@ -41,7 +41,7 @@
     <!-- SIDEBAR ITEMS -->
     <div class='sidebar-items'>
         <ul>
-            <li><a href='#'><img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/USER SETTINGS/orderHistory_Yellow.svg')}}" alt="Icon for order history page."><span id="active">Order<br>History</span></a></li>
+            <li><a href='#'><img class='sidebar-items-img' id="active" src="{{URL::asset('assets/ICONS/USER SETTINGS/orderHistory_Yellow.svg')}}" alt="Icon for order history page."><span id="active">Order<br>History</span></a></li>
             <li><a href="#"><img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/USER SETTINGS/paymentSettings_White.svg')}}" alt="Icon for payment settings page.">Payment Settings</a></li>
             <li><a href="#"><img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/USER SETTINGS/favorite_white.svg')}}" alt="Icon for favorites page.">Favorites</a></li>
             <li><a href="#"><img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/USER SETTINGS/reviews_white.svg')}}" alt="Icon for Reviews page.">Reviews</a></li>
