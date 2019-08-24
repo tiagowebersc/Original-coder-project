@@ -16,7 +16,7 @@
 
 
     <div class="sidebar">
-        <div class='side-mobile-pic'><img src="{{URL::asset('assets/IMGS/475605E3-69C5-4D2B-8727-61B7BB8C4699-500w.jpeg')}}" alt=""></div>
+        <div class='side-mobile-pic'></div>
 
         <div class="sidebar-logo">
             <a href="/"><img class='sidebar-logo-img' src="{{URL::asset('assets/ICONS/Logo_White.svg')}}" alt="Logo of SnackHound."></a>
@@ -29,15 +29,17 @@
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
-                <div> <a href='/' class='dropdown-item'> <img class='dropdown-icon' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-track-order (2).svg')}}" onmousemove="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/map_yellow.svg')}}'" onmouseout="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-track-order (2).svg')}}'" alt="FIX THE ALT."> <span class="marginLeft">Coverage Area</span> </a> </div>
+                <div> <a href='/' class='dropdown-item'> <img class='dropdown-icon' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-track-order (2).svg')}}" onmousemove="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/map_yellow.svg')}}'" onmouseout="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-track-order (2).svg')}}'" alt=""> <span class="marginLeft">Coverage Area</span> </a> </div>
 
-                <div class="lunchBagItem"> <a href='/lunchbag' class='dropdown-item'> <img class='dropdown-icon' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-doggy-bag (2).svg')}}" onmousemove="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/lunchbag_yellow.svg')}}'" onmouseout="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-doggy-bag (2).svg')}}'" alt="FIX THE ALT."> <span class="marginLeft">Lunchbag</span> </a>
+                <div class="lunchBagItem"> <a href='/lunchbag' class='dropdown-item'> <img class='dropdown-icon' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-doggy-bag (2).svg')}}" onmousemove="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/lunchbag_yellow.svg')}}'" onmouseout="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-doggy-bag (2).svg')}}'" alt=""> <span class="marginLeft">Lunchbag</span> </a>
                     <strong class="totalLunchBag">0</strong>
                 </div>
                 <?php if (Session::has('user_type') && Session::get('user_type') === 1) { ?>
-                <div> <a href='/truck' class='dropdown-item'> <img class='dropdown-icon' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-food-truck.svg')}}" alt="FIX THE ALT."> <span class="marginLeft">Food Truck Owner?</span> </a> </div>
+                <div> <a href='/truck' class='dropdown-item'> <img class='dropdown-icon' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-food-truck.svg')}}" alt=""> <span class="marginLeft">Food Truck Owner?</span> </a> </div>
                 <?php } ?>
                 <?php if (Session::has('id_user')) { ?>
+                <div> <a href='/settings' class='dropdown-item'> <img class='dropdown-icon' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/settings_black.svg')}}" onmousemove="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/settings_yellow.svg')}}'" onmouseout="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/settings_black.svg')}}'" alt=""> <span class="marginLeft">Account Settings</span> </a> </div>
+
                 <div class='dropdown-sign'> <a href="/signout" class='dropdown-item'> SIGN OUT </a> </div>
                 <?php } else { ?>
                 <div class='dropdown-sign'> <a href="/signup" class='dropdown-item'> SIGN UP </a> </div>
@@ -61,7 +63,7 @@
                 <li><a href="/login"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-login-as-user (1).svg')}}" onmousemove="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-login-as-user (3).svg')}}'" onmouseout="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-login-as-user (1).svg')}}'"> Login | Sign Up </a></li>
                 <?php } ?>
                 <?php if (Session::has('id_user')) { ?>
-                <li><a href="#"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-settings (1).svg')}}" onmousemove="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/settings_yellow.svg')}}'" onmouseout="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-settings (1).svg')}}'"> Account Settings </a></li>
+                <li><a href="/settings"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-settings (1).svg')}}" onmousemove="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/settings_yellow.svg')}}'" onmouseout="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-settings (1).svg')}}'"> Account Settings </a></li>
                 <?php } ?>
 
             </ul>

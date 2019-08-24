@@ -157,7 +157,7 @@ class UserController extends Controller
             $order->truckName=Truck::WHERE('id_truck', $order->id_truck)->GET()->first()->name;
             $order->orderSum=DB::select('SELECT SUM(price * quantity) AS total FROM order_item WHERE id_order = ?', [$order->id_order])[0]->total;
         }
-        
+
         $name=Session::get('first_name');
         return  view('userDashboard', ['orders'=>$orders, 'name'=>$name]);
     }
@@ -174,5 +174,39 @@ class UserController extends Controller
         Session::put('first_name', $user->first_name);
         Session::put('last_name', $user->last_name);
         Session::put('user_type', $user->user_type);
+    }
+
+    // ! User SETINGS
+
+    public function getUserSettings() {
+
+        if(Session::has('id_user')){
+
+            $user = User::find(Session::get('id_user'));
+
+        } else {
+            return redirect()->route('index');
+        }
+
+        return view('settingsUser', ['user' => $user]);
+    }
+
+    public function updateUserSettings(Request $request) {
+        if(Session::has('id_user')){
+
+            $user = User::find(Session::get('id_user'));
+
+            $user->first_name = $request->user_first_name;
+            $user->last_name = $request->user_last_name;
+            $user->telephone = $request->user_phone;
+            $user->hash_password = password_hash($request->user_pass, PASSWORD_DEFAULT);
+
+            $user->save();
+
+            return redirect()->route('index');
+
+        } else {
+            return redirect()->route('index');
+        }
     }
 }
