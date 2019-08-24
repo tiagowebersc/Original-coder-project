@@ -175,4 +175,8 @@ class UserController extends Controller
         Session::put('last_name', $user->last_name);
         Session::put('user_type', $user->user_type);
     }
+
+    public function userFavorites(){
+        return view('userFavorites');
+    }
 }
