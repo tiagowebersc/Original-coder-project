@@ -38,7 +38,7 @@
                 <div> <a href='/truck' class='dropdown-item'> <img class='dropdown-icon' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-food-truck.svg')}}" alt=""> <span class="marginLeft">Food Truck Owner?</span> </a> </div>
                 <?php } ?>
                 <?php if (Session::has('id_user')) { ?>
-                <div> <a href='/settings' class='dropdown-item'> <img class='dropdown-icon' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/settings_black.svg')}}" onmousemove="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/settings_yellow.svg')}}'" onmouseout="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/settings_black.svg')}}'" alt=""> <span class="marginLeft">Account Settings</span> </a> </div>
+                <div> <a href='/userDashboard' class='dropdown-item'> <img class='dropdown-icon' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/settings_black.svg')}}" onmousemove="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/settings_yellow.svg')}}'" onmouseout="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/Truck%20Owner/settings_black.svg')}}'" alt=""> <span class="marginLeft">Account Settings</span> </a> </div>
 
                 <div class='dropdown-sign'> <a href="/signout" class='dropdown-item'> SIGN OUT </a> </div>
                 <?php } else { ?>
@@ -63,7 +63,7 @@
                 <li><a href="/login"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-login-as-user (1).svg')}}" onmousemove="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-login-as-user (3).svg')}}'" onmouseout="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-login-as-user (1).svg')}}'"> Login | Sign Up </a></li>
                 <?php } ?>
                 <?php if (Session::has('id_user')) { ?>
-                <li><a href="/settings"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-settings (1).svg')}}" onmousemove="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/settings_yellow.svg')}}'" onmouseout="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-settings (1).svg')}}'"> Account Settings </a></li>
+                <li><a href="/userDashboard"> <img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-settings (1).svg')}}" onmousemove="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/settings_yellow.svg')}}'" onmouseout="src='{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-settings (1).svg')}}'"> Account Settings </a></li>
                 <?php } ?>
 
             </ul>

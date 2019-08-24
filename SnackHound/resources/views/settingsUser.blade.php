@@ -1,6 +1,6 @@
-@extends('layouts.customerSidebar')
+@extends('layouts.userSidebar')
 
-@section('title', 'SnackHound - User Settings')
+@section('title', 'SnackHound - Edit Profile')
 
 @section('css')
 

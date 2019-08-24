@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" href="{{ URL::asset('css/userDashboard.css') }}" />
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700|Roboto+Slab&display=swap" rel="stylesheet">
-    
+
 @endsection
 
 @section('content')
@@ -79,9 +79,9 @@
                         </tr>
                     </thead>
                     <!-- Row 1 -->
-                    <?php 
+                    <?php
                         foreach ($orders as $order) {
-                           ?> 
+                           ?>
                     <tr class="table-content">
                         <td class='green'>{{ $order->id_order }}</td>
                         <td class=''>{{ $order->created_at }}</td>
