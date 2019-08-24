@@ -7,6 +7,10 @@ use App\Models\User;
 use App\Models\Order_item;
 use App\Models\Order;
 use App\Models\Truck;
+use App\Models\Truck_food_category;
+use App\Models\Food_category;
+use App\Models\Favorite;
+use App\Models\Schedule;
 use Session;
 use Mail;
 use DB;
@@ -152,20 +156,15 @@ class UserController extends Controller
 
     // Create a public function  to populate the user table
     public function orderHistory(){
-        $orders=Order::all();
+        if(!Session::has('id_user')) return redirect()->route('index');
+        $orders=Order::where('id_user', Session::get('id_user'))->get();
         foreach ($orders as $order) {
             $order->truckName=Truck::WHERE('id_truck', $order->id_truck)->GET()->first()->name;
             $order->orderSum=DB::select('SELECT SUM(price * quantity) AS total FROM order_item WHERE id_order = ?', [$order->id_order])[0]->total;
         }
-
         $name=Session::get('first_name');
         return  view('userDashboard', ['orders'=>$orders, 'name'=>$name]);
     }
-
-    // How take info from session
-    //if (Session::has('email')) {
-    //    echo Session::get('email');
-    //}
 
     private function SaveSessionInfo($user)
     {
@@ -177,7 +176,29 @@ class UserController extends Controller
     }
 
     public function userFavorites(){
-        return view('userFavorites');
+        if(!Session::has('id_user')) return redirect()->route('index');
+
+        $favorites = Favorite::where('id_user', Session::get('id_user'))->get();
+        foreach ($favorites as $favorite) {
+            $favorite->truck = Truck::where('id_truck', $favorite->id_truck)->first();
+            $truckReview = DB::select('SELECT avg(rate) as rate, count(id_review) as numReviews FROM review WHERE id_truck = ? ', [$favorite->id_truck]);
+            if(isset($truckReview[0]->rate)) {
+                $favorite->avgRate = $truckReview[0]->rate;
+                $favorite->reviewsNbr = $truckReview[0]->numReviews;
+            } else {
+                $favorite->avgRate = 0;
+                $favorite->reviewsNbr = 0;
+            }
+            $favorite->schedules = Schedule::WHERE('id_truck', $favorite->id_truck)->GET();
+            $favorite->categories = Truck_food_category::where('id_truck', $favorite->id_truck)->GET();
+
+
+            for($i = 0; $i < count($favorite->categories); $i++) {
+                $favorite->categories[$i]->name = Food_category::where('id_food_category', $favorite->categories[$i]->id_food_category)->first()->name;
+            }
+        }
+
+        return view('userFavorites', ['favorites' => $favorites]);
     }
     // ! User SETINGS
 
