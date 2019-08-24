@@ -75,6 +75,7 @@ Route::get('/adminedit', 'AdminEditController@getUsers'); // Admin page to edit 
 // ! USER SETTINGS PAGE **
 Route::get('/userDashboard', 'UserController@orderHistory');
 Route::get('/userFavorites', 'UserController@userFavorites');
+Route::get('/userReviews', 'UserController@userReviews');
 // User settings page
 
 // TEST VIEW for the RESET PASSWORD email

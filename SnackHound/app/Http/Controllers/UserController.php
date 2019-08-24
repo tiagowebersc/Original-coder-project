@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Order_item;
+use App\Models\Review;
 use App\Models\Order;
 use App\Models\Truck;
 use App\Models\Truck_food_category;
@@ -199,6 +200,17 @@ class UserController extends Controller
         }
 
         return view('userFavorites', ['favorites' => $favorites]);
+    }
+
+    public function userReviews(){
+        if(!Session::has('id_user')) return redirect()->route('index');
+
+        $reviews = Review::where('id_user', Session::get('id_user'))->orderby('created_at', 'desc')->get();
+        foreach ($reviews as $review) {
+            $review->truck = Truck::where('id_truck', $review->id_truck)->first()->name;
+        }
+
+        return view('userReviews', ['reviews' => $reviews]);
     }
     // ! User SETINGS
 

@@ -10,8 +10,8 @@
 
 @section('content')
 <div class="background">
+    @csrf
     <section class="cards-container">
-        @csrf
         <?php
         if (count($favorites) == 0){
             ?>
@@ -153,6 +153,10 @@
                     response.json().then(function(data) {
                         if (!data.favorite) {
                             e.target.parentElement.parentElement.remove();
+
+                            if (document.querySelector(".cards-container").childElementCount == 0){
+                                document.querySelector(".cards-container").innerHTML = "<h1 class=\"void\">You don't have any favorite foodtruck!</h1>";
+                            }
                         }
                     });
                 });
