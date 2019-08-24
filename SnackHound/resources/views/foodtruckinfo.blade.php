@@ -204,7 +204,7 @@
 <script>
     window.addEventListener('DOMContentLoaded', (event) => {
         // add comment
-        let btnFavorite = document.querySelector(".heartlogo");
+        //let btnFavorite = document.querySelector(".heartlogo");
         // favorite
         let btnFavorite = document.querySelector(".heartlogo");
         if (btnFavorite != null) {
