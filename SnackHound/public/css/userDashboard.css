@@ -19,6 +19,10 @@
     font-family: 'Roboto Slab', 'serif';
 }
 
+::placeholder {
+    padding-left: 5px;
+}
+
 /* ** END GLOBAL STYLING ** */
 
 /* ** BODY STYLING ** */
@@ -74,7 +78,8 @@ input[type='radio'] {
 }
 
 #orderInput {
-    margin-left: 108px;
+    margin-left: 106px;
+    width: 205px;
 }
 
 #dateInput {
@@ -83,17 +88,13 @@ input[type='radio'] {
 }
 
 #businessInput {
-    width: 200px;
+    width: 205px;
+    margin-left: 50px;
 }
 
-/* input[type='tel'] {
-    width: 160px;
-} */
-
-/* label[for='typeSearch'] {
-    display: inline-block;
-    width: 100px;
-} */
+.calendarIcon {
+    margin-left: 5px;
+}
 
 #searchForm-search,
 #searchForm-showall,
@@ -109,6 +110,7 @@ input[type='radio'] {
     -webkit-box-shadow: 0px 3px 6px 2px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 3px 6px 2px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 3px 6px 2px rgba(0, 0, 0, 0.1);
+    border-style: none;
     border-radius: 2px;
 }
 
@@ -158,6 +160,7 @@ tr {
     -webkit-box-shadow: 0px 3px 6px 2px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 3px 6px 2px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 3px 6px 2px rgba(0, 0, 0, 0.1);
+    border-style: none;
     border-radius: 2px;
 }
 
