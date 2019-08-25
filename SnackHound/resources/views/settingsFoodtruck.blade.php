@@ -18,7 +18,7 @@
         <h4 class='main-title'>SETTINGS: </h4>
 
 
-        <form class='edit-form' action="" method='post'>
+        <form class='edit-form' enctype="multipart/form-data" method='post'>
             @csrf
 
             <label for="truck_name"> <strong>Name:</strong>
@@ -41,6 +41,14 @@
                     <input name='truck_website' type="url" value='{{$truck->website}}'>
             </label>
 
+            <label for="truck_image">Image:
+                    <div id='img-helper'>
+                        <span id='img-helper-text'>Change image?</span>
+                        <input name="truck_image" type="file">
+                    </div>
+            </label>
+
+
 
             <div id="helper"></div>
             <input type="submit" value='Edit'>
@@ -54,12 +62,19 @@
 
 @section('js')
 <script>
-    $('.edit-form').submit( function(e) {
+    $(function() {
 
-    if($('input[name="truck_name"]').val().length < 3 || $('input[name="truck_price"]').val() < 1 || $('input[name="truck_price"]').val() > 5 || $('input[name="truck_phone"]').val().length < 6 || $('textarea[name="truck_desc"]').val().length < 10 ) {
-        $("#helper").text("Invalid fields");
-        e.preventDefault();
-    }
+    $('#img-helper-text').click( function() {
+        $(this).css('display', "none");
+
+    })
+        $('.edit-form').submit( function(e) {
+
+            if($('input[name="truck_name"]').val().length < 3 || $('input[name="truck_price"]').val() < 1 || $('input[name="truck_price"]').val() > 5 || $('input[name="truck_phone"]').val().length < 6 || $('textarea[name="truck_desc"]').val().length < 10 ) {
+                $("#helper").text("Invalid fields");
+                e.preventDefault();
+            }
+        })
     })
 
 </script>

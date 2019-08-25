@@ -24,6 +24,28 @@
     max-width: 300px;
 }
 
+#img-helper {
+    position: relative;
+    cursor: pointer;
+    max-width: 300px;
+    width: 100%;
+    padding-bottom: 5px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+#img-helper-text {
+    display: block;
+    width: 100%;
+    margin: auto;
+    height: 100%;
+    padding: 5px;
+    text-align: center;
+    background-color: #06b7f9;
+    color: white;
+    position: absolute;
+}
+
 .edit-form {
     width: 55%;
     margin: auto;

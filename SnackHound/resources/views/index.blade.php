@@ -219,8 +219,8 @@
     function categorySubmit(id) {
         let forms = document.querySelectorAll(".form-anchor-submit");
         localStorage.top = window.scrollY;
+        window.location.href = '...';
         forms[id - 1].submit();
-
     }
 
     function categoryAll() {
