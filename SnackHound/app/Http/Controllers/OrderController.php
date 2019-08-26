@@ -165,6 +165,6 @@ class OrderController extends Controller
         }
         $address = urlencode($address);
 
-        return view('orderconfirmation', ['truck' => $truck, 'latitude' => $latitude, 'longitude' => $longitude, 'avg_rate' => $avg_rate, 'address' => $address, 'total_reviews' => count($reviews), 'favorite' => $favorite]);
+        return view('orderconfirmation', ['truck' => $truck, 'latitude' => $latitude, 'longitude' => $longitude, 'avg_rate' => $avg_rate, 'address' => $address, 'id_order' => $order->id_order, 'total_reviews' => count($reviews), 'favorite' => $favorite]);
     }
 }

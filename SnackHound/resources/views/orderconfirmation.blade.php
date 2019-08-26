@@ -43,7 +43,7 @@
             <div id="left-content">
                 <article id="lunchbagCost" class="panel">
                     <h2>Your order has been accepted!</h2>
-                    <p>Thank you for your order, your order number is D5JLTL. You can find directions to your truck on the map to the right and contact details below! Did you like your experience, or not so much? Please leave a review on the food truck’s page!</p>
+                    <p>Thank you for your order, your order number is {{$id_order}}. You can find directions to your truck on the map to the right and contact details below! Did you like your experience, or not so much? Please leave a review on the food truck’s page!</p>
                     <div class="divButtonMap">
                         <a class="buttonMap" href="https://maps.google.com/maps?q={{$address}}&t=&z=13&ie=UTF8&iwloc=&output=embed" target="_blank">Open in google maps</a>
                     </div>
