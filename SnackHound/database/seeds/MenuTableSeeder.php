@@ -958,7 +958,7 @@ class MenuTableSeeder extends Seeder
             'description' => 'Roll stuffed with cooked lobster, tartar sauce & a squeeze of lemon. \ Served with chips',
             'price' => 11,
             'available' => true,
-            'image' => 'lobsterrolls.jpg'
+            'image' => 'lobster_rolls.jpg'
         ]);
 
         DB::table('menu')->insert([
