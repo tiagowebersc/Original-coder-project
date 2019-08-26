@@ -14,8 +14,6 @@
 
 <main class='main'>
 
-        <h3 class="main-title"> Hello, {{$user->first_name}} {{$user->last_name}}</h3>
-
         <form class='edit-form' action="" method='post'>
             @csrf
 
@@ -31,7 +29,7 @@
                     <input name='user_phone' type="text" value='{{$user->telephone}}'>
             </label>
 
-            <label for="user_pass"> <strong>Password:</strong>
+            <label for="user_pass"> <strong>New password:</strong>
                     <input type='password' name='user_pass'>
             </label>
 

@@ -12,6 +12,7 @@ use App\Models\Truck_food_category;
 use App\Models\Food_category;
 use App\Models\Favorite;
 use App\Models\Schedule;
+use App\Models\View_order_item;
 use Session;
 use Mail;
 use DB;
@@ -241,6 +242,28 @@ class UserController extends Controller
 
             return redirect()->route('index');
 
+        } else {
+            return redirect()->route('index');
+        }
+    }
+
+    public function orderDetails($id) {
+        if(Session::has('id_user')){
+
+            $user = User::find(Session::get('id_user'));
+
+            $order = Order::find($id);
+
+            if($order->id_user === Session::get('id_user')) {
+
+                $truck = Truck::find($order->id_truck);
+                $orderItems = View_order_item::where('id_order', $order->id_order)->get();
+
+                return view('viewOrderDetails', ['user' => $user, 'order' => $order, 'truck' => $truck, 'orderItems' => $orderItems]);
+
+            }  else {
+                return redirect()->route('index');
+            }
         } else {
             return redirect()->route('index');
         }

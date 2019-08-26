@@ -29,11 +29,13 @@ class OrderController extends Controller
 
             $order = View_order::find($id);
 
+            $user = User::find($order->id_user);
+
             $orderItems = View_order_item::where('id_order', $id)->get();
 
             if (isset($truck->id_truck) && isset($order->id_truck) && $truck->id_truck === $order->id_truck) {
 
-                return view('truckOwnerDetail', ['order' => $order, 'truck' => $truck, 'orderItems' => $orderItems]);
+                return view('truckOwnerDetail', ['order' => $order, 'truck' => $truck, 'orderItems' => $orderItems, 'user' => $user]);
             } else {
                 return redirect()->route('truck');
             }

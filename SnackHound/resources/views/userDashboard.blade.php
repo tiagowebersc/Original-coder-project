@@ -86,8 +86,8 @@
                         <td class='green'>{{ $order->id_order }}</td>
                         <td class=''>{{ $order->created_at }}</td>
                         <td class=''>{{ $order->truckName }}</td>
-                        <td class='green'>{{ $order->orderSum }}</td>
-                        <td><input type='submit' name='updateBtn' class='update-order-btn accept-order' value='VIEW'></td>
+                        <td class='green'>{{ $order->orderSum }}€</td>
+                        <td><a href='/userDashboard/details/{{$order->id_order}}'><input type='submit' name='updateBtn' class='update-order-btn accept-order' value='VIEW'></a></td>
                     </tr>
                            <?php
                         }
@@ -95,13 +95,10 @@
                 </table>
             </div>
             </section>
-            
+
         </div>
     </main>
 
-    @section('js')
-    <script type="text/javascript" src="{{ URL::asset('js/truckownerDashboard.js') }}"></script>
-    @endsection
 
 @endsection
 

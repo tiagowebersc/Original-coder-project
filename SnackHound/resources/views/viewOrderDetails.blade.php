@@ -1,6 +1,6 @@
-@extends('layouts.truckownerSidebar')
+@extends('layouts.userSidebar')
 
-@section('title', 'SnackHound - Truck Order Details')
+@section('title', 'SnackHound - Order Details')
 
 @section('css')
 
@@ -13,24 +13,6 @@
 @section('content')
 
 <main>
-
-    <h3 class='main-title'> Hello, {{$truck->name}}</h3>
-    <h4 class='main-title'>DETAILS: </h4>
-
-    @if($order->status < 2)
-
-    <form action="/truck/details/{{$order->id_order}}" method='POST'>
-        @csrf
-        @if($order->status === 0)
-            <input class='accept-order' name='updateBtn' type="submit" value="Accept Order">
-            <input class='decline-order' name='cancelBtn' type="submit" value="DECLINE ORDER">
-        @elseif($order->status === 1)
-            <input class='accept-order blue' name='updateBtn' type="submit" value="Delivered">
-            <input class='decline-order' name='cancelBtn' type="submit" value="CANCEL ORDER">
-        @endif
-    </form>
-
-    @endif
 
     <section>
         <?php $total = 0 ?>
@@ -57,13 +39,13 @@
 
 
         <div>
-            <p class='info-label'>Customer name:</p>
-            <p>{{$user->first_name}} {{$user->last_name}}</p>
+            <p class='info-label'>Food Truck:</p>
+            <p>{{$truck->name}}</p>
         </div>
 
         <div>
-            <p class='info-label'>Customer email:</p>
-            <p>{{$user->email}}</p>
+            <p class='info-label'>Contact:</p>
+            <p>{{$truck->telephone}}</p>
         </div>
 
         <div>

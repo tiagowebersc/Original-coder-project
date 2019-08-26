@@ -11,7 +11,7 @@
 
 @endsection
 
-@section('title', 'SnackHound - FoodTruck Info')
+@section('title', 'SnackHound - Food Truck Information')
 
 @section('content')
 <div class="background">
@@ -22,7 +22,7 @@
         <div class="backgrounddiv" name="backgrounddiv" style="background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.52), rgba(0, 0, 20, 0.73)), url('/assets/IMGS/Food Trucks/BLURRED/{{$foodtruck->image}}');">
 
             <div name="truckinfo" class="truckinfo">
-                <input type="hidden" id="idTruck" value="{{$foodtruck->id_truck}}"> {{-- In the alue we are looking for the id truck in the databse --}}
+                <input type="hidden" id="idTruck" value="{{$foodtruck->id_truck}}"> {{-- In the value we are looking for the id truck in the databse --}}
                 <h1>{{$foodtruck->name}}</h1> {{-- Here we are looking to take the name of the foodtruck from the databse and show it on the website --}}
                 <div class="favstar">
                     <div class="reviewDiv">
