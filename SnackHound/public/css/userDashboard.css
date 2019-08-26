@@ -46,9 +46,9 @@ main {
 #main-title {
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
-    font-size: 20px;
-    /* margin-left: 25px; */
-    padding-top: 100px;
+    font-size: 36px;
+    margin-left: 25px;
+
 }
 
 #left-side {
@@ -210,10 +210,6 @@ a:active {
     .desktop-btn {
         display: flex;
     }
-    .footer{
-        padding-top: 53px;
-    }
-
 }
 
 @media only screen and (max-width: 1024px) {

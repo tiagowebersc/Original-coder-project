@@ -149,6 +149,8 @@
     width: 100%;
     margin: auto;
 }
+
+
 .filter-button{
     background: transparent;
     border-radius: 2px;
@@ -444,6 +446,7 @@ hr {
       display: flex;
       justify-content: space-between;
       width: 250px;
+      color: white;
   }
   .price_range{
       display: flex;

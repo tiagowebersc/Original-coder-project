@@ -4,8 +4,8 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ URL::asset('css/userFavorites.css') }}" />
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700|Roboto+Slab&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />  
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700|Roboto+Slab&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 @endsection
 
 @section('content')
@@ -31,7 +31,7 @@
                     <div class="left">
                         <div class="details">
                             <a href="/foodtruckinfo/{{$truck['id_truck']}}">
-                                <h1><?= $truck->truck['name'] ?></h1>
+                                <h3><?= $truck->truck['name'] ?></h3>
                             </a>
                             <div class="stars-lication">
                                 <div class="reviewDiv">

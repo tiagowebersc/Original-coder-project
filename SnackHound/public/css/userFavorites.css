@@ -10,6 +10,12 @@
     width: 100%;
 }
 
+
+.details a {
+    color: #010101;
+    text-decoration: none;
+}
+
  /* start with the careds css */
  .cards-container{
     display: flex;
