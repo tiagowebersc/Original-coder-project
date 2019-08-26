@@ -31,6 +31,12 @@ header {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+.info-main input[type='button'] {
+    border: none;
+    cursor: pointer;
+}
+
 .error {
     display: block;
     width: 300px;

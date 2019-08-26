@@ -107,7 +107,7 @@
 
     </header>
 
-    <main>
+    <main class='info-main'>
         <?php
         // We display all the item of the footruck
         foreach ($menus as $menu) { ?>
