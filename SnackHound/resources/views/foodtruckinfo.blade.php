@@ -81,7 +81,6 @@
                         <div class="row">
                             <p class="daySchedule"></p>
                         </div>
-                        <br>
 
                         <tr>
                             <td class="daySchedule"><?= $weekdays[$schedule->weekday] ?>:</td>

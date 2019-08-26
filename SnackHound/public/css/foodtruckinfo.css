@@ -437,7 +437,11 @@ input {
         width: 400px;
     }
     header {
-        height: 800px;
+        height: 500px;
+    }
+
+    .truckinfo {
+        padding-top: 0px;
     }
 
     .backgrounddiv {
@@ -449,7 +453,7 @@ input {
     }
 
     .truckinfo h1 {
-        font-size: 132px;
+        font-size: 70px;
     }
 
     .reviewDiv {
@@ -463,11 +467,11 @@ input {
     }
 
     .phoneInfo {
-        font-size: 25px;
+        font-size: 20px;
     }
 
     .webInfo {
-        font-size: 25px;
+        font-size: 20px;
     }
 
     .contactweb {
@@ -476,7 +480,7 @@ input {
     }
 
     .positionInfo {
-        font-size: 25px;
+        font-size: 20px;
     }
 
     .truckposition {
