@@ -147,21 +147,24 @@ class OrderController extends Controller
         // default lux address
         $latitude = 49.609266;
         $longitude = 6.129368;
-        $queryResult = DB::select("(SELECT s.latitude, s.longitude, s.weekday, s.start_time, s.end_time
+        $address = "Luxembourg";
+        $queryResult = DB::select("(SELECT s.latitude, s.longitude, s.address, s.weekday, s.start_time, s.end_time
                                               FROM schedule s
                                              WHERE ((s.weekday = WEEKDAY(CURDATE()) AND s.end_time >= CURTIME()) OR (s.weekday > WEEKDAY(CURDATE())))
                                                AND s.id_truck = ?
                                              ORDER BY s.weekday, s.start_time)
                                            UNION
-                                           (SELECT s.latitude, s.longitude, s.weekday, s.start_time, s.end_time
+                                           (SELECT s.latitude, s.longitude, s.address, s.weekday, s.start_time, s.end_time
                                               FROM schedule s
                                              WHERE s.id_truck = ?
                                              ORDER BY s.weekday, s.start_time)", [$truck->id_truck, $truck->id_truck]);
         if (count($queryResult) > 0) {
             $latitude = $queryResult[0]->latitude;
             $longitude = $queryResult[0]->longitude;
+            $address = $queryResult[0]->address;
         }
+        $address = urlencode($address);
 
-        return view('orderconfirmation', ['truck' => $truck, 'latitude' => $latitude, 'longitude' => $longitude, 'avg_rate' => $avg_rate, 'total_reviews' => count($reviews), 'favorite' => $favorite]);
+        return view('orderconfirmation', ['truck' => $truck, 'latitude' => $latitude, 'longitude' => $longitude, 'avg_rate' => $avg_rate, 'address' => $address, 'total_reviews' => count($reviews), 'favorite' => $favorite]);
     }
 }
