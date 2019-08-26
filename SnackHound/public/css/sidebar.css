@@ -20,10 +20,13 @@
     z-index: 100;
 }
 
-.sidebar-items-img,
-.sidebar-logo-img {
+.sidebar-items-img{
     width: 60px;
     height: 60px;
+}
+
+.sidebar-logo-img {
+    height: 40px;
 }
 
 .side-mobile-pic {
