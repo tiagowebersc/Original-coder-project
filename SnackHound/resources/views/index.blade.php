@@ -164,8 +164,8 @@
                                 </tr>
                                 <?php
                                 foreach ($truck->schedules as $Schedle) {
-                                    $start_time = \Carbon\Carbon::createFromFormat('H:i:s',$Schedle->start_time)->format('h:i');
-                                    $end_time = \Carbon\Carbon::createFromFormat('H:i:s',$Schedle->end_time)->format('h:i');
+                                    $start_time = \Carbon\Carbon::createFromFormat('H:i:s',$Schedle->start_time)->format('H:i');
+                                    $end_time = \Carbon\Carbon::createFromFormat('H:i:s',$Schedle->end_time)->format('H:i');
                                 ?>
                                 <tr>
                                     @switch($Schedle->weekday)
@@ -283,7 +283,7 @@
     function initMap() {
         // Map options
         let options = {
-            zoom: 10,
+            zoom: 9.7,
             center: {
                 lat: 49.779705,
                 lng: 6.091878

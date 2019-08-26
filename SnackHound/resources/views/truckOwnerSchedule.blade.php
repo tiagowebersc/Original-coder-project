@@ -79,8 +79,8 @@
 
         @endswitch
         <p class='display-time'>
-                <?php $start_time = \Carbon\Carbon::createFromFormat('H:i:s',$schedule->start_time)->format('h:i');
-                      $end_time = \Carbon\Carbon::createFromFormat('H:i:s',$schedule->end_time)->format('h:i')
+                <?php $start_time = \Carbon\Carbon::createFromFormat('H:i:s',$schedule->start_time)->format('H:i');
+                      $end_time = \Carbon\Carbon::createFromFormat('H:i:s',$schedule->end_time)->format('H:i')
                       ?>
                 {{$start_time}} - {{$end_time}}</p>
         <p class='display-city'>{{$schedule->city}}</p>
