@@ -9,7 +9,6 @@
 @section('title', 'SnackHound - Lunch Bag')
 
 @section('content')
-
 <main class="background">
     <section class="frame">
         <!-- This header will only be visible on wider screens -->
@@ -43,9 +42,9 @@
             <div id="left-content">
                 <article id="lunchbagCost" class="panel">
                     <h2>Your order has been accepted!</h2>
-                    <p>Thank you for your order, your order number is D5JLTL. You can find directions to your truck on the map to the right and contact details below! Did you like your experience, or not so much? Please leave a review on the food truck’s page!</p>
+                    <p>Thank you for your order, your order number is {{$id_order}}. You can find directions to your truck on the map to the right and contact details below! Did you like your experience, or not so much? Please leave a review on the food truck’s page!</p>
                     <div class="divButtonMap">
-                        <a class="buttonMap" href="https://maps.google.com/maps?q={{$address}}&t=&z=13&ie=UTF8&iwloc=&output=embed" target="_blank">Open in google maps</a>
+                    <a class="buttonMap" href="https://maps.google.com/maps?q={{$address}}&t=&z=13&ie=UTF8&iwloc=&output=embed" target="_blank">Open in google maps</a>
                     </div>
                 </article>
                 @csrf
@@ -84,7 +83,8 @@
                 </article>
             </div>
             <article id="lunchbagList" class="panel map-container">
-                <iframe class='map' src="https://maps.google.com/maps?q={{$address}}&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+            <iframe class='map' frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q={{$address}}&hl=es;z=14&amp;output=embed">
+                </iframe>
             </article>
         </form>
     </section>

@@ -86,7 +86,6 @@
                 </form>
             </article>
         </div>
-        <p class="hideSmallScreen">* Do you own a foodtruck and want to work with us? You can find more information <a href="#">here</a></p>
     </section>
 </div>
 
