@@ -163,9 +163,9 @@
                             <table>
                                 <tr>
                                     <h3>Schedules</h3>
-                                    <th>weekday</th>
-                                    <th>Start-Time</th>
-                                    <th>End-Time</th>
+                                    <th>Day</th>
+                                    <th>From</th>
+                                    <th>To</th>
                                     <th>City</th>
                                 </tr>
                                 <?php

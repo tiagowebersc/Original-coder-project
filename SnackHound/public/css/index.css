@@ -451,6 +451,7 @@ hr {
   .price_range{
       display: flex;
       justify-content: space-around;
+      color: black;
   }
   .background {
     padding: 60px 0 0 0;

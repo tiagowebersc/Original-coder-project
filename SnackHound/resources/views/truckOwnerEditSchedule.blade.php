@@ -12,9 +12,9 @@
 @section('content')
 
 <main>
-    <h3>Hello, {{$truck->name}}</h3>
+    <h3 class='main-title'>Hello, {{$truck->name}}</h3>
 
-    <h4>Schedule:</h4>
+    <h4 class='main-title'>SCHEDULE:</h4>
 
 <form class='edit-schedule' id='edit-schedule-form' action="/truck/schedule" method='POST'>
     @csrf
@@ -122,8 +122,8 @@
 
         @endswitch
         <p class='display-time'>
-            <?php $start_time = \Carbon\Carbon::createFromFormat('H:i:s',$schedule->start_time)->format('h:i');
-                  $end_time = \Carbon\Carbon::createFromFormat('H:i:s',$schedule->end_time)->format('h:i')
+            <?php $start_time = \Carbon\Carbon::createFromFormat('H:i:s',$schedule->start_time)->format('H:i');
+                  $end_time = \Carbon\Carbon::createFromFormat('H:i:s',$schedule->end_time)->format('H:i')
                   ?>
             {{$start_time}} - {{$end_time}}</p>
         <p class='display-city'>{{$schedule->city}}</p>

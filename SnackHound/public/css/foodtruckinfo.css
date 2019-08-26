@@ -14,10 +14,14 @@
 /* HEADER */
 
 header {
-    height: 640px;
+    height: 100%;
     resize: both;
     resize: none;
 }
+.info-main {
+    margin-top: 50px;
+}
+
 .backgrounddiv {
     background-size: cover;
     background-position: 50% 50%;
@@ -53,8 +57,7 @@ header {
 }
 
 .truckinfo {
-    padding-top: 100px;
-    padding-bottom: 10px;
+    padding-top: 40px;
     text-align: center;
     position: relative;
     color: white;
@@ -429,19 +432,20 @@ input {
     }
 
 
-#myModal {
-    padding-left: 124px;
-}
+    #myModal {
+        padding-left: 124px;
+    }
 
     .formReview {
         width: 400px;
     }
     header {
-        height: 500px;
+        height: 100%;
     }
 
     .truckinfo {
-        padding-top: 0px;
+        padding-top: 30px;
+
     }
 
     .backgrounddiv {
