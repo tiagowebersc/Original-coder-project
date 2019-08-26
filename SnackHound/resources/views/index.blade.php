@@ -41,7 +41,8 @@
 
                     </button>
                     <ul id="custome-drpdown" class="custome-drpdown">
-                            <li><a onclick="categoryAll()" href="/" id="now"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}'" onmousedown="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'"> All </a></li>
+                            <li><a onclick="categoryAll()" href="/" id="now">
+                                <img class='filterbar' <?php if (isset($category_selected)) { ?> src="{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}'" onmousedown="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'" <?php } else { ?> src="{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker 4).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'" onmousedown="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}'" <?php } ?>> All </a></li>
 
                         <?php foreach ($categories as $category) {
                             ?>
@@ -51,7 +52,9 @@
                             <form class='form-anchor-submit' action="/" method='POST'>
                                 @csrf
                                 <input type="hidden" name="categoryId" value="{{$category->id_food_category}}">
-                                <a href="" onclick="categorySubmit({{$category->id_food_category}}); return false;" class='anchor-submit'> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/'.$category->image)}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image_hover)}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image)}}'"> {{$category->name}} </a></li>
+                                <a href="" onclick="categorySubmit({{$category->id_food_category}}); return false;" class='anchor-submit'>
+                                        <img class='filterbar' <?php if (isset($category_selected) && $category_selected == $category->id_food_category) { ?> src="{{URL::asset('assets/ICONS/Filter/'.$category->image_hover)}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image)}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image_hover)}}'" <?php } else { ?> src="{{URL::asset('assets/ICONS/Filter/'.$category->image)}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image_hover)}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image)}}'" <?php } ?>> {{$category->name}} </a>
+                            </li>
                             </form>
                         </li>
 
@@ -64,14 +67,17 @@
 
         <section id="filterbar-container" class="filterbar-container">
             <ul>
-                <li><a onclick="categoryAll()" href="/" id="now"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}'" onmousedown="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'"> All </a></li>
+                    <li><a onclick="categoryAll()" href="/" id="now">
+                        <img class='filterbar' <?php if (isset($category_selected)) { ?> src="{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}'" onmousedown="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'" <?php } else { ?> src="{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'" onmousedown="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}'" <?php } ?>> All </a></li>
                 <?php foreach ($categories as $category) {
                     ?>
                 <li>
                     <form class='form-anchor-submit' action="/" method='POST'>
                     @csrf
                         <input type="hidden" name="categoryId" value="{{$category->id_food_category}}">
-                        <a href="" onclick="categorySubmit({{$category->id_food_category}}); return false;" class='anchor-submit'> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/'.$category->image)}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image_hover)}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image)}}'"> {{$category->name}} </a></li>
+                        <a href="" onclick="categorySubmit({{$category->id_food_category}}); return false;" class='anchor-submit'>
+                                <img class='filterbar' <?php if (isset($category_selected) && $category_selected == $category->id_food_category) { ?> src="{{URL::asset('assets/ICONS/Filter/'.$category->image_hover)}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image)}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image_hover)}}'" <?php } else { ?> src="{{URL::asset('assets/ICONS/Filter/'.$category->image)}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image_hover)}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image)}}'" <?php } ?>> {{$category->name}} </a>
+                    </li>
                     </form>
                 <?php } ?>
             </ul>
@@ -164,8 +170,8 @@
                                 </tr>
                                 <?php
                                 foreach ($truck->schedules as $Schedle) {
-                                    $start_time = \Carbon\Carbon::createFromFormat('H:i:s',$Schedle->start_time)->format('h:i');
-                                    $end_time = \Carbon\Carbon::createFromFormat('H:i:s',$Schedle->end_time)->format('h:i');
+                                    $start_time = \Carbon\Carbon::createFromFormat('H:i:s',$Schedle->start_time)->format('H:i');
+                                    $end_time = \Carbon\Carbon::createFromFormat('H:i:s',$Schedle->end_time)->format('H:i');
                                 ?>
                                 <tr>
                                     @switch($Schedle->weekday)
@@ -283,7 +289,7 @@
     function initMap() {
         // Map options
         let options = {
-            zoom: 9.5,
+            zoom: 9.7,
             center: {
                 lat: 49.779705,
                 lng: 6.091878
