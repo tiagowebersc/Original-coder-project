@@ -14,7 +14,7 @@ class TruckTableSeeder extends Seeder
         DB::table('truck')->insert([
             'id_truck' => 1,
             'id_user' => 2,
-            'name' => 'Las maracas',
+            'name' => 'Las Maracas',
             'image' => 'las-maracas.jpg',
             'price_range' => 3,
             'telephone' => '666 111 222',
@@ -29,13 +29,13 @@ class TruckTableSeeder extends Seeder
         DB::table('truck')->insert([
             'id_truck' => 2,
             'id_user' => 3,
-            'name' => 'The moose is lose',
+            'name' => 'The Moose is Loose',
             'image' => 'moose_is_loose.jpg',
             'price_range' => 5,
             'telephone' => '555 333 777',
             'online_order' => false,
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod hic facere ipsa fuga perferendis sunt pariatur perspiciatis tempora. Amet quos vero est distinctio praesentium veritatis blanditiis aut voluptatibus ducimus voluptate.',
-            'website' => 'http://www.themooseislose.lu',
+            'website' => 'http://www.themooseisloose.lu',
             'facebook_link' => 'http://www.facebook.com',
             'instagram_link' => 'http://www.instagram.com',
             'twitter_link' => 'http://www.twitter.com'
@@ -76,13 +76,13 @@ class TruckTableSeeder extends Seeder
         DB::table('truck')->insert([
             'id_truck' => 5,
             'id_user' => 7,
-            'name' => 'Fish Go',
+            'name' => 'Go Fish',
             'image' => 'go_fish.jpg',
             'price_range' => 3,
             'telephone' => '691 997 982',
             'online_order' => false,
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod hic facere ipsa fuga perferendis sunt pariatur perspiciatis tempora. Amet quos vero est distinctio praesentium veritatis blanditiis aut voluptatibus ducimus voluptate.',
-            'website' => 'http://www.Fishgo.lu/',
+            'website' => 'http://www.gofish.lu/',
             'facebook_link' => 'https://fr-fr.facebook.com/Fishgo.lu/',
             'instagram_link' => 'https://www.instagram.com/',
             'twitter_link' => 'http://www.twitter.com'
@@ -121,7 +121,7 @@ class TruckTableSeeder extends Seeder
         DB::table('truck')->insert([
             'id_truck' => 8,
             'id_user' => 10,
-            'name' => 'Marios Delights',
+            'name' => 'Mario\'s Delights',
             'image' => 'marios_delights.jpg',
             'price_range' => 3,
             'telephone' => '691 997 987',
@@ -157,7 +157,7 @@ class TruckTableSeeder extends Seeder
             'telephone' => '691 997 990',
             'online_order' => false,
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod hic facere ipsa fuga perferendis sunt pariatur perspiciatis tempora. Amet quos vero est distinctio praesentium veritatis blanditiis aut voluptatibus ducimus voluptate.',
-            'website' => 'http://www.foodRiders.lu/',
+            'website' => 'http://www.foodriders.lu/',
             'facebook_link' => 'https://fr-fr.facebook.com/foodRiders.lu/',
             'instagram_link' => 'https://www.instagram.com/',
             'twitter_link' => 'http://www.twitter.com'

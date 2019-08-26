@@ -938,7 +938,7 @@ class MenuTableSeeder extends Seeder
             'description' => 'Beer battered salmon + chips + tartar sauce',
             'price' => 13,
             'available' => true,
-            'image' => 'salmonnchips.jpg'
+            'image' => 'salmon.jpg'
         ]);
 
         DB::table('menu')->insert([
@@ -958,7 +958,7 @@ class MenuTableSeeder extends Seeder
             'description' => 'Roll stuffed with cooked lobster, tartar sauce & a squeeze of lemon. \ Served with chips',
             'price' => 11,
             'available' => true,
-            'image' => 'lobster_roll.jpg'
+            'image' => 'lobsterrolls.jpg'
         ]);
 
         DB::table('menu')->insert([
