@@ -423,6 +423,16 @@ input {
     .reviewList {
         width: 420px;
     }
+
+    .modal {
+        top: -20px;
+    }
+
+
+#myModal {
+    padding-left: 124px;
+}
+
     .formReview {
         width: 400px;
     }
