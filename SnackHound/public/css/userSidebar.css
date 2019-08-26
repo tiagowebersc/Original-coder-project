@@ -33,7 +33,6 @@
 
 /* SIDEBAR LOGO */
 .sidebar-logo {
-    padding: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,8 +44,8 @@
 
 /* ICONS */
 .sidebar-items-img {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
 }
 /* .sidebar-items-img:hover{
     width: 42px;
