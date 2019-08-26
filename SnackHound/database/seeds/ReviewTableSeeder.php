@@ -209,5 +209,91 @@ class ReviewTableSeeder extends Seeder
             'created_at'=>"2019-02-28 18:23:55",
             'comment' => 'Savoyard for the cheese amator'
         ]);
+
+        DB::table('review')->insert([
+            'id_truck' => 15,
+            'id_user' => 8,
+            'rate' => 5,
+            'created_at'=>"2018-08-18 18:42:13",
+            'comment' => 'Delicious Ribs'
+        ]);
+
+        DB::table('review')->insert([
+            'id_truck' => 5,
+            'id_user' => 10,
+            'rate' => 3,
+            'created_at'=>"2019-12-20 12:00:32",
+            'comment' => 'The fish was tasty but a little bit dry'
+        ]);
+        DB::table('review')->insert([
+            'id_truck' => 6,
+            'id_user' => 15,
+            'rate' => 1,
+            'created_at'=>"2019-07-05 15:02:52",
+            'comment' => 'They forgot our order and told us to order a pizza, shameful!'
+        ]);
+        DB::table('review')->insert([
+            'id_truck' => 7,
+            'id_user' => 15,
+            'rate' => 5,
+            'created_at'=>"2019-07-01 15:30:55",
+            'comment' => 'After being denied in other place, this pizza was out of heaven!'
+        ]);
+        DB::table('review')->insert([
+            'id_truck' => 8,
+            'id_user' => 6,
+            'rate' => 4,
+            'created_at'=>"2019-01-15 10:45:15",
+            'comment' => 'It was good ;)'
+        ]);
+        DB::table('review')->insert([
+            'id_truck' => 9,
+            'id_user' => 9,
+            'rate' => 3,
+            'created_at'=>"2019-05-28 12:23:55",
+            'comment' => 'Et kéint besser, deier an dréchen sinn'
+        ]);
+        DB::table('review')->insert([
+            'id_truck' => 10,
+            'id_user' => 13,
+            'rate' => 5,
+            'created_at'=>"2019-07-21 13:13:15",
+            'comment' => 'BEST BURGUER IN MY WHOLE LIFE'
+        ]);
+        DB::table('review')->insert([
+            'id_truck' => 11,
+            'id_user' => 2,
+            'rate' => 2,
+            'created_at'=>"2019-08-18 11:43:00",
+            'comment' => 'Ewww.....'
+        ]);
+        DB::table('review')->insert([
+            'id_truck' => 12,
+            'id_user' => 4,
+            'rate' => 5,
+            'created_at'=>"2019-02-28 18:23:55",
+            'comment' => 'Maria was so nice, the meal was 4/5, costumer service 5/5.'
+        ]);
+        DB::table('review')->insert([
+            'id_truck' => 13,
+            'id_user' => 5,
+            'rate' => 4,
+            'created_at'=>"2019-07-07 13:23:55",
+            'comment' => 'Not the first time here, cheap and good.'
+        ]);
+        DB::table('review')->insert([
+            'id_truck' => 14,
+            'id_user' => 6,
+            'rate' => 4,
+            'created_at'=>"2019-01-19 14:13:25",
+            'comment' => 'Good good gutten!'
+        ]);
+        DB::table('review')->insert([
+            'id_truck' => 15,
+            'id_user' => 14,
+            'rate' => 5,
+            'created_at'=>"2019-01-10 11:48:25",
+            'comment' => 'Spicy chicken wings and the true beer!!'
+        ]);
     }
 }
