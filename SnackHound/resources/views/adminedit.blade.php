@@ -17,6 +17,9 @@
 
     <h4>USERS: </h4>
 
+    {{--FoodTruck Admin can search for users and check their informations, block them or remove also view
+        their comment --}}
+
     <form id='searchForm' method="GET">
         @csrf
         <strong>Search users:</strong>

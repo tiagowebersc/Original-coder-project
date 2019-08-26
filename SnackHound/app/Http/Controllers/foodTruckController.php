@@ -15,14 +15,17 @@ class foodTruckController extends Controller
 {
     public function main($idTruck)
     {
+        
         $foodTruck = Truck::where("id_truck", $idTruck)->get();
         if (count($foodTruck) === 0) return redirect()->route('index');
         $foodTruck = $foodTruck[0];
 
+        
         $reviews = Review::where("id_truck", $idTruck)->orderby('created_at', 'desc')->get();
         foreach ($reviews as $review) {
             $review->userName = User::where("id_user", $review->id_user)->get()->first()->first_name;
         }
+        
         $avg_rate = 0;
         if (count($reviews) > 0) {
             foreach ($reviews as $review) {

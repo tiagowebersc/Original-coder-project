@@ -16,14 +16,18 @@
 <div class="background">
     <header>
         <!-- principal div header start here -->
+
+        {{-- In the style of the div below i've put an effect which is  degrade --}}
         <div class="backgrounddiv" name="backgrounddiv" style="background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.52), rgba(0, 0, 20, 0.73)), url('/assets/IMGS/Food Trucks/BLURRED/{{$foodtruck->image}}');">
 
             <div name="truckinfo" class="truckinfo">
-                <input type="hidden" id="idTruck" value="{{$foodtruck->id_truck}}">
-                <h1>{{$foodtruck->name}}</h1>
+                <input type="hidden" id="idTruck" value="{{$foodtruck->id_truck}}"> {{-- In the alue we are looking for the id truck in the databse --}}
+               <h1>{{$foodtruck->name}}</h1> {{--  Here we are looking to take the name of the foodtruck from the databse and show it on the website --}}
                 <div class="favstar">
                     <div class="reviewDiv">
                         <?php
+
+                        // We are looking to take the rate of the foodtruck from the database and show it on the website 
                         for ($i = 1; $i <= $avg_rate; $i++) { ?>
                         <img class="starlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-filled.svg')}}" alt="">
                         <?php }
@@ -32,9 +36,11 @@
                             ?>
                         <img class="starlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-blank.svg')}}" alt="">
                         <?php } ?>
+                        {{--  we count how many reviews the foodtruck have and we display it on the info --}}
                         <p class="reviewNbr">{{COUNT($reviews)}}</p>
                     </div>
                     <?php if (Session::has('id_user')) {
+                        // If the foodtruck is on favorite the heart will be colored in red and if not it will be transparent
                         if ($favorite) { ?>
                     <img class="heartlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-heart-outline.svg')}}" alt="">
                     <?php } else { ?>
@@ -49,11 +55,11 @@
                     <div class="contactlist">
                         <div class="contactnumber" name="contactnumber">
                             <img name="phoneicon" class="phoneicon" src="{{URL::asset('assets/ICONS/icons8-cell-phone (1).svg')}}" alt="">
-                            <p class="phoneInfo" name="phoneInfo">{{$foodtruck->telephone}}</p>
+                            <p class="phoneInfo" name="phoneInfo">{{$foodtruck->telephone}}</p> {{-- We are looking to take the phone number of the foodtruck from the database and display it--}}
                         </div>
                         <div class="contactweb" name="contactweb">
                             <img name="webicon" class="webicon" src="{{URL::asset('assets/ICONS/icons8-internet (1).svg')}}" alt="">
-                            <p class="webInfo" name="webInfo">{{$foodtruck->website}}</p>
+                            <p class="webInfo" name="webInfo">{{$foodtruck->website}}</p> {{--  Here we are looking to take the official website of the foodtruck from the database and displax it--}}
                         </div>
                     </div>
                     <div class="truckposition" name="truckposition">
@@ -67,6 +73,8 @@
                 <div class="hourinfo">
                     <table class="scheduleTable">
                         <?php
+
+                        // We display the schedule fo the foodtruck
                         $weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
                         foreach ($schedules as $schedule) { ?>
                         <div class="row">
@@ -95,22 +103,26 @@
 
         </div>
         <!-- <img name="backgroundimg" class="backgroundimg" src="frittenwerk.png" alt=""> -->
-
-
         <!-- principal div HEADER end here -->
+
     </header>
+
     <main>
         <?php
+        // We display all the item of the footruck
         foreach ($menus as $menu) { ?>
         @csrf
         <div class="itemCard">
-            <img class="itemImg" src="{{URL::asset('assets/IMGS/Menu/'.$menu->id_truck.'/'.$menu->image)}}" alt="Avatar" style="width:100%">
+            <img class="itemImg" src="{{URL::asset('assets/IMGS/Menu/'.$menu->id_truck.'/'.$menu->image)}}" alt="Avatar" style="width:100%"> {{--display the image of the item--}}
             <div class="container">
                 <div class="iteminfo" name="iteminfo">
-                    <h2 name="itemname" class="itemName">{{$menu->name}}</h2>
-                    <h2 class="itemPrice">{{number_format($menu->price, 2)}}€</h2>
+                    <h2 name="itemname" class="itemName">{{$menu->name}}</h2> {{--display the name of the item--}}
+                    <h2 class="itemPrice">{{number_format($menu->price, 2)}}€</h2> {{--display the price of the item--}}
                 </div>
+
                 <hr class="itemseparator">
+
+                {{--Button + and - of the card to add or remove item from the launch bag--}}
                 <section class="itemform" name="itemform">
                     <div class="plusMinus" name="plusminus">
                         <input class="plusBtn" name="plusBtn" type="button" value="+">
@@ -122,6 +134,7 @@
                         <input name="addToBag" class="addToBag" type="button" value="Add">
                     </div>
                 </section>
+
             </div>
         </div>
         <?php } ?>
@@ -133,13 +146,14 @@
                     <h1>REVIEWS</h1>
                     <div class="reviewList">
                         <?php
+                        // starting a foreach to display information in the review table
                         foreach ($reviews as $review) {
                             ?>
                         <div class="formReview">
                             <div class="userInfo">
-                                <p class="userNameInBox">{{$review->userName}}</p>
+                                <p class="userNameInBox">{{$review->userName}}</p> {{--display the User Name of the user that put the comment --}}
                                 <p><?php
-                                        for ($i = 1; $i <= $review->rate; $i++) { ?>
+                                        for ($i = 1; $i <= $review->rate; $i++) { ?> {{--display the rate of the user from 1 to 5 stars--}}
                                     <img class="ratingStar" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-filled.svg')}}" alt="">
                                     <?php }
                                         $blankStars = 5 - $review->rate;
@@ -148,16 +162,18 @@
                                     <img class="ratingStar" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-blank.svg')}}" alt="">
                                     <?php } ?>
                                 </p>
-                                <p class="dateReview">({{$review->created_at}}) :</p>
+                                <p class="dateReview">({{$review->created_at}}) :</p> {{--display the date when the review has been sended--}}
                             </div>
                             <div class="userReview">
-                                <p>{{$review->comment}}</p>
+                                <p>{{$review->comment}}</p> {{--display the review of the user--}}
                             </div>
                         </div>
                         <?php } ?>
 
                     </div>
                 </div>
+
+                {{--User can leave a review only when they are Loged In . If they are not loged in so these part will be hidden--}}
                 <?php if (Session::has('id_user')) { ?>
                 <div class="review">
                     <div class="leavReview">

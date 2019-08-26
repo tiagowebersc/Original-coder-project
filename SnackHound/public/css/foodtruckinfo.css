@@ -31,16 +31,16 @@ header {
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.error{
+.error {
     display: block;
     color: red;
-    font-family: 'Raleway', sans-serif;
+    font-family: "Raleway", sans-serif;
     text-align: center;
 }
-.success{
+.success {
     display: block;
     color: green;
-    font-family: 'Raleway', sans-serif;
+    font-family: "Raleway", sans-serif;
     text-align: center;
 }
 
@@ -53,8 +53,9 @@ header {
 }
 
 .truckinfo h1 {
-    font-family: 'Raleway', sans-serif;
+    font-family: "Raleway", sans-serif;
     font-size: 46px;
+    /* These text shadow help us to put border color to the each letter of the text */
     text-shadow: 3px 0 0 black, -3px 0 0 black, 0 3px 0 black, 0 -3px 0 black,
         2px 2px black, -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black;
 }
@@ -73,16 +74,18 @@ header {
 .favstar {
     display: flex;
     justify-content: space-around;
-    font-family: 'Roboto Slab', serif;
+    font-family: "Roboto Slab", serif;
     padding-top: 10px;
 }
 
 .truckcontact {
-    font-family: 'Roboto Slab', serif;
+    font-family: "Roboto Slab", serif;
     display: flex;
     justify-content: space-around;
+    /* These text shadow help us to put border color to the each letter of the text */
     text-shadow: 1px 0 0 black, -1px 0 0 black, 0 1px 0 black, 0 -1px 0 black,
-    0.5px 0.5px black, -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black;
+        0.5px 0.5px black, -0.5px -0.5px 0 black, 0.5px -0.5px 0 black,
+        -0.5px 0.5px 0 black;
 }
 
 .contactlist {
@@ -119,17 +122,19 @@ header {
 }
 
 .hourinfo {
-    font-family: 'Roboto Slab', serif;
+    font-family: "Roboto Slab", serif;
 }
 
 .scheduleTable {
+    /* These text shadow help us to put border color to the each letter of the text */
     text-shadow: 1px 0 0 black, -1px 0 0 black, 0 1px 0 black, 0 -1px 0 black,
-    0.5px 0.5px black, -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black;
+        0.5px 0.5px black, -0.5px -0.5px 0 black, 0.5px -0.5px 0 black,
+        -0.5px 0.5px 0 black;
     margin: 0 auto;
 }
 
 .daySchedule {
-    font-family: 'Raleway', sans-serif;
+    font-family: "Raleway", sans-serif;
     padding: 0 7px 0 7px;
 }
 
@@ -267,11 +272,9 @@ main {
     padding: 60px 0 0 0;
 }
 
-
-
 /* REVIEW */
 
-.reviewBox{
+.reviewBox {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -281,12 +284,14 @@ main {
 }
 
 .scrollBoxReview {
-   margin: 20px;
+    margin: 20px;
 }
 
-h1, h3, .userNameInBox, input {
-    font-family: 'Raleway', sans-serif;
-
+h1,
+h3,
+.userNameInBox,
+input {
+    font-family: "Raleway", sans-serif;
 }
 
 .reviewList {
@@ -302,56 +307,53 @@ h1, h3, .userNameInBox, input {
     margin-bottom: 10px;
     color: black;
     scrollbar-base-color: gray;
-    border: 1px solid gainsboro
+    border: 1px solid gainsboro;
 }
 
-#divStar{
+#divStar {
     width: 300px;
     display: flex;
     justify-content: center;
 }
 
-.userInfo{
+.userInfo {
     display: flex;
 }
 
-
-.userInfo p{
+.userInfo p {
     padding-left: 5px;
 }
 
-.ratingStar{
+.ratingStar {
     width: 16px;
     height: 16px;
 }
 
-
-.userNameInBox{
+.userNameInBox {
     font-weight: bold;
 }
 
-.userReview{
-    font-family: 'Roboto Slab', serif;
+.userReview {
+    font-family: "Roboto Slab", serif;
 }
 
 .dateReview {
-    font-family: 'Roboto Slab', serif;
+    font-family: "Roboto Slab", serif;
     font-size: 10px;
-    padding-top: 2px
+    padding-top: 2px;
 }
 
-
-.review{
+.review {
     margin: 20px;
 }
-
 
 .formbox {
     display: flex;
     flex-direction: column;
-    -webkit-box-shadow: 0px -1px 29px 5px rgba(0,0,0,0.12);
-    -moz-box-shadow: 0px -1px 29px 5px rgba(0,0,0,0.12);
-    box-shadow: 0px -1px 29px 5px rgba(0,0,0,0.12);
+    /* source for the box shadow : https://www.cssmatic.com/box-shadow */
+    -webkit-box-shadow: 0px -1px 29px 5px rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: 0px -1px 29px 5px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px -1px 29px 5px rgba(0, 0, 0, 0.12);
     width: 400px;
     height: 300px;
 }
@@ -364,25 +366,22 @@ h1, h3, .userNameInBox, input {
     height: 270px;
 }
 
-
 .reviewForm h3 {
     font-size: 13px;
     width: 150px;
 }
 
 .reviewForm textarea {
-    border: 1px solid  black;
+    border: 1px solid black;
     resize: none;
     width: 300px;
 }
-
 
 .reviewForm input {
     width: 300px;
     border: none;
     background-color: #06b7f9;
     color: white;
-
 }
 
 .ratingReview {
@@ -391,21 +390,20 @@ h1, h3, .userNameInBox, input {
     flex-direction: column;
 }
 
-
-.rateStarLogo{
+.rateStarLogo {
     padding-right: 5px;
     padding-top: 5px;
     padding-bottom: 5px;
     height: 35px;
 }
 
-.bottomComment{
+.bottomComment {
     margin: auto;
 }
 
 .ratingReview input {
     width: 8rem;
-    height: 1.7rem ;
+    height: 1.7rem;
     background-color: #06b7f9;
     color: white;
     border: none;
@@ -471,11 +469,10 @@ h1, h3, .userNameInBox, input {
     }
 
     /* REVIEW */
-    .reviewBox{
+    .reviewBox {
         display: flex;
         flex-direction: row;
         width: 100%;
         margin: auto;
     }
-
 }
