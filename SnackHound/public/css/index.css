@@ -223,6 +223,10 @@
     box-shadow: 40px 20px 74px rgba(0, 0, 0, 0.2);
   }
 
+  #main-anchor {
+    position: relative;
+  }
+
 .wrapper:hover {
     -webkit-transform: scale(1);
     transform: scale(1);

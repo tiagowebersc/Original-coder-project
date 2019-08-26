@@ -11,6 +11,8 @@ use App\Models\Favorite;
 use Mail;
 use Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input as IlluminateInput;
+use Symfony\Component\Console\Input\Input;
 
 class TruckController extends Controller
 {
@@ -269,6 +271,61 @@ public function getSchedule() {
         }
     }
 
+
+    // ! TRUCK SETINGS
+
+    public function getTruckSettings() {
+
+        if(Session::has('id_user')){
+
+            $truck = Truck::where('id_user', Session::get('id_user'))->first() ;
+
+            if(isset($truck->id_truck)) {
+
+            } else {
+                return redirect()->route('index');
+            }
+        } else {
+            return redirect()->route('index');
+        }
+
+        return view('settingsFoodtruck', ['truck' => $truck]);
+    }
+
+    public function updateTruckSettings(Request $request) {
+
+        if(Session::has('id_user')){
+
+            $truck = Truck::where('id_user', Session::get('id_user'))->first();
+
+            if(isset($truck->id_truck)) {
+
+                if ($request->hasFile('truck_image')) {
+
+                    $path = public_path('assets/IMGS/Food Trucks/');
+
+                    $fullFileName = $request->file('truck_image') . "." . $request->file('truck_image')->extension();
+
+                    $fileName = IlluminateInput::file('truck_image')->move($path, $fullFileName);
+
+                    $truck->image = basename($fileName);
+                }
+
+                $truck->name = $request->truck_name;
+                $truck->price_range = $request->truck_price;
+                $truck->telephone = $request->truck_phone;
+                $truck->description = $request->truck_desc;
+                $truck->website = $request->truck_website;
+                $truck->save();
+
+                    return back()->with(['truck' => $truck]);
+                } else {
+                return redirect()->route('index');
+            }
+        } else {
+            return redirect()->route('index');
+        }
+    }
 
 
 }

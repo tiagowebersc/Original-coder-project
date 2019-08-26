@@ -19,7 +19,7 @@ class foodTruckController extends Controller
         if (count($foodTruck) === 0) return redirect()->route('index');
         $foodTruck = $foodTruck[0];
 
-        $reviews = Review::where("id_truck", $idTruck)->get();
+        $reviews = Review::where("id_truck", $idTruck)->orderby('created_at', 'desc')->get();
         foreach ($reviews as $review) {
             $review->userName = User::where("id_user", $review->id_user)->get()->first()->first_name;
         }

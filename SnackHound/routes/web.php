@@ -24,6 +24,10 @@ Route::post('/forgot_password', 'UserController@forgotPasswordPost');
 Route::get('/reset_password/{token}', 'UserController@resetPassword');
 Route::post('/reset_password/{token}', 'UserController@resetPasswordPost');
 Route::get('/signout', 'UserController@signout');
+
+Route::get('/settings', 'UserController@getUserSettings');
+Route::post('/settings', 'UserController@updateUserSettings');
+
 // ! Lunchbag functions
 Route::get('/lunchbag', 'LunchBagController@main')->name('lunchBag');
 Route::get('/lunchbagTotal', 'LunchBagController@totalItems');
@@ -36,9 +40,12 @@ Route::get('/truck', 'TruckController@getOrders')->name('truck');
 Route::post('/truck', 'TruckController@updateOrders');
 Route::get('/truck/orderFilter', 'TruckController@filterOrder');
 Route::post('/truck/orderFilter', 'TruckController@updateOrders');
-
 Route::get('/foodtruck/favorite/{idTruck}', 'foodTruckController@getFavorite');
 Route::post('/foodtruck/favorite/{idTruck}', 'foodTruckController@setFavorite');
+
+// ! TRUCK SETTINGS
+Route::get('/truck/settings', "TruckController@getTruckSettings");
+Route::post('/truck/settings', "TruckController@updateTruckSettings");
 
 // ! MENU
 Route::get('/truck/menu', 'MenuController@getMenu')->name('menu'); //menu editing page
@@ -46,8 +53,6 @@ Route::post('/truck/menu', 'MenuController@setMenu');
 Route::post('/truck/menu/info', 'MenuController@getEditMenu');
 Route::get('/truck/menu/info', 'MenuController@getMenu');
 Route::get('/truck/menu/delete/{id}', 'MenuController@deleteMenu');
-
-
 
 Route::get('/truck/details/{id}', 'OrderController@detailsOrders')->name('details');
 Route::post('/truck/details/{id}', 'OrderController@updateOrdersDetails');
@@ -59,19 +64,19 @@ Route::get('/truck/schedule/info', 'TruckController@getSchedule');
 Route::get('/truck/schedule/delete/{id}', 'TruckController@deleteSchedule');
 
 // ! TRUCKS DASHBOARD **
-
 Route::get('/test', function () {
     return view('layouts/customerSidebar');
 });
 
 Route::get('/foodtruckinfo/{id_truck}', 'foodTruckController@main'); //foodtruck information+item page
-
+Route::post('/addReview', 'foodTruckController@saveReview');
 Route::get('/adminedit', 'AdminEditController@getUsers'); // Admin page to edit user
 
 // ! USER SETTINGS PAGE **
-Route::get('/userDashboard', function () {
-    return view('userDashboard');
-}); // User settings page
+Route::get('/userDashboard', 'UserController@orderHistory');
+Route::get('/userFavorites', 'UserController@userFavorites');
+Route::get('/userReviews', 'UserController@userReviews');
+// User settings page
 
 // TEST VIEW for the RESET PASSWORD email
 Route::get('/mailTruckConfirm', function () {
