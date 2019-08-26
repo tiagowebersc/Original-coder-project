@@ -87,7 +87,7 @@ class MenuTableSeeder extends Seeder
             'available' => true,
             'image' => 'banana_muffin.jpg'
         ]);
-        
+
         DB::table('menu')->insert([
             'id_menu' => 9,
             'id_truck' => 2,
@@ -142,7 +142,7 @@ class MenuTableSeeder extends Seeder
             'id_menu' => 14,
             'id_truck' => 2,
             'name' => 'Cannoli',
-            'description' => 'Lorem ipsum',
+            'description' => 'Tube-shaped Italian pastry filled with sweet cream, ricotta cheese, candied fruit or chocolate sprinkles.',
             'price' => 2.5,
             'available' => true,
             'image' => 'Cannoli.jpg'
@@ -358,7 +358,7 @@ class MenuTableSeeder extends Seeder
             'available' => true,
             'image' => 'bianco.jpg'
         ]);
-     
+
         DB::table('menu')->insert([
             'id_menu' => 36,
             'id_truck' => 3,
@@ -368,7 +368,7 @@ class MenuTableSeeder extends Seeder
             'available' => true,
             'image' => 'rosso.jpg'
         ]);
-     
+
         DB::table('menu')->insert([
             'id_menu' => 37,
             'id_truck' => 3,
@@ -378,7 +378,7 @@ class MenuTableSeeder extends Seeder
             'available' => true,
             'image' => 'verde.jpg'
         ]);
-     
+
         DB::table('menu')->insert([
             'id_menu' => 38,
             'id_truck' => 3,
@@ -388,7 +388,7 @@ class MenuTableSeeder extends Seeder
             'available' => true,
             'image' => 'verde.jpg'
         ]);
-     
+
         DB::table('menu')->insert([
             'id_menu' => 39,
             'id_truck' => 3,
@@ -398,7 +398,7 @@ class MenuTableSeeder extends Seeder
             'available' => true,
             'image' => 'arancini.jpg'
         ]);
-     
+
         DB::table('menu')->insert([
             'id_menu' => 40,
             'id_truck' => 3,
@@ -408,7 +408,7 @@ class MenuTableSeeder extends Seeder
             'available' => true,
             'image' => 'pizza.jpg'
         ]);
-     
+
         DB::table('menu')->insert([
             'id_menu' => 41,
             'id_truck' => 3,
@@ -418,7 +418,7 @@ class MenuTableSeeder extends Seeder
             'available' => true,
             'image' => 'soup.jpg'
         ]);
-     
+
         DB::table('menu')->insert([
             'id_menu' => 42,
             'id_truck' => 3,
@@ -428,7 +428,7 @@ class MenuTableSeeder extends Seeder
             'available' => true,
             'image' => 'salad_lg.jpg'
         ]);
-     
+
         DB::table('menu')->insert([
             'id_menu' => 43,
             'id_truck' => 3,
@@ -438,7 +438,7 @@ class MenuTableSeeder extends Seeder
             'available' => true,
             'image' => 'salad_sm.jpg'
         ]);
-     
+
         DB::table('menu')->insert([
             'id_menu' => 44,
             'id_truck' => 3,
@@ -448,7 +448,7 @@ class MenuTableSeeder extends Seeder
             'available' => true,
             'image' => 'panna_cotta.jpg'
         ]);
-     
+
         DB::table('menu')->insert([
             'id_menu' => 45,
             'id_truck' => 3,
@@ -458,7 +458,7 @@ class MenuTableSeeder extends Seeder
             'available' => true,
             'image' => 'tiramisu.jpg'
         ]);
-     
+
         DB::table('menu')->insert([
             'id_menu' => 46,
             'id_truck' => 3,
@@ -468,7 +468,7 @@ class MenuTableSeeder extends Seeder
             'available' => true,
             'image' => 'cannolo.jpg'
         ]);
-     
+
         DB::table('menu')->insert([
             'id_menu' => 47,
             'id_truck' => 3,
@@ -478,7 +478,7 @@ class MenuTableSeeder extends Seeder
             'available' => true,
             'image' => 'fruit_salad.jpg'
         ]);
-     
+
         DB::table('menu')->insert([
             'id_menu' => 48,
             'id_truck' => 3,
@@ -488,7 +488,7 @@ class MenuTableSeeder extends Seeder
             'available' => true,
             'image' => 'beer.jpg'
         ]);
-     
+
         DB::table('menu')->insert([
             'id_menu' => 49,
             'id_truck' => 3,
@@ -498,7 +498,7 @@ class MenuTableSeeder extends Seeder
             'available' => true,
             'image' => 'italiansoda.jpg'
         ]);
-     
+
         DB::table('menu')->insert([
             'id_menu' => 50,
             'id_truck' => 3,
@@ -508,7 +508,7 @@ class MenuTableSeeder extends Seeder
             'available' => true,
             'image' => 'rosso.jpg'
         ]);
-     
+
         DB::table('menu')->insert([
             'id_menu' => 51,
             'id_truck' => 3,
@@ -518,7 +518,7 @@ class MenuTableSeeder extends Seeder
             'available' => true,
             'image' => 'pizza.jpg'
         ]);
-     
+
         DB::table('menu')->insert([
             'id_menu' => 52,
             'id_truck' => 3,
@@ -528,8 +528,8 @@ class MenuTableSeeder extends Seeder
             'available' => true,
             'image' => 'bianco.jpg'
         ]);
-     
-        //BURGER & Co 
+
+        //BURGER & Co
         DB::table('menu')->insert([
             'id_menu' => 53,
             'id_truck' => 4,

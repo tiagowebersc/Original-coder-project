@@ -413,49 +413,55 @@ hr {
     background-color: black;
     height: 1px;
     margin-bottom: 20px;
-  }
- .stars-lication{
-      width: 250px;
-      display: flex;
-      justify-content: space-between;
-  }
-  .reviewDiv{
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      padding: 5px;
-  }
-  .reviewDiv img{
-      width: 15px;
-  }
-  .wrapper .container .bottom .reviewNbr{
-      padding-left: 8px;
-  }
-  .card-category{
-      padding: 5px 7px;
-      color: white;
-      background-color: #06B7F9;
-      border-radius: 2px;
+}
+.stars-lication{
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+}
 
-    }
-    .category .card-category{
+.reviewDiv{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+}
+
+  .reviewDiv img{
+    width: 15px;
+}
+
+.wrapper .container .bottom .reviewNbr{
+    padding-left: 8px;
+}
+.card-category{
+    padding: 5px 7px;
+    color: white;
+    background-color: #06B7F9;
+    border-radius: 2px;
+}
+.category .card-category{
     text-decoration: none;
     color: white;
-    }
-  .category-€{
+}
+
+.category-€{
       display: flex;
       justify-content: space-between;
       width: 250px;
       color: white;
-  }
-  .price_range{
+}
+
+.price_range{
       display: flex;
       justify-content: space-around;
       color: black;
-  }
-  .background {
+}
+
+.background {
     padding: 60px 0 0 0;
-  }
+}
+
 .trucks-img{
   width: 318px;
   height: 216px;
@@ -466,8 +472,6 @@ hr {
 }
 .contents{
     height: 351px;
-    /* align-items: center; */
-    /* align-content: center; */
     text-align: center;
 }
 .contents img{
@@ -491,6 +495,9 @@ hr {
     padding: 2px;
 }
 
+.stars-lication .loc-img {
+    margin-bottom: 10px;
+}
 
 @media only screen and (min-width: 1024px) {
     .bg-image {

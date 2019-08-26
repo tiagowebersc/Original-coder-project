@@ -272,7 +272,7 @@ class ReviewTableSeeder extends Seeder
             'id_user' => 4,
             'rate' => 5,
             'created_at'=>"2019-02-28 18:23:55",
-            'comment' => 'Maria was so nice, the meal was 4/5, costumer service 5/5.'
+            'comment' => 'Maria was so nice, the meal was 4/5, customer service 5/5.'
         ]);
         DB::table('review')->insert([
             'id_truck' => 13,

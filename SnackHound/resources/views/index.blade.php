@@ -14,7 +14,7 @@
     <header class="bg-image">
         <section class="bg-text">
             <h1>Hungry?</h1>
-            <p>SnackHound sniffs out the nearest food trucks in your are and lets you order, pay,
+            <p>SnackHound sniffs out the nearest food trucks in your area and lets you order
                 and get directions to your favorite stop. Enter in your address below to get started!</p>
 
             <form action="">
@@ -128,9 +128,8 @@
                                         </div>
                                         <div class="location-icon-meter">
                                             <p>
-                                                <img src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-marker.svg')}}" alt="" height="25" width="25" />
+                                                <img class='loc-img' src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-marker.svg')}}" alt="" height="25" width="25" />
                                             </p>
-                                            <p>100 m</p>
                                         </div>
                                     </div>
                                     <div id="line">

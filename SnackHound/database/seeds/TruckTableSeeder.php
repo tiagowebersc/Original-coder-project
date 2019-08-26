@@ -31,7 +31,7 @@ class TruckTableSeeder extends Seeder
             'id_user' => 3,
             'name' => 'The Moose',
             'image' => 'moose_is_loose.jpg',
-            'price_range' => 5,
+            'price_range' => 2,
             'telephone' => '555 333 777',
             'online_order' => false,
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod hic facere ipsa fuga perferendis sunt pariatur perspiciatis tempora. Amet quos vero est distinctio praesentium veritatis blanditiis aut voluptatibus ducimus voluptate.',

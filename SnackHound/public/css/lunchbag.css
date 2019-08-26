@@ -265,6 +265,10 @@ li {
     align-items: center;
 }
 
+button:focus {
+    outline: none;
+}
+
 .minus {
     font-family: 'Roboto Slab', serif;
     font-size: 24px;

@@ -62,11 +62,11 @@
             <div class="verticalLine"></div>
             <article class="articleSignIn <?php if ($form == 'signup') echo " hideSmallScreen"; ?>">
                 <h2 class="center">Sign In</h2>
-                <p class="hideSmallScreen">Why be old fashioned? Sign in with through Facebook or Google:</p>
+                <p class="hideSmallScreen">Sign in with us, stay with us</p>
                 <form action="/login" method="post">
                     @csrf
                     <label class="bold hideSmallScreen" for="email">Email:</label>
-                    <input class="input100" type="email" name="email" id="email" placeholder="Email" @isset($request->email)
+                    <input class="input100" type="email" name="email" id="email2" placeholder="Email" @isset($request->email)
                     value={{$request->email}}
                     @endisset>
                     <label class="bold hideSmallScreen" for="passwordLogin">Password:</label>
