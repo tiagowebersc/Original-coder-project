@@ -8,6 +8,7 @@
     resize: both;
 }
 
+
 .bg-text {
     margin-top: 25px;
     color: white;
@@ -32,6 +33,8 @@
     font-family: 'Roboto Slab', serif;
     padding: 14px;
     padding-bottom: 20px;
+    letter-spacing: 1px;
+    font-weight: 100;
 }
 
 .search {
@@ -129,6 +132,10 @@
 }
 .dropdown-menu li a img {
     width: 100px;
+}
+
+.gm-style-iw a:hover {
+    text-decoration: none;
 }
 
 #filter-container .dropdown-menu {

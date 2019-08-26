@@ -296,7 +296,7 @@
                     lng: <?php echo $truck['longitude'] ?>
                 },
                 iconImage: 'https://img.icons8.com/officel/40/000000/marker.png',
-                content: '<img src="{{URL::asset('assets/IMGS/Food Trucks/RESIZED/'. $truck['image'])}}" alt="" /><h1>"<?php echo $truck['name'] ?>"</h1>',
+                content: '<a href="/foodtruckinfo/{{$truck->id_truck}}"><img src="{{URL::asset('assets/IMGS/Food Trucks/RESIZED/'. $truck['image'])}}" alt="Truck card"/><h3 style= "text-align: center; color: black; text-decoration: none"><?php echo $truck['name'] ?></h3> </a>',
                 animation: google.maps.Animation.DROP
             },
             <?php
