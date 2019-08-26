@@ -168,9 +168,9 @@
                                 <p>{{$review->comment}}</p> {{--display the review of the user--}}
                             </div>
                         </div>
-                    </div>
-                    <?php } ?>
+                        <?php } ?>
 
+                    </div>
                 </div>
 
                 {{--User can leave a review only when they are Loged In . If they are not loged in so these part will be hidden--}}
@@ -199,25 +199,24 @@
                         </div>
                     </div>
                 </div>
+                <?php } ?>
+
             </div>
-            <?php } ?>
+        </section>
 
-        </div>
-    </section>
-
-    {{-- END OF REVIEW --}}
+        {{-- END OF REVIEW --}}
 </div>
 @endsection
 
 @section('js')
 <script>
-    function updateRate(nbr) {
+    function updateRate(nbr){
         document.querySelector("#rate").value = nbr;
-        for (let i = 1; i <= 5; i++) {
-            if (i <= nbr) {
-                document.querySelector("#star" + i).src = document.querySelector("#star" + i).src.replace("star-blank", "star-filled");
-            } else {
-                document.querySelector("#star" + i).src = document.querySelector("#star" + i).src.replace("star-filled", "star-blank");
+        for(let i = 1; i <= 5; i++){
+            if (i <= nbr){
+                document.querySelector("#star"+i).src = document.querySelector("#star"+i).src.replace("star-blank", "star-filled");
+            }else{
+                document.querySelector("#star"+i).src = document.querySelector("#star"+i).src.replace("star-filled", "star-blank");
             }
         }
 
@@ -226,41 +225,39 @@
     window.addEventListener('DOMContentLoaded', (event) => {
         // comment/review
         const starlst = document.querySelectorAll(".rateStarLogo");
-        for (let star of starlst) {
+        for (let star of starlst){
             star.addEventListener("click", (e) => {
-                updateRate(e.target.id.substr(4, 1));
+                updateRate(e.target.id.substr(4,1));
             })
         }
         let frmReview = document.querySelector("#formReview");
-        if (frmReview != null) {
-            frmReview.addEventListener("submit", (e) => {
-                e.preventDefault();
-                document.querySelector('#errorReview').innerHTML = "";
-                if (document.querySelector('#comment').value == "") {
-                    document.querySelector('#errorReview').innerHTML = "Leave a comment!";
-                }
+        frmReview.addEventListener("submit", (e) => {
+            e.preventDefault();
+            document.querySelector('#errorReview').innerHTML = "";
+            if (document.querySelector('#comment').value == ""){
+                document.querySelector('#errorReview').innerHTML = "Leave a comment!";
+            }
 
-                const paramReview = {
+            const paramReview = {
                     _token: document.querySelector('input[name="_token"]').value,
                     idTruck: document.querySelector("#idTruck").value,
                     rate: document.querySelector('#rate').value,
                     comment: document.querySelector('#comment').value
-                };
-                fetch("/addReview", {
-                        method: "POST",
-                        body: JSON.stringify(paramReview),
-                        headers: {
-                            "Content-Type": "application/json"
-                        }
-                    })
-                    .then(response => {
-                        document.querySelector('#comment').value = "";
-                        updateRate(0);
-                        document.querySelector('#successReview').innerHTML = "Review inserted!";
-                    });
+            };
+            fetch("/addReview", {
+                    method: "POST",
+                    body: JSON.stringify(paramReview),
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                })
+                .then(response => {
+                    document.querySelector('#comment').value = "";
+                    updateRate(0);
+                    document.querySelector('#successReview').innerHTML = "Review inserted!";
+                });
 
-            });
-        }
+        });
         // favorite
         let btnFavorite = document.querySelector(".heartlogo");
         if (btnFavorite != null) {
