@@ -96,13 +96,16 @@
                         <?php }
                             } ?>
                         <div class="top">
-                            <a href="/foodtruckinfo/{{$truck['id_truck']}}"><img src="{{URL::asset('assets/IMGS/Food Trucks/RESIZED/'. $truck['image'])}}" alt="" /></a>
+                            <a href="/foodtruckinfo/{{$truck['id_truck']}}"><img src="{{URL::asset('assets/IMGS/Food Trucks/RESIZED/'. $truck['image'])}}" alt="Truck image." /></a>
                         </div>
                         <div class="bottom">
-                            <div class="left">
+
+
+
+                                <div class="left">
                                 <div class="details">
                                     <a href="/foodtruckinfo/{{$truck['id_truck']}}">
-                                        <h1><?= $truck['name'] ?></h1>
+                                        <h3><?= $truck['name'] ?></h3>
                                     </a>
                                     <div class="stars-lication">
                                         <div class="reviewDiv">
@@ -121,7 +124,7 @@
                                             <p>
                                                 <img src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-marker.svg')}}" alt="" height="25" width="25" />
                                             </p>
-                                            <p>..250</p>
+                                            <p>100 m</p>
                                         </div>
                                     </div>
                                     <div id="line">
@@ -141,6 +144,9 @@
                                     </div>
                                 </div>
                             </div>
+
+
+
                         </div>
                     </div>
                     <div class="inside">

@@ -281,8 +281,6 @@
     background: white;
     position: relative;
     float: left;
-    /* border:solid black 1px;
-    border-radius: 10px; */
     width: 293px;
 }
 
@@ -293,6 +291,13 @@
     width: calc(100% - 40px);
 }
 
+.details h3 {
+    color: #010101;
+}
+
+.details a{
+    text-decoration: none;
+}
 .wrapper .container .bottom .left .buy {
     float: right;
     width: calc(30% - 2px);

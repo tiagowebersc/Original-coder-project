@@ -70,5 +70,172 @@ class TruckTableSeeder extends Seeder
             'instagram_link' => 'https://www.instagram.com/',
             'twitter_link' => 'http://www.twitter.com'
         ]);
+
+        // ! HEREEEEE
+
+        DB::table('truck')->insert([
+            'id_truck' => 5,
+            'id_user' => 7,
+            'name' => 'Fish Go',
+            'image' => 'go_fish.jpg',
+            'price_range' => 3,
+            'telephone' => '691 997 982',
+            'online_order' => false,
+            'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod hic facere ipsa fuga perferendis sunt pariatur perspiciatis tempora. Amet quos vero est distinctio praesentium veritatis blanditiis aut voluptatibus ducimus voluptate.',
+            'website' => 'http://www.Fishgo.lu/',
+            'facebook_link' => 'https://fr-fr.facebook.com/Fishgo.lu/',
+            'instagram_link' => 'https://www.instagram.com/',
+            'twitter_link' => 'http://www.twitter.com'
+        ]);
+
+        DB::table('truck')->insert([
+            'id_truck' => 6,
+            'id_user' => 8,
+            'name' => 'Wok Me Up',
+            'image' => 'wok-me-up.jpg',
+            'price_range' => 2,
+            'telephone' => '691 997 984',
+            'online_order' => false,
+            'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod hic facere ipsa fuga perferendis sunt pariatur perspiciatis tempora. Amet quos vero est distinctio praesentium veritatis blanditiis aut voluptatibus ducimus voluptate.',
+            'website' => 'http://www.wokmeup.lu/',
+            'facebook_link' => 'https://fr-fr.facebook.com/wokmeup.lu/',
+            'instagram_link' => 'https://www.instagram.com/',
+            'twitter_link' => 'http://www.twitter.com'
+        ]);
+
+        DB::table('truck')->insert([
+            'id_truck' => 7,
+            'id_user' => 9,
+            'name' => 'Pizzaguy',
+            'image' => 'pizzaguy.jpg',
+            'price_range' => 2,
+            'telephone' => '691 997 986',
+            'online_order' => false,
+            'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod hic facere ipsa fuga perferendis sunt pariatur perspiciatis tempora. Amet quos vero est distinctio praesentium veritatis blanditiis aut voluptatibus ducimus voluptate.',
+            'website' => 'http://www.pizzaguy.lu/',
+            'facebook_link' => 'https://fr-fr.facebook.com/pizzaguy.lu/',
+            'instagram_link' => 'https://www.instagram.com/',
+            'twitter_link' => 'http://www.twitter.com'
+        ]);
+
+        DB::table('truck')->insert([
+            'id_truck' => 8,
+            'id_user' => 10,
+            'name' => 'Mario\'s Delights',
+            'image' => 'marios_delights.jpg',
+            'price_range' => 3,
+            'telephone' => '691 997 987',
+            'online_order' => false,
+            'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod hic facere ipsa fuga perferendis sunt pariatur perspiciatis tempora. Amet quos vero est distinctio praesentium veritatis blanditiis aut voluptatibus ducimus voluptate.',
+            'website' => 'http://www.mariosdelights.lu/',
+            'facebook_link' => 'https://fr-fr.facebook.com/mariosdelights.lu/',
+            'instagram_link' => 'https://www.instagram.com/',
+            'twitter_link' => 'http://www.twitter.com'
+        ]);
+
+        DB::table('truck')->insert([
+            'id_truck' => 9,
+            'id_user' => 11,
+            'name' => 'Joo',
+            'image' => 'joo.jpg',
+            'price_range' => 3,
+            'telephone' => '691 997 988',
+            'online_order' => false,
+            'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod hic facere ipsa fuga perferendis sunt pariatur perspiciatis tempora. Amet quos vero est distinctio praesentium veritatis blanditiis aut voluptatibus ducimus voluptate.',
+            'website' => 'http://www.joo.lu/',
+            'facebook_link' => 'https://fr-fr.facebook.com/joo.lu/',
+            'instagram_link' => 'https://www.instagram.com/',
+            'twitter_link' => 'http://www.twitter.com'
+        ]);
+
+        DB::table('truck')->insert([
+            'id_truck' => 10,
+            'id_user' => 12,
+            'name' => 'Food Riders',
+            'image' => 'Food-Rider.jpg',
+            'price_range' => 3,
+            'telephone' => '691 997 990',
+            'online_order' => false,
+            'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod hic facere ipsa fuga perferendis sunt pariatur perspiciatis tempora. Amet quos vero est distinctio praesentium veritatis blanditiis aut voluptatibus ducimus voluptate.',
+            'website' => 'http://www.foodRiders.lu/',
+            'facebook_link' => 'https://fr-fr.facebook.com/foodRiders.lu/',
+            'instagram_link' => 'https://www.instagram.com/',
+            'twitter_link' => 'http://www.twitter.com'
+        ]);
+
+        DB::table('truck')->insert([
+            'id_truck' => 11,
+            'id_user' => 13,
+            'name' => 'Turbo Bao',
+            'image' => 'turbo_bao.jpg',
+            'price_range' => 1,
+            'telephone' => '691 997 998',
+            'online_order' => false,
+            'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod hic facere ipsa fuga perferendis sunt pariatur perspiciatis tempora. Amet quos vero est distinctio praesentium veritatis blanditiis aut voluptatibus ducimus voluptate.',
+            'website' => 'http://www.turbobao.lu/',
+            'facebook_link' => 'https://fr-fr.facebook.com/turbobao.lu/',
+            'instagram_link' => 'https://www.instagram.com/',
+            'twitter_link' => 'http://www.twitter.com'
+        ]);
+
+        DB::table('truck')->insert([
+            'id_truck' => 12,
+            'id_user' => 14,
+            'name' => 'Greenmango',
+            'image' => 'greenmango.jpg',
+            'price_range' => 3,
+            'telephone' => '691 997 991',
+            'online_order' => false,
+            'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod hic facere ipsa fuga perferendis sunt pariatur perspiciatis tempora. Amet quos vero est distinctio praesentium veritatis blanditiis aut voluptatibus ducimus voluptate.',
+            'website' => 'http://www.greenmango.lu/',
+            'facebook_link' => 'https://fr-fr.facebook.com/greenmango.lu/',
+            'instagram_link' => 'https://www.instagram.com/',
+            'twitter_link' => 'http://www.twitter.com'
+        ]);
+
+        DB::table('truck')->insert([
+            'id_truck' => 13,
+            'id_user' => 15,
+            'name' => 'The Karavan',
+            'image' => 'karavan.jpg',
+            'price_range' => 3,
+            'telephone' => '691 997 993',
+            'online_order' => false,
+            'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod hic facere ipsa fuga perferendis sunt pariatur perspiciatis tempora. Amet quos vero est distinctio praesentium veritatis blanditiis aut voluptatibus ducimus voluptate.',
+            'website' => 'http://www.karavan.lu/',
+            'facebook_link' => 'https://fr-fr.facebook.com/karavan.lu/',
+            'instagram_link' => 'https://www.instagram.com/',
+            'twitter_link' => 'http://www.twitter.com'
+        ]);
+
+        DB::table('truck')->insert([
+            'id_truck' => 14,
+            'id_user' => 16,
+            'name' => 'FutoBuri',
+            'image' => 'futo_buri.jpg',
+            'price_range' => 4,
+            'telephone' => '691 997 996',
+            'online_order' => false,
+            'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod hic facere ipsa fuga perferendis sunt pariatur perspiciatis tempora. Amet quos vero est distinctio praesentium veritatis blanditiis aut voluptatibus ducimus voluptate.',
+            'website' => 'http://www.futoburi.lu/',
+            'facebook_link' => 'https://fr-fr.facebook.com/futoburi.lu/',
+            'instagram_link' => 'https://www.instagram.com/',
+            'twitter_link' => 'http://www.twitter.com'
+        ]);
+
+        DB::table('truck')->insert([
+            'id_truck' => 15,
+            'id_user' => 17,
+            'name' => 'Northern BBQ',
+            'image' => 'northern_bbq.jpg',
+            'price_range' => 3,
+            'telephone' => '691 998 000',
+            'online_order' => false,
+            'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod hic facere ipsa fuga perferendis sunt pariatur perspiciatis tempora. Amet quos vero est distinctio praesentium veritatis blanditiis aut voluptatibus ducimus voluptate.',
+            'website' => 'http://www.northern.lu/',
+            'facebook_link' => 'https://fr-fr.facebook.com/northern.lu/',
+            'instagram_link' => 'https://www.instagram.com/',
+            'twitter_link' => 'http://www.twitter.com'
+        ]);
     }
 }
