@@ -237,7 +237,7 @@ class ReviewTableSeeder extends Seeder
             'id_user' => 15,
             'rate' => 5,
             'created_at'=>"2019-07-01 15:30:55",
-            'comment' => 'After being denied in other place, this pizza was out of delicious!'
+            'comment' => 'After being denied in other place, this pizza was delicious!'
         ]);
         DB::table('review')->insert([
             'id_truck' => 8,
