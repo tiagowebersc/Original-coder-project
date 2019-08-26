@@ -258,7 +258,7 @@
 
         if (top === 0 && window.innerWidth > 1024) {
             sidebar.style.backgroundColor = 'white';
-            sidebarLogo.src = '{{URL::asset('assets/ICONS/LOGO/SVG/Logo_Black - White.svg')}}';
+            sidebarLogo.src = '{{URL::asset('assets/ICONS/LOGO/SVG/Logo_Black-White.svg')}}';
         } else {
             sidebar.style.backgroundColor = 'black';
             sidebarLogo.src = '{{URL::asset('assets/ICONS/Logo_White.svg')}}';
