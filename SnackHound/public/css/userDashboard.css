@@ -177,6 +177,38 @@ a:active {
 
 /* !!!!! MEDIA QUERIES !!!!! */
 
+@media only screen and (max-width: 1280px){
+
+    table {
+        width: 125%;
+    }
+
+    .green_truck {
+        width: 70%;
+        float: right;
+    }
+
+    #orderInput {
+        margin-left: 0;
+        width: 205px;
+    }
+    
+    #dateInput {
+        margin-left: 0;
+        /* display: inline; */
+    }
+    
+    #businessInput {
+        width: 205px;
+        margin-left: 0;
+    }
+    
+    .desktop-btn {
+        display: flex;
+    }
+
+}
+
 @media only screen and (max-width: 1024px) {
     table {
         width: 100%;
