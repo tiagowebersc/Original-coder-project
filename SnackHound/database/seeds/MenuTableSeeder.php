@@ -919,5 +919,398 @@ class MenuTableSeeder extends Seeder
             'available' => true,
             'image' => 'perrier.jpg'
         ]);
+
+        // Go Fish
+        DB::table('menu')->insert([
+            'id_menu' => 92,
+            'id_truck' => 5,
+            'name' => 'Cod N Chips',
+            'description' => 'Beer battered cod + chips + tartar sauce',
+            'price' => 11,
+            'available' => true,
+            'image' => 'fishnchips.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 93,
+            'id_truck' => 5,
+            'name' => 'Salmon N Chips',
+            'description' => 'Beer battered salmon + chips + tartar sauce',
+            'price' => 13,
+            'available' => true,
+            'image' => 'salmonnchips.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 94,
+            'id_truck' => 5,
+            'name' => 'Mahi-Mahi Fish Tacos',
+            'description' => 'Corn Tortillas filled with mahi-mahi, coleslaw & tartar sauce \ Served with guacamole',
+            'price' => 11,
+            'available' => true,
+            'image' => 'fish_tacos.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 95,
+            'id_truck' => 5,
+            'name' => 'Lobster Roll',
+            'description' => 'Roll stuffed with cooked lobster, tartar sauce & a squeeze of lemon. \ Served with chips',
+            'price' => 11,
+            'available' => true,
+            'image' => 'lobster_roll.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 96,
+            'id_truck' => 5,
+            'name' => 'Crab Cake Sandwich',
+            'description' => 'Breaded crab cakes in a bun + tartar sauce + coleslaw / Served with chips',
+            'price' => 17,
+            'available' => true,
+            'image' => 'crabcake_sandwich.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 97,
+            'id_truck' => 5,
+            'name' => 'Crabby Melt',
+            'description' => 'Breaded crab cakes in a bun + smothered in cheese sauce + coleslaw / Served with chips',
+            'price' => 12,
+            'available' => true,
+            'image' => 'crabby_melt.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 98,
+            'id_truck' => 5,
+            'name' => 'Crab Quesadilla',
+            'description' => 'Tortilla filled with crab, cheese / Served with guacamole',
+            'price' => 10,
+            'available' => true,
+            'image' => 'crab_quesadilla.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 99,
+            'id_truck' => 5,
+            'name' => 'Salmon Burger',
+            'description' => 'Salmon burger + coleslaw + tartar sauce / Served with chips',
+            'price' => 9,
+            'available' => true,
+            'image' => 'salmon_burger.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 100,
+            'id_truck' => 5,
+            'name' => 'Salmon Burger',
+            'description' => 'Salmon burger + coleslaw + tartar sauce / Served with chips',
+            'price' => 9,
+            'available' => true,
+            'image' => 'salmon_burger.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 101,
+            'id_truck' => 5,
+            'name' => 'Coke Light',
+            'description' => '',
+            'price' => 2.5,
+            'available' => true,
+            'image' => 'coke_light.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 102,
+            'id_truck' => 5,
+            'name' => 'Perrier',
+            'description' => '',
+            'price' => 2.5,
+            'available' => true,
+            'image' => 'perrier.jpg'
+        ]);
+
+        //Wok Me Up
+        DB::table('menu')->insert([
+            'id_menu' => 103,
+            'id_truck' => 6,
+            'name' => 'Chicken Kung Pao',
+            'description' => 'Cashew nuts, peppers, carrots, white cabbage, onion, leeks, pineapple',
+            'price' => 7.5,
+            'available' => true,
+            'image' => 'kungpao.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 104,
+            'id_truck' => 6,
+            'name' => 'Beef Hei Jia Black Pepper',
+            'description' => 'Broccoli, peppers, carrots, chinese cabbage, onions, white cabbage',
+            'price' => 8.5,
+            'available' => true,
+            'image' => 'heijia.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 105,
+            'id_truck' => 6,
+            'name' => 'Tofu Shuan Dong',
+            'description' => 'Chinese cabbage, bamboo, chinese mushrooms, carrots, onions, white cabbage, snow peas',
+            'price' => 8.5,
+            'available' => true,
+            'image' => 'feijao.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 106,
+            'id_truck' => 6,
+            'name' => 'Scampi Feijao Garlic',
+            'description' => 'Bean sprouts, snow peas, green beans, cabbage, carrots, onions',
+            'price' => 9.5,
+            'available' => true,
+            'image' => 'feijao.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 107,
+            'id_truck' => 6,
+            'name' => 'Chicken Red Curry',
+            'description' => 'Coconut milk, carrots, bamboo, onions, peppers, garlic, cabbage',
+            'price' => 7.5,
+            'available' => true,
+            'image' => 'redcurry.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 108,
+            'id_truck' => 6,
+            'name' => 'Beef Green Curry',
+            'description' => 'Snow peas, carrots, green beans, white cabbage, bamboo, coconut milk',
+            'price' => 8.5,
+            'available' => true,
+            'image' => 'greencurry.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 109,
+            'id_truck' => 6,
+            'name' => 'Beef Green Curry',
+            'description' => 'White cabbage, carrots, onions, bamboo, peppers, broccoli, chinese mushrooms',
+            'price' => 7.5,
+            'available' => true,
+            'image' => 'saokao.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 110,
+            'id_truck' => 6,
+            'name' => 'Chicken Pad Thai',
+            'description' => 'Bean sprouts, leeks, onions, carrots, white cabbage, cashew nuts, eggs, green beans',
+            'price' => 7.5,
+            'available' => true,
+            'image' => 'padthai.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 111,
+            'id_truck' => 6,
+            'name' => 'Tofu Lemon Soup',
+            'description' => 'Lemongrass, coriander, peas, chinese mushrooms, onions, cabbage',
+            'price' => 6,
+            'available' => true,
+            'image' => 'lemonsoup.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 112,
+            'id_truck' => 6,
+            'name' => 'Coke Light',
+            'description' => '',
+            'price' => 2.5,
+            'available' => true,
+            'image' => 'coke_light.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 113,
+            'id_truck' => 6,
+            'name' => 'Perrier',
+            'description' => '',
+            'price' => 2.5,
+            'available' => true,
+            'image' => 'perrier.jpg'
+        ]);
+
+        //Pizzaguy
+        DB::table('menu')->insert([
+            'id_menu' => 114,
+            'id_truck' => 7,
+            'name' => 'Pizzaballs Cheese N Classic',
+            'description' => 'Tomato sauce, mozarella, oregano',
+            'price' => 3,
+            'available' => true,
+            'image' => 'pizzaballs.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 115,
+            'id_truck' => 7,
+            'name' => 'Pizzaballs Cheese N Ham',
+            'description' => 'Tomato sauce, mozarella, ham, oregano',
+            'price' => 3.4,
+            'available' => true,
+            'image' => 'pizzaballs.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 116,
+            'id_truck' => 7,
+            'name' => 'Pizzaballs Cheese N Beef',
+            'description' => 'Tomato sauce, ground beef, oregano, spicy oil',
+            'price' => 3.4,
+            'available' => true,
+            'image' => 'pizzaballs.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 117,
+            'id_truck' => 7,
+            'name' => 'Piadina Jack White',
+            'description' => 'Mozarella, oregano, spicy oil',
+            'price' => 8.4,
+            'available' => true,
+            'image' => 'pizza.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 118,
+            'id_truck' => 7,
+            'name' => 'Piadina Jack Black',
+            'description' => 'Mozarella, olives, garlic oil',
+            'price' => 9.2,
+            'available' => true,
+            'image' => 'pizza1.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 119,
+            'id_truck' => 7,
+            'name' => 'Piadina Jack Red',
+            'description' => 'Mozarella, pepperoni, spicy oil',
+            'price' => 10.6,
+            'available' => true,
+            'image' => 'pizza2.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 120,
+            'id_truck' => 7,
+            'name' => 'Pizza Mick Jagger',
+            'description' => 'Mozarella, mushrooms, ham, oregano',
+            'price' => 12,
+            'available' => true,
+            'image' => 'pizza3.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 121,
+            'id_truck' => 7,
+            'name' => 'Pizza Madonna',
+            'description' => 'Mozarella, oregano, spicy oil',
+            'price' => 9.4,
+            'available' => true,
+            'image' => 'pizza4.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 122,
+            'id_truck' => 7,
+            'name' => 'Pizza Hill-Billy',
+            'description' => 'Mozarella, pepperoni, oregano',
+            'price' => 11.5,
+            'available' => true,
+            'image' => 'pizza5.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 123,
+            'id_truck' => 7,
+            'name' => 'Pizza Simple Man',
+            'description' => 'Mozarella, ham, oregano',
+            'price' => 11.4,
+            'available' => true,
+            'image' => 'pizza6.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 124,
+            'id_truck' => 7,
+            'name' => 'Pizza Jimmy Hendrix',
+            'description' => 'Mozarella, mushrooms, oregano',
+            'price' => 10.1,
+            'available' => true,
+            'image' => 'pizza7.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 125,
+            'id_truck' => 7,
+            'name' => 'Pizza Peggy Sue',
+            'description' => 'Mozarella, corn, red bell pepper, olives, mushrooms',
+            'price' => 11.9,
+            'available' => true,
+            'image' => 'pizza8.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 126,
+            'id_truck' => 7,
+            'name' => 'Pizza Slash',
+            'description' => 'Mozarella, gouda, emmenthaler, gorgonzola, oregano',
+            'price' => 13.9,
+            'available' => true,
+            'image' => 'pizza9.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 127,
+            'id_truck' => 7,
+            'name' => 'Pizza Elvis Presley',
+            'description' => 'Mozarella, ham, ground beef, pepperoni, onions, BBQ sauce',
+            'price' => 15.3,
+            'available' => true,
+            'image' => 'pizza10.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 128,
+            'id_truck' => 7,
+            'name' => 'Pizza Summer (special)',
+            'description' => 'Warm bread, cold toppings! Mozarella, cherry tomatoes, olives, roquette',
+            'price' => 13.5,
+            'available' => true,
+            'image' => 'pizza.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 129,
+            'id_truck' => 7,
+            'name' => 'Coke',
+            'description' => '',
+            'price' => 2.5,
+            'available' => true,
+            'image' => 'coke.jpg'
+        ]);
+
+        DB::table('menu')->insert([
+            'id_menu' => 130,
+            'id_truck' => 7,
+            'name' => 'Perrier',
+            'description' => '',
+            'price' => 2.5,
+            'available' => true,
+            'image' => 'perrier.jpg'
+        ]);
     }
 }
