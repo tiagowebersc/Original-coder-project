@@ -49,7 +49,7 @@
                             </div>
                             <div class="rows" id="row2">
                                 <p class="labels">Promo Code :</p>
-                                <input class="labelContent" id="code" type="text" placeholder="code">
+                                <input class="labelContent" id="code" type="text" placeholder="code" disabled>
                             </div>
                             <hr>
                             <div class="rows" id="row3">
@@ -80,7 +80,7 @@
                     <?php foreach ($ftList as $foodTruck) {
                         $tabName = 'foodTruck_' . $foodTruck['idTruck']; ?>
                     <form class="lunchBagForm" id="{{$tabName}}" action="/generateOrder" method="post">
-                    @csrf
+                        @csrf
                         <input type="hidden" name="idTruck" value="{{$foodTruck['idTruck']}}">
                         <ul class="lunchBagitems">
                             <?php foreach ($foodTruck['list'] as $item) { ?>
@@ -104,18 +104,18 @@
                             <?php } ?>
                         </ul>
 
-                <!-- This checkbox should be hidden on wider screens -->
-                <div id="mailCheckbox">
-                    <p id="check">Sign up to for our mailing list:</p>
-                    <input id="mobileCheckbox" type="checkbox">
-                </div>
-                <button id="checkout" class="checkoutButton" type="submit">Checkout</button>
+                        <!-- This checkbox should be hidden on wider screens -->
+                        <div id="mailCheckbox">
+                            <p id="check">Sign up to for our mailing list:</p>
+                            <input id="mobileCheckbox" type="checkbox">
+                        </div>
+                        <button id="checkout" class="checkoutButton" type="submit">Checkout</button>
 
                     </form>
                     <?php } ?>
                 </div>
             </article>
-            </div>
+        </div>
     </section>
 </main>
 @endsection
