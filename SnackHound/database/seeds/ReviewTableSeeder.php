@@ -97,7 +97,7 @@ class ReviewTableSeeder extends Seeder
         ]);
 
         DB::table('review')->insert([
-            'id_truck' => 2,
+            'id_truck' => 12,
             'id_user' => 5,
             'rate' => 4,
             'created_at'=>"2019-02-28 18:23:55",
@@ -122,7 +122,7 @@ class ReviewTableSeeder extends Seeder
         ]);
 
         DB::table('review')->insert([
-            'id_truck' => 3,
+            'id_truck' => 14,
             'id_user' => 3,
             'rate' => 1,
             'created_at'=>"2019-02-28 18:23:55",
@@ -146,7 +146,7 @@ class ReviewTableSeeder extends Seeder
         ]);
 
         DB::table('review')->insert([
-            'id_truck' => 3,
+            'id_truck' => 10,
             'id_user' => 5,
             'rate' => 3,
             'created_at'=>"2019-02-28 18:23:55",
@@ -187,7 +187,7 @@ class ReviewTableSeeder extends Seeder
         ]);
 
         DB::table('review')->insert([
-            'id_truck' => 4,
+            'id_truck' => 5,
             'id_user' => 4,
             'rate' => 3,
             'created_at'=>"2019-02-28 18:23:55",
