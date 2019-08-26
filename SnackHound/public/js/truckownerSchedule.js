@@ -11,6 +11,7 @@ $(document).ready (function() {
                     $('#latitude').val(pos.results[0].geometry.lat);
                     $('#longitude').val(pos.results[0].geometry.lng);
                     pos.results[0].components['town'] !== undefined ? $('#city').val(pos.results[0].components.town) : $('#city').val(pos.results[0].components.city);
+
                     if(pos.results[0].components.town || pos.results[0].components.city) {
                         $("#edit-schedule-form").submit();
                     } else {
