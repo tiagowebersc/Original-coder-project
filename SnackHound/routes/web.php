@@ -95,8 +95,8 @@ Route::get('/footer', function () {
     return view('footer');
 });
 
-Route::get('/test2', function () {
-    return view('layouts/truckOwnerSidebar');
+Route::get('/test', function () {
+    return view('test');
 });
 Route::get('/test3', function () {
     return view('layouts/filterbar');
