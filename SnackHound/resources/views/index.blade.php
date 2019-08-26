@@ -41,18 +41,20 @@
 
                     </button>
                     <ul id="custome-drpdown" class="custome-drpdown">
-                            <li><a onclick="categoryAll()" href="/" id="now"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}'" onmousedown="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'"> All </a></li>
-
+                        <li><a onclick="categoryAll()" href="/" id="now">
+                                <img class='filterbar' <?php if (isset($category_selected)) { ?> src="{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}'" onmousedown="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'" <?php } else { ?> src="{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker 4).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'" onmousedown="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}'" <?php } ?>> All </a></li>
                         <?php foreach ($categories as $category) {
                             ?>
 
 
-                         <li>
+                        <li>
                             <form class='form-anchor-submit' action="/" method='POST'>
                                 @csrf
                                 <input type="hidden" name="categoryId" value="{{$category->id_food_category}}">
-                                <a href="" onclick="categorySubmit({{$category->id_food_category}}); return false;" class='anchor-submit'> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/'.$category->image)}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image_hover)}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image)}}'"> {{$category->name}} </a></li>
-                            </form>
+                                <a href="" onclick="categorySubmit({{$category->id_food_category}}); return false;" class='anchor-submit'>
+                                    <img class='filterbar' <?php if (isset($category_selected) && $category_selected == $category->id_food_category) { ?> src="{{URL::asset('assets/ICONS/Filter/'.$category->image_hover)}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image)}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image_hover)}}'" <?php } else { ?> src="{{URL::asset('assets/ICONS/Filter/'.$category->image)}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image_hover)}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image)}}'" <?php } ?>> {{$category->name}} </a>
+                        </li>
+                        </form>
                         </li>
 
                         <?php } ?>
@@ -64,15 +66,18 @@
 
         <section id="filterbar-container" class="filterbar-container">
             <ul>
-                <li><a onclick="categoryAll()" href="/" id="now"> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}'" onmousedown="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'"> All </a></li>
+                <li><a onclick="categoryAll()" href="/" id="now">
+                        <img class='filterbar' <?php if (isset($category_selected)) { ?> src="{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}'" onmousedown="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'" <?php } else { ?> src="{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (3).svg')}}'" onmousedown="this.src='{{URL::asset('assets/ICONS/Filter/icons8-marker (4).svg')}}'" <?php } ?>> All </a></li>
                 <?php foreach ($categories as $category) {
                     ?>
                 <li>
                     <form class='form-anchor-submit' action="/" method='POST'>
-                    @csrf
+                        @csrf
                         <input type="hidden" name="categoryId" value="{{$category->id_food_category}}">
-                        <a href="" onclick="categorySubmit({{$category->id_food_category}}); return false;" class='anchor-submit'> <img class='filterbar' src="{{URL::asset('assets/ICONS/Filter/'.$category->image)}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image_hover)}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image)}}'"> {{$category->name}} </a></li>
-                    </form>
+                        <a href="" onclick="categorySubmit({{$category->id_food_category}}); return false;" class='anchor-submit'>
+                            <img class='filterbar' <?php if (isset($category_selected) && $category_selected == $category->id_food_category) { ?> src="{{URL::asset('assets/ICONS/Filter/'.$category->image_hover)}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image)}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image_hover)}}'" <?php } else { ?> src="{{URL::asset('assets/ICONS/Filter/'.$category->image)}}" onmouseover="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image_hover)}}'" onmouseout="this.src='{{URL::asset('assets/ICONS/Filter/'.$category->image)}}'" <?php } ?>> {{$category->name}} </a>
+                </li>
+                </form>
                 <?php } ?>
             </ul>
         </section>
@@ -86,7 +91,7 @@
                     ?>
                 <div class="wrapper">
 
-                        <div class="container">
+                    <div class="container">
                         <input type="hidden" name="idTruck" value="{{$truck->id_truck}}">
                         <?php if (Session::has('id_user')) {
                                 if ($truck->favorite) { ?>
@@ -102,7 +107,7 @@
 
 
 
-                                <div class="left">
+                            <div class="left">
                                 <div class="details">
                                     <a href="/foodtruckinfo/{{$truck['id_truck']}}">
                                         <h3><?= $truck['name'] ?></h3>
@@ -113,9 +118,9 @@
                                                 for ($i = 1; $i <= $truck['avgRate']; $i++) { ?>
                                             <img class="starlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-filled.svg')}}" alt="">
                                             <?php }
-                                            $blankStars = 5 - $truck['avgRate'];
-                                            for ($i = 1; $i <= $blankStars ; $i++) {
-                                                ?>
+                                                $blankStars = 5 - $truck['avgRate'];
+                                                for ($i = 1; $i <= $blankStars; $i++) {
+                                                    ?>
                                             <img class="starlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-blank.svg')}}" alt="">
                                             <?php } ?>
                                             <p class="reviewNbr" id="reviewNbr"> {{($truck['reviewsNbr'])}} Reviews</p>
@@ -133,12 +138,12 @@
                                     <div class="category-€">
                                         <div class="category">
                                             <?php foreach ($truck->categories as $category) { ?>
-                                                <a class="card-category" href="#">{{$category->name}}</a>
+                                            <a class="card-category" href="#">{{$category->name}}</a>
                                             <?php } ?>
                                         </div>
                                         <div class="price_range">
                                             <?php for ($i = 1; $i <= $truck['price_range']; $i++) { ?>
-                                             <h5>€</h5>
+                                            <h5>€</h5>
                                             <?php } ?>
                                         </div>
                                     </div>
@@ -163,34 +168,34 @@
                                     <th>City</th>
                                 </tr>
                                 <?php
-                                foreach ($truck->schedules as $Schedle) {
-                                    $start_time = \Carbon\Carbon::createFromFormat('H:i:s',$Schedle->start_time)->format('h:i');
-                                    $end_time = \Carbon\Carbon::createFromFormat('H:i:s',$Schedle->end_time)->format('h:i');
-                                ?>
+                                    foreach ($truck->schedules as $Schedle) {
+                                        $start_time = \Carbon\Carbon::createFromFormat('H:i:s', $Schedle->start_time)->format('h:i');
+                                        $end_time = \Carbon\Carbon::createFromFormat('H:i:s', $Schedle->end_time)->format('h:i');
+                                        ?>
                                 <tr>
                                     @switch($Schedle->weekday)
 
                                     @case(0)
-                                        <th class='display-weekday'>Monday:</th>
-                                        @break
+                                    <th class='display-weekday'>Monday:</th>
+                                    @break
                                     @case(1)
-                                        <th class='display-weekday'>Tuesday:</th>
-                                        @break
+                                    <th class='display-weekday'>Tuesday:</th>
+                                    @break
                                     @case(2)
-                                        <th class='display-weekday'>Wednesday:</th>
-                                        @break
+                                    <th class='display-weekday'>Wednesday:</th>
+                                    @break
                                     @case(3)
-                                        <th class='display-weekday'>Thursday:</th>
-                                        @break
+                                    <th class='display-weekday'>Thursday:</th>
+                                    @break
                                     @case(4)
-                                        <th class='display-weekday'>Friday:</th>
-                                        @break
+                                    <th class='display-weekday'>Friday:</th>
+                                    @break
                                     @case(5)
-                                        <th class='display-weekday'>Saturday:</th>
-                                        @break
+                                    <th class='display-weekday'>Saturday:</th>
+                                    @break
                                     @case(6)
-                                        <th class='display-weekday'>Sunday:</th>
-                                        @break
+                                    <th class='display-weekday'>Sunday:</th>
+                                    @break
 
                                     @endswitch
                                     <th>{{$start_time}}</th>
@@ -199,7 +204,7 @@
                                 </tr>
                                 <?php } ?>
                             </table>
-                            <img class=""  src="{{URL::asset('assets/ICONS/Footer%20Content/MadeInLuxLogo.svg')}}">
+                            <img class="" src="{{URL::asset('assets/ICONS/Footer%20Content/MadeInLuxLogo.svg')}}">
                         </div>
                     </div>
 
@@ -217,8 +222,7 @@
 </div>
 
 <script>
-
-    if(localStorage.top > 0) {
+    if (localStorage.top > 0) {
         scrollTo(0, localStorage.top);
     }
 
@@ -254,7 +258,7 @@
 
         if (top === 0 && window.innerWidth > 1024) {
             sidebar.style.backgroundColor = 'white';
-            sidebarLogo.src = '{{URL::asset('assets/ICONS/LOGO/SVG/Logo_Black-White.svg')}}';
+            sidebarLogo.src = '{{URL::asset('assets/ICONS/LOGO/SVG/Logo_Black - White.svg')}}';
         } else {
             sidebar.style.backgroundColor = 'black';
             sidebarLogo.src = '{{URL::asset('assets/ICONS/Logo_White.svg')}}';
@@ -271,7 +275,7 @@
 
         if (top === 0 && window.innerWidth > 1024) {
             sidebar.style.backgroundColor = 'white';
-            sidebarLogo.src = '{{URL::asset('assets/ICONS/LOGO/SVG/Logo_Black-White.svg')}}';
+            sidebarLogo.src = '{{URL::asset('assets/ICONS/LOGO/SVG/Logo_Black - White.svg')}}';
         } else {
             sidebar.style.backgroundColor = 'black';
             sidebarLogo.src = '{{URL::asset('assets/ICONS/Logo_White.svg')}}';
@@ -393,4 +397,3 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtlX1KloHpjKujAEto6qDggr_-ibVatcA&callback=initMap" async defer></script>
 
 @endsection
-
