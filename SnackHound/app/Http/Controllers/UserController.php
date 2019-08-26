@@ -91,8 +91,8 @@ class UserController extends Controller
         }
     }
 
-    public function forgotPassword()
-    {
+    public function forgotPassword() {
+
         return view('forgot_password');
     }
 
