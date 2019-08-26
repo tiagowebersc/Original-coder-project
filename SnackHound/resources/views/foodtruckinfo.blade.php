@@ -22,12 +22,12 @@
 
             <div name="truckinfo" class="truckinfo">
                 <input type="hidden" id="idTruck" value="{{$foodtruck->id_truck}}"> {{-- In the alue we are looking for the id truck in the databse --}}
-               <h1>{{$foodtruck->name}}</h1> {{--  Here we are looking to take the name of the foodtruck from the databse and show it on the website --}}
+                <h1>{{$foodtruck->name}}</h1> {{-- Here we are looking to take the name of the foodtruck from the databse and show it on the website --}}
                 <div class="favstar">
                     <div class="reviewDiv">
                         <?php
 
-                        // We are looking to take the rate of the foodtruck from the database and show it on the website 
+                        // We are looking to take the rate of the foodtruck from the database and show it on the website
                         for ($i = 1; $i <= $avg_rate; $i++) { ?>
                         <img class="starlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-filled.svg')}}" alt="">
                         <?php }
@@ -36,7 +36,7 @@
                             ?>
                         <img class="starlogo" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-blank.svg')}}" alt="">
                         <?php } ?>
-                        {{--  we count how many reviews the foodtruck have and we display it on the info --}}
+                        {{-- we count how many reviews the foodtruck have and we display it on the info --}}
                         <p class="reviewNbr">{{COUNT($reviews)}}</p>
                     </div>
                     <?php if (Session::has('id_user')) {
@@ -59,7 +59,7 @@
                         </div>
                         <div class="contactweb" name="contactweb">
                             <img name="webicon" class="webicon" src="{{URL::asset('assets/ICONS/icons8-internet (1).svg')}}" alt="">
-                            <p class="webInfo" name="webInfo">{{$foodtruck->website}}</p> {{--  Here we are looking to take the official website of the foodtruck from the database and displax it--}}
+                            <p class="webInfo" name="webInfo">{{$foodtruck->website}}</p> {{-- Here we are looking to take the official website of the foodtruck from the database and displax it--}}
                         </div>
                     </div>
                     <div class="truckposition" name="truckposition">
@@ -140,83 +140,84 @@
         <?php } ?>
     </main>
     {{-- REVIEW --}}
-        <section class="mainReview">
-            <div class="reviewBox">
-                <div class="scrollBoxReview">
-                    <h1>REVIEWS</h1>
-                    <div class="reviewList">
-                        <?php
-                        // starting a foreach to display information in the review table
-                        foreach ($reviews as $review) {
-                            ?>
-                        <div class="formReview">
-                            <div class="userInfo">
-                                <p class="userNameInBox">{{$review->userName}}</p> {{--display the User Name of the user that put the comment --}}
-                                <p><?php
-                                        for ($i = 1; $i <= $review->rate; $i++) { ?> {{--display the rate of the user from 1 to 5 stars--}}
-                                    <img class="ratingStar" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-filled.svg')}}" alt="">
-                                    <?php }
-                                        $blankStars = 5 - $review->rate;
-                                        for ($i = 1; $i <= $blankStars; $i++) {
-                                            ?>
-                                    <img class="ratingStar" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-blank.svg')}}" alt="">
-                                    <?php } ?>
-                                </p>
-                                <p class="dateReview">({{$review->created_at}}) :</p> {{--display the date when the review has been sended--}}
-                            </div>
-                            <div class="userReview">
-                                <p>{{$review->comment}}</p> {{--display the review of the user--}}
-                            </div>
+    <section class="mainReview">
+        <div class="reviewBox">
+            <div class="scrollBoxReview">
+                <h1>REVIEWS</h1>
+                <div class="reviewList">
+                    <?php
+                    // starting a foreach to display information in the review table
+                    foreach ($reviews as $review) {
+                        ?>
+                    <div class="formReview">
+                        <div class="userInfo">
+                            <p class="userNameInBox">{{$review->userName}}</p> {{--display the User Name of the user that put the comment --}}
+                            <p><?php
+                                    for ($i = 1; $i <= $review->rate; $i++) { ?> {{--display the rate of the user from 1 to 5 stars--}}
+                                <img class="ratingStar" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-filled.svg')}}" alt="">
+                                <?php }
+                                    $blankStars = 5 - $review->rate;
+                                    for ($i = 1; $i <= $blankStars; $i++) {
+                                        ?>
+                                <img class="ratingStar" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-blank.svg')}}" alt="">
+                                <?php } ?>
+                            </p>
+                            <p class="dateReview">({{$review->created_at}}) :</p> {{--display the date when the review has been sended--}}
                         </div>
-                        <?php } ?>
-
-                    </div>
-                </div>
-
-                {{--User can leave a review only when they are Loged In . If they are not loged in so these part will be hidden--}}
-                <?php if (Session::has('id_user')) { ?>
-                <div class="review">
-                    <div class="leavReview">
-                        <h1>Leave A Review</h1>
-                        <div class="formbox">
-                            <form id="formReview" class="reviewForm" action="" method="POST">
-                                <h3>Comments:</h3>
-                                <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
-                                <input type="hidden" name="rate" id="rate" value="0">
-                                <div id="divStar">
-                                    <img class="rateStarLogo" id="star1" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-blank.svg')}}" alt="">
-                                    <img class="rateStarLogo" id="star2" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-blank.svg')}}" alt="">
-                                    <img class="rateStarLogo" id="star3" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-blank.svg')}}" alt="">
-                                    <img class="rateStarLogo" id="star4" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-blank.svg')}}" alt="">
-                                    <img class="rateStarLogo" id="star5" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-blank.svg')}}" alt="">
-                                </div>
-                                <div class="subReview">
-                                    <input type="submit" id="insertReview" value="Post">
-                                    <span class="error" id="errorReview"></span>
-                                    <span class="success" id="successReview"></span>
-                                </div>
-                            </form>
+                        <div class="userReview">
+                            <p>{{$review->comment}}</p> {{--display the review of the user--}}
                         </div>
                     </div>
-                </div>
-                <?php } ?>
+                    <?php } ?>
 
+                </div>
             </div>
-        </section>
 
-        {{-- END OF REVIEW --}}
+            {{--User can leave a review only when they are Loged In . If they are not loged in so these part will be hidden--}}
+            <?php if (Session::has('id_user')) { ?>
+            <div class="review">
+                <div class="leavReview">
+                    <h1>Leave A Review</h1>
+                    <div class="formbox">
+                        <form id="formReview" class="reviewForm" action="" method="POST">
+                            <h3>Comments:</h3>
+                            <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+                            <input type="hidden" name="rate" id="rate" value="0">
+                            <div id="divStar">
+                                <img class="rateStarLogo" id="star1" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-blank.svg')}}" alt="">
+                                <img class="rateStarLogo" id="star2" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-blank.svg')}}" alt="">
+                                <img class="rateStarLogo" id="star3" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-blank.svg')}}" alt="">
+                                <img class="rateStarLogo" id="star4" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-blank.svg')}}" alt="">
+                                <img class="rateStarLogo" id="star5" src="{{URL::asset('assets/ICONS/Food Truck Cards/icons8-star-blank.svg')}}" alt="">
+                            </div>
+                            <div class="subReview">
+                                <input type="submit" id="insertReview" value="Post">
+                                <span class="error" id="errorReview"></span>
+                                <span class="success" id="successReview"></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <?php } ?>
+
+        </div>
+    </section>
+
+    {{-- END OF REVIEW --}}
 </div>
 @endsection
 
 @section('js')
 <script>
-    function updateRate(nbr){
+    function updateRate(nbr) {
+        if (document.querySelector("#rate").value == nbr) nbr = 0;
         document.querySelector("#rate").value = nbr;
-        for(let i = 1; i <= 5; i++){
-            if (i <= nbr){
-                document.querySelector("#star"+i).src = document.querySelector("#star"+i).src.replace("star-blank", "star-filled");
-            }else{
-                document.querySelector("#star"+i).src = document.querySelector("#star"+i).src.replace("star-filled", "star-blank");
+        for (let i = 1; i <= 5; i++) {
+            if (i <= nbr) {
+                document.querySelector("#star" + i).src = document.querySelector("#star" + i).src.replace("star-blank", "star-filled");
+            } else {
+                document.querySelector("#star" + i).src = document.querySelector("#star" + i).src.replace("star-filled", "star-blank");
             }
         }
 
@@ -225,39 +226,40 @@
     window.addEventListener('DOMContentLoaded', (event) => {
         // comment/review
         const starlst = document.querySelectorAll(".rateStarLogo");
-        for (let star of starlst){
+        for (let star of starlst) {
             star.addEventListener("click", (e) => {
-                updateRate(e.target.id.substr(4,1));
+                updateRate(e.target.id.substr(4, 1));
             })
         }
         let frmReview = document.querySelector("#formReview");
-        frmReview.addEventListener("submit", (e) => {
-            e.preventDefault();
-            document.querySelector('#errorReview').innerHTML = "";
-            if (document.querySelector('#comment').value == ""){
-                document.querySelector('#errorReview').innerHTML = "Leave a comment!";
-            }
-
-            const paramReview = {
-                    _token: document.querySelector('input[name="_token"]').value,
-                    idTruck: document.querySelector("#idTruck").value,
-                    rate: document.querySelector('#rate').value,
-                    comment: document.querySelector('#comment').value
-            };
-            fetch("/addReview", {
-                    method: "POST",
-                    body: JSON.stringify(paramReview),
-                    headers: {
-                        "Content-Type": "application/json"
-                    }
-                })
-                .then(response => {
-                    document.querySelector('#comment').value = "";
-                    updateRate(0);
-                    document.querySelector('#successReview').innerHTML = "Review inserted!";
-                });
-
-        });
+        if (frmReview != null) {
+            frmReview.addEventListener("submit", (e) => {
+                e.preventDefault();
+                document.querySelector('#errorReview').innerHTML = "";
+                if (document.querySelector('#comment').value == "") {
+                    document.querySelector('#errorReview').innerHTML = "Leave a comment!";
+                } else {
+                    const paramReview = {
+                        _token: document.querySelector('input[name="_token"]').value,
+                        idTruck: document.querySelector("#idTruck").value,
+                        rate: document.querySelector('#rate').value,
+                        comment: document.querySelector('#comment').value
+                    };
+                    fetch("/addReview", {
+                            method: "POST",
+                            body: JSON.stringify(paramReview),
+                            headers: {
+                                "Content-Type": "application/json"
+                            }
+                        })
+                        .then(response => {
+                            document.querySelector('#comment').value = "";
+                            updateRate(0);
+                            document.querySelector('#successReview').innerHTML = "Review inserted!";
+                        });
+                }
+            });
+        }
         // favorite
         let btnFavorite = document.querySelector(".heartlogo");
         if (btnFavorite != null) {

@@ -33,12 +33,14 @@ header {
 }
 .error {
     display: block;
+    width: 300px;
     color: red;
     font-family: "Raleway", sans-serif;
     text-align: center;
 }
 .success {
-    display: block;
+    display: block;\
+    width: 300px;
     color: green;
     font-family: "Raleway", sans-serif;
     text-align: center;
