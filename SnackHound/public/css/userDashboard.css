@@ -46,8 +46,9 @@ main {
 #main-title {
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
-    font-size: 36px;
-    margin-left: 25px;
+    font-size: 20px;
+    /* margin-left: 25px; */
+    padding-top: 100px;
 }
 
 #left-side {
@@ -78,7 +79,7 @@ input[type='radio'] {
 }
 
 #orderInput {
-    margin-left: 106px;
+    margin-left: 105px;
     width: 205px;
 }
 
@@ -116,6 +117,7 @@ input[type='radio'] {
 
 .desktop-btn {
     width: 100%;
+    display: flex;
 }
 
 input[type='date'] {
@@ -175,6 +177,8 @@ a:active {
     margin: 50px;
 }
 
+
+
 /* !!!!! MEDIA QUERIES !!!!! */
 
 @media only screen and (max-width: 1280px){
@@ -192,19 +196,22 @@ a:active {
         margin-left: 0;
         width: 205px;
     }
-    
+
     #dateInput {
         margin-left: 0;
         /* display: inline; */
     }
-    
+
     #businessInput {
         width: 205px;
         margin-left: 0;
     }
-    
+
     .desktop-btn {
         display: flex;
+    }
+    .footer{
+        padding-top: 53px;
     }
 
 }

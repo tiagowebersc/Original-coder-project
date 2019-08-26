@@ -95,9 +95,7 @@
                 </table>
             </div>
             </section>
-            <section id="right-side">
-                <img class="green_truck" src="{{URL::asset('assets/IMGS/green_truck.jpg')}}" alt="a girl serving food from a food truck">
-            </section>
+            
         </div>
     </main>
 

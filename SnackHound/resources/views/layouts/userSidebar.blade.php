@@ -15,7 +15,7 @@
 
 <div class="sidebar">
     <!-- LOGO -->
-    <div class='side-mobile-pic'><img src="{{URL::asset('assets/IMGS/475605E3-69C5-4D2B-8727-61B7BB8C4699-500w.jpeg')}}" alt=""></div>
+    <div class='side-mobile-pic'></div>
     <div class="sidebar-logo">
         <a href="/"><img class='sidebar-logo-img' src="{{URL::asset('assets/ICONS/Logo_White.svg')}}" alt="Logo of SnackHound."></a>
     </div>
@@ -28,12 +28,13 @@
             <img src="https://img.icons8.com/android/24/000000/menu.png">
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <div> <a class='dropdown-item'> <img class='dropdown-icon' src="{{URL::asset('assets/ICONS/USER%SETTINGS/.svg')}}" alt="FIX THE ALT."> <span>Coverage Area</span> </a> </div>
-            <div> <a class='dropdown-item'> <img class='dropdown-icon' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-doggy-bag (2).svg')}}" alt="FIX THE ALT."> <span>Lunchbag</span> </a> </div>
-            <div> <a class='dropdown-item'> <img class='dropdown-icon' src="{{URL::asset('assets/ICONS/Sidebar%20Navigation/icons8-food-truck.svg')}}" alt="FIX THE ALT."> <span>Food Truck Owner?</span> </a> </div>
+            <div> <a href='#'><img class='sidebar-items-img' id="active" src="{{URL::asset('assets/ICONS/USER SETTINGS/order-history_black.svg')}}" onmousemove="src='{{URL::asset('assets/ICONS/USER SETTINGS/order-history_yellow.svg')}}'" onmouseout="src='{{URL::asset('assets/ICONS/USER SETTINGS/order-history_black.svg')}}'" alt="Icon for order history page.">Order History</a> </div>
+            <div> <a href="/userFavorites"><img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/USER SETTINGS/favorite_black.svg')}}" onmousemove="src='{{URL::asset('assets/ICONS/USER SETTINGS/heart_yellow.svg')}}'" onmouseout="src='{{URL::asset('assets/ICONS/USER SETTINGS/favorite_black.svg')}}'" alt="Icon for favorites page.">Favorites</a> </div>
+            <div> <a href="/userReviews"><img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/USER SETTINGS/reviews_black.svg')}}" onmousemove="src='{{URL::asset('assets/ICONS/USER SETTINGS/reviews_yellow.svg')}}'" onmouseout="src='{{URL::asset('assets/ICONS/USER SETTINGS/reviews_black.svg')}}'" alt="Icon for Reviews page.">Reviews</a> </div>
+            <div> <a href="/settings"><img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/USER SETTINGS/editProfile_black.svg')}}" onmousemove="src='{{URL::asset('assets/ICONS/USER SETTINGS/editProfile_yellow.svg')}}'" onmouseout="src='{{URL::asset('assets/ICONS/USER SETTINGS/editProfile_black.svg')}}'" alt="Icon for Edit Profile page.">Edit Profile</a> </div>
             <div id="dropdown-btns">
-                <div class='dropdown-sign'> <a class='dropdown-item'> SIGN UP </a> </div>
-                <div class='dropdown-log'> <a class='dropdown-item'> LOG IN </a> </div>
+            <div class='dropdown-sign'> <a class='dropdown-item'> SIGN UP </a> </div>
+            <div class='dropdown-log'> <a class='dropdown-item'> LOG IN </a> </div>
             </div>
         </div>
     </nav>
@@ -41,12 +42,12 @@
     <!-- SIDEBAR ITEMS -->
     <div class='sidebar-items'>
         <ul>
-            <li><a href='#'><img class='sidebar-items-img' id="active" src="{{URL::asset('assets/ICONS/USER SETTINGS/orderHistory_Yellow.svg')}}" alt="Icon for order history page."><span id="active">Order<br>History</span></a></li>
-            <li><a href="#"><img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/USER SETTINGS/paymentSettings_White.svg')}}" alt="Icon for payment settings page.">Payment Settings</a></li>
-            <li><a href="/userFavorites"><img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/USER SETTINGS/favorite_white.svg')}}" alt="Icon for favorites page.">Favorites</a></li>
-            <li><a href="/userReviews"><img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/USER SETTINGS/reviews_white.svg')}}" alt="Icon for Reviews page.">Reviews</a></li>
-            <li><a href="/settings"><img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/USER SETTINGS/editProfile_white.svg')}}" alt="Icon for Edit Profile page.">Edit<br>Profile</a></li>
-            <li><a href="#"><img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/USER SETTINGS/settings_white.svg')}}" alt="Icon for Settings page.">Settings</a></li>
+            <li><a href='#'><img class='sidebar-items-img' id="active" src="{{URL::asset('assets/ICONS/USER SETTINGS/order-history_white.svg')}}" onmousemove="src='{{URL::asset('assets/ICONS/USER SETTINGS/order-history_yellow.svg')}}'" onmouseout="src='{{URL::asset('assets/ICONS/USER SETTINGS/order-history_white.svg')}}'" alt="Icon for order history page."><span id="active">Order<br>History</span></a></li>
+            {{-- <li><a href="#"><img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/USER SETTINGS/paymentSettings_White.svg')}}" alt="Icon for payment settings page.">Payment Settings</a></li> --}}
+            <li><a href="/userFavorites"><img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/USER SETTINGS/favorite_white.svg')}}" onmousemove="src='{{URL::asset('assets/ICONS/USER SETTINGS/heart_yellow.svg')}}'" onmouseout="src='{{URL::asset('assets/ICONS/USER SETTINGS/favorite_white.svg')}}'" alt="Icon for favorites page.">Favorites</a></li>
+            <li><a href="/userReviews"><img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/USER SETTINGS/reviews_white.svg')}}" onmousemove="src='{{URL::asset('assets/ICONS/USER SETTINGS/reviews_yellow.svg')}}'" onmouseout="src='{{URL::asset('assets/ICONS/USER SETTINGS/reviews_white.svg')}}'" alt="Icon for Reviews page.">Reviews</a></li>
+            <li><a href="/settings"><img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/USER SETTINGS/editProfile_white.svg')}}" onmousemove="src='{{URL::asset('assets/ICONS/USER SETTINGS/editProfile_yellow.svg')}}'" onmouseout="src='{{URL::asset('assets/ICONS/USER SETTINGS/editProfile_white.svg')}}'" alt="Icon for Edit Profile page.">Edit<br>Profile</a></li>
+            {{-- <li><a href="#"><img class='sidebar-items-img' src="{{URL::asset('assets/ICONS/USER SETTINGS/settings_white.svg')}}" alt="Icon for Settings page.">Settings</a></li> --}}
         </ul>
     </div>
 </div>
